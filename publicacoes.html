@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>MIND - Publicações</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="javascript/components/menu.js" defer></script>
+  <script src="javascript/components/footer.js" defer></script>
+
+  <style>
+    
+  #page-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* ocupa a altura disponível */
+  min-height: 100vh; /* força ocupar a altura toda da tela */
+  max-width: 100%;
+  max-height: 90%;
+  margin: auto; /* centraliza horizontal e vertical */
+  overflow: auto; /* ativa scroll se o conteúdo for maior */
+}
+  </style>
+
+</head>
+<body>
+  <meu-menu></meu-menu>
+
+  <div id="page-wrapper">
+    <main class="container-fluid d-flex flex-column my-0 pt-0 mt-1 mb-5">
+      <section class="mt-2">
+        <h2 class="text-center text-danger"><strong>Movimento para Inclusão e Neurodiversidade.</strong></h2>
+        <div class="container-fluid">
+          <h5 class="text-center text-black"><strong>Publicações realizadas pela equipe MIND.</strong></h5> 
+          <h5 class="text-center">Gráfico: Publicações por Tipo e Ano</h5>
+          <canvas id="graficoPublicacoes" height="100"></canvas>
+        </div>
+
+        <div class="row g-2 my-4">
+          <div class="col-md-3">
+            <input type="text" id="pesquisaInput" class="form-control" placeholder="Buscar por título..." />
+          </div>
+          <div class="col-md-2">
+            <select id="filtroAutores" class="form-select"><option value="">Filtrar por Autor</option></select>
+          </div>
+          <div class="col-md-2">
+            <select id="filtroTipos" class="form-select"><option value="">Filtrar por Tipo</option></select>
+          </div>
+          <div class="col-md-2">
+            <select id="filtroSiglas" class="form-select"><option value="">Filtrar por Sigla</option></select>
+          </div>
+          <div class="col-md-2">
+            <select id="filtroAnos" class="form-select"><option value="">Filtrar por Ano</option></select>
+          </div>
+          <div class="col-md-1">
+            <button id="btnLimpar" class="btn btn-secondary w-100">Limpar</button>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table id="tabelaPublicacoes" class="table table-striped table-bordered w-100">
+            <thead class="table-dark text-center">
+              <tr>
+                <th>ID</th>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>Co-Autor(es)</th>
+                <th>Tipo</th>
+                <th>Local Publicado</th>
+                <th>Sigla</th>
+                <th>Ano</th>
+                <th>Acesse Aqui</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal fade" id="modalReferencia" tabindex="-1" aria-labelledby="modalReferenciaLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title" id="modalReferenciaLabel">Dados referente à Publicação</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body" id="conteudoReferencia"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+  <script src="javascript/dados-publicacoes.js"></script>
+
+  <script>
+    let chartInstance;
+    let tabelaDT;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const itens = listarItens('publicacoes');
+
+      const selAutores = $('#filtroAutores');
+      const selTipos = $('#filtroTipos');
+      const selAnos = $('#filtroAnos');
+      const selSiglas = $('#filtroSiglas');
+
+      function popularFiltros() {
+        const autores = [...new Set(itens.map(i => i.autor))].sort();
+        const tipos = [...new Set(itens.map(i => i.tipo))].sort();
+        const anos = [...new Set(itens.map(i => i.ano))].sort();
+        const siglas = [...new Set(itens.map(i => i.sigla))].sort();
+
+        autores.forEach(v => selAutores.append(new Option(v, v)));
+        tipos.forEach(v => selTipos.append(new Option(v, v)));
+        anos.forEach(v => selAnos.append(new Option(v, v)));
+        siglas.forEach(v => selSiglas.append(new Option(v, v)));
+      }
+
+      function aplicarFiltros() {
+        const q = $('#pesquisaInput').val().toLowerCase();
+        const a = selAutores.val();
+        const t = selTipos.val();
+        const y = selAnos.val();
+        const z = selSiglas.val();
+
+        return itens.filter(i =>
+          (!a || i.autor === a) &&
+          (!t || i.tipo === t) &&
+          (!y || i.ano === y) &&
+          (!z || i.sigla === z) &&
+          (!q || i.titulo.toLowerCase().includes(q))
+        );
+      }
+
+      function renderizarTabela(data) {
+        if (tabelaDT) tabelaDT.clear().rows.add(data).draw();
+        else {
+          tabelaDT = $('#tabelaPublicacoes').DataTable({
+            data: data,
+            columns: [
+              { data: 'idpub' },
+              { data: 'titulo' },
+              { data: 'autor', render: d => `<strong>${d}</strong>` },
+              { data: 'coautor' },
+              { data: 'tipo' },
+              { data: 'local' },
+              { data: 'sigla' },
+              { data: 'ano' },
+              {
+  data: null,
+  render: d => `
+    <div class="mb-2">
+  <a href="${d.linkSite}" class="btn btn-danger btn-sm w-100" target="_blank" style="min-width: 130px; padding-top: 5px;">🔗 Submissão</a>
+</div>
+<div class="mb-2">
+  <a href="${d.linkPublicacao}" class="btn btn-warning btn-sm w-100" target="_blank" style="min-width: 130px; padding-top: 5px;">🌐Publicação</a>
+</div>
+<div class="mb-2">
+  ${d.publicacaoArquivo 
+    ? `<a href="${d.publicacaoArquivo}" class="btn btn-success btn-sm w-100" target="_blank" style="min-width: 130px; padding-top: 5px;">📄PDF Drive</a>` 
+    : `<button class="btn btn-secondary btn-sm w-100" disabled style="min-width: 130px;">❌ Sem PDF</button>`
+  }
+</div>
+<div class="mb-2">
+  <button class="btn btn-primary btn-sm" onclick='mostrarReferencia(${JSON.stringify(d)})'>📄 Referenciar</button>
+</div>
+
+  `
+}
+
+           ],
+            paging: true,
+            language: {
+              info: "Mostrando _START_ até _END_ de _TOTAL_ registros",
+              infoEmpty: "Mostrando 0 até 0 de 0 registros",
+              lengthMenu: "Mostrar _MENU_ registros por página",
+              search: "Pesquisar:",
+              paginate: {
+                first: "Primeiro", last: "Último", next: "Próximo", previous: "Anterior"
+              }
+            }
+          });
+        }
+      }
+
+      function renderizarGrafico(data) {
+        const group = {};
+        data.forEach(i => {
+          if (!group[i.tipo]) group[i.tipo] = {};
+          if (!group[i.tipo][i.ano]) group[i.tipo][i.ano] = 0;
+          group[i.tipo][i.ano]++;
+        });
+
+        const tiposArr = Object.keys(group);
+        const anosArr = [...new Set(data.map(i => i.ano))].sort();
+        const colors = ['#007bff','#28a745','#ffc107','#dc3545','#17a2b8'];
+        const datasets = tiposArr.map((tp, idx) => ({
+          label: tp,
+          backgroundColor: colors[idx % colors.length],
+          data: anosArr.map(y => group[tp][y] || 0)
+        }));
+
+          // Função para calcular o valor máximo da escala Y acima do máximo apresentado da quantidade para para item
+  function calcularMaximo(datasets) {
+    let max = 0;
+    datasets.forEach(ds => {
+      const dsMax = Math.max(...ds.data);
+      if (dsMax > max) max = dsMax;
+    });
+    return Math.ceil(max + 1); // força uma unidade acima
+  }
+
+        const ctx = document.getElementById('graficoPublicacoes').getContext('2d');
+        if(chartInstance) chartInstance.destroy();
+        chartInstance = new Chart(ctx, {
+          type: 'bar',
+          data: { labels: anosArr, datasets },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: { position: 'bottom' },
+              datalabels: { anchor:'end', align:'end', formatter: Math.round }
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+                suggestedMax: calcularMaximo(datasets),
+                ticks: {
+                  stepSize: 1,
+                  precision: 0,
+                  callback: v => Number.isInteger(v) ? v : null
+                }
+              }
+            }
+          },
+          plugins: [ChartDataLabels]
+        });
+      }
+
+      function atualizar() {
+        const filtrado = aplicarFiltros();
+        renderizarTabela(filtrado);
+        renderizarGrafico(filtrado);
+      }
+
+      $('#pesquisaInput, #filtroAutores, #filtroTipos, #filtroAnos, #filtroSiglas').on('input change', atualizar);
+      $('#btnLimpar').on('click', () => {
+        $('#pesquisaInput').val('');
+        selAutores.val('');
+        selTipos.val('');
+        selAnos.val('');
+        selSiglas.val('');
+        atualizar();
+      });
+
+      popularFiltros();
+      atualizar();
+    });
+
+    function mostrarReferencia(item) {
+      const ref = `
+        <p><strong>Título:</strong> ${item.titulo}</p>
+        <p><strong>Autor Principal:</strong> ${item.autor}</p>
+        <p><strong>Co-autor(es):</strong> ${item.coautor}</p>
+        <p><strong>Tipo:</strong> ${item.tipo}</p>
+        <p><strong>Ano:</strong> ${item.ano}</p>
+        <p><strong>Local:</strong> ${item.local}</p>
+        <p><strong>Sigla:</strong> ${item.sigla}</p>
+        <p><strong>Link Submissão:</strong> <a href="${item.linkSite}" target="_blank">${item.linkSite}</a></p>
+        <p><strong>Link Publicação:</strong> <a href="${item.linkPublicacao}" target="_blank">${item.linkPublicacao}</a></p>
+        <p style="text-align: justify;"><strong style="color:red;">Como Referenciar pela ABNT:</strong> ${item.referenciarPub}</p>`;
+      document.getElementById('conteudoReferencia').innerHTML = ref;
+      new bootstrap.Modal(document.getElementById('modalReferencia')).show();
+    }
+  </script>
+
+  <meu-footer></meu-footer>
+</body>
+</html>

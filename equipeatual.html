@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>MIND - Membro Equipe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="javascript/components/menu.js" defer></script>
+  <script src="javascript/components/footer.js" defer></script>
+
+   <style>
+    .galeria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  align-items: stretch; /* <-- garante altura igual */
+}
+    autor-card {
+      display: inline-block;
+      margin: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <meu-menu></meu-menu>
+
+  <main class="container py-5">
+    <h2 class="text-center text-danger mb-4">
+      <strong>Movimento para Inclusão e Neurodiversidade</strong>
+    </h2>
+
+    <div class="d-flex justify-content-center align-items-center mb-3 flex-wrap gap-2">
+      <h5 class="text-black mb-0">Conheça os membros atuais da Equipe</h5>
+      <a href="autores.html" class="btn btn-primary">
+        <i class="bi bi-people-fill me-1"></i> Ver Dados Completos
+      </a>
+    </div>
+
+    <div id="container-autores" class="galeria"></div>
+  </main>
+
+  <!-- Template do Web Component -->
+  <template id="autor-card">
+  <style>
+    .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px;
+  height:65vb; /* estica para altura do container pai */
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 1rem;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+}
+.card-body {
+  flex: 1; /* ocupa o restante do espaço */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+    .foto {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+    }
+
+    .nome {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      word-wrap: break-word;
+    }
+
+    .secao {
+      width: 100%;
+      text-align: left;
+      font-size: 13px;
+      margin-bottom: 0.4rem;
+    }
+
+    .secao strong {
+      display: block;
+      margin-bottom: 0.2rem;
+      color: #333;
+    }
+
+    .texto {
+      color: #555;
+      text-align: justify;
+      word-wrap: break-word;
+    }
+  </style>
+
+ <div class="col-6 col-md-2">
+  <div class="card h-100 text-center shadow-sm border-0">
+      <div class="card-body d-flex flex-column align-items-center justify-content-between">
+        <img class="foto" />
+        <div class="nome evento-legenda"></div>
+
+        <div class="secao">
+          <strong>Participação:</strong>
+          <div class="texto tipoParticipacao"></div>
+        </div>
+
+        <div class="secao">
+          <strong>Formação:</strong>
+          <div class="texto formacao"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+
+  <!-- Definição do Web Component -->
+  <script>
+    class AutorCard extends HTMLElement {
+      connectedCallback() {
+        const shadow = this.attachShadow({ mode: 'open' });
+        const template = document.getElementById('autor-card');
+        shadow.appendChild(template.content.cloneNode(true));
+
+        const imagem = this.getAttribute('imagem') || 'default.jpg';
+        const nome = this.getAttribute('nome') || 'Nome não informado';
+        const tipo = this.getAttribute('tipoParticipacao') || 'Participação não informada';
+        const formacao = this.getAttribute('formacao') || 'Formação não informada';
+
+        const img = shadow.querySelector('.foto');
+        img.src = `imagens/autores_equipe/${imagem}`;
+        img.alt = `Foto de ${nome}`;
+        img.onerror = () => {
+          img.src = 'imagens/autores_equipe/default.jpg';
+          img.alt = `Foto não disponível para ${nome}`;
+        };
+
+        shadow.querySelector('.nome').textContent = nome;
+        shadow.querySelector('.tipoParticipacao').textContent = tipo;
+        shadow.querySelector('.formacao').textContent = formacao;
+
+      }
+    }
+    customElements.define('autor-card', AutorCard);
+  </script>
+
+  <!-- Carregar dados externos -->
+  <script src="javascript/dados-autores.js"></script>
+
+  <!-- Script principal -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const idsIndicados = ["3","1","2","5","6","9","12","13"];
+      const autores = listarItens('autores'); // vem do dados-autores.js
+      const autoresContainer = document.getElementById('container-autores');
+
+      idsIndicados.forEach(id => {
+        const autor = autores.find(a => String(a.id) === id);
+        if (!autor) {
+          console.warn(`Autor não encontrado para id: ${id}`);
+          return;
+        }
+        const card = document.createElement('autor-card');
+        card.setAttribute('imagem', autor.imagem ?? 'default.jpg');
+        card.setAttribute('nome', autor.nome ?? '');
+        card.setAttribute('tipoParticipacao', autor.tipoParticipacao ?? '');
+        card.setAttribute('formacao', autor.formacao ?? '');
+
+        autoresContainer.appendChild(card);
+      });
+    });
+  </script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <meu-footer></meu-footer>
+
+</body>
+</html>

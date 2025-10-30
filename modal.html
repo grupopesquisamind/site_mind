@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>MIND - Projeto Desenvolvido</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      min-width: 100vh;
+      min-height: 100vh; /* 100% da viewport */
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+    }
+
+#titulo{
+	text-align: center;
+      margin: 10px 0;
+}
+
+ #nomeProducao {
+      text-align: center;
+      margin: 10px 0;
+      font-size: 1.8em;
+    }
+
+ #autor {
+      text-align: center;
+      font-weight: bold;
+      margin:1px 0;
+      font-size: 1.5em;
+      color: red;
+ }
+
+ #tipo {
+      text-align: center;
+      margin: 10px 0;
+      font-size: 1.0em;
+      color: blue;
+ }
+
+ #categoria {
+      text-align: center;
+      margin: 10px 0;
+      font-size: 1.5em;
+    }
+
+ #referencia {
+      padding: 0 20px 20px 20px;
+      text-align: justify;
+      max-width: 90%;
+      margin: 0 auto;
+      font-size: 1em;
+    }
+
+    #iframeConteudo {
+      flex: 1;
+      border: none;
+      display: flex;
+      height: 100%;
+      width: 100%;
+      min-width: 100vh;
+      min-height: 100vh; /* 100% da viewport */
+
+    }
+/*INICIO (novo) Configuração TELA responsividade*/
+@media (max-width: 1200px) {
+  /* Ajustes para larguras até 1200 pixels */
+}
+/* Estilos para telas entre 760px e 1024px (tablets) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    order: 1;
+  }
+
+  .main-content {
+    order: 2;
+  }
+
+/*.responsive-image {
+    content: url('img.jpg');
+    content: url('nome-mind.jpg');
+   content: url('imagem.jpg');
+  }
+
+}
+.responsive-image {
+  width: 100%;
+  height: auto;
+}
+*/
+/* Estilos para telas maiores que 1024px (desktops) */
+@media (min-width: 1025px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .sidebar {
+    display: block;
+  }
+}
+
+
+@media (max-width: 576px) {
+  /* Ajustes para larguras até 576 pixels */
+}
+@media (max-width: 480px) {
+  /* Estilos para telas com no máximo 480 pixels de largura (smartphones) */
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Estilos para dispositivos com alta densidade de pixels (ex: telas Retina) */
+}
+@media (orientation: portrait) {
+  /* Estilos para dispositivos em modo retrato */
+}
+@media (orientation: landscape) {
+  /* Estilos para dispositivos em modo paisagem */
+}
+
+
+
+
+
+/*FIM (novo) Configuração TELA responsividade*/
+
+/* Media Queries para tablets (entre 768px e 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    width: 95%;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .card {
+    padding: 20px;
+  }
+}
+
+/* Media Queries para dispositivos maiores que 1024px */
+@media (min-width: 1025px) {
+  .container {
+    width: 90%;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  .card-body {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+}
+}
+  </style>
+</head>
+<body class="container">
+<main class="container my-2">
+    <section class="mt-2" id="modal">
+  <h2 id="titulo">Jogo criado pela equipe MIND - Movimento para Inclusão e Neurodiversidade.</h2>
+  <h2 id="nomeProducao" class="container-fluid flex responsive">Aguarde um instante, carregando o projeto...</h2>
+  <div id="nomeProducao" class="container-fluid flex responsive"></div>
+  <div id="autor" class="container-fluid flex responsive"></div>
+  <div id="tipo" class="container-fluid flex responsive"></div>
+  <div id="categoria" class="container-fluid flex responsive"></div>
+  <div id="referencia" class="container-fluid flex responsive"></div>
+<div class="text-center">
+<button onclick="ampliarIframe()" style="margin: 5px auto; display: block;">🔍 Ampliar Tela para Jogar</button>
+</div>
+
+<iframe id="iframeConteudo" allowfullscreen class="container-fluid flex responsive"></iframe>
+
+</section>
+</main>
+
+<script src="javascript/dados-projetos.js"></script>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id');
+    const projetos = listarItens('projetos');
+    const projeto = projetos.find(p => p.id === id);
+
+    if (projeto) {
+      document.getElementById('nomeProducao').textContent = `ID: (${projeto.id}) - Nome do Projeto: ${projeto.nomeProducao}`;
+      document.getElementById('autor').textContent = `Autor do Jogo: ${projeto.autor} (${projeto.ano})`;
+      document.getElementById('tipo').textContent = `Tipo/Categoria: ${projeto.tipo} (${projeto.categoria})`;
+      document.getElementById('referencia').innerHTML = `<strong>Como Referenciar pela ABNT:</strong><br>${projeto.referenciar}`;
+      document.getElementById('iframeConteudo').src = projeto.src;
+    } else {
+      document.getElementById('nomeProducao').textContent = 'Conteúdo não encontrado';
+    }
+    </script>
+
+<script>
+  function ampliarIframe() {
+    const iframe = document.getElementById('iframeConteudo');
+    if (iframe.requestFullscreen) {
+      iframe.requestFullscreen();
+    } else if (iframe.webkitRequestFullscreen) {
+      iframe.webkitRequestFullscreen(); // Safari
+    } else if (iframe.msRequestFullscreen) {
+      iframe.msRequestFullscreen(); // IE11
+    }
+  }
+</script>
+
+
+</body>
+</html>

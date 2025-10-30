@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>MIND - Sobre</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <!-- Componentes personalizados -->
+  <script src="javascript/components/menu.js" defer></script>
+  <script src="javascript/components/footer.js" defer></script>
+
+  <style>
+     .card-sobre {
+      background-color: #f9f9f9;
+      border-left: 5px solid #dc3545;
+      border-radius: 8px;
+    }
+
+    .accordion-body {
+      text-align: justify;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Botão de menu -->
+  <meu-menu></meu-menu>
+  <div id="overlay"></div>
+
+  <!-- Conteúdo principal -->
+  <div id="page-wrapper">
+    <div id="page-content-wrapper"></div>
+
+    <main class="container-fluid my-1 pt-0 mt-5 mb-5">
+      <h2 class="text-center text-danger"><strong>Movimento para Inclusão e Neurodiversidade.</strong></h2>
+      <section class="mt-3">
+      <h5 class="text-center text-black">
+        <strong>
+          Informações sobre a equipe MIND e o Processo Inclusivo para Alunos com TEA.
+        </strong>
+      </h5>
+        <div class="row container-fluid g-4" id="sobreContainer">
+          <!-- Accordion será inserido via JavaScript -->
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Dados -->
+  <script src="javascript/dados-sobre.js"></script>
+
+  <!-- Script para montar o accordion -->
+  <script>
+  const dados = listarItens('sobreProjeto'); // Certifique-se que essa função e variável estão corretas
+const container = document.getElementById("sobreContainer");
+
+if (Array.isArray(dados) && dados.length > 0) {
+  const accordion = document.createElement("div");
+  accordion.className = "accordion";
+  accordion.id = "accordionSobre";
+
+  dados.forEach((item, index) => {
+    accordion.innerHTML += `
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="heading${index}a">
+          <button class="accordion-button" type="button" 
+                  data-bs-toggle="collapse" 
+                  data-bs-target="#collapse${index}a"
+                  aria-expanded="true" 
+                  aria-controls="collapse${index}a">
+            Sobre o Projeto e a Equipe
+          </button>
+        </h2>
+        <div id="collapse${index}a" class="accordion-collapse collapse show" 
+             aria-labelledby="heading${index}a">
+          <div class="accordion-body">${item.descricao}</div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="heading${index}b">
+          <button class="accordion-button" type="button" 
+                  data-bs-toggle="collapse" data-bs-target="#collapse${index}b"
+                  aria-expanded="true" aria-controls="collapse${index}b">
+            Principais Estratégias
+          </button>
+        </h2>
+        <div id="collapse${index}b" class="accordion-collapse collapse show" 
+             aria-labelledby="heading${index}b">
+          <div class="accordion-body">${item.principaisestrategias}</div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="heading${index}c">
+          <button class="accordion-button" type="button" 
+                  data-bs-toggle="collapse" data-bs-target="#collapse${index}c"
+                  aria-expanded="true" aria-controls="collapse${index}c">
+            Principais Desafios
+          </button>
+        </h2>
+        <div id="collapse${index}c" class="accordion-collapse collapse show" 
+             aria-labelledby="heading${index}c">
+          <div class="accordion-body">${item.desafios}</div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="heading${index}d">
+          <button class="accordion-button" type="button" 
+                  data-bs-toggle="collapse" data-bs-target="#collapse${index}d"
+                  aria-expanded="true" aria-controls="collapse${index}d">
+            Perspectivas
+          </button>
+        </h2>
+        <div id="collapse${index}d" class="accordion-collapse collapse show" 
+             aria-labelledby="heading${index}d">
+          <div class="accordion-body">${item.perspectivas}</div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="heading${index}e">
+          <button class="accordion-button" type="button" 
+                  data-bs-toggle="collapse" data-bs-target="#collapse${index}e"
+                  aria-expanded="true" aria-controls="collapse${index}e">
+            Certificação do Grupo de Pesquisa
+          </button>
+        </h2>
+        <div id="collapse${index}e" class="accordion-collapse collapse show" 
+             aria-labelledby="heading${index}e">
+          <div class="accordion-body">
+            <a href="${item.certificacao || '#'}" target="_blank">Acesse aqui</a>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+
+  container.appendChild(accordion);
+}
+
+  </script>
+
+  <!-- Menu JS -->
+  <script>
+    const menuToggleBtn = document.getElementById('menu-toggle-btn');
+    const menu = document.querySelector('meu-menu');
+    const overlay = document.getElementById('overlay');
+
+    function openMenu() {
+      menu.classList.add('open');
+      overlay.classList.add('show');
+      document.body.classList.add('menu-open');
+    }
+
+    function closeMenu() {
+      menu.classList.remove('open');
+      overlay.classList.remove('show');
+      document.body.classList.remove('menu-open');
+    }
+
+    menuToggleBtn.addEventListener('click', () => {
+      menu.classList.contains('open') ? closeMenu() : openMenu();
+    });
+
+    overlay.addEventListener('click', closeMenu);
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) closeMenu();
+    });
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Rodapé -->
+  <meu-footer></meu-footer>
+</body>
+</html>

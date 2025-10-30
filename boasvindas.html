@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Tela de Boas Vindas</title>
+
+<style>
+ #page-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* ocupa a altura disponível */
+  min-height: 100vh; /* força ocupar a altura toda da tela */
+  max-width: 100%;
+  max-height: 90%;
+  margin: auto; /* centraliza horizontal e vertical */
+  overflow: auto; /* ativa scroll se o conteúdo for maior */
+}
+
+body{
+  margin: 10;
+  padding: 10;
+  background: white;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#text{
+  margin-top: 10px;	
+  color: blue;
+  font-size: 40px;
+  text-align: center;
+  margin-top: 10px;
+  text-transform: uppercase;
+  font-family: "Montserrat";
+  font-weight: 700;
+  padding: 24px; /*espaço do inicio (topo) até texto*/
+
+}
+
+.imagem {
+  max-width: 600px;  /* tamanho máximo da imagem */
+  width: 100%;       /* ocupa até 100% do container */
+  height: auto;      /* altura ajusta proporcionalmente */
+  display: block;    /* remove espaçamento em linha */
+  margin: 0 auto;    /* centraliza horizontalmente (se o container for maior que a imagem) */
+  margin-top: 10px;	
+}
+
+
+.btn{
+  border: none;
+  margin: 20px;
+  padding: 20px;
+  width: 220px;
+  font-family: "montserrat",sans-serif;
+  text-transform: uppercase;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #fff;
+  background-size: 200%;
+  transition: 0.6s;
+}
+
+.btn3{
+  background-image: linear-gradient(to left,#12CBC4,#0652DD,#12CBC4);
+}
+
+.btn:hover{
+  background-position: right;
+}
+</style>
+
+  </head>
+  <body>
+
+  <div id="text">
+
+    </div>
+
+<script type="text/javascript">
+  var i=0,text;
+  text = "Seja Bem Vindo! Somos o Grupo de Pesquisa"
+
+
+  function typing() {
+    if(i<text.length){
+      document.getElementById("text").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typing,100); 
+    }
+  }
+  typing();
+</script>
+
+   <div class="container-fluid flex">
+	<img src="imagens/img.jpg" class="imagem img-fluid rounded shadow-lg" alt="MIND">	
+     	    <td><a href="index.html" class="btn btn3 btn-sm" target="_blank">🔗 Acessar o Site</a></td>
+	</div>
+  </div>
+
+  </body>
+</html>
