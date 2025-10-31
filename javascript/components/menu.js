@@ -158,7 +158,9 @@ class MeuMenu extends HTMLElement {
             <a class="nav-link d-flex align-items-center gap-2" href="publicacoes.html">
               <i class="bi bi-journal-text"></i> Publicações
             </a>
-            <a class="nav-link d-flex align-items-center gap-2" href="eventos.html"><i class="bi bi-calendar-event-fill"></i> Eventos Futuros</a>
+            <a class="nav-link d-flex align-items-center gap-2" href="eventos.html">
+              <i class="bi bi-calendar-event-fill"></i> Eventos Futuros
+            </a>
             <a class="nav-link d-flex align-items-center gap-2" href="sobre.html">
               <i class="bi bi-info-circle-fill"></i> Sobre
             </a>
@@ -176,13 +178,11 @@ class MeuMenu extends HTMLElement {
         </div>
       </div>
 
-      <!-- Bootstrap & DataTables -->
+      <!-- Bootstrap -->
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-      <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-      <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
     `;
 
-    /* === Marca o item ativo automaticamente === */
+    /* === Marca o item ativo === */
     const currentPage = window.location.pathname.split("/").pop();
     const links = this.querySelectorAll(".nav-link");
     links.forEach(link => {
@@ -209,24 +209,24 @@ class MeuMenu extends HTMLElement {
       setInterval(atualizarRelogio, 1000);
     }
 
-    /* === Mantém menu recolhido em mobile e fecha ao girar === */
+    /* === Controle de exibição do menu === */
     const offcanvasMenu = document.getElementById("menuOffcanvas");
     const bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasMenu);
 
+    // Garante menu fechado no carregamento em mobile/tablet
     const garantirMenuFechado = () => {
       if (window.innerWidth <= 992) {
-        bsOffcanvas.hide(); // garante que comece fechado
+        bsOffcanvas.hide();
       }
     };
 
-    // Fecha ao girar ou redimensionar
+    // Fecha automaticamente ao girar ou redimensionar
     const fecharMenuMobile = () => {
       if (window.innerWidth <= 992 && offcanvasMenu.classList.contains("show")) {
         bsOffcanvas.hide();
       }
     };
 
-    // Executa ao carregar a página
     window.addEventListener("load", garantirMenuFechado);
     window.addEventListener("resize", fecharMenuMobile);
     window.addEventListener("orientationchange", fecharMenuMobile);
