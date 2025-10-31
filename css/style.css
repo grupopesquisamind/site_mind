@@ -1,0 +1,211 @@
+/* ===== Layout base ===== */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: padding-left 0.3s ease;
+}
+
+/* ===== Wrapper do conteúdo ===== */
+#page-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-width: 100%;
+  max-height: 90%;
+  margin: auto;
+  overflow: auto;
+}
+
+#page-content-wrapper, main {
+  flex: 1;
+}
+
+/* ===== Footer ===== */
+meu-footer, footer.footer {
+  margin-top: auto;
+}
+
+/* ===== Data e Hora ===== */
+#dataHora {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+}
+
+/* ===== Logo ===== */
+#imagem-nome-mind {
+  max-width: 150px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ===== Centralização genérica ===== */
+.container-central {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+/* ===== Imagens ===== */
+.imagem-eventos {
+  min-width: 350px;
+  min-height: 250px;
+  max-width: 750px;
+  max-height: 600px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.imagem-unica-inicio {
+  width: 100%;             /* Ocupa toda a largura do col */
+  height: 250px;           /* Altura fixa */
+  object-fit: cover;       /* Corta a imagem para cobrir todo o espaço */
+  object-position: center; /* Centraliza o corte */
+  border-radius: 10px;     /* Opcional: bordas arredondadas */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra sutil */
+}
+
+/* ===== Footer ===== */
+footer.footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.9rem;
+  background-color: #212529;
+  color: white;
+  margin-top: auto;
+}
+
+footer.footer a {
+  transition: color 0.2s;
+  padding: 4px 8px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+footer.footer a:hover {
+  color: #0d6efd;
+  transition: background-color 0.3s ease;
+}
+
+/* ===== Botão toggle do menu ===== */
+#menu-toggle-btn {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1051;
+  background-color: #0d6efd;
+  border: none;
+  color: white;
+  padding: 10px 12px;
+  font-size: 20px;
+  border-radius: 3px;
+  cursor: pointer;
+  display: none;
+}
+
+/* Mostrar botão toggle em telas menores */
+@media (max-width: 1270px) {
+  #menu-toggle-btn {
+    display: block;
+  }
+}
+
+/* ===== Menu lateral ===== */
+#menuOffcanvas {
+  width: 260px;
+  height: 100vh;
+}
+
+/* Links do menu */
+#meuMenu .nav-link {
+  padding: 10px 15px;
+  font-size: 1rem;
+  color: white;
+  transition: background 0.2s;
+}
+
+#meuMenu .nav-link:hover,
+#meuMenu .nav-link.active {
+  background-color: #0d6efd;
+  font-weight: bold;
+}
+
+/* ===== Menu fixo em telas grandes ===== */
+@media (min-width: 769px) {
+  .offcanvas-start {
+    position: fixed !important;
+    transform: none !important;
+    visibility: visible !important;
+    border-right: none;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+  }
+
+  .offcanvas-backdrop {
+    display: none !important;
+  }
+
+  #menu-toggle-btn {
+    display: none !important;
+  }
+
+  /* Conteúdo recuado à direita do menu */
+  body {
+    padding-left: 260px;
+  }
+
+  #page-wrapper, main {
+    margin-left: 0; /* já que o body aplica padding-left */
+  }
+}
+
+/* ===== Responsividade menu ===== */
+@media (max-width: 992px) {
+  .offcanvas {
+    width: 80% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  #menu-toggle-btn {
+    top: 10px;
+    left: 10px;
+    padding: 5px 8px;
+  }
+
+  .offcanvas {
+    width: 90% !important;
+  }
+
+  .submenu .nav-link {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  #menu-toggle-btn i {
+    font-size: 1.4rem;
+  }
+
+  .offcanvas {
+    width: 100% !important;
+  }
+
+  figcaption {
+    font-size: 14px !important;
+  }
+
+  #dataHora {
+    font-size: 13px !important;
+  }
+}
