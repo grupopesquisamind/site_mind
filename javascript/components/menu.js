@@ -105,7 +105,7 @@ class MeuMenu extends HTMLElement {
 
         <div class="offcanvas-body d-flex flex-column p-0">
           <nav class="nav flex-column">
-            <a class="nav-link d-flex align-items-center gap-2" href="site_mind.html">
+            <a class="nav-link d-flex align-items-center gap-2" href="home.html">
               <i class="bi bi-house-door"></i> Início
             </a>
 
