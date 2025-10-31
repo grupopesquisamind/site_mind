@@ -22,7 +22,8 @@ function listarItens(tipo) {
         sigla: "CIEDUC",
         linkSite: "https://www.cieduc.org/home.html",
         linkPublicacao: "https://www.cieduc.org/libros/LibroActasCieduc2022.pdf",
-	      publicacaoArquivo: "${baseURL}/publicacaoArquivo/publicacoes/1-Publicacao_Libro_Actas_CIEDUC_2022.pdf", // NOVO CAMPO
+        // ✅ Use crases (template string) no lugar de aspas
+        publicacaoArquivo: `${baseURL}/publicacaoArquivo/publicacoes/1-Publicacao_Libro_Actas_CIEDUC_2022.pdf`, // NOVO CAMPO    
         referenciarPub: "NASCIMENTO, Ricardo Henrique dos Reis; MONTEMOR, Bianca Estrela Abdalla França Camargo; CAMPOS, Ryan Cristian Sousa; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. O uso da ferramenta Scratch utilizada para o Ensino da Lei de Hess para alunos com Transtorno do Espectro Autista. In: BEGONCHEA, Luis et al. Educación científica para el desarrollo ibero-americano. Alcalá - Espanha: Editorial Universidad de Alcalá, 2022, p. 133 - 140. Disponível em: https://www.cieduc.org/libros/LibroActasCieduc2022.pdf",
       },
       {
@@ -36,7 +37,8 @@ function listarItens(tipo) {
         sigla: "CONICT",
         linkSite: "https://ocs.ifsp.edu.br/conict/xivconict",
         linkPublicacao: "https://ocs.ifsp.edu.br/conict/xiiiconict/paper/view/8609/",
-	publicacaoArquivo: "publicacaoArquivo/publicacoes/2-Publicacao_A_utilizacao_da_ferramenta_Scratch_na_aprendizagem_Entalpia_Padrao_alunos_TEA_foco_sistema_de_arraste_CONICT_2022.pdf", // NOVO CAMPO
+        // ✅ Use crases (template string) no lugar de aspas
+        publicacaoArquivo: '${baseURL}/publicacaoArquivo/publicacoes/2-Publicacao_A_utilizacao_da_ferramenta_Scratch_na_aprendizagem_Entalpia_Padrao_alunos_TEA_foco_sistema_de_arraste_CONICT_2022.pdf', // NOVO CAMPO    
         referenciarPub: "NASCIMENTO, Ricardo Henrique dos Reis; MONTEMOR, Bianca Estrela Abdalla França Camargo; CAMPOS, Ryan Cristina Souza; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. A utilização da ferramenta Scratch na aprendizagem da Entalpia Padrão para alunos com TEA com foco no sistema de arraste. Anais [...] In: CONGRESSO DE INOVAÇÃO, CIÊNCIA E TECNOLOGIA DO IFSP, XIII, 2022, São Paulo-SP. Anais [...]. São Paulo: IFSP-SP, 2022, p. 1-6. Disponível em: https://ocs.ifsp.edu.br/conict/xiiiconict/paper/view/8609/",
       },
       {
@@ -50,8 +52,9 @@ function listarItens(tipo) {
         sigla: "CONAPESC",
         linkSite: "https://editorarealize.com.br",
         linkPublicacao: "https://editorarealize.com.br/artigo/visualizar/86777",
-	publicacaoArquivo: "publicacaoArquivo/publicacoes/3-Publicacao_A_utilizacao_da_ferramenta_Scratch_aprendizagem_entalpia_padrao_formacao_e_entalpia_padrao_de_combustao_alunos_TEA_CONAPESC_2022.pdf", // NOVO CAMPO
-	referenciarPub: "SILVA, Alexssandro Ferreira da; NASCIMENTO, Ricardo Henrique dos Reis; MONTEMOR, Bianca Estrela Abdalla França Camargo; FERREIRA, Ana Paula Kawabe de Lima.  A utilização da ferramenta scratch na aprendizagem entalpia padrão de formação e entalpia padrão de combustão para alunos com TEA. Anais [...] In: CONAPESC- CONGRESSO NACIONAL DE PESQUISA E ENSINO DE CIÊNCIAS, VII, 2022, Campina Grande – PB. Anais [...]. Campina Grande: Editora Realize, 2022, p. 1-10. Disponível em: https://editorarealize.com.br/artigo/visualizar/86777",
+	      // ✅ Use crases (template string) no lugar de aspas
+        publicacaoArquivo: '${baseURL}/publicacaoArquivo/publicacoes/3-Publicacao_A_utilizacao_da_ferramenta_Scratch_aprendizagem_entalpia_padrao_formacao_e_entalpia_padrao_de_combustao_alunos_TEA_CONAPESC_2022.pdf', // NOVO CAMPO    
+	      referenciarPub: "SILVA, Alexssandro Ferreira da; NASCIMENTO, Ricardo Henrique dos Reis; MONTEMOR, Bianca Estrela Abdalla França Camargo; FERREIRA, Ana Paula Kawabe de Lima.  A utilização da ferramenta scratch na aprendizagem entalpia padrão de formação e entalpia padrão de combustão para alunos com TEA. Anais [...] In: CONAPESC- CONGRESSO NACIONAL DE PESQUISA E ENSINO DE CIÊNCIAS, VII, 2022, Campina Grande – PB. Anais [...]. Campina Grande: Editora Realize, 2022, p. 1-10. Disponível em: https://editorarealize.com.br/artigo/visualizar/86777",
       },
       {
         idpub: "4",
@@ -64,8 +67,9 @@ function listarItens(tipo) {
         sigla: "CONICT",
         linkSite: "https://ocs.ifsp.edu.br/conict/xivconict",
         linkPublicacao: "https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9638/3216",
-	publicacaoArquivo: "publicacaoArquivo/publicacoes/4-Publicacao_Bullying_e_Transtorno_do_Espectro_Autista_como_ajudar_crianças_com_TEA_reconhecerem_bullying_utilizando_plataforma_Scratch_ e_CAA_CONICT_2023.pdf", // NOVO CAMPO      
-referenciarPub: "ALMEIDA, Maria Wianney Miranda; MONTEMOR, Bianca Estrela  Abdalla França Camargo; SILVA,  Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Bullying e Transtorno do Espectro Autista: como ajudar crianças com TEA a reconhecerem o bullying utilizando a plataforma scratch e a Comunicação Aumentativa e Alternativa. Anais [...] In: CONGRESSO DE INOVAÇÃO, CIÊNCIA E TECNOLOGIA DO IFSP, XIV, 2023, Capivari-SP. Anais [...]. Capivari: IFSP-SP, 2023, p. 1-6. ISSN: 2178-9959. Disponível em: https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9638/3216",
+	      // ✅ Use crases (template string) no lugar de aspas
+        publicacaoArquivo: '${baseURL}/publicacaoArquivo/publicacoes/4-Publicacao_Bullying_e_Transtorno_do_Espectro_Autista_como_ajudar_crianças_com_TEA_reconhecerem_bullying_utilizando_plataforma_Scratch_ e_CAA_CONICT_2023.pdf', // NOVO CAMPO      
+        referenciarPub: "ALMEIDA, Maria Wianney Miranda; MONTEMOR, Bianca Estrela  Abdalla França Camargo; SILVA,  Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Bullying e Transtorno do Espectro Autista: como ajudar crianças com TEA a reconhecerem o bullying utilizando a plataforma scratch e a Comunicação Aumentativa e Alternativa. Anais [...] In: CONGRESSO DE INOVAÇÃO, CIÊNCIA E TECNOLOGIA DO IFSP, XIV, 2023, Capivari-SP. Anais [...]. Capivari: IFSP-SP, 2023, p. 1-6. ISSN: 2178-9959. Disponível em: https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9638/3216",
       },
       {
         idpub: "5",
@@ -562,7 +566,7 @@ referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, R
     ];
     
   }
-  
+
 /*PACO Editorial faltou
 NASCIMENTO, Ricardo Henrique dos Reis; MONTEMOR, Bianca Estrela; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Enseñar sobre volatilidad, temperatura de ebullición; CAMARGO, B. E. M. A. F. . IMPORTÂNCIA DE UM PROJETO DE EXTENSÃO PARA PROMOÇÃO DE EDUCAÇÃO INCLUSIVA: AHSD E TEA. In: Eliamar Godoi; Letícia de Sousa Leite; Maria Isabel de Araújo; Susana Graciela Pérez-Barrera. (Org.). Sequências didáticas, Dinâmicas, Estratégias de metacognição e Jogos, Proposta para o Ensino de Estudantes com Altas Habilidades ou Superdotação. 1ed.Jundiaí-SP: Paco Editorial, 2024, v. 1, p. 77-92. Disponível em: https://www.pacolivros.com.br/sequencias-didaticas-dinamicas-estrategias-de-metacognicao-e-jogos
 
