@@ -1,6 +1,16 @@
-function listarItens(chave) {
-  if (chave === 'publicacoes') {
-    return [
+// =====================================================
+// ARQUIVO: javascript/dados-publicacoes.js
+// OBJETIVO: Listar publicações com links e PDFs integrados ao GitHub Pages
+// =====================================================
+
+function listarItens(tipo) {
+  if (tipo !== 'publicacoes') return [];
+
+  // Altere 'usuario' e 'repositorio' para o nome real do seu GitHub Pages
+  const baseURL = "https://grupopesquisamind.github.io/site_mind/"; 
+  // Exemplo: const baseURL = "https://mind-projeto.github.io/MIND-Projeto";
+
+  return [
       {
         idpub: "1",
         ano: "2022",
@@ -12,7 +22,7 @@ function listarItens(chave) {
         sigla: "CIEDUC",
         linkSite: "https://www.cieduc.org/home.html",
         linkPublicacao: "https://www.cieduc.org/libros/LibroActasCieduc2022.pdf",
-	publicacaoArquivo: "publicacaoArquivo/publicacoes/1-Publicacao_Libro_Actas_CIEDUC_2022.pdf", // NOVO CAMPO
+	      publicacaoArquivo: "${baseURL}/publicacaoArquivo/publicacoes/1-Publicacao_Libro_Actas_CIEDUC_2022.pdf", // NOVO CAMPO
         referenciarPub: "NASCIMENTO, Ricardo Henrique dos Reis; MONTEMOR, Bianca Estrela Abdalla França Camargo; CAMPOS, Ryan Cristian Sousa; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. O uso da ferramenta Scratch utilizada para o Ensino da Lei de Hess para alunos com Transtorno do Espectro Autista. In: BEGONCHEA, Luis et al. Educación científica para el desarrollo ibero-americano. Alcalá - Espanha: Editorial Universidad de Alcalá, 2022, p. 133 - 140. Disponível em: https://www.cieduc.org/libros/LibroActasCieduc2022.pdf",
       },
       {
@@ -552,10 +562,7 @@ referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, R
     ];
     
   }
-  return [];
-}
-
-
+  
 /*PACO Editorial faltou
 NASCIMENTO, Ricardo Henrique dos Reis; MONTEMOR, Bianca Estrela; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Enseñar sobre volatilidad, temperatura de ebullición; CAMARGO, B. E. M. A. F. . IMPORTÂNCIA DE UM PROJETO DE EXTENSÃO PARA PROMOÇÃO DE EDUCAÇÃO INCLUSIVA: AHSD E TEA. In: Eliamar Godoi; Letícia de Sousa Leite; Maria Isabel de Araújo; Susana Graciela Pérez-Barrera. (Org.). Sequências didáticas, Dinâmicas, Estratégias de metacognição e Jogos, Proposta para o Ensino de Estudantes com Altas Habilidades ou Superdotação. 1ed.Jundiaí-SP: Paco Editorial, 2024, v. 1, p. 77-92. Disponível em: https://www.pacolivros.com.br/sequencias-didaticas-dinamicas-estrategias-de-metacognicao-e-jogos
 
