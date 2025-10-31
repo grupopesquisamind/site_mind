@@ -222,7 +222,7 @@ referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, R
         sigla: "DIDÁCTICA DE LAS CIENCIAS",
         linkSite: "https://www.esfm.ipn.mx/revista-jadc.html",
         linkPublicacao: "https://www.test.desarrolloweb.ipn.mx/assets/files/esfm/docs/jornadas/revista-jornadas-vi.pdf",
-        publicacaoArquivo: "publicacaoArquivo/publicacoes/16-Publicacao_Ensenar_sobre_volatilidad_temperatura_de_ebullicion_y_presion_de_vapor_con_el_uso_de_la_herramienta_metodologica_Scratch_para_estudiantes_con_TEA_Revista_DIDACTICA_Mex_2023.pdf",
+        publicacaoArquivo: "publicacaoArquivo/publicacoes/16-Publicacao_Ensenar_volatilidad_temperatura_ebullicion_y_presion_vapor_con_el_uso_la_herramienta_metodologica_Scratch_estudiantes_TEA_Revista_DIDACTICA_2023.pdf",
         referenciarPub: "NASCIMENTO, Ricardo Henrique dos Reis; MONTEMOR, Bianca Estrela Abdalla França Camargo; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Enseñar sobre volatilidad, temperatura de ebullición y presión de vapor, con el uso de la herramienta metodológica Scratch para estudiantes con Trastorno del Espectro Autista. Revista Digital Didáctica de Las Ciencias, México, v. 6, p. 310-319, 2023. Disponível em: https://www.esfm.ipn.mx/assets/files/esfm/docs/jornadas/revista-jornadas-vi.pdf",      
       },
        {
@@ -518,7 +518,7 @@ referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, R
         sigla: "ENEBIO",
         linkSite: "https://eventos.ifgoiano.edu.br/ixenebioeviierebiomggotodf/",
         linkPublicacao: "https://publicacoes.sbenbio.org.br/trabalhos/e0322.pdf",
-        publicacaoArquivo: "publicacaoArquivo/publicacoes/37-Publicacao_Educacao_Cientifica_Inclusiva__Alunos_Transtorno_do_Espectro_Autista_Uso_de_Jogo_Didatico_Utilizando_Comunicacao_Aumentativa_Alternativa_EIAS_2024.pdf",
+        publicacaoArquivo: "publicacaoArquivo/publicacoes/37-Publicacao_Educacao_Cientifica_Inclusiva_para_Alunos__TEA_Uso_de_Jogo_Didatico_Utilizando_CAA_Scratch_Aprender_sobre_Sistema_Digestorio_EIAS_2024.pdf",
         referenciarPub: "SANTOS, Lucas Caraça dos; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; CAMEJO AVILES, Ivana Elena. Educação Científica Inclusiva para Alunos com Transtorno do Espectro Autista (TEA): Uso de Jogo Didático Utilizando Comunicação Aumentativa e Alternativa (CAA) e Scratch para Aprender sobre o Sistema Digestório. IN: IX ENEBIO & VII EREBIO MG/GO/TO/DF (Encontro Nacional de Ensino de Biologia).  E-book VIII ENEBIO, X ENEBIO & VII EREBIO, Campina Grande: Realize Editora, 2024. Disponível em:",
       },
       {
