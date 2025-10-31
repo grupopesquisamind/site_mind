@@ -170,16 +170,19 @@
 <div class="mb-2">
   ${d.publicacaoArquivo 
     ? 
-  `<iframe> 
-    <a href="${d.publicacaoArquivo}" class="btn btn-success btn-sm w-100" target="_blank" style="min-width: 130px; padding-top: 5px;">
-      📄PDF Drive</a>
-   </iframe>` 
-    : `<iframe> 
-      <button class="btn btn-secondary btn-sm w-100" disabled style="min-width: 130px;">
-      ❌ Sem PDF</button>
-    </iframe>`
+  `<a href="${d.publicacaoArquivo}" 
+       class="btn btn-success btn-sm w-100" 
+       target="_blank"
+       style="min-width: 130px; padding-top: 5px;">
+     📄 Abrir PDF
+   </a>` 
+    : `<button class="btn btn-secondary btn-sm w-100" disabled>
+        ❌ Sem PDF
+      </button>`
   }
 </div>
+
+
 <div class="mb-2">
   <button class="btn btn-primary btn-sm" onclick='mostrarReferencia(${JSON.stringify(d)})'>📄 Referenciar</button>
 </div>
