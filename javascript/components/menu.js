@@ -1,4 +1,4 @@
-class MeuMenu extends HTMLElement {
+class MeuMenu extends HTMLElement { 
   connectedCallback() {
     this.innerHTML = `
       <style>
@@ -17,7 +17,6 @@ class MeuMenu extends HTMLElement {
           background-color: #0d6efd;
           color: white;
           font-weight: bold;
-          color: fff !important;
         }
 
         .submenu .nav-link {
@@ -177,10 +176,10 @@ class MeuMenu extends HTMLElement {
         </div>
       </div>
 
-  <!-- Bootstrap & DataTables -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-  <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+      <!-- Bootstrap & DataTables -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+      <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
     `;
 
     /* === Marca o item ativo automaticamente === */
@@ -199,31 +198,38 @@ class MeuMenu extends HTMLElement {
       }
     });
 
-    /* === Relógio interno (atualização em tempo real) === */
+    /* === Relógio interno === */
     const campoHora = this.querySelector("#dataHora");
     if (campoHora) {
       const atualizarRelogio = () => {
         const agora = new Date();
-        const data = agora.toLocaleDateString("pt-BR");
-        const hora = agora.toLocaleTimeString("pt-BR");
-        campoHora.innerHTML = `📅 ${data} ⏰ ${hora}`;
+        campoHora.innerHTML = `📅 ${agora.toLocaleDateString("pt-BR")} ⏰ ${agora.toLocaleTimeString("pt-BR")}`;
       };
       atualizarRelogio();
       setInterval(atualizarRelogio, 1000);
     }
 
-    /* === Fecha o menu automaticamente ao girar ou redimensionar === */
+    /* === Mantém menu recolhido em mobile e fecha ao girar === */
     const offcanvasMenu = document.getElementById("menuOffcanvas");
     const bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasMenu);
 
+    const garantirMenuFechado = () => {
+      if (window.innerWidth <= 992) {
+        bsOffcanvas.hide(); // garante que comece fechado
+      }
+    };
+
+    // Fecha ao girar ou redimensionar
     const fecharMenuMobile = () => {
       if (window.innerWidth <= 992 && offcanvasMenu.classList.contains("show")) {
         bsOffcanvas.hide();
       }
     };
 
-    window.addEventListener("orientationchange", fecharMenuMobile);
+    // Executa ao carregar a página
+    window.addEventListener("load", garantirMenuFechado);
     window.addEventListener("resize", fecharMenuMobile);
+    window.addEventListener("orientationchange", fecharMenuMobile);
   }
 }
 
