@@ -169,8 +169,15 @@
 </div>
 <div class="mb-2">
   ${d.publicacaoArquivo 
-    ? `<a href="${d.publicacaoArquivo}" class="btn btn-success btn-sm w-100" target="_blank" style="min-width: 130px; padding-top: 5px;">📄PDF Drive</a>` 
-    : `<button class="btn btn-secondary btn-sm w-100" disabled style="min-width: 130px;">❌ Sem PDF</button>`
+    ? 
+  `<iframe> 
+    <a href="${d.publicacaoArquivo}" class="btn btn-success btn-sm w-100" target="_blank" style="min-width: 130px; padding-top: 5px;">
+      📄PDF Drive</a>
+   </iframe>` 
+    : `<iframe> 
+      <button class="btn btn-secondary btn-sm w-100" disabled style="min-width: 130px;">
+      ❌ Sem PDF</button>
+    </iframe>`
   }
 </div>
 <div class="mb-2">
