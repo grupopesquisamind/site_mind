@@ -177,7 +177,6 @@ class MeuMenu extends HTMLElement {
         </div>
       </div>
 
-      
   <!-- Bootstrap & DataTables -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
@@ -212,6 +211,19 @@ class MeuMenu extends HTMLElement {
       atualizarRelogio();
       setInterval(atualizarRelogio, 1000);
     }
+
+    /* === Fecha o menu automaticamente ao girar ou redimensionar === */
+    const offcanvasMenu = document.getElementById("menuOffcanvas");
+    const bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasMenu);
+
+    const fecharMenuMobile = () => {
+      if (window.innerWidth <= 992 && offcanvasMenu.classList.contains("show")) {
+        bsOffcanvas.hide();
+      }
+    };
+
+    window.addEventListener("orientationchange", fecharMenuMobile);
+    window.addEventListener("resize", fecharMenuMobile);
   }
 }
 
