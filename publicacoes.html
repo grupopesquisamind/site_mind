@@ -167,21 +167,20 @@
 <div class="mb-2">
   <a href="${d.linkPublicacao}" class="btn btn-warning btn-sm w-100" target="_blank" style="min-width: 130px; padding-top: 5px;">🌐Publicação</a>
 </div>
+
 <div class="mb-2">
   ${d.publicacaoArquivo 
     ? 
-  `<a href="${d.publicacaoArquivo}" 
-       class="btn btn-success btn-sm w-100" 
-       target="_blank"
-       style="min-width: 130px; padding-top: 5px;">
-     📄 Abrir PDF
-   </a>` 
-    : `<button class="btn btn-secondary btn-sm w-100" disabled>
+  `<iframe src="${d.publicacaoArquivo}" 
+           width="100%" 
+           height="500px" 
+           style="border: 1px solid #ccc;">
+  </iframe>` 
+    : `<button class="btn btn-secondary btn-sm w-100" disabled style="min-width: 130px;">
         ❌ Sem PDF
       </button>`
   }
 </div>
-
 
 <div class="mb-2">
   <button class="btn btn-primary btn-sm" onclick='mostrarReferencia(${JSON.stringify(d)})'>📄 Referenciar</button>
