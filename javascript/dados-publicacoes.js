@@ -23,7 +23,7 @@ function listarItens(tipo) {
         linkSite: "https://www.cieduc.org/home.html",
         linkPublicacao: "https://www.cieduc.org/libros/LibroActasCieduc2022.pdf",
         // ✅ Use crases (template string) no lugar de aspas
-        publicacaoArquivo: `${baseURL}/publicacaoArquivo/publicacoes/1-Publicacao_Libro_Actas_CIEDUC_2022.pdf`, // NOVO CAMPO    
+        publicacaoArquivo: '${baseURL}/publicacaoArquivo/publicacoes/1-Publicacao_Libro_Actas_CIEDUC_2022.pdf', // NOVO CAMPO    
         referenciarPub: "NASCIMENTO, Ricardo Henrique dos Reis; MONTEMOR, Bianca Estrela Abdalla França Camargo; CAMPOS, Ryan Cristian Sousa; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. O uso da ferramenta Scratch utilizada para o Ensino da Lei de Hess para alunos com Transtorno do Espectro Autista. In: BEGONCHEA, Luis et al. Educación científica para el desarrollo ibero-americano. Alcalá - Espanha: Editorial Universidad de Alcalá, 2022, p. 133 - 140. Disponível em: https://www.cieduc.org/libros/LibroActasCieduc2022.pdf",
       },
       {
