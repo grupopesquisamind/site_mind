@@ -11,7 +11,7 @@ function listarItens(chave) {
     tipo: "Jogo Educativo",
     src: "https://scratch.mit.edu/projects/1086913760/embed",
     linkPublicacao: "https://drive.google.com/file/d/1q6IocMyieI3uPrkgpwYN3SfP_Pwk2CWv/view",
-    publicacaoArquivo: "publicacaoArquivo/Publicacoes_Jogos/1-Jogos_de_Ciencias_Utilizacao_da_ferramenta_metodologica_Scratch_no_ensino_das_direcoes_para_alunos_com_TEA_nivel_de_suporte_Anais_Congresso_CONICT_2023.pdf",
+    publicacaoArquivo: "publicacaoArquivo/Publicacoes_Jogos/1-Jogos_de_Ciencias_Utilizacao_Scratch_ensino_direcoes_alunos_TEA_Anais_Congresso_CONICT_2023.pdf",
     referenciar: "CAMPOS, Ryan Cristian Sousa; MONTEMOR, Bianca Estrela  Abdalla França Camargo; SILVA,  Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Utilização da ferramenta metodológica Scratch no ensino das direções para alunos com TEA, nível de suporte 2.  IN: CONGRESSO DE INICIAÇÃO CIENTÍFICA DO IFSP ITAPETININGa, IX. 2023, Itapetininga-SP. Anais [...]. Itapetininga: Edições Hipótese, 2023, p. 335-340. Disponível em: https://drive.google.com/file/d/1q6IocMyieI3uPrkgpwYN3SfP_Pwk2CWv/view",
       },
        {
