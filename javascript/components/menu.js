@@ -46,11 +46,9 @@ class MeuMenu extends HTMLElement {
           font-size: 1.6rem;
         }
 
-        /* ======= Responsividade ======= */
+        /* ======= Responsividade geral ======= */
         @media (max-width: 992px) {
-          .offcanvas {
-            width: 80% !important;
-          }
+          .offcanvas { width: 80% !important; }
         }
 
         @media (max-width: 768px) {
@@ -59,31 +57,94 @@ class MeuMenu extends HTMLElement {
             left: 10px;
             padding: 5px 8px;
           }
-
-          .offcanvas {
-            width: 90% !important;
-          }
-
-          .submenu .nav-link {
-            font-size: 14px;
-          }
+          .offcanvas { width: 90% !important; }
+          .submenu .nav-link { font-size: 14px; }
         }
 
         @media (max-width: 480px) {
-          #menu-toggle-btn i {
-            font-size: 1.4rem;
-          }
+          #menu-toggle-btn i { font-size: 1.4rem; }
+          .offcanvas { width: 100% !important; }
+          figcaption { font-size: 14px !important; }
+          #dataHora { font-size: 13px !important; }
+        }
 
-          .offcanvas {
-            width: 100% !important;
-          }
+        /* ============================================================
+           AJUSTES POR ORIENTAÇÃO E RESOLUÇÃO (RETRATO / PAISAGEM)
+        ============================================================ */
 
-          figcaption {
-            font-size: 14px !important;
-          }
+        /* ===== ORIENTAÇÃO: RETRATO (VERTICAL) ===== */
 
-          #dataHora {
-            font-size: 13px !important;
+        /* Celulares em pé */
+        @media screen and (max-width: 768px) and (orientation: portrait) {
+          .imagem-unica-inicio {
+            width: 200px;
+            height: 200px;
+          }
+          #menu-toggle-btn {
+            top: 10px;
+            left: 10px;
+          }
+        }
+
+        /* Tablets em pé */
+        @media screen and (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
+          .imagem-unica-inicio {
+            width: 260px;
+            height: 260px;
+          }
+          #menu-toggle-btn {
+            top: 15px;
+            left: 15px;
+          }
+        }
+
+        /* Monitores grandes em pé */
+        @media screen and (min-width: 1025px) and (orientation: portrait) {
+          .imagem-unica-inicio {
+            width: 300px;
+            height: 300px;
+          }
+          #menu-toggle-btn {
+            top: 20px;
+            left: 20px;
+          }
+        }
+
+        /* ===== ORIENTAÇÃO: PAISAGEM (HORIZONTAL) ===== */
+
+        /* Celulares deitados */
+        @media screen and (max-width: 768px) and (orientation: landscape) {
+          .imagem-unica-inicio {
+            width: 150px;
+            height: 150px;
+          }
+          #menu-toggle-btn {
+            top: 5px;
+            left: 5px;
+          }
+        }
+
+        /* Tablets deitados */
+        @media screen and (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+          .imagem-unica-inicio {
+            width: 220px;
+            height: 220px;
+          }
+          #menu-toggle-btn {
+            top: 10px;
+            left: 10px;
+          }
+        }
+
+        /* Monitores e notebooks (paisagem padrão) */
+        @media screen and (min-width: 1025px) and (orientation: landscape) {
+          .imagem-unica-inicio {
+            width: 280px;
+            height: 280px;
+          }
+          #menu-toggle-btn {
+            top: 20px;
+            left: 20px;
           }
         }
       </style>
@@ -198,7 +259,7 @@ class MeuMenu extends HTMLElement {
       }
     });
 
-    /* === Relógio interno === */
+    /* === Relógio === */
     const campoHora = this.querySelector("#dataHora");
     if (campoHora) {
       const atualizarRelogio = () => {
@@ -209,15 +270,13 @@ class MeuMenu extends HTMLElement {
       setInterval(atualizarRelogio, 1000);
     }
 
-    /* === Controle de exibição do menu === */
+    /* === Controle do menu === */
     const offcanvasMenu = document.getElementById("menuOffcanvas");
     const bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasMenu);
 
     // Garante menu fechado no carregamento em mobile/tablet
     const garantirMenuFechado = () => {
-      if (window.innerWidth <= 992) {
-        bsOffcanvas.hide();
-      }
+      if (window.innerWidth <= 992) bsOffcanvas.hide();
     };
 
     // Fecha automaticamente ao girar ou redimensionar
