@@ -8,7 +8,7 @@ function listarItens(chave) {
         data: "17-19 setembro 2025",
         tema: "Educação Química em contexto Histórico-Político-Social",
         sediadoPor: "Departamento de Química e Bioquímica da Faculdade de Ciências Tecnologia da UNESP, Campus Presidente Prudente.",
-        local: "Presidente Prudente",
+        local: "Presidente Prudente / SP",
         link: "https://portal.sbenq.org.br/eppeq/"
       },
       {
