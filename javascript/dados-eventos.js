@@ -3,7 +3,7 @@ function listarItens(chave) {
   if (chave === 'eventos') {
     return [
        {
-        status: "Inscrições Abertas",
+        status: "Evento Encerrado",
         titulo: "XIII Encontro Paulista de Pesquisa em Ensino de Química",
         data: "17-19 setembro 2025",
         tema: "Educação Química em contexto Histórico-Político-Social",
@@ -12,24 +12,15 @@ function listarItens(chave) {
         link: "https://portal.sbenq.org.br/eppeq/"
       },
       {
-        status: "Inscrições Abertas",
-        titulo: "Congresso Nacional de Inclusão Escolar",
-        data: "15-17 de Julho, 2025",
-        tema: "",
-        sediadoPor: "",
-        local: "São Paulo, SP",
-        link: "https://exemplo.com/evento1"
+        status: "Evento em Andamento",
+        titulo: "9° Encontro Nacional de Aprendizagem Significativa",
+        data: "17 a 21 de novembro de 2025",
+        tema: "Discutir estudos fundamentados na Teoria da Aprendizagem Significativa (TAS), nas perspectivas tradicional e contemporânea, e seu impacto no processo da aprendizagem efetivada em contextos formais e não formais de ensino.",
+        sediadoPor: "Universidade do Vale do Taquari - Univates",
+        local: "Lajeado / RS",
+        link: "https://www.univates.br/evento/9-enas"
       },
-      {
-        status: "Inscrições Encerradas",
-        titulo: "Curso de Formação em Educação Inclusiva",
-        data: "20 de Agosto, 2025",
-        tema: "",
-        sediadoPor: "",
-        local: "Online",
-        link: "https://exemplo.com/evento2"
-      },
-      
+           
     ];
   }
   return [];
