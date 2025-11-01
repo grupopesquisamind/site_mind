@@ -1,4 +1,4 @@
-class MeuMenu extends HTMLElement { 
+class MeuMenu extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <style>
@@ -17,6 +17,7 @@ class MeuMenu extends HTMLElement {
           background-color: #0d6efd;
           color: white;
           font-weight: bold;
+          color: fff !important;
         }
 
         .submenu .nav-link {
@@ -46,9 +47,11 @@ class MeuMenu extends HTMLElement {
           font-size: 1.6rem;
         }
 
-        /* ======= Responsividade geral ======= */
+        /* ======= Responsividade ======= */
         @media (max-width: 992px) {
-          .offcanvas { width: 80% !important; }
+          .offcanvas {
+            width: 80% !important;
+          }
         }
 
         @media (max-width: 768px) {
@@ -57,94 +60,31 @@ class MeuMenu extends HTMLElement {
             left: 10px;
             padding: 5px 8px;
           }
-          .offcanvas { width: 90% !important; }
-          .submenu .nav-link { font-size: 14px; }
+
+          .offcanvas {
+            width: 90% !important;
+          }
+
+          .submenu .nav-link {
+            font-size: 14px;
+          }
         }
 
         @media (max-width: 480px) {
-          #menu-toggle-btn i { font-size: 1.4rem; }
-          .offcanvas { width: 100% !important; }
-          figcaption { font-size: 14px !important; }
-          #dataHora { font-size: 13px !important; }
-        }
+          #menu-toggle-btn i {
+            font-size: 1.4rem;
+          }
 
-        /* ============================================================
-           AJUSTES POR ORIENTAÇÃO E RESOLUÇÃO (RETRATO / PAISAGEM)
-        ============================================================ */
+          .offcanvas {
+            width: 100% !important;
+          }
 
-        /* ===== ORIENTAÇÃO: RETRATO (VERTICAL) ===== */
+          figcaption {
+            font-size: 14px !important;
+          }
 
-        /* Celulares em pé */
-        @media screen and (max-width: 768px) and (orientation: portrait) {
-          .imagem-unica-inicio {
-            width: 200px;
-            height: 200px;
-          }
-          #menu-toggle-btn {
-            top: 10px;
-            left: 10px;
-          }
-        }
-
-        /* Tablets em pé */
-        @media screen and (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
-          .imagem-unica-inicio {
-            width: 260px;
-            height: 260px;
-          }
-          #menu-toggle-btn {
-            top: 15px;
-            left: 15px;
-          }
-        }
-
-        /* Monitores grandes em pé */
-        @media screen and (min-width: 1025px) and (orientation: portrait) {
-          .imagem-unica-inicio {
-            width: 300px;
-            height: 300px;
-          }
-          #menu-toggle-btn {
-            top: 20px;
-            left: 20px;
-          }
-        }
-
-        /* ===== ORIENTAÇÃO: PAISAGEM (HORIZONTAL) ===== */
-
-        /* Celulares deitados */
-        @media screen and (max-width: 768px) and (orientation: landscape) {
-          .imagem-unica-inicio {
-            width: 150px;
-            height: 150px;
-          }
-          #menu-toggle-btn {
-            top: 5px;
-            left: 5px;
-          }
-        }
-
-        /* Tablets deitados */
-        @media screen and (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
-          .imagem-unica-inicio {
-            width: 220px;
-            height: 220px;
-          }
-          #menu-toggle-btn {
-            top: 10px;
-            left: 10px;
-          }
-        }
-
-        /* Monitores e notebooks (paisagem padrão) */
-        @media screen and (min-width: 1025px) and (orientation: landscape) {
-          .imagem-unica-inicio {
-            width: 280px;
-            height: 280px;
-          }
-          #menu-toggle-btn {
-            top: 20px;
-            left: 20px;
+          #dataHora {
+            font-size: 13px !important;
           }
         }
       </style>
@@ -165,7 +105,7 @@ class MeuMenu extends HTMLElement {
 
         <div class="offcanvas-body d-flex flex-column p-0">
           <nav class="nav flex-column">
-            <a class="nav-link d-flex align-items-center gap-2" href="home.html">
+            <a class="nav-link d-flex align-items-center gap-2" href="index.html">
               <i class="bi bi-house-door"></i> Início
             </a>
 
@@ -219,9 +159,7 @@ class MeuMenu extends HTMLElement {
             <a class="nav-link d-flex align-items-center gap-2" href="publicacoes.html">
               <i class="bi bi-journal-text"></i> Publicações
             </a>
-            <a class="nav-link d-flex align-items-center gap-2" href="eventos.html">
-              <i class="bi bi-calendar-event-fill"></i> Eventos Futuros
-            </a>
+            <a class="nav-link d-flex align-items-center gap-2" href="eventos.html"><i class="bi bi-calendar-event-fill"></i> Eventos Futuros</a>
             <a class="nav-link d-flex align-items-center gap-2" href="sobre.html">
               <i class="bi bi-info-circle-fill"></i> Sobre
             </a>
@@ -239,11 +177,14 @@ class MeuMenu extends HTMLElement {
         </div>
       </div>
 
-      <!-- Bootstrap -->
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+      
+  <!-- Bootstrap & DataTables -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
     `;
 
-    /* === Marca o item ativo === */
+    /* === Marca o item ativo automaticamente === */
     const currentPage = window.location.pathname.split("/").pop();
     const links = this.querySelectorAll(".nav-link");
     links.forEach(link => {
@@ -259,36 +200,18 @@ class MeuMenu extends HTMLElement {
       }
     });
 
-    /* === Relógio === */
+    /* === Relógio interno (atualização em tempo real) === */
     const campoHora = this.querySelector("#dataHora");
     if (campoHora) {
       const atualizarRelogio = () => {
         const agora = new Date();
-        campoHora.innerHTML = `📅 ${agora.toLocaleDateString("pt-BR")} ⏰ ${agora.toLocaleTimeString("pt-BR")}`;
+        const data = agora.toLocaleDateString("pt-BR");
+        const hora = agora.toLocaleTimeString("pt-BR");
+        campoHora.innerHTML = `📅 ${data} ⏰ ${hora}`;
       };
       atualizarRelogio();
       setInterval(atualizarRelogio, 1000);
     }
-
-    /* === Controle do menu === */
-    const offcanvasMenu = document.getElementById("menuOffcanvas");
-    const bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasMenu);
-
-    // Garante menu fechado no carregamento em mobile/tablet
-    const garantirMenuFechado = () => {
-      if (window.innerWidth <= 992) bsOffcanvas.hide();
-    };
-
-    // Fecha automaticamente ao girar ou redimensionar
-    const fecharMenuMobile = () => {
-      if (window.innerWidth <= 992 && offcanvasMenu.classList.contains("show")) {
-        bsOffcanvas.hide();
-      }
-    };
-
-    window.addEventListener("load", garantirMenuFechado);
-    window.addEventListener("resize", fecharMenuMobile);
-    window.addEventListener("orientationchange", fecharMenuMobile);
   }
 }
 
