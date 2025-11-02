@@ -1,83 +1,208 @@
-<html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <title>MIND-Participação Eventos/Congressos</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+<meta charset="UTF-8" />
+<title>MIND - Galeria de Eventos</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap e ícones -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
 
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/galeria.css"> <!--não apagar-->
+<!-- Magnific Popup -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" />
 
-  <script src="javascript/components/menu.js" defer></script>
-  <script src="javascript/components/footer.js" defer></script>
+<script src="javascript/components/menu.js" defer></script>
+<script src="javascript/components/footer.js" defer></script>
+
+<style>
+#page-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 100vh;
+  margin: auto;
+  overflow: auto;
+}
+
+h2, h5 {
+  text-align: center;
+}
+
+/* Galeria responsiva */
+.gallery {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.gallery a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery a:hover {
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.gallery img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+  transition: transform 0.3s ease;
+}
+
+.gallery a:hover img {
+  transform: scale(1.05); /* zoom suave ao passar o mouse */
+}
+
+.legend {
+  margin-top: 0.4rem;
+  padding: 0.3rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-align: center;
+  color: #555;
+  width: 100%;
+  background: #f8f9fa;
+}
+
+/* Ajuste de colunas por largura da tela */
+@media (min-width: 1600px) { .gallery { grid-template-columns: repeat(8, 1fr); } }
+@media (min-width: 1200px) and (max-width: 1599px) { .gallery { grid-template-columns: repeat(6, 1fr); } }
+@media (min-width: 992px) and (max-width: 1199px) { .gallery { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 768px) and (max-width: 991px) { .gallery { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 767px) { .gallery { grid-template-columns: repeat(2, 1fr); } }
+</style>
 </head>
-  <body>
-  <meu-menu></meu-menu>
-<main class="container-fluid my-0 pt-0 mb-5">
-  <section class="mt-0">
-    <div class="gallery-section">
-      <div class="inner-width">
- <!-- Conteúdo principal -->
-  <div id="page-wrapper">
-    <div id="page-content-wrapper">
-     <h2 class="text-center text-danger"><strong>Movimento para Inclusão e Neurodiversidade.</strong></h2>
-      <h5 class="mt-0 text-center">Galeria das Participações em Eventos/Congressos</h5>
-    </div>    
-        <div class="gallery">
+<body>
 
-          <a href="imagens/eventos/img/1.png" class="image">
-            <img src="imagens/eventos/img/1.png" alt="">
-          </a>
+<meu-menu></meu-menu>
 
-          <a href="imagens/eventos/img/eppeq_2025.jpg" class="image">
-            <img src="imagens/eventos/img/eppeq_2025.jpg" alt="">
-          </a>
+<div id="page-wrapper">
+  <main class="container my-4">
+    <h2 class="text-danger"><strong>Movimento para Inclusão e Neurodiversidade</strong></h2>
+    <h5 class="text-center mb-4">Galeria de Participações em Eventos e Congressos</h5>
 
-          <a href="imagens/eventos/img/eppeq_2025_A-C.jpg" class="image">
-            <img src="imagens/eventos/img/eppeq_2025_A-C.jpg" alt="">
-          </a>
-
-          <a href="imagens/eventos/img/eppeq_2025_y.jpg" class="image">
-            <img src="imagens/eventos/img/eppeq_2025_y.jpg" alt="">
-          </a>
-
-          <a href="imagens/eventos/img/5.png" class="image">
-            <img src="imagens/eventos/img/5.png" alt="">
-          </a>
-
-          <a href="imagens/eventos/img/6.png" class="image">
-            <img src="imagens/eventos/img/6.png" alt="">
-          </a>
-
-          <a href="imagens/eventos/img/7.png" class="image">
-            <img src="imagens/eventos/img/7.png" alt="">
-          </a>
-
-          <a href="imagens/eventos/img/8.png" class="image">
-            <img src="imagens/eventos/img/8.png" alt="">
-          </a>
-
-        </div>
+    <!-- Filtros -->
+    <div class="row g-2 mb-3">
+      <div class="col-md-4">
+        <select id="filtroSigla" class="form-select">
+          <option value="">Filtrar por sigla do evento</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <select id="filtroAno" class="form-select">
+          <option value="">Filtrar por Ano</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <button id="btnLimpar" class="btn btn-secondary w-100">Limpar</button>
       </div>
     </div>
-</section>
-</main>
 
-  <script>
-    $(".gallery").magnificPopup({
-      delegate: 'a',
-      type: 'image',
-      gallery:{
-        enabled: true
+    <!-- Galeria -->
+    <div id="gallery" class="gallery"></div>
+  </main>
+</div>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+<script>
+const eventos = [
+    {imagem: 'imagens/eventos/img/1.png', sigla: 'EPPEQ', ano: '2022'},
+  {imagem: 'imagens/eventos/img/2.png', sigla: 'EPPEQ', ano: '2024'},
+  {imagem: 'imagens/eventos/img/3.png', sigla: 'CIEN', ano: '2023'},
+  {imagem: 'imagens/eventos/img/eppeq_2025_grupo.jpg', sigla: 'EPPEQ - Grupo', ano: '2025'},
+  {imagem: 'imagens/eventos/img/eppeq_2025.jpg', sigla: 'EPPEQ - Grupo', ano: '2025'},
+  {imagem: 'imagens/eventos/img/eppeq_2025_grupo_2.jpg', sigla: 'EPPEQ - Grupo', ano: '2025'},
+  {imagem: 'imagens/eventos/img/eppeq_2025_A-C.jpg', sigla: 'EPPEQ - Ana Clara', ano: '2025'},
+  {imagem: 'imagens/eventos/img/eppeq_2025_y.jpg', sigla: 'EPPEQ - Yara', ano: '2025'},
+];
+
+
+function popularFiltros() {
+  const siglas = [...new Set(eventos.map(e => e.sigla))].sort();
+  const selectSigla = $('#filtroSigla');
+  siglas.forEach(s => selectSigla.append(new Option(s, s)));
+
+  const anos = [...new Set(eventos.map(e => e.ano))].sort();
+  const selectAno = $('#filtroAno');
+  anos.forEach(a => selectAno.append(new Option(a, a)));
+}
+
+function renderizarGaleria(filtroSigla = '', filtroAno = '') {
+  const container = $('#gallery');
+  container.empty();
+
+  const listaFiltrada = eventos.filter(e =>
+    (!filtroSigla || e.sigla.toLowerCase().includes(filtroSigla.toLowerCase())) &&
+    (!filtroAno || e.ano === filtroAno)
+  );
+
+  listaFiltrada.forEach(e => {
+    container.append(`
+      <a href="${e.imagem}" class="image" title="${e.sigla} - ${e.ano}">
+        <img src="${e.imagem}" alt="${e.sigla} ${e.ano}">
+        <div class="legend">${e.sigla} - ${e.ano}</div>
+      </a>
+    `);
+  });
+
+  // Magnific Popup com limite de tamanho
+  $('.gallery').magnificPopup({
+    delegate: 'a',
+    type: 'image',
+    gallery: { enabled: true },
+    callbacks: {
+      open: function() {
+        $('.mfp-img').css({
+          'max-width': '90vw',
+          'max-height': '90vh',
+          'transform': 'scale(1.2)'
+        });
+      },
+      resize: function() {
+        $('.mfp-img').css({
+          'max-width': '90vw',
+          'max-height': '90vh'
+        });
+      },
+      close: function() {
+        $('.mfp-img').css('transform', '');
       }
-    });
-  </script>
+    }
+  });
+}
+
+$(document).ready(() => {
+  popularFiltros();
+  renderizarGaleria();
+
+  $('#filtroSigla, #filtroAno').on('input change', () => {
+    renderizarGaleria($('#filtroSigla').val(), $('#filtroAno').val());
+  });
+
+  $('#btnLimpar').click(() => {
+    $('#filtroSigla').val('');
+    $('#filtroAno').val('');
+    renderizarGaleria();
+  });
+});
+</script>
+
 <meu-footer></meu-footer>
-  </body>
+</body>
 </html>
