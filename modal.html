@@ -1,221 +1,178 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <title>MIND - Projeto Desenvolvido</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      width: 100%;
-      min-width: 100vh;
-      min-height: 100vh; /* 100% da viewport */
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-    }
+<meta charset="UTF-8" />
+<title>MIND - Projeto Desenvolvido</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-#titulo{
-	text-align: center;
-      margin: 10px 0;
-}
-
- #nomeProducao {
-      text-align: center;
-      margin: 10px 0;
-      font-size: 1.8em;
-    }
-
- #autor {
-      text-align: center;
-      font-weight: bold;
-      margin:1px 0;
-      font-size: 1.5em;
-      color: red;
- }
-
- #tipo {
-      text-align: center;
-      margin: 10px 0;
-      font-size: 1.0em;
-      color: blue;
- }
-
- #categoria {
-      text-align: center;
-      margin: 10px 0;
-      font-size: 1.5em;
-    }
-
- #referencia {
-      padding: 0 20px 20px 20px;
-      text-align: justify;
-      max-width: 90%;
-      margin: 0 auto;
-      font-size: 1em;
-    }
-
-    #iframeConteudo {
-      flex: 1;
-      border: none;
-      display: flex;
-      height: 100%;
-      width: 100%;
-      min-width: 100vh;
-      min-height: 100vh; /* 100% da viewport */
-
-    }
-/*INICIO (novo) Configuração TELA responsividade*/
-@media (max-width: 1200px) {
-  /* Ajustes para larguras até 1200 pixels */
-}
-/* Estilos para telas entre 760px e 1024px (tablets) */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .container {
-    flex-direction: column;
-  }
-
-  .sidebar {
-    order: 1;
-  }
-
-  .main-content {
-    order: 2;
-  }
-
-/*.responsive-image {
-    content: url('img.jpg');
-    content: url('nome-mind.jpg');
-   content: url('imagem.jpg');
-  }
-
-}
-.responsive-image {
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
   width: 100%;
-  height: auto;
-}
-*/
-/* Estilos para telas maiores que 1024px (desktops) */
-@media (min-width: 1025px) {
-  .container {
-    flex-direction: row;
-  }
-
-  .sidebar {
-    display: block;
-  }
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  background: #f5f5f5;
 }
 
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  max-width: 100%;
+}
 
-@media (max-width: 576px) {
-  /* Ajustes para larguras até 576 pixels */
-}
-@media (max-width: 480px) {
-  /* Estilos para telas com no máximo 480 pixels de largura (smartphones) */
+h2, h3, h5 {
+  text-align: center;
+  margin: 5px 0;
 }
 
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  /* Estilos para dispositivos com alta densidade de pixels (ex: telas Retina) */
+#titulo { margin: 10px 0; font-size: 1.5rem; color: darkred; }
+#nomeProducao { font-size: 1.6rem; margin: 5px 0; }
+
+/* Informações do projeto alinhadas à esquerda dentro de uma div */
+#infoProjeto {
+  text-align: left;
+  width: 90%;
+  max-width: 900px;
+  margin: 10px auto;
+  padding: 10px 15px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #333;
 }
+
+#infoProjeto p {
+  margin: 5px 0;
+}
+
+#iframeContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex: 1;
+  margin-top: 10px;
+}
+
+#iframeConteudo {
+  width: 100%;
+  max-width: 90vw;
+  height: 70vh;
+  max-height: 90vh;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+/* Botão centralizado */
+#btnAmpliar {
+  margin: 10px auto;
+  display: block;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background-color: #0d6efd;
+  color: white;
+  transition: transform 0.2s ease;
+}
+
+#btnAmpliar:hover {
+  transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+  #nomeProducao { font-size: 1.4rem; }
+  #infoProjeto { font-size: 0.95rem; }
+  #iframeConteudo { height: 60vh; }
+}
+
+@media (max-width: 768px) {
+  #nomeProducao { font-size: 1.2rem; }
+  #infoProjeto { font-size: 0.9rem; }
+  #iframeConteudo { height: 55vh; }
+}
+
 @media (orientation: portrait) {
-  /* Estilos para dispositivos em modo retrato */
+  #iframeConteudo { height: 60vh; width: 90vw; }
 }
+
 @media (orientation: landscape) {
-  /* Estilos para dispositivos em modo paisagem */
+  #iframeConteudo { height: 75vh; width: 90vw; }
 }
-
-
-
-
-
-/*FIM (novo) Configuração TELA responsividade*/
-
-/* Media Queries para tablets (entre 768px e 1024px) */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .container {
-    width: 95%;
-  }
-
-  header h1 {
-    font-size: 2rem;
-  }
-
-  .card {
-    padding: 20px;
-  }
-}
-
-/* Media Queries para dispositivos maiores que 1024px */
-@media (min-width: 1025px) {
-  .container {
-    width: 90%;
-  }
-
-  header h1 {
-    font-size: 2.5rem;
-  }
-
-  .card-body {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-  }
-}
-}
-  </style>
+</style>
 </head>
+
 <body class="container">
 <main class="container my-2">
-    <section class="mt-2" id="modal">
-  <h2 id="titulo">Jogo criado pela equipe MIND - Movimento para Inclusão e Neurodiversidade.</h2>
-  <h2 id="nomeProducao" class="container-fluid flex responsive">Aguarde um instante, carregando o projeto...</h2>
-  <div id="nomeProducao" class="container-fluid flex responsive"></div>
-  <div id="autor" class="container-fluid flex responsive"></div>
-  <div id="tipo" class="container-fluid flex responsive"></div>
-  <div id="categoria" class="container-fluid flex responsive"></div>
-  <div id="referencia" class="container-fluid flex responsive"></div>
-<div class="text-center">
-<button onclick="ampliarIframe()" style="margin: 5px auto; display: block;">🔍 Ampliar Tela para Jogar</button>
-</div>
+  <section class="mt-2" id="modal">
+    <h2 id="titulo"><strong style="color: rgb(7, 7, 7);">Jogo criado pela equipe MIND - Movimento para Inclusão e Neurodiversidade.</strong></h2>
+    <h2 id="nomeProducao">Aguarde um instante, carregando o projeto...</h2>
 
-<iframe id="iframeConteudo" allowfullscreen class="container-fluid flex responsive"></iframe>
+    <!-- Div única com todas as informações alinhadas à esquerda -->
+    <div id="infoProjeto">
+      <p id="autor"></p>
+      <p id="tipo"></p>
+      <p id="categoria"></p>
+      <p id="referencia"></p>
+    </div>
 
-</section>
+    <button id="btnAmpliar">🔍 Abrir em Nova Janela Fullscreen</button>
+
+    <div id="iframeContainer">
+      <iframe id="iframeConteudo" allowfullscreen scrolling="auto"></iframe>
+    </div>
+  </section>
 </main>
 
 <script src="javascript/dados-projetos.js"></script>
-  <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const id = urlParams.get('id');
-    const projetos = listarItens('projetos');
-    const projeto = projetos.find(p => p.id === id);
-
-    if (projeto) {
-      document.getElementById('nomeProducao').textContent = `ID: (${projeto.id}) - Nome do Projeto: ${projeto.nomeProducao}`;
-      document.getElementById('autor').textContent = `Autor do Jogo: ${projeto.autor} (${projeto.ano})`;
-      document.getElementById('tipo').textContent = `Tipo/Categoria: ${projeto.tipo} (${projeto.categoria})`;
-      document.getElementById('referencia').innerHTML = `<strong>Como Referenciar pela ABNT:</strong><br>${projeto.referenciar}`;
-      document.getElementById('iframeConteudo').src = projeto.src;
-    } else {
-      document.getElementById('nomeProducao').textContent = 'Conteúdo não encontrado';
-    }
-    </script>
-
 <script>
-  function ampliarIframe() {
-    const iframe = document.getElementById('iframeConteudo');
-    if (iframe.requestFullscreen) {
-      iframe.requestFullscreen();
-    } else if (iframe.webkitRequestFullscreen) {
-      iframe.webkitRequestFullscreen(); // Safari
-    } else if (iframe.msRequestFullscreen) {
-      iframe.msRequestFullscreen(); // IE11
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get('id');
+const projetos = listarItens('projetos');
+const projeto = projetos.find(p => p.id === id);
+
+if (projeto) {
+  document.getElementById('nomeProducao').innerHTML = `ID: (${projeto.id}) - <strong> Nome do Projeto:</strong> <span style="color: blue;"> ${projeto.nomeProducao} </span>`;
+  document.getElementById('autor').innerHTML = `<strong>Autor do Jogo:</strong> <span style="color: blue;">${projeto.autor}</span> <span style="color: red;">(${projeto.ano})</span>`;
+  document.getElementById('tipo').innerHTML = `<strong>Tipo/Categoria:</strong> <span style="color: blue;">${projeto.tipo} </span><span style="color: red;">(${projeto.categoria})</span>`;
+  document.getElementById('referencia').innerHTML = `<strong>Como Referenciar pela ABNT:</strong><br>${projeto.referenciar}`;
+  document.getElementById('iframeConteudo').src = projeto.src;
+} else {
+  document.getElementById('nomeProducao').textContent = 'Conteúdo não encontrado';
+}
+
+// Abrir iframe em nova janela fullscreen
+document.getElementById('btnAmpliar').addEventListener('click', () => {
+  if (document.getElementById('iframeConteudo').src) {
+    const width = screen.availWidth;
+    const height = screen.availHeight;
+
+    const novaJanela = window.open(
+      projeto.src,
+      '_blank',
+      `width=${width},height=${height},top=0,left=0,resizable=yes,scrollbars=yes`
+    );
+
+    if (novaJanela) {
+      novaJanela.moveTo(0, 0);
+      novaJanela.resizeTo(screen.availWidth, screen.availHeight);
+      novaJanela.focus();
     }
   }
+});
 </script>
-
-
 </body>
 </html>
