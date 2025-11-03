@@ -1,177 +1,184 @@
-<!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <title>MIND - Galeria de Autores</title>
+  <title>MIND - Galeria Autores</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Bootstrap e ícones -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-
   <link rel="stylesheet" href="css/style.css">
   <script src="javascript/components/menu.js" defer></script>
   <script src="javascript/components/footer.js" defer></script>
- <style>
-/* ====== Layout Geral ====== */
-* {
-  box-sizing: border-box;
-}
 
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* evita barra horizontal */
-  font-family: Arial, sans-serif;
-}
+  <style>
+    #page-wrapper {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      min-height: 100vh;
+      margin: auto;
+      overflow: auto;
+    }
 
-#page-wrapper {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  min-height: 100vh;
-  margin: auto;
-  overflow: auto;
-}
+    autor-card {
+      display: inline-block;
+      margin: 1rem;
+    }
 
-h2, h5 {
-  text-align: center;
-}
-
-/* ====== Container dos Cards ====== */
-.card-container {
-  display: grid;
-  gap: 1rem;                   /* espaço entre cards */
-  padding: 0.5rem;             /* espaçamento interno */
-  justify-content: center;      /* centraliza horizontalmente */
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-}
-
-/* ====== Card ====== */
-.card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
-  color: inherit;
-  width: 100%;       /* largura máxima da coluna */
-  height: 100%;       /* altura máxima da coluna */
-
-}
-
-/* ====== Imagem do Card com tamanho fixo ====== */
-.card-img {
-  width: 100%;            /* ocupa toda a largura do card */
-  height: 180px;          /* altura fixa para todas as imagens */
-  object-fit: cover;      /* mantém proporção, mas preenche a área */
-  border-bottom: 1px solid #eee;
-  transition: transform 0.3s ease;
-}
-
-
-/* ====== Informações do Card ====== */
-.card-info {
-  flex: 1;
-  padding: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 80px; /* altura mínima uniforme */
-}
-
-/* Hover efeito */
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-
-.card:hover .card-img {
-  transform: scale(1.05);
-}
-
-
-/* Ajuste de colunas por largura da tela */
-@media (min-width: 1600px) { .card-container { grid-template-columns: repeat(7, 180px); } }
-@media (min-width: 1200px) and (max-width: 1599px) { .card-container { grid-template-columns: repeat(5, 180px); } }
-@media (min-width: 992px) and (max-width: 1199px) { .card-container { grid-template-columns: repeat(4, 180px); } }
-@media (min-width: 768px) and (max-width: 991px) { .card-container { grid-template-columns: repeat(3, 180px); } }
-@media (max-width: 767px) { .card-container { grid-template-columns: repeat(2, 180px); } }
-
-.card-title {
-  font-weight: bold;
-  font-size: 0.9rem;
-  color: #333;
-  margin-top: 0.2rem;
-}
-
-.card-text {
-  font-size: 0.8rem;
-  color: #555;
-  margin: 0.2rem 0;
-}
-</style>
-
+    .galeria {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+  </style>
 </head>
 <body>
 
 <meu-menu></meu-menu>
 
-<div id="page-wrapper">
-  <main class="container my-4">
-    <h2 class="text-danger"><strong>Movimento para Inclusão e Neurodiversidade</strong></h2>
-    <h5 class="text-center mb-4">Galeria de Autores com Participação em Trabalhos Publicados</h5>
+<main class="container py-5">
+  <h2 class="text-center text-danger mb-4"><strong>Movimento para Inclusão e Neurodiversidade</strong></h2>
 
-    <div class="d-flex justify-content-center mb-3">
-      <a href="autores.html" class="btn btn-primary">
-        <i class="bi bi-people-fill me-1"></i> Ver Dados Completos
-      </a>
+  <!-- Título + Botão -->
+  <div class="d-flex justify-content-center align-items-center mb-3 flex-wrap gap-2">
+    <h5 class="text-black mb-0">Galeria de Autores com Participação em Trabalhos Publicados</h5>
+    <a href="autores.html" class="btn btn-primary">
+      <i class="bi bi-people-fill me-1"></i> Ver Dados Completos
+    </a>
+  </div>  
+
+  <div id="container-autores" class="galeria"></div>
+</main>
+
+<!-- Template dos cards -->
+<template id="autor-card">
+  <style>
+    .card {
+      font-size: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: left;
+      width: 200px;
+      height: 300px;
+      text-align: center;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      padding: 1rem;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-sizing: border-box;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .foto {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+
+    .nome {
+      margin-top: 0.4rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .secao {
+      font-size: 11.5px;
+      text-align: left;
+      margin-top: 0.3rem;
+      width: 100%;
+      color: #444;
+    }
+
+    .secao strong {
+      display: block;
+      color: #000;
+      font-weight: 600;
+    }
+  </style>
+
+  <div class="col-6 col-md-2">
+    <div class="card h-100 text-center shadow-sm border-0">
+      <div class="card-body d-flex flex-column align-items-center justify-content-between">
+        <img class="foto" />
+        <div class="nome"></div>
+        <div class="secao">
+          <strong>Participação:</strong>
+          <span class="tipoParticipacao"></span>
+        </div>
+       <!-- <div class="secao">
+          <strong>Formação:</strong>
+          <span class="formacao"></span>
+        </div>
+        -->
+      </div>
     </div>
+  </div>
+</template>
 
-    <div id="container-autores" class="card-container"></div>
-  </main>
-</div>
+<script>
+  class AutorCard extends HTMLElement {
+    connectedCallback() {
+      const shadow = this.attachShadow({ mode: 'open' });
+      const template = document.getElementById('autor-card');
+      shadow.appendChild(template.content.cloneNode(true));
+
+      const imagem = this.getAttribute('imagem') || 'default.jpg';
+      const nome = this.getAttribute('nome') || 'Nome não informado';
+      const tipo = this.getAttribute('tipoParticipacao') || 'Participação não informada';
+     // const formacao = this.getAttribute('formacao') || 'Formação não informada';
+
+      const img = shadow.querySelector('.foto');
+      img.src = `imagens/autores_equipe/${imagem}`;
+      img.alt = `Foto de ${nome}`;
+      img.onerror = () => {
+        img.src = 'imagens/autores_equipe/default.jpg';
+        img.alt = `Foto não disponível para ${nome}`;
+      };
+
+      shadow.querySelector('.nome').textContent = nome;
+      shadow.querySelector('.tipoParticipacao').textContent = tipo;
+     // shadow.querySelector('.formacao').textContent = formacao;
+    }
+  }
+  customElements.define('autor-card', AutorCard);
+</script>
 
 <script src="javascript/dados-autores.js"></script>
+
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const autores = listarItens('autores');
-  const autoresContainer = document.getElementById('container-autores');
+  document.addEventListener('DOMContentLoaded', () => {
+    const autores = listarItens('autores');
+    const autoresContainer = document.getElementById('container-autores');
 
-  // Remover duplicatas por nome
-  const nomesUnicos = new Map();
-  autores.forEach(autor => {
-    if (!nomesUnicos.has(autor.nome)) {
-      nomesUnicos.set(autor.nome, autor);
-    }
+    // Evita duplicados e ordena alfabeticamente
+    const nomesUnicos = new Map();
+    autores.forEach(autor => {
+      if (!nomesUnicos.has(autor.nome)) {
+        nomesUnicos.set(autor.nome, autor);
+      }
+    });
+
+    const listaOrdenada = Array.from(nomesUnicos.values())
+      .sort((a, b) => a.nome.localeCompare(b.nome, 'pt', { sensitivity: 'base' }));
+
+    listaOrdenada.forEach(autor => {
+      const card = document.createElement('autor-card');
+      card.setAttribute('imagem', autor.imagem ?? 'default.jpg');
+      card.setAttribute('nome', autor.nome ?? '');
+      card.setAttribute('tipoParticipacao', autor.tipoParticipacao ?? '');
+     // card.setAttribute('formacao', autor.formacao ?? '');
+      autoresContainer.appendChild(card);
+    });
   });
-
-  const listaOrdenada = Array.from(nomesUnicos.values())
-    .sort((a, b) => a.nome.localeCompare(b.nome, 'pt', { sensitivity: 'base' }));
-
-  listaOrdenada.forEach(autor => {
-    const div = document.createElement('div');
-    div.innerHTML = `
-      <div class="card">
-        <img src="imagens/autores_equipe/${autor.imagem ?? 'default.jpg'}"
-             alt="Foto de ${autor.nome}"
-             class="card-img"
-             onerror="this.src='imagens/autores_equipe/default.jpg'; this.alt='Foto não disponível'">
-        <div class="card-info">
-          <div class="card-title">${autor.nome ?? ''}</div>
-          <div class="card-text"><strong>Participação:</strong> ${autor.tipoParticipacao ?? ''}</div>
-         <!-- <div class="card-text"><strong>Formação:</strong> ${autor.formacao ?? ''}</div>-->
-        </div>
-      </div>
-    `;
-    autoresContainer.appendChild(div);
-  });
-});
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
