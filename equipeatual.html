@@ -25,11 +25,13 @@
       margin: 1rem;
     }
 
-.galeria {
+    .galeria {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1rem;
-  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.2rem; /* Espaço entre os cards */
+  justify-items: center; /* Centraliza os cards dentro das colunas */
+  align-items: start; /* Alinha o topo dos cards */
+  padding: 0.5rem 1rem; /* Margem interna para não encostar nas bordas */
 }
 
 
