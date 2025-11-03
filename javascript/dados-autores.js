@@ -120,22 +120,8 @@ function listarItens(tipo) {
         lattes: "http://lattes.cnpq.br/9908620895084723",
         imagem: "ricardo_henrique.jpg",  // <-- Só o nome do arquivo
       },
-    {     
+     {     
         id: "10",
-        status: "Ativo",
-        nome: "Roberto Greco",
-        formacao: "Ciências Naturais",
-        titulo: "Doutorado",
-        tipoParticipacao: "Colaborador Externo",
-        anoIngresso: "2024",
-        anoSaida: "Atualmente",
-        instituicao: "Unicamp Campinas",
-        lattes: "http://lattes.cnpq.br/4068114349004406",
-        imagem: "roberto_greco.jpg",  // <-- Só o nome do arquivo
-      },
-
-      {     
-        id: "11",
         status: "Ativo",
         nome: "Tardelli Ronan Coelho Stekel",
         formacao: "Engenharia Elétrica",
@@ -148,7 +134,7 @@ function listarItens(tipo) {
         imagem: "",  // <-- Só o nome do arquivo / se estiver sem foto no lattes adota foto default
       },
     {     
-        id: "12",
+        id: "11",
         status: "Ativo",
         nome: "Thiago Marinho Santos",
         formacao: "Cursando Ensino Médio Integrado em Administração",
@@ -161,7 +147,7 @@ function listarItens(tipo) {
         imagem: "thiago_marinho.jpg",  // <-- Só o nome do arquivo
       },
     {     
-        id: "13",
+        id: "12",
         status: "Ativo",
         nome: "Yara Vitoria Claro de Freitas",
         formacao: "Cursando Ensino Médio Integrado em Informática",
@@ -176,7 +162,7 @@ function listarItens(tipo) {
 
       
       {     
-        id: "14",
+        id: "13",
         status: "Inativo",
         nome: "Bianca Estrela Montemor Abdalla França Camargo",
         formacao: "Cursando Ensino Médio Integrado em Informática",
@@ -189,7 +175,7 @@ function listarItens(tipo) {
         imagem: "bianca_motemor.jpg",  // <-- Só o nome do arquivo
       },
       {  
-        id: "15",
+        id: "14",
         nome: "Gabriel Kawabe de Lima Ferreira",
         status: "Inativo",
         formacao: "Cursando Ensino Fundamental",
@@ -202,7 +188,7 @@ function listarItens(tipo) {
         imagem: "gabriel_kawabe.jpg",  // <-- Só o nome do arquivo
       },
       {     
-        id: "16",
+        id: "15",
         status: "Inativo",
         nome: "Lucas Caraça dos Santos",
         formacao: "Cursando Ensino Médio Integrado em Informática",
@@ -215,7 +201,7 @@ function listarItens(tipo) {
         imagem: "lucas_caraca.jpg",  // <-- Só o nome do arquivo
       },
       {     
-        id: "17",
+        id: "16",
         status: "Inativo",
         nome: "Luis Gustavo Cardoso",
         formacao: "Cursando Ensino Médio Integrado em Administração",
@@ -228,7 +214,7 @@ function listarItens(tipo) {
         imagem: "luis_cardoso.jpg",  // <-- Só o nome do arquivo
       },
       {     
-        id: "18",
+        id: "17",
         status: "Inativo",
         nome: "Lyan Lisboa de Souza",
         formacao: "Cursando Ensino Médio Integrado em Informática",
@@ -241,7 +227,7 @@ function listarItens(tipo) {
         imagem: "lyan_lisboa.jpg",  // <-- Só o nome do arquivo
       },
       {     
-        id: "19",
+        id: "18",
         status: "Inativo",
         nome: "Maria Wianney Miranda Almeida",
         formacao: "Cursando Ensino Médio Integrado em Informática",
@@ -254,7 +240,7 @@ function listarItens(tipo) {
         imagem: "maria_wianney.jpg",  // <-- Só o nome do arquivo
       },
       {     
-        id: "20",
+        id: "19",
         status: "Inativo",
         nome: "Mateus Cayque Figueiredo Gomes",
         formacao: "Cursando Ensino Médio Integrado em Administração",
@@ -267,7 +253,7 @@ function listarItens(tipo) {
         imagem: "mateus_cayque.jpg",  // <-- Só o nome do arquivo
       },
       {
-        id: "21",
+        id: "20",
         status: "Inativo",
         nome: "Ricardo Henrique dos Reis Nascimento",
         formacao: "Cursando Ensino Médio Integrado em Informática",
@@ -280,7 +266,7 @@ function listarItens(tipo) {
         imagem: "ricardo_henrique.jpg",  // <-- Só o nome do arquivo
       },
       {
-        id: "22",
+        id: "21",
         status: "Inativo",
         nome: "Ryan Cristian Sousa Campos",
         formacao: "Cursando Ensino Médio Integrado em Informática",
