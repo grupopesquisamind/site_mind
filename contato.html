@@ -38,19 +38,17 @@
     }
 
     .card-contato {
-      position: relative;
+      width: 180px; /* largura do card */
+      height: 430px; /* ocupa 60% do card */
       display: flex;
       flex-direction: column;
-      border-radius: 10px;
-      background-color: #fff;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      background: #fff;
+      border-radius: 12px;
       overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      width: 200px;
-      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
       text-align: center;
-      opacity: 0;
-      transform: translateY(20px);
+      aspect-ratio: 4/5; /* altura proporcional à largura */
     }
 
     .card-contato.show {
