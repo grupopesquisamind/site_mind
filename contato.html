@@ -15,154 +15,152 @@
   <script src="javascript/components/footer.js" defer></script>
 
   <style>
-  /* ====== Reset e base ====== */
-  html, body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+    /* ====== Estrutura ====== */
+    #page-wrapper {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      min-height: 100vh;
+      margin: auto;
+      overflow: auto;
+    }
 
-  /* ====== Wrapper geral ====== */
-  #page-wrapper {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    min-height: 100vh;
-    width: 100%;
-    margin: 0;
-    overflow: auto;
-  }
+    h2, h5 {
+      text-align: center;
+    }
 
-  h2, h5 {
-    text-align: center;
-  }
+    /* ====== Cards de contato ====== */
+    .gallery-contatos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
 
-  /* ====== Container principal ====== */
-  main.container {
-    width: 100%;
-    max-width: 100%;
-    padding: 0 1rem; /* espaçamento lateral */
-  }
+    .card-contato {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      border-radius: 14px;
+      background-color: #fff;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width: 300px;
+      cursor: pointer;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(30px);
+    }
 
-  /* ====== Container dos cards ====== */
-  #contatosContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 2rem;
-    width: 100%;
-  }
+    /* ====== Animação ====== */
+    .card-contato.show {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.8s ease;
+    }
 
-  /* ====== Card ====== */
-  .card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    text-align: center;
-    width: 200px;
-  }
+    .card-contato:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      z-index: 2;
+    }
 
-  .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  }
+    .card-contato img {
+      width: 100%;
+      height: auto;
+      min-height: 200px;
+      display: block;
+      border-bottom: 1px solid #eee;
+      object-fit: contain;
+      background-color: #f8f9fa;
+      transition: transform 0.3s ease;
+    }
 
-  /* ====== Imagem ====== */
-  .card-img {
-    width: 100%;
-    height: auto;
-    min-height: 180px;
-    object-fit: contain;
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #eee;
-    transition: transform 0.3s ease;
-  }
+    .card-contato:hover img {
+      transform: scale(1.02);
+    }
 
-  .card:hover .card-img {
-    transform: scale(1.02);
-  }
+    .card-body-contato {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
 
-  /* ====== Informações ====== */
-  .card-info {
-    padding: 0.6rem;
-    font-size: 0.85rem;
-    width: 100%;
-    background: #ffffff;
-    min-height: 150px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+    .card-title-contato {
+      font-weight: 600;
+      color: #222;
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
 
-  .card-title {
-    font-weight: bold;
-    font-size: 0.9rem;
-    color: #333;
-    margin-bottom: 0.3rem;
-  }
+    .card-text-contato {
+      font-size: 0.85rem;
+      color: #555;
+      line-height: 1.3rem;
+    }
 
-  .card-text {
-    font-size: 0.8rem;
-    color: #555;
-    margin: 0.2rem 0;
-  }
+    /* ====== Responsividade ====== */
+    @media (max-width: 576px) { .card-contato { width: 90%; } }
+    @media (min-width: 577px) and (max-width: 768px) { .card-contato { width: 45%; } }
+    @media (min-width: 769px) and (max-width: 1200px) { .card-contato { width: 30%; } }
+    @media (min-width: 1201px) { .card-contato { width: 22%; } }
 
-  /* ====== Responsividade ====== */
-  @media (max-width: 576px) { .card { width: 80%; } }
-  @media (min-width: 577px) and (max-width: 768px) { .card { width: 45%; } }
-  @media (min-width: 769px) and (max-width: 1200px) { .card { width: 28%; } }
-  @media (min-width: 1201px) { .card { width: 200px; } }
+    /* ====== Mapa ====== */
+    .embed-google-map {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+    }
 
-  /* ====== Mapa ====== */
-  .embed-google-map {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .embed-google-map iframe {
-    width: 100% !important;
-    max-width: 100%;
-    height: 320px;
-    border: 0;
-  }
+    .embed-google-map iframe {
+      width: 100%;
+      max-width: 900px;
+      height: 350px;
+      border: 0;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    }
   </style>
 </head>
 
 <body>
   <meu-menu></meu-menu>
 
-  <div id="page-wrapper">
-    <main class="container my-4">
+  <div id="page-wrapper" class="container-fluid my-4">
+    <div id="page-content-wrapper">
       <h2 class="text-danger"><strong>Movimento para Inclusão e Neurodiversidade</strong></h2>
       <h5 class="text-center mb-4">Contatos e Responsáveis pelos Projetos</h5>
-
-      <div id="contatosContainer"></div>
-
-      <div class="text-center mt-4">
-        <h5>Instituição de Vínculo da Equipe MIND:</h5>
-        <h5><strong>Instituto Federal de São Paulo - Campus Jacareí</strong></h5>
-        <h5>Rua Antônio Fogaça de Almeida, 200 - Jardim América, Jacareí - SP</h5>
-        <h5><strong>Contato:</strong> Alexssandro — (12) 2128-5218</h5>
-        <h5><a href="https://jcr.ifsp.edu.br/" target="_blank" class="text-primary">🔗 Acesso ao site do IFSP-JCR</a></h5>
-      </div>
-
-      <!-- Mapa -->
-    <div class="embed-google-map mt-4 d-flex justify-content-center">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d640.1111432226878!2d-45.98435759573596!3d-23.31748639596604!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cdcc814521b981%3A0xde813412bf4e04d!2sR.%20Ant%C3%B4nio%20Foga%C3%A7a%20de%20Almeida%2C%20200%20-%20Jardim%20America%2C%20Jacare%C3%AD%20-%20SP%2C%2012322-030%2C%20Brasil!5e1!3m2!1spt-BR!2sus!4v1750033904303!5m2!1spt-BR!2sus" 
-        width="300px" height="450px" style="border:0;" allowfullscreen loading="lazy"></iframe>
     </div>
 
-    </main>
+    <!-- ====== Cards de Contatos ====== -->
+    <section class="gallery-contatos" id="contatosContainer"></section>
+
+    <!-- ====== Informações institucionais ====== -->
+    <div class="text-center mt-4">
+      <h5>Instituição de Vínculo da Equipe MIND:</h5>
+      <h5><strong>Instituto Federal de São Paulo - Campus Jacareí</strong></h5>
+      <h5>Rua Antônio Fogaça de Almeida, 200 - Jardim América, Jacareí - SP</h5>
+      <h5><strong>Contato:</strong> Alexssandro — (12) 2128-5218</h5>
+      <h5>
+        <a href="https://jcr.ifsp.edu.br/" target="_blank" class="text-primary">
+          🔗 Acesso ao site do IFSP-JCR
+        </a>
+      </h5>
+    </div>
+
+    <!-- ====== Mapa ====== -->
+    <div class="embed-google-map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d640.1111432226878!2d-45.98435759573596!3d-23.31748639596604!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cdcc814521b981%3A0xde813412bf4e04d!2sR.%20Ant%C3%B4nio%20Foga%C3%A7a%20de%20Almeida%2C%20200%20-%20Jardim%20America%2C%20Jacare%C3%AD%20-%20SP%2C%2012322-030%2C%20Brasil!5e1!3m2!1spt-BR!2sus!4v1750033904303!5m2!1spt-BR!2sus"
+        allowfullscreen loading="lazy"></iframe>
+    </div>
   </div>
 
   <meu-footer></meu-footer>
@@ -172,32 +170,43 @@
   <script src="javascript/dados-contatos.js"></script>
 
   <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const contatos = listarItens('contatos');
-    const container = document.getElementById('contatosContainer');
+    document.addEventListener('DOMContentLoaded', () => {
+      const contatos = listarItens('contatos');
+      const container = document.getElementById('contatosContainer');
 
-    contatos.forEach(item => {
-      const div = document.createElement('div');
-      div.innerHTML = `
-        <div class="card">
+      contatos.forEach(item => {
+        const card = document.createElement('div');
+        card.classList.add('card-contato');
+        card.innerHTML = `
           <img src="imagens/autores_equipe/${item.imagem || 'default.jpg'}"
                alt="Foto de ${item.nome}"
-               class="card-img"
                onerror="this.src='imagens/autores_equipe/default.jpg';">
-          <div class="card-info">
-            <div class="card-title">${item.nome ?? ''}</div>
-            <div class="card-text"><strong>Cargo IFSP:</strong> ${item.funcao ?? ''}</div>
-            <div class="card-text"><strong>Função MIND:</strong> ${item.tipoParticipacao ?? ''}</div>
-            <div class="card-text"><strong>E-mail:</strong> ${item.email ?? ''}</div>
-            <div class="card-text"><strong>Lattes:</strong> 
+          <div class="card-body-contato">
+            <div class="card-title-contato">${item.nome ?? ''}</div>
+            <div class="card-text-contato"><strong>Cargo IFSP:</strong> ${item.funcao ?? ''}</div>
+            <div class="card-text-contato"><strong>Função MIND:</strong> ${item.tipoParticipacao ?? ''}</div>
+            <div class="card-text-contato"><strong>E-mail:</strong> ${item.email ?? ''}</div>
+            <div class="card-text-contato"><strong>Lattes:</strong> 
               <a href="${item.lattes?.trim() || '#'}" class="text-primary" target="_blank">🔗 Acessar</a>
             </div>
           </div>
-        </div>
-      `;
-      container.appendChild(div);
+        `;
+        container.appendChild(card);
+      });
+
+      // Animação de entrada (igual à Home)
+      const cards = document.querySelectorAll(".card-contato");
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+
+      cards.forEach(card => observer.observe(card));
     });
-  });
   </script>
 </body>
 </html>
