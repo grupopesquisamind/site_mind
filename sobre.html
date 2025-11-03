@@ -5,7 +5,7 @@
   <title>MIND - Sobre</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Bootstrap CSS -->
+  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
@@ -15,165 +15,148 @@
   <script src="javascript/components/footer.js" defer></script>
 
   <style>
-     .card-sobre {
-      background-color: #f9f9f9;
-      border-left: 5px solid #dc3545;
-      border-radius: 8px;
+    body {
+      background-color: #f5f5f5;
+      font-family: Arial, sans-serif;
     }
 
+    main.container {
+      max-width: 900px;
+    }
+
+    /* ====== Título e Legenda ====== */
+    h5 small {
+      font-size: 0.85rem;
+      color: #6c757d;
+    }
+
+    /* ====== Estilo geral do Accordion ====== */
+    .accordion-item {
+      border: none;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      overflow: hidden;
+      background-color: #fff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    /* ====== Botão padrão ====== */
+    .accordion-button {
+      background-color: #f9f9f9;
+      color: #070707;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    /* ====== Quando o painel está aberto ====== */
+    .accordion-button:not(.collapsed) {
+      background-color: #070707 !important;
+      color: #f9f9f9 !important;
+      box-shadow: none !important;
+    }
+
+    /* Remove contorno azul padrão */
+    .accordion-button:focus {
+      box-shadow: none !important;
+      border-color: #333 !important;
+    }
+
+    /* ====== Seta (fechado) ====== */
+    .accordion-button::after {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23070707' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.5 5.5l6 6 6-6z'/%3E%3C/svg%3E") !important;
+      transition: transform 0.3s ease;
+    }
+
+    /* ====== Seta (aberto) ====== */
+    .accordion-button:not(.collapsed)::after {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f9f9f9' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.5 5.5l6 6 6-6z'/%3E%3C/svg%3E") !important;
+      transform: rotate(180deg);
+    }
+
+    /* ====== Corpo do conteúdo ====== */
     .accordion-body {
-      text-align: justify;
+      background-color: #fff;
+      color: #333;
+      line-height: 1.6;
+      padding: 1.2rem;
+    }
+
+    /* ====== Ajuste para telas pequenas ====== */
+    @media (max-width: 576px) {
+      main.container {
+        padding: 0 1rem;
+      }
     }
   </style>
 </head>
+
 <body>
 
-  <!-- Botão de menu -->
+  <!-- Menu -->
   <meu-menu></meu-menu>
   <div id="overlay"></div>
 
   <!-- Conteúdo principal -->
-  <div id="page-wrapper">
-    <div id="page-content-wrapper"></div>
+  <main class="container my-5">
+    <h2 class="text-center text-danger mb-3">
+      <strong>Movimento para Inclusão e Neurodiversidade</strong>
+    </h2>
 
-    <main class="container-fluid my-1 pt-0 mt-5 mb-5">
-      <h2 class="text-center text-danger"><strong>Movimento para Inclusão e Neurodiversidade.</strong></h2>
-      <section class="mt-3">
-      <h5 class="text-center text-black">
-        <strong>
-          Informações sobre a equipe MIND e o Processo Inclusivo para Alunos com TEA.
-        </strong>
-      </h5>
-        <div class="row container-fluid g-4" id="sobreContainer">
-          <!-- Accordion será inserido via JavaScript -->
-        </div>
-      </section>
-    </main>
-  </div>
+    <h5 class="text-black mb-4 text-center">
+      <strong>Informações sobre a equipe MIND e o Processo Inclusivo para Alunos com TEA.</strong>
+      <small class="d-block text-muted mt-1">
+        Clique nos títulos para abrir ou recolher os textos.
+      </small>
+    </h5>
+
+    <!-- Accordion será gerado aqui -->
+    <div class="accordion shadow-sm rounded-3" id="accordionSobre"></div>
+  </main>
 
   <!-- Dados -->
   <script src="javascript/dados-sobre.js"></script>
 
-  <!-- Script para montar o accordion -->
+  <!-- Montagem dinâmica do accordion -->
   <script>
-  const dados = listarItens('sobreProjeto'); // Certifique-se que essa função e variável estão corretas
-const container = document.getElementById("sobreContainer");
+  document.addEventListener("DOMContentLoaded", () => {
+    const dados = listarItens('sobreProjeto');
+    const container = document.getElementById("accordionSobre");
 
-if (Array.isArray(dados) && dados.length > 0) {
-  const accordion = document.createElement("div");
-  accordion.className = "accordion";
-  accordion.id = "accordionSobre";
+    if (!Array.isArray(dados) || !dados.length) return;
 
-  dados.forEach((item, index) => {
-    accordion.innerHTML += `
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="heading${index}a">
-          <button class="accordion-button" type="button" 
-                  data-bs-toggle="collapse" 
-                  data-bs-target="#collapse${index}a"
-                  aria-expanded="true" 
-                  aria-controls="collapse${index}a">
-            Sobre o Projeto e a Equipe
-          </button>
-        </h2>
-        <div id="collapse${index}a" class="accordion-collapse collapse show" 
-             aria-labelledby="heading${index}a">
-          <div class="accordion-body">${item.descricao}</div>
-        </div>
-      </div>
+    const item = dados[0]; // usa o primeiro, pois há apenas um conjunto de dados
 
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="heading${index}b">
-          <button class="accordion-button" type="button" 
-                  data-bs-toggle="collapse" data-bs-target="#collapse${index}b"
-                  aria-expanded="true" aria-controls="collapse${index}b">
-            Principais Estratégias
-          </button>
-        </h2>
-        <div id="collapse${index}b" class="accordion-collapse collapse show" 
-             aria-labelledby="heading${index}b">
-          <div class="accordion-body">${item.principaisestrategias}</div>
-        </div>
-      </div>
+    const secoes = [
+      { id: "a", titulo: "Sobre o Projeto e a Equipe", conteudo: item.descricao },
+      { id: "b", titulo: "Principais Estratégias", conteudo: item.principaisestrategias },
+      { id: "c", titulo: "Principais Desafios", conteudo: item.desafios },
+      { id: "d", titulo: "Perspectivas", conteudo: item.perspectivas }
+    ];
 
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="heading${index}c">
-          <button class="accordion-button" type="button" 
-                  data-bs-toggle="collapse" data-bs-target="#collapse${index}c"
-                  aria-expanded="true" aria-controls="collapse${index}c">
-            Principais Desafios
-          </button>
-        </h2>
-        <div id="collapse${index}c" class="accordion-collapse collapse show" 
-             aria-labelledby="heading${index}c">
-          <div class="accordion-body">${item.desafios}</div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="heading${index}d">
-          <button class="accordion-button" type="button" 
-                  data-bs-toggle="collapse" data-bs-target="#collapse${index}d"
-                  aria-expanded="true" aria-controls="collapse${index}d">
-            Perspectivas
-          </button>
-        </h2>
-        <div id="collapse${index}d" class="accordion-collapse collapse show" 
-             aria-labelledby="heading${index}d">
-          <div class="accordion-body">${item.perspectivas}</div>
-        </div>
-      </div>
-
-     <!--  <div class="accordion-item">
-        <h2 class="accordion-header" id="heading${index}e">
-          <button class="accordion-button" type="button" 
-                  data-bs-toggle="collapse" data-bs-target="#collapse${index}e"
-                  aria-expanded="true" aria-controls="collapse${index}e">
-            Certificação do Grupo de Pesquisa
-          </button>
-        </h2>
-       <div id="collapse${index}e" class="accordion-collapse collapse show" 
-             aria-labelledby="heading${index}e">
-          <div class="accordion-body">
-            <a href="${item.certificacao || '#'}" target="_blank">Acesse aqui</a>
+    secoes.forEach((sec) => {
+      container.innerHTML += `
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading${sec.id}">
+            <button class="accordion-button collapsed" 
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapse${sec.id}"
+                    aria-expanded="false"
+                    aria-controls="collapse${sec.id}">
+              ${sec.titulo}
+            </button>
+          </h2>
+          <div id="collapse${sec.id}" 
+               class="accordion-collapse collapse" 
+               aria-labelledby="heading${sec.id}">
+            <div class="accordion-body">
+              ${sec.conteudo}
+            </div>
           </div>
         </div>
-        -->
-      </div>
-    `;
+      `;
+    });
   });
-
-  container.appendChild(accordion);
-}
-
-  </script>
-
-  <!-- Menu JS -->
-  <script>
-    const menuToggleBtn = document.getElementById('menu-toggle-btn');
-    const menu = document.querySelector('meu-menu');
-    const overlay = document.getElementById('overlay');
-
-    function openMenu() {
-      menu.classList.add('open');
-      overlay.classList.add('show');
-      document.body.classList.add('menu-open');
-    }
-
-    function closeMenu() {
-      menu.classList.remove('open');
-      overlay.classList.remove('show');
-      document.body.classList.remove('menu-open');
-    }
-
-    menuToggleBtn.addEventListener('click', () => {
-      menu.classList.contains('open') ? closeMenu() : openMenu();
-    });
-
-    overlay.addEventListener('click', closeMenu);
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 768) closeMenu();
-    });
   </script>
 
   <!-- Bootstrap JS -->
@@ -181,5 +164,6 @@ if (Array.isArray(dados) && dados.length > 0) {
 
   <!-- Rodapé -->
   <meu-footer></meu-footer>
+
 </body>
 </html>
