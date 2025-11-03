@@ -65,12 +65,11 @@ h2, h5 {
 
 }
 
-/* ====== Imagem do Card ====== */
+/* ====== Imagem do Card com tamanho fixo ====== */
 .card-img {
-  width: 100%;          /* ocupa toda largura da coluna */
-  height: auto;         /* mantém proporção */
-  max-height: 250px;    /* altura máxima relativa ao card */
-  object-fit: contain;  /* evita cortes da imagem */
+  width: 100%;            /* ocupa toda a largura do card */
+  height: 180px;          /* altura fixa para todas as imagens */
+  object-fit: cover;      /* mantém proporção, mas preenche a área */
   border-bottom: 1px solid #eee;
   transition: transform 0.3s ease;
 }
