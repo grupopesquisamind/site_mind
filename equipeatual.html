@@ -78,8 +78,9 @@ h2, h5 {
 /* ====== Imagem do Card ====== */
 .card-img {
   width: 100%;
-  height: 140px; /* altura fixa como na galeria */
-  object-fit: cover;
+  height: auto;       /* deixa altura proporcional */
+  max-height: 100%;   /*140px não ultrapassa a altura do card */
+  object-fit: contain; /* mantém proporção sem cortar */
   border-bottom: 1px solid #eee;
   transition: transform 0.3s ease;
 }
