@@ -127,6 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const autores = listarItens('autores');
   const autoresContainer = document.getElementById('container-autores');
 
+  // Remover duplicatas por nome
   const nomesUnicos = new Map();
   autores.forEach(autor => {
     if (!nomesUnicos.has(autor.nome)) {
@@ -148,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="card-info">
           <div class="card-title">${autor.nome ?? ''}</div>
           <div class="card-text"><strong>Participação:</strong> ${autor.tipoParticipacao ?? ''}</div>
-         <!-- <div class="card-text"><strong>Formação:</strong> ${autor.formacao ?? ''}</div> -->
+          <div class="card-text"><strong>Formação:</strong> ${autor.formacao ?? ''}</div>
         </div>
       </div>
     `;
