@@ -1,7 +1,7 @@
 class MeuFooter extends HTMLElement {
   connectedCallback() {
     const ano = new Date().getFullYear();
-    const ultimaAtualizacao = '30/10/2025';
+    const ultimaAtualizacao = '03/11/2025';
     const versao = 'v1.0.0';
 
     this.innerHTML = `
