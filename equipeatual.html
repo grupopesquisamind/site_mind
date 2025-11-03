@@ -28,14 +28,14 @@ h2, h5 {
   text-align: center;
 }
 
-/* ====== Grid responsivo como na galeria ====== */
 .card-container {
-  display: grid;
-  gap: 1rem;
-  justify-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-}
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
 
+    
 /* Ajuste de colunas por largura da tela */
 @media (min-width: 1600px) { .card-container { grid-template-columns: repeat(7, 1fr); } }
 @media (min-width: 1200px) and (max-width: 1599px) { .card-container { grid-template-columns: repeat(5, 1fr); } }
