@@ -6,7 +6,7 @@ function listarItens(chave) {
 	principaisestrategias: "Estratégias eficazes são as que se baseiam no conhecimento profundo do aluno e seu contexto; Adaptação curricular individualizada; Ambientes afetivos e seguros; Uso de materiais visuais e concretos; Comunicação clara e estruturada; Transformar os conteúdos escolares de forma a garantir a participação e a aprendizagem reais, com exemplificação de situações do cotidiano; Proporcionar ao aluno previsibilidade nas rotinas; Desenvolvimento de linguagem, habilidades sociais e flexibilidade cognitiva; Práticas pedagógicas colaborativas e criativas; Formação continuada dos educadores; Parceria contínua com as famílias, docentes e profissionais por meio de oficinas e reuniões.",
 	desafios: "Alguns dos grandes desafios envolvem a falta de formação específica de professores; Práticas normativas que excluem; Cobrança excessiva e sem apoio pedagógico; Falta de articulação entre os setores escolares e professores; Persistência de preconceito, estigmas e bullying; Em muitas situações, a inclusão ainda depende de ações isoladas ou da boa vontade de porfessores/profissionais.",
 	perspectivas: "Entender como os professores vivenciam o processo de inclusão dos alunos com TEA em sala de aula, como sentem, pensam e atribuem significado a essa experiência, quais necessidades e adaptações curriculares educacionais são necessárias, a partir do seu ponto de vista e das necessidades individualizadas dos alunos com TEA.",
-	certificacao: "http://dgp.cnpq.br/dgp/espelhogrupo/6627435564246794"
+	certificacao: ""
 },
 
     ];
