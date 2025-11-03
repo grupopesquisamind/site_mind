@@ -12,10 +12,12 @@
 <!-- Magnific Popup -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" />
 
+<!-- Componentes -->
 <script src="javascript/components/menu.js" defer></script>
 <script src="javascript/components/footer.js" defer></script>
 
 <style>
+/* ====== Layout ====== */
 #page-wrapper {
   display: flex;
   flex-direction: column;
@@ -29,16 +31,15 @@ h2, h5 {
   text-align: center;
 }
 
-/* ====== Galeria (idêntica à Equipe Atual) ====== */
+/* ====== Galeria estilo “cards” ====== */
 .gallery {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
-  padding: 0.5rem;
 }
 
-/* ====== Estilo dos cards ====== */
+/* Cards */
 .gallery a {
   display: flex;
   flex-direction: column;
@@ -49,7 +50,7 @@ h2, h5 {
   box-shadow: 0 2px 8px rgba(255,255,255,0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   text-align: center;
-  width: 180px; /* igual ao da equipe */
+  width: 180px;
   height: 100%;
   text-decoration: none;
   color: inherit;
@@ -79,12 +80,12 @@ h2, h5 {
   font-size: 0.85rem;
   font-weight: 500;
   width: 100%;
-  background: #ffffff;
-  min-height: 60px; /* altura uniforme */
+  min-height: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: #ffffff;
   color: #555;
 }
 
