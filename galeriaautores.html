@@ -30,6 +30,13 @@
       justify-content: center;
       gap: 1rem;
     }
+/* Ajuste de colunas por largura da tela */
+/* ====== Responsividade ====== */
+@media (min-width: 1600px) { .gallery { grid-template-columns: repeat(7, 1fr); } }
+@media (min-width: 1200px) and (max-width: 1599px) { .gallery { grid-template-columns: repeat(5, 1fr); } }
+@media (min-width: 992px) and (max-width: 1199px) { .gallery { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 768px) and (max-width: 991px) { .gallery { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 767px) { .gallery { grid-template-columns: repeat(2, 1fr); } }
   </style>
 </head>
 <body>
