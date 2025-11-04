@@ -325,9 +325,42 @@ function listarItens(chave) {
     linkPublicacao: "https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie/article/view/30/",
     publicacaoArquivo: "publicacaoArquivo/Publicacoes_Jogos/25-Jogos_de_Quimica_Jogos_computacionais_contacao_historia_uma_proposta_educacional_inclusiva_para_ensinar_funcoes_oxigenadas_CAIE_REI_2024.pdf",
     referenciar: "GOMES, Mateus Cayque Figueiredo; ARAUJO, S. M.; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; CAMEJO AVILES, Ivana Elena. Jogos computacionais e a contação de história: uma proposta educacional inclusiva para ensinar funções oxigenadas. Revista da Educação Inclusiva, v. 1, p. 177-192, 2024. Disponível em: https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie/issue/view/30",
+  },
+{
+    id: "26", /*enviado ao EPPEQ, aguardando publicação*/
+    autor: "Yara Vitoria Claro de Freitas",
+    ano: "2024",
+    nomeProducao: "Feromônios para o ensino de isomeria geométrica. (Aguardando publicação nos Anais do Congresso)",
+    titulo: "Formigas, feromônios e Isômeros Geométricos: Proposta de Jogo Educacional Digital para a educação inclusiva de alunos com TEA.",
+    categoria: "Química",
+    tipo: "Jogo Educativo",
+    src: "https://scratch.mit.edu/projects/1234855642/embed",
+    linkPublicacao: "aviso.html",
+    publicacaoArquivo: "",
+    referenciar: "FREITAS, Yara Vitoria Claro de; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; NASCIMENTO, Ricardo Henrique dos Reis; CAMEJO AVILES, Ivana Elena. Formigas, feromônios e Isômeros Geométricos: Proposta de Jogo Educacional Digital para a educação inclusiva de alunos com TEA. 2025. In: EPPEQ-ENCONTRO PAULISTA DE PESQUISA EM ENSINO DE QUÍMICA, XIII, 2025, Presidente Prudente-SP. Anais [...]. Unesp: 2025, . Disponível em:",
+  },
+  {
+    id: "27", /*enviado ao EPPEQ, aguardando publicação*/
+    autor: "Thiago Marinho Santos",
+    ano: "2024",
+    nomeProducao: "Máquina a vapor. (Aguardando publicação nos Anais do Congresso)",
+    titulo: "Do Vapor à Inclusão: Um Recurso Didático Digital Baseado na História da Máquina a Vapor para Alunos com Transtorno do Espectro Autista.",
+    categoria: "Física",
+    tipo: "Jogo Educativo",
+    src: "https://scratch.mit.edu/projects/1234857192/embed",
+    linkPublicacao: "aviso.html",
+    publicacaoArquivo: "",
+    referenciar: "SANTOS, Thiago Marinho; SILVA, Alexssandro Ferreira da; NASCIMENTO, Ricardo Henrique dos Reis; FERREIRA, Ana Paula Kawabe de Lima. Do Vapor à Inclusão: Um Recurso Didático Digital Baseado na História da Máquina a Vapor para Alunos com Transtorno do Espectro Autista. 2025. In: EPPEQ-ENCONTRO PAULISTA DE PESQUISA EM ENSINO DE QUÍMICA, XIII, 2025, Presidente Prudente-SP. Anais [...]. Unesp: 2025, . Disponível em:",
   }
-
 ];
   }
   return [];
 }
+
+/*
+Química Orgânica - ORG 3- hidroc cadeia aberta
+Lyan              (trabalho aplicado)
+https://scratch.mit.edu/projects/1141670774/	
+
+eppeq 2025
+*/
