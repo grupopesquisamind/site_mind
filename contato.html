@@ -38,17 +38,17 @@
     }
 
     .card-contato {
-      width: 180px; /* largura do card */
-      height: 430px; /* ocupa 60% do card */
-      display: flex;
-      flex-direction: column;
-      background: #fff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      text-align: center;
-      aspect-ratio: 4/5; /* altura proporcional à largura */
+     width: 180px; /* largura do card */
+    height: 380px; /* ocupa 60% do card */
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
+    aspect-ratio: 4/5; /* altura proporcional à largura */
     }
 
     .card-contato.show {
@@ -65,12 +65,9 @@
 
     .card-contato img {
       width: 100%;
-      height: 200px;
-      min-height: 150px;
-      display: block;
+      height: 50%; /* ocupa 60% do card */
+      object-fit: cover; /* cobre o card sem deformar */
       border-bottom: 1px solid #eee;
-      object-fit: contain;
-      background-color: #f8f9fa;
       transition: transform 0.3s ease;
     }
 
@@ -90,18 +87,18 @@
     }
 
     .card-title-contato {
-      font-weight: 600;
-      color: #222;
-      font-size: 0.85rem;
-      margin-bottom: 0.2rem;
+      font-weight: bold;
+      font-size: 0.9rem;
+      color: #333;
+      margin-top: 0.2rem;
+
     }
 
     .card-text-contato {
-      font-size: 0.7rem;
+      font-size: 0,8rem;
       color: #555;
       line-height: 1rem;
       text-align: justify;
-
     }
 
     /* ====== Responsividade ====== */
@@ -183,8 +180,9 @@
             <div class="card-title-contato">${item.nome ?? ''}</div>
             <div class="card-text-contato"><strong>Cargo IFSP:</strong> ${item.funcao ?? ''}</div>
             <div class="card-text-contato"><strong>Função MIND:</strong> ${item.tipoParticipacao ?? ''}</div>
-            <div class="card-text-contato"><strong>E-mail:</strong> ${item.email ?? ''}</div>
-            <div class="card-text-contato"><strong>Lattes:</strong> 
+            <div class="card-text-contato"><strong>E-mail:</strong> ${item.email ?? ''}</div> <br>
+            <div class="card-text-contato text-start">
+              <strong>Lattes:</strong> 
               <a href="${item.lattes?.trim() || '#'}" class="text-primary" target="_blank">🔗 Acessar</a>
             </div>
           </div>
