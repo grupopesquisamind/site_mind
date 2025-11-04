@@ -131,7 +131,7 @@ function listarItens(tipo) {
         anoSaida: "Atualmente",
         instituicao: "IFSP Jacareí",
         lattes: "http://lattes.cnpq.br/4733654913237092",
-        imagem: "",  // <-- Só o nome do arquivo / se estiver sem foto no lattes adota foto default
+        imagem: "tardelli.jpg",  // <-- Só o nome do arquivo / se estiver sem foto no lattes adota foto default
       },
     {     
         id: "11",
