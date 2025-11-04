@@ -5,7 +5,7 @@ function listarItens(chave) {
        {
         status: "Evento Encerrado",
         titulo: "XIII Encontro Paulista de Pesquisa em Ensino de Química",
-        data: "17-19 setembro 2025",
+        data: "17 a 19 de setembro de 2025",
         tema: "Educação Química em contexto Histórico-Político-Social",
         sediadoPor: "Departamento de Química e Bioquímica da Faculdade de Ciências Tecnologia da UNESP, Campus Presidente Prudente.",
         local: "Presidente Prudente / SP",
