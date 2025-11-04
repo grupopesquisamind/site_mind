@@ -51,7 +51,7 @@ function listarItens(chave) {
     src: "https://scratch.mit.edu/projects/1086926136/embed",
     linkPublicacao: "http://eppeq.ti.srt.ifsp.edu.br/index.php/eppeq/article/view/122",
     publicacaoArquivo: "publicacaoArquivo/Publicacoes_Jogos/4-Jogos_de_Ciencias_Utilizacao_da_Plataforma_Scratch_no_Ensino_dos_Orgaos_do_Corpo_Humano_para_Alunos_TEA_Nivel_Suporte_EPPEQ_2023.pdf",
-    referenciar: "CAMPOS, Ryan Cristian Sousa; MONTEMOR, Bianca Estrela  Abdalla França Camargo; FERREIRA, Gabriel Kawabe de Lima; SILVA,  Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima.  Utilização da Plataforma Scratch no Ensino dos Órgãos do Corpo Humano para Alunos com TEA, Nível de Suporte 2. In: EPPEQ-ENCONTRO PAULISTA DE PESQUISA EM ENSINO DE QUÍMICA, XII, 2023, Ribeirão Preto e Sertãozinho-SP. Anais [...]. Sertãozinho: IFSP, 2023, V1, nº 12, p. 1-11. Disponível em: http://eppeq.ti.srt.ifsp.edu.br/index.php/eppeq/article/view/122",
+    referenciar: "CAMPOS, Ryan Cristian Sousa; MONTEMOR, Bianca Estrela Abdalla França Camargo; FERREIRA, Gabriel Kawabe de Lima; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Utilização da Plataforma Scratch no Ensino dos Órgãos do Corpo Humano para Alunos com TEA, Nível de Suporte 2. In: EPPEQ-ENCONTRO PAULISTA DE PESQUISA EM ENSINO DE QUÍMICA, XII, 2023, Ribeirão Preto e Sertãozinho-SP. Anais [...]. Sertãozinho: IFSP, 2023, V1, nº 12, p. 1-11. Disponível em: http://eppeq.ti.srt.ifsp.edu.br/index.php/eppeq/article/view/122",
   },
   {
     id: "5",
@@ -64,7 +64,7 @@ function listarItens(chave) {
     src: "https://scratch.mit.edu/projects/1086916528/embed",
     linkPublicacao: "https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9636/3156",
     publicacaoArquivo: "publicacaoArquivo/Publicacoes_Jogos/5-Jogos_de_Ciencias_Ensino_Circulacao_Sanguinea_alunos_com_TEA_nivel_Suporte_2_atraves_ferramenta_computacional_Scratch_atrelada_CAA_CONICT_2023.pdf",
-    referenciar: "CAMPOS, Ryan Cristian Sousa; MONTEMOR, Bianca Estrela  Abdalla França Camargo; SILVA,  Alexssandro Ferreira da; MALDONADO, Raquel Fonseca; FERREIRA, Ana Paula Kawabe de Lima. Ensino da Circulação Sanguínea para alunos com TEA, nível de Suporte 2, através da ferramenta computacional Scratch atrelada à Comunicação Aumentativa e Alternativa. In: CONGRESSO DE INOVAÇÃO, CIÊNCIA E TECNOLOGIA DO IFSP, XIV, 2023, Capivari-SP. Anais [...]. Capivari: IFSP-SP, 2023, p. 1-6. ISSN: 2178-9959. Disponível em: https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9636/",
+    referenciar: "CAMPOS, Ryan Cristian Sousa; MONTEMOR, Bianca Estrela Abdalla França Camargo; SILVA, Alexssandro Ferreira da; MALDONADO, Raquel Fonseca; FERREIRA, Ana Paula Kawabe de Lima. Ensino da Circulação Sanguínea para alunos com TEA, nível de Suporte 2, através da ferramenta computacional Scratch atrelada à Comunicação Aumentativa e Alternativa. In: CONGRESSO DE INOVAÇÃO, CIÊNCIA E TECNOLOGIA DO IFSP, XIV, 2023, Capivari-SP. Anais [...]. Capivari: IFSP-SP, 2023, p. 1-6. ISSN: 2178-9959. Disponível em: https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9636/",
   },
   {
     id: "6",
@@ -132,20 +132,20 @@ function listarItens(chave) {
     referenciar: "FERREIRA, Gabriel Kawabe de Lima; MONTEMOR, Bianca Estrela  Abdalla França Camargo; SILVA,  Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. O semáforo do corpo humano combinado à Comunicação Aumentativa e Alternativa através da utilização da Ferramenta metodológica Scratch.  IN: CONGRESSO DE INICIAÇÃO CIENTÍFICA DO IFSP ITAPETININGA, IX. 2023, Itapetininga-SP. Anais [...]. Itapetininga: Edições Hipótese, 2023, p. 232-237. Disponível em: https://drive.google.com/file/d/1q6IocMyieI3uPrkgpwYN3SfP_Pwk2CWv/view e FERREIRA, Gabriel Kawabe de Lima; CAMPOS, Ryan Cristian Sousa; SILVA, Alexssandro Ferreira da; CAMARGO, Bianca Estrela Montemor Abdlla França; FERREIRA, Ana Paula Kawabe de Lima. Semáforo do Corpo: uma proposta lúdica de sensações ao toque utilizando comunicação aumentativa e alternativa. Revista Macambira, [S. l.], v. 9, n. 1, p. 1–18, 2025. DOI: 10.35642/rm.v9i1.1227. Disponível em: https://revista.lapprudes.net/RM/article/view/1227",
   },
   {
-    id: "11",
+    id: "11", /*Projeto Faltando em src*/
     autor: "Gabriel Kawabe de Lima Ferreira",
     ano: "2024",
     nomeProducao: "Jogo Figuras Geométricas Planas.",
     titulo: "Estratégia pedagógica inclusiva para alunos no transtorno do espectro autista: ensino de formas geométricas planas",
     categoria: "Matemática",
     tipo: "Jogo Educativo",
-    src: "https://scratch.mit.edu/projects/1086924178/embed",
+    src: "aviso.html",
     linkPublicacao: "https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie/article/view/36/",
     publicacaoArquivo: "publicacaoArquivo/Publicacoes_Jogos/11-Jogos_de_Matematica_Estrategia_pedagogica_inclusiva_alunos_Transtorno_Espectro_Autista_ensino_formas_geometricas_planas_CAIE_REI_2024.pdf",
     referenciar: "FERREIRA, Gabriel Kawabe de Lima; SILVA, Alexssandro Ferreira da; Ferreira, Ana Paula Kawabe de Lima. Estratégia pedagógica inclusiva para alunos no transtorno do espectro autista: ensino de formas geométricas planas. Revista da Educação Inclusiva, v. 1, p. 128-139, 2024. Disponível em: https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie/article/view/36",
   },
   {
-    id: "12",
+    id: "12", /*Projeto Faltando em src*/
     autor: "Ricardo Henrique dos Reis Nascimento e Ryan Cristian Sousa Campos ",
     ano: "2022",
     nomeProducao: "Jogo Junção de Termoquímica 1 a 4, só a parte de inclusão.",
@@ -158,10 +158,10 @@ function listarItens(chave) {
     referenciar: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, Ricardo dos Reis; CAMPOS, Ryan Cristian Sousa; MONTEMOR, Bianca Estrela  Abdalla França Camargo; FERREIRA, Gabriel Kawabe de Lima; SILVA,  Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. A utilização do Scratch para o ensino de termoquímica para alunos com TEA. Cadernos Macambira, v. 7, n. 3, p. 82-89, 2022. Disponível em: https://revista.lapprudes.net/index.php/CM/article/view/790",
   },
   {
-    id: "13",
+    id: "13", /*Projeto Faltando em src*/
     autor: "Ricardo Henrique dos Reis Nascimento e Ryan Cristian Sousa Campos ",
     ano: "2022",
-    nomeProducao: "Jogo Junção de Termoquímica 1 a  2 inclusão e programação.",
+    nomeProducao: "Jogo Junção de Termoquímica 1 a 2, inclusão e programação.",
     titulo: "O ensino de conceitos Termoquímicos básicos para alunos com TEA através da ferramenta metodológica Scratch",
     categoria: "Química",
     tipo: "Jogo Educativo",
@@ -204,7 +204,7 @@ function listarItens(chave) {
     titulo: "A utilização da ferramenta Scratch na aprendizagem da Entalpia Padrão para alunos com TEA com foco no sistema de arraste",
     categoria: "Química",
     tipo: "Jogo Educativo",
-    src: "aviso.html",
+    src: "https://scratch.mit.edu/projects/1220611026/embed",
     linkPublicacao: "https://ocs.ifsp.edu.br/conict/xiiiconict/paper/view/8609/2957",
     publicacaoArquivo: "publicacaoArquivo/Publicacoes_Jogos/16-Jogos_de_Quimica_A_utilizacao_da_ferramenta_Scratch_na_aprendizagem_da_Entalpia_Padrao_para_alunos_com_TEA_com_foco_no_sistema_de_arraste_CONICT_2022.pdf",
     referenciar: "NASCIMENTO, Ricardo Henrique dos Reis; MONTEMOR, Bianca Estrela Abdalla França Camargo; CAMPOS, Ryan Cristina Souza; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. A utilização da ferramenta Scratch na aprendizagem da Entalpia Padrão para alunos com TEA com foco no sistema de arraste. In: CONGRESSO DE INOVAÇÃO, CIÊNCIA E TECNOLOGIA DO IFSP, XIII, 2022, São Paulo-SP. Anais [...]. São Paulo: IFSP-SP, 2022, p. 1-6. Disponível em: https://ocs.ifsp.edu.br/conict/xiiiconict/paper/view/8609/2957",
