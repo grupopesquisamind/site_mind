@@ -22,7 +22,7 @@ class MeuMenu extends HTMLElement {
           <nav class="nav flex-column px-3" id="meuMenu">
             <a class="nav-link d-flex align-items-center gap-2" href="home.html"><i class="bi bi-house-door-fill"></i> Início</a>
             <a class="nav-link d-flex align-items-center gap-2 border border-4 border-white" href="equipeatual.html"><i class="bi bi-people-fill"></i> Equipe Atual</a>
-            <a class="nav-link d-flex align-items-center gap-2" href="menucongressos.html"><i class="bi bi-calendar2-event"></i>Participações</a>
+            <a class="nav-link d-flex align-items-center gap-2" href="menucongressos.html"><i class="bi bi-calendar2-event"></i>Congressos</a>
             <a class="nav-link d-flex align-items-center gap-2" href="publicacoes.html"><i class="bi bi-journal-text"></i> Publicações</a>
             <a class="nav-link d-flex align-items-center gap-2" href="projetos.html"><i class="bi bi-kanban-fill"></i> Projetos</a>
             <a class="nav-link d-flex align-items-center gap-2" href="eventos.html"><i class="bi bi-calendar2-event"></i> Eventos/Congressos</a>

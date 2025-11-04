@@ -1,192 +1,201 @@
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
   <title>MIND - Participação Congressos</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Bootstrap e ícones -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Componentes -->
   <script src="javascript/components/menu.js" defer></script>
   <script src="javascript/components/footer.js" defer></script>
 
-   <style>
-    
-  #page-wrapper {
-  display: flex;
-  flex-direction: column;
-  flex: 1; /* ocupa a altura disponível */
-  min-height: 100vh; /* força ocupar a altura toda da tela */
-  max-width: 100%;
-  max-height: 90%;
-  margin: auto; /* centraliza horizontal e vertical */
-  overflow: auto; /* ativa scroll se o conteúdo for maior */
-}
-  </style>
+  <!-- Dados dos eventos -->
+  <script src="javascript/dados-congressos.js" defer></script>
 
+  <style>
+    #page-wrapper {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      min-height: 100vh;
+      margin: auto;
+      overflow: auto;
+    }
+
+    h2, h5 {
+      text-align: center;
+    }
+
+    /* ==== GRID DOS CARDS ==== */
+    #eventos-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    /* ==== ESTILO DOS CARDS ==== */
+    evento-card {
+      flex: 1 1 160px;
+      max-width: 200px;
+    }
+
+    .card {
+      text-align: center;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .evento-logo {
+      max-height: 100px;
+      object-fit: contain;
+    }
+
+    .evento-legenda {
+      min-height: 70px;
+      font-size: 0.9rem;
+      text-align: center;
+      color: #555;
+    }
+  </style>
 </head>
 
 <body>
-
-  <!-- Menu lateral -->
   <meu-menu></meu-menu>
 
-  <!-- Overlay escuro quando menu aberto no mobile -->
-  <div id="overlay"></div>
+  <div id="page-wrapper" class="container-fluid my-4">
+    <h2 class="text-danger fw-bold">Movimento para Inclusão e Neurodiversidade</h2>
 
-  <!-- Conteúdo principal -->
-  <div id="page-wrapper"><br>
-    <div id="row col-12 page-content-wrapper">
-            <h2 class="text-center text-danger"><strong>Movimento para Inclusão e Neurodiversidade.</strong></h2>
-
-     <div class="col- col-md-12">
-      <h5 class="mt-4 text-center">Conheça os Eventos e Congressos que a Equipe MIND já participou</h5>
+    <div class="d-flex justify-content-center align-items-center flex-wrap gap-2 mt-3 mb-3">
+      <h5 class="text-black m-0">Eventos e Congressos com participação da Equipe MIND</h5>
+      <a href="galeriaeventoscongressos.html" class="btn btn-primary">
+        <i class="bi bi-images me-1"></i> Ver Galeria de Fotos
+      </a>
     </div>
 
-       <div class="col- col-md-12">
-      <h5 class="mt-4 text-center text-primary">Clique nas imagens e veja mais fotos</h5>
+    <main class="container-fluid mb-5">
+      <section>
+        <div id="eventos-container" class="mt-4"></div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Template do Web Component -->
+  <template id="evento-card-template">
+
+ <style>
+   .card {
+  text-align: center;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;              /* Largura fixa */
+  height:100%;             /* Altura fixa */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* distribui imagem, nome e legenda */
+  padding: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.evento-logo {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.evento-nome {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-top: 0.4rem;
+  flex-shrink: 0;
+}
+
+.evento-legenda {
+  font-size: 0.85rem;
+  min-height: 40px;
+  color: #555;
+  line-height: 1.2;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+    </style>
+
+    <div class="card h-100 text-center p-3">
+      <a class="evento-link" target="_blank">
+        <img class="evento-logo mb-2" />
+      </a>
+      <div class="evento-nome"></div>
+      <div class="evento-legenda"></div>
     </div>
+  </template>
 
-    </div>
+  <script>
+    class EventoCard extends HTMLElement {
+      connectedCallback() {
+        const shadow = this.attachShadow({ mode: 'open' });
+        const template = document.getElementById('evento-card-template');
+        shadow.appendChild(template.content.cloneNode(true));
 
-    <main class="container-fluid my-1 pt-3 mb-5">
-  <section class="mt-3">
-    <div class="row justify-content-center g-4">
+        const nome = this.getAttribute('nome');
+        const descricao = this.getAttribute('descricao');
+        const imagem = this.getAttribute('imagem');
 
-<!-- Card  -->
-      <div class="col-6 col-md-2">
-        <div class="card h-100 text-center shadow-sm border-0">
-          <div class="card-body d-flex flex-column align-items-center justify-content-between">
-          <a href="galeriaeventoscongressos.html">
-            <img src="imagens/eventos/caie.png" alt="Outro Evento" class="evento-logo mb-2">
-          </a>  
-            <strong>CAIE</strong>
-            <div class="evento-legenda">
-              Ccongresso de Acessibilidade de Inclusão na Educação
-            </div>
-          </div>
-        </div>
-      </div>
- <!-- Card  -->
-      <div class="col-6 col-md-2">
-        <div class="card h-100 text-center shadow-sm border-0">
-          <div class="card-body d-flex flex-column align-items-center justify-content-between">
-            <a href="galeriaeventoscongressos.html">
-           <img src="imagens/eventos/cieduc.png" alt="Outro Evento" class="evento-logo mb-2">
-            </a>
-           <strong>CIEDUC</strong>
-            <div class="evento-legenda">
-            Congresos Iberoamericanos de Educación Científica
-            </div>
-          </div>
-        </div>
-      </div>
-       
-         <!-- Card  -->
-      <div class="col-6 col-md-2">
-        <div class="card h-100 text-center shadow-sm border-0">
-          <div class="card-body d-flex flex-column align-items-center justify-content-between">
-           <a href="galeriaeventoscongressos.html">
-            <img src="imagens/eventos/conapesc.jpg" alt="CONAPESC" class="evento-logo mb-2">
-           </a> 
-            <strong>CONAPESC </strong>
-            <div class="evento-legenda">
-             Congresso de Iniciação Científica do IFSP Itapetininga
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Card  -->
-      <div class="col-6 col-md-2">
-        <div class="card h-100 text-center shadow-sm border-0">
-          <div class="card-body d-flex flex-column align-items-center justify-content-between">
-           <a href="galeriaeventoscongressos.html">
-            <img src="imagens/eventos/conict.jpg" alt="CONICT" class="evento-logo mb-2">
-           </a>
-            <strong>CONICT </strong>
-            <div class="evento-legenda">
-             Congresso de Inovação, Ciência e Tecnologia pelo IFSP
-            </div>
-          </div>
-        </div>
-      </div>
+        const logo = shadow.querySelector('.evento-logo');
+        logo.src = `imagens/eventos/${imagem}`;
+        logo.alt = nome;
+        logo.onerror = () => (logo.src = 'imagens/eventos/default.png');
 
-      <!-- Card  -->
-      <div class="col-6 col-md-2">
-        <div class="card h-100 text-center shadow-sm border-0">
-          <div class="card-body d-flex flex-column align-items-center justify-content-between">
-            <a href="galeriaeventoscongressos.html">
-               <img src="imagens/eventos/eppeq.png" alt="EPPEQ" class="evento-logo mb-2">
-                  </a>            
-                  <strong>EPPEQ </strong>
-            <div class="evento-legenda">
-              Encontro Paulista de Pesquisa em Ensino de Química
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Card  -->
-      <div class="col-6 col-md-2">
-        <div class="card h-100 text-center shadow-sm border-0">
-          <div class="card-body d-flex flex-column align-items-center justify-content-between">
-          <a href="galeriaeventoscongressos.html">
-          <img src="imagens/eventos/sbenbio.png" alt="SBENBIO" class="evento-logo mb-2">
-          </a>
-             <strong>SBENBIO </strong>
-            <div class="evento-legenda">
-             Sociedade Brasileira de Ensino de Biologia
-            </div>
-          </div>
-        </div>
-      </div>
+        shadow.querySelector('.evento-nome').textContent = nome;
+        shadow.querySelector('.evento-legenda').textContent = descricao;
+      }
+    }
 
-      <!-- Card 4 -->
-      <div class="col-6 col-md-2">
-        <div class="card h-100 text-center shadow-sm border-0">
-          <div class="card-body d-flex flex-column align-items-center justify-content-between">
-            <a href="implementacao.html">
-            <img src="imagens/eventos/apsignificativa.png" alt="EIAS" class="evento-logo mb-2">
-            </a>
-            <strong>EIAS</strong> 
-            <div class="evento-legenda">
-             Encontro Internacional de Aprendizagem Significativa
-            </div>
-          </div>
-        </div>
-      </div>
+    customElements.define('evento-card', EventoCard);
 
-      
-    </div>
-  </section>
-</main>
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('eventos-container');
+      try {
+        const eventos = listarItens('congressos');
+        eventos.forEach(e => {
+          const card = document.createElement('evento-card');
+          card.setAttribute('nome', e.nome);
+          card.setAttribute('descricao', e.descricao);
+          card.setAttribute('imagem', e.imagem);
+          container.appendChild(card);
+        });
+      } catch (err) {
+        console.error("Erro ao carregar eventos:", err);
+        container.innerHTML = `<p class="text-center text-danger">Erro ao carregar os eventos.</p>`;
+      }
 
-<style>
-  .evento-logo {
-    max-height: 100px;       /* altura padronizada das logos */
-    object-fit: contain;     /* mantém proporção */
-  }
+      // Adiciona o footer dinamicamente
+      const footer = document.createElement("meu-footer");
+      document.body.appendChild(footer);
+    });
+  </script>
 
-  .evento-legenda {
-    min-height: 70px;        /* deixa todas as legendas iguais */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-size: 0.9rem;
-  }
-
-  .card {
-    border-radius: 12px;      /* cantos arredondados */
-    transition: transform .2s ease;
-  }
-
-  .card:hover {
-    transform: scale(1.05);   /* efeito hover */
-  }
-</style>
-
-  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="javascript/dados-index.js"></script>
-  <meu-footer></meu-footer>
 </body>
 </html>

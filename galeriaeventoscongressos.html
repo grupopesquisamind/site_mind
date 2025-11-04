@@ -15,9 +15,9 @@
 <!-- Componentes -->
 <script src="javascript/components/menu.js" defer></script>
 <script src="javascript/components/footer.js" defer></script>
+<script src="javascript/dados-galeriacongressos.js" defer></script>
 
 <style>
-/* ====== Layout ====== */
 #page-wrapper {
   display: flex;
   flex-direction: column;
@@ -31,39 +31,38 @@ h2, h5 {
   text-align: center;
 }
 
-/* ====== Galeria estilo “cards” ====== */
+/* ====== Galeria ====== */
 .gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1rem;
+  justify-items: center;
 }
 
-/* Cards */
-.gallery a {
+/* ====== Cards ====== */
+.card {
   display: flex;
   flex-direction: column;
   align-items: center;
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(255,255,255,0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   text-align: center;
-  width: 180px;
-  height: 100%;
   text-decoration: none;
   color: inherit;
+  width: 100%;
+  max-width: 180px;
 }
 
-.gallery a:hover {
+.card:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  z-index: 2;
 }
 
-.gallery img {
-  width: auto;
+.card img {
+  width: 100%;
   height: 140px;
   object-fit: cover;
   border-radius: 8px;
@@ -71,7 +70,7 @@ h2, h5 {
   transition: transform 0.3s ease;
 }
 
-.gallery a:hover img {
+.card:hover img {
   transform: scale(1.05);
 }
 
@@ -88,46 +87,53 @@ h2, h5 {
   background: #ffffff;
   color: #555;
 }
-
-/* Ajuste de colunas por largura da tela */
-/* ====== Responsividade ====== */
-@media (min-width: 1600px) { .gallery { grid-template-columns: repeat(7, 1fr); } }
-@media (min-width: 1200px) and (max-width: 1599px) { .gallery { grid-template-columns: repeat(5, 1fr); } }
-@media (min-width: 992px) and (max-width: 1199px) { .gallery { grid-template-columns: repeat(4, 1fr); } }
-@media (min-width: 768px) and (max-width: 991px) { .gallery { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 767px) { .gallery { grid-template-columns: repeat(2, 1fr); } }
 </style>
 </head>
 <body>
 
 <meu-menu></meu-menu>
 
-<div id="page-wrapper">
-  <main class="container my-4">
-    <h2 class="text-danger"><strong>Movimento para Inclusão e Neurodiversidade</strong></h2>
-    <h5 class="text-center mb-4">Galeria de Participações em Eventos e Congressos</h5>
+<div id="page-wrapper" class="container-fluid my-4">
+  <h2 class="text-danger fw-bold">Movimento para Inclusão e Neurodiversidade</h2>
 
-    <!-- Filtros -->
-    <div class="row g-2 mb-3">
-      <div class="col-md-3">
-        <select id="filtroSigla" class="form-select">
-          <option value="">Filtrar por sigla do evento</option>
-        </select>
-      </div>
-      <div class="col-md-2">
-        <select id="filtroAno" class="form-select">
-          <option value="">Filtrar por Ano</option>
-        </select>
-      </div>
-      <div class="col-md-2">
-        <button id="btnLimpar" class="btn btn-secondary w-100">Limpar</button>
-      </div>
+  <div class="d-flex justify-content-center align-items-center flex-wrap gap-2 mt-3 mb-3">
+    <h5 class="text-black m-0">Galeria de Participações em Eventos e Congressos</h5>
+    <a href="menucongressos.html" class="btn btn-primary">
+      <i class="bi bi-arrow-left-circle me-1"></i> Voltar Menu de Congresso
+    </a>
+  </div>
+
+  <!-- Filtros -->
+  <div class="row g-2 mb-3 justify-content-center">
+    <div class="col-md-3 col-sm-6">
+      <select id="filtroSigla" class="form-select">
+        <option value="">Filtrar por sigla do evento</option>
+      </select>
     </div>
+    <div class="col-md-2 col-sm-6">
+      <select id="filtroAno" class="form-select">
+        <option value="">Filtrar por Ano</option>
+      </select>
+    </div>
+    <div class="col-md-2 col-sm-6">
+      <button id="btnLimpar" class="btn btn-secondary w-100">Limpar</button>
+    </div>
+  </div>
 
-    <!-- Galeria -->
-    <div id="gallery" class="gallery"></div>
-  </main>
+  <!-- Galeria -->
+  <div id="gallery" class="gallery"></div>
 </div>
+
+<!-- Template do item -->
+<template id="galeria-item-template">
+  <a class="card image" target="_blank">
+    <img class="galeria-imagem" alt="">
+    <div class="legend">
+      <strong class="galeria-sigla"></strong>
+      <span class="galeria-descricao"></span>
+    </div>
+  </a>
+</template>
 
 <!-- Scripts -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -135,77 +141,77 @@ h2, h5 {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
 
 <script>
-const eventos = [
-  {imagem: 'imagens/eventos/img/eppeq_2025_grupo.jpg', sigla: 'EPPEQ', ano: '2025', descricao: 'Foto do grupo no EPPEQ 2025'},
-  {imagem: 'imagens/eventos/img/eppeq_2025.jpg', sigla: 'EPPEQ', ano: '2025', descricao: 'Apresentação do Grupo EPPEQ 2025'},
-  {imagem: 'imagens/eventos/img/eppeq_2025_grupo_2.jpg', sigla: 'EPPEQ', ano: '2025', descricao: 'Apresentação Thiago EPPEQ 2025'},
-  {imagem: 'imagens/eventos/img/eppeq_2025_A-C.jpg', sigla: 'EPPEQ', ano: '2025', descricao: 'Apresentação de Ana Clara no EPPEQ 2025'},
-  {imagem: 'imagens/eventos/img/eppeq_2025_y.jpg', sigla: 'EPPEQ', ano: '2025', descricao: 'Apresentação de Yara no EPPEQ 2025'},
-  {imagem: 'imagens/eventos/img/eppeq_2025_encerramento.jpg', sigla: 'EPPEQ', ano: '2025', descricao: 'Encerramento do EPPEQ 2025'},
-];
+// ===== Web Component sem Shadow DOM (mantém popup funcional) =====
+class GaleriaItem extends HTMLElement {
+  connectedCallback() {
+    const template = document.getElementById('galeria-item-template').content.cloneNode(true);
+    this.appendChild(template);
 
-function popularFiltros() {
-  const siglas = [...new Set(eventos.map(e => e.sigla))].sort();
-  const selectSigla = $('#filtroSigla');
-  siglas.forEach(s => selectSigla.append(new Option(s, s)));
+    const imagem = this.getAttribute('imagem');
+    const sigla = this.getAttribute('sigla');
+    const ano = this.getAttribute('ano');
+    const descricao = this.getAttribute('descricao');
 
-  const anos = [...new Set(eventos.map(e => e.ano))].sort();
-  const selectAno = $('#filtroAno');
-  anos.forEach(a => selectAno.append(new Option(a, a)));
+    const card = this.querySelector('.card');
+    card.href = imagem;
+    this.querySelector('.galeria-imagem').src = imagem;
+    this.querySelector('.galeria-imagem').alt = `${sigla} ${ano}`;
+    this.querySelector('.galeria-sigla').textContent = `${sigla} - ${ano}`;
+    this.querySelector('.galeria-descricao').textContent = descricao;
+  }
 }
+customElements.define('galeria-item', GaleriaItem);
 
-function renderizarGaleria(filtroSigla = '', filtroAno = '') {
-  const container = $('#gallery');
-  container.empty();
+// ===== Lógica principal =====
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.getElementById('gallery');
+  const dados = listarItens('galeriacongressos');
 
-  const listaFiltrada = eventos.filter(e =>
-    (!filtroSigla || e.sigla.toLowerCase().includes(filtroSigla.toLowerCase())) &&
-    (!filtroAno || e.ano === filtroAno)
-  );
+  const filtroSigla = document.getElementById('filtroSigla');
+  const filtroAno = document.getElementById('filtroAno');
 
-  listaFiltrada.forEach(e => {
-    container.append(`
-      <a href="${e.imagem}" class="image" title="${e.sigla} - ${e.ano}">
-        <img src="${e.imagem}" alt="${e.sigla} ${e.ano}">
-        <div class="legend">
-          <strong>${e.sigla} - ${e.ano}</strong>
-          <span>${e.descricao}</span>
-        </div>
-      </a>
-    `);
-  });
+  const siglas = [...new Set(dados.map(e => e.sigla))].sort();
+  const anos = [...new Set(dados.map(e => e.ano))].sort();
+  siglas.forEach(s => filtroSigla.append(new Option(s, s)));
+  anos.forEach(a => filtroAno.append(new Option(a, a)));
 
-  $('.gallery').magnificPopup({
-    delegate: 'a',
-    type: 'image',
-    gallery: { enabled: true },
-    callbacks: {
-      open: function() {
-        $('.mfp-img').css({ 'max-width': '90vw', 'max-height': '90vh' });
-      },
-      resize: function() {
-        $('.mfp-img').css({ 'max-width': '90vw', 'max-height': '90vh' });
-      }
-    }
-  });
-}
+  function renderizarGaleria(fSigla = '', fAno = '') {
+    container.innerHTML = '';
+    const filtrados = dados.filter(e =>
+      (!fSigla || e.sigla === fSigla) && (!fAno || e.ano === fAno)
+    );
 
-$(document).ready(() => {
-  popularFiltros();
+    filtrados.forEach(e => {
+      const item = document.createElement('galeria-item');
+      item.setAttribute('imagem', e.imagem);
+      item.setAttribute('sigla', e.sigla);
+      item.setAttribute('ano', e.ano);
+      item.setAttribute('descricao', e.descricao);
+      container.appendChild(item);
+    });
+
+    // Reativa Magnific Popup
+    $('.gallery').magnificPopup({
+      delegate: 'a',
+      type: 'image',
+      gallery: { enabled: true }
+    });
+  }
+
   renderizarGaleria();
 
-  $('#filtroSigla, #filtroAno').on('input change', () => {
-    renderizarGaleria($('#filtroSigla').val(), $('#filtroAno').val());
-  });
-
-  $('#btnLimpar').click(() => {
-    $('#filtroSigla').val('');
-    $('#filtroAno').val('');
+  filtroSigla.addEventListener('change', () => renderizarGaleria(filtroSigla.value, filtroAno.value));
+  filtroAno.addEventListener('change', () => renderizarGaleria(filtroSigla.value, filtroAno.value));
+  document.getElementById('btnLimpar').addEventListener('click', () => {
+    filtroSigla.value = '';
+    filtroAno.value = '';
     renderizarGaleria();
   });
+
+  const footer = document.createElement('meu-footer');
+  document.body.appendChild(footer);
 });
 </script>
 
-<meu-footer></meu-footer>
 </body>
 </html>
