@@ -1,10 +1,10 @@
 function listarItens(tipo) {
   if (tipo === 'galeriacongressos') {
     return [
-      {imagem: 'imagens/eventos/img/conict_2022_bianca_ricardo_apresentacao.jpeg', sigla: 'CONICT', ano: '2022', descricao: 'Reitoria IFSP - Apresentação: Bianca e Ricardo no CONICT'},
-      {imagem: 'imagens/eventos/img/conict_2022_bianca_ricardo_apresentacao_2.jpeg', sigla: 'CONICT', ano: '2022', descricao: 'Reitoria IFSP - Apresentação: Bianca e Ricardo no CONICT'},
-      {imagem: 'imagens/eventos/img/conict_2022_bianca_ricardo_apresentacao_3.jpeg', sigla: 'CONICT', ano: '2022', descricao: 'Reitoria IFSP - Apresentação: Bianca e Ricardo no CONICT'},
-      {imagem: 'imagens/eventos/img/conict_2022_bianca_ricardo_apresentacao_4.jpeg', sigla: 'CONICT', ano: '2022', descricao: 'Reitoria IFSP - Apresentação: Bianca e Ricardo no CONICT'},
+      {imagem: 'imagens/eventos/img/conict_2022_bianca_ricardo_apresentacao.jpeg', sigla: 'CONICT', ano: '2022', descricao: 'Reitoria IFSP - Apresentação: Bianca e Ricardo'},
+      {imagem: 'imagens/eventos/img/conict_2022_bianca_ricardo_apresentacao_2.jpeg', sigla: 'CONICT', ano: '2022', descricao: 'Reitoria IFSP - Apresentação: Bianca e Ricardo'},
+      {imagem: 'imagens/eventos/img/conict_2022_bianca_ricardo_apresentacao_3.jpeg', sigla: 'CONICT', ano: '2022', descricao: 'Reitoria IFSP - Apresentação: Bianca e Ricardo'},
+      {imagem: 'imagens/eventos/img/conict_2022_bianca_ricardo_apresentacao_4.jpeg', sigla: 'CONICT', ano: '2022', descricao: 'Reitoria IFSP - Apresentação: Bianca e Ricardo'},
       
       {imagem: 'imagens/eventos/img/enebio_lucas_alexssandro_2024.jpg', sigla: 'ENEBIO', ano: '2024', descricao: 'SBENBIO/ENEBIO - Lucas e Alexssandro'},
 
