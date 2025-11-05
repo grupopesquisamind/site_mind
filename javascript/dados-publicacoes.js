@@ -292,7 +292,7 @@ referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, R
         sigla: "CAIE - REI",
         linkSite: "https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie",
         linkPublicacao: "https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie/article/view/31",
-        publicacaoArquivo: "publicacaoArquivo/Publicacoes/21-Publicacao_Desenho_Universal_da_Aprendizagem_e_a_ludicidade_uma_proposta_para_o_ensino_de_isomeria_optica_CAIE_REI_2024.pdf",
+        publicacaoArquivo: "publicacaoArquivo/Publicacoes/21-Publicacao_Educacao_especial_formacao_professores_revisao_sistematica_abordagem_anais_CBEE_CAIE-REI_2024.pdf",
         referenciarPub: "FERREIRA, Ana Paula Kawabe de Lima, CAMEJO AVILES, Ivana Elena. Educação especial e a formação de professores: uma revisão sistemática da abordagem dos anais CB33-2023. Anais [...] IN: CONGRESSO DE ACESSIBILIDADE E INCLUSÃO NA EDUCAÇÃO, IFSP CUBATÃO, 2023, Cubatão-SP. Anais [...] Cubatão: Revista  da Educação Inclusiva (REI), v1, 2024, p.1-16. Disponível em: https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie/article/view/31",
       },
       {
