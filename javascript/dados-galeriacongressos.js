@@ -16,7 +16,7 @@ function listarItens(tipo) {
       {imagem: 'imagens/eventos/img/eias_2024_chegada_grupo_escola_evento_congresso.jpg', sigla: 'EIAS', ano: '2024', descricao: 'Montevideo Uruguai: chegada grupo no local do congresso'},
       {imagem: 'imagens/eventos/img/eias_2024_alex_apresentacao_trabalho_gabriel_baroni.jpg', sigla: 'EIAS', ano: '2024', descricao: 'Montevideo Uruguai - Apresentacao: Alexssandro Ferreira sobre o trabalho feito por Gabriel Baroni'},
       {imagem: 'imagens/eventos/img/eias_2024_alex_apresentacao.jpeg', sigla: 'EIAS', ano: '2024', descricao: 'Montevideo Uruguai - Apresentação: Alexssandro Ferreira'},
-      {imagem: 'imagens/eventos/img/eias_2024_alex_paula_ivana.jpg', sigla: 'EIAS', ano: '2024', descricao: 'Montevideo Uruguai - Alexssandro, Ana Paula Kawabe e profa Ivana Elena (LTE-Unicamp)'},
+      {imagem: 'imagens/eventos/img/eias_2024_alex_paula_ivana.jpg', sigla: 'EIAS', ano: '2024', descricao: 'Montevideo Uruguai - Alexssandro, Ana Paula Kawabe e profa Ivana Elena (LTE-PECIM-Unicamp)'},
       {imagem: 'imagens/eventos/img/eias_2024_paula_apresentacao.jpeg', sigla: 'EIAS', ano: '2024', descricao: 'Montevideo Uruguai - Apresentação: Ana Paula Kawabe'},
       {imagem: 'imagens/eventos/img/eias_2024_paula_apresentacao_2.jpeg', sigla: 'EIAS', ano: '2024', descricao: 'Montevideo Uruguai - Apresentação: Ana Paula Kawabe'},
       {imagem: 'imagens/eventos/img/eias_2024_lucas_apresentacao.jpg', sigla: 'EIAS', ano: '2024', descricao: 'Montevideo Uruguai - Apresentação: Lucas Caraça'},
