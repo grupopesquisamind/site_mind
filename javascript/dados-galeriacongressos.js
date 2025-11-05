@@ -15,13 +15,11 @@ function listarItens(tipo) {
       {imagem: 'imagens/eventos/img/EIAS_alex_paula_ivana.jpg', sigla: 'EIAS', ano: '2024', descricao: 'Montevideo Uruguai - Alexssandro, Ana Paula e profa Ivana Elena (LTE-Unicamp)'},
       {imagem: 'imagens/eventos/img/EIAS_paula_apresentacao.jpeg', sigla: 'EIAS', ano: '2024', descricao: 'Montevideo Uruguai - Apresentação: Ana Paula'},
       {imagem: 'imagens/eventos/img/EIAS_paula_apresentacao_2.jpeg', sigla: 'EIAS', ano: '2024', descricao: 'Montevideo Uruguai - Apresentação: Ana Paula'},
-      {imagem: 'imagens/eventos/img/EIAS_paula_apresentacao_2.jpeg', sigla: 'EIAS', ano: '2024', descricao: 'Montevideo Uruguai - Apresentação: Ana Paula'},
       {imagem: 'imagens/eventos/img/EIAS_lucas_apresentacao.jpg', sigla: 'EIAS', ano: '2024', descricao: 'Montevideo Uruguai - Apresentação: Lucas'},
       {imagem: 'imagens/eventos/img/EIAS_lucas_apresentacao_2.jpg', sigla: 'EIAS', ano: '2024', descricao: 'Montevideo Uruguai - Apresentação: Lucas'},
       {imagem: 'imagens/eventos/img/EIAS_gabriel_kawabe_apresentacao.jpeg', sigla: 'EIAS', ano: '2024', descricao: 'Montevideo Uruguai - Apresentação: Gabriel Kawabe'},
       {imagem: 'imagens/eventos/img/EIAS_gabriel_kawabe_apresentacao_2.jpeg', sigla: 'EIAS', ano: '2024', descricao: 'Montevideo Uruguai - Apresentação: Gabriel Kawabe'},
       {imagem: 'imagens/eventos/img/EIAS_palestrante_marco_antonio_moreira.jpeg', sigla: 'EIAS', ano: '2024', descricao: 'Montevideo Uruguai - Palestrante: Marco Antônio Moreira'},
-
 
       {imagem: 'imagens/eventos/img/eppeq_2025_grupo.jpg', sigla: 'EPPEQ', ano: '2025', descricao: 'Presidente Prudente/SP - Foto do Grupo'},
       {imagem: 'imagens/eventos/img/eppeq_2025.jpg', sigla: 'EPPEQ', ano: '2025', descricao: 'Presidente Prudente/SP - Apresentação do Grupo'},
