@@ -222,7 +222,7 @@ referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, R
         sigla: "DIDÁCTICA DE LAS CIENCIAS",
         linkSite: "https://www.esfm.ipn.mx/revista-jadc.html",
         linkPublicacao: "https://www.test.desarrolloweb.ipn.mx/assets/files/esfm/docs/jornadas/revista-jornadas-vi.pdf",
-        publicacaoArquivo: "publicacaoArquivo/Publicacoes/16-Publicacao_Ensenar_sobre_volatilidad_temperatura_de_ebullicion_y_presion_de_vapor_con_el_uso_de_la_herramienta_metodologica_Scratch_para_estudiantes_con_TEA_Revista_DIDACTICA_Mex_2023.pdf",
+        publicacaoArquivo: "publicacaoArquivo/Publicacoes/16-Publicacao_Ensenar_volatilidad_temperatura_ebullicion_y_presion_vapor_uso_la_herramienta_metodologica_Scratch_estudiantes_TEA_Revista_DIDACTICA_2023.pdf",
         referenciarPub: "NASCIMENTO, Ricardo Henrique dos Reis; MONTEMOR, Bianca Estrela Abdalla França Camargo; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Enseñar sobre volatilidad, temperatura de ebullición y presión de vapor, con el uso de la herramienta metodológica Scratch para estudiantes con Trastorno del Espectro Autista. Revista Digital Didáctica de Las Ciencias, México, v. 6, p. 310-319, 2023. Disponível em: https://www.esfm.ipn.mx/assets/files/esfm/docs/jornadas/revista-jornadas-vi.pdf",      
       },
        {
