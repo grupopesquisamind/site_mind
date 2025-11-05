@@ -219,7 +219,7 @@ function listarItens(chave) {
     tipo: "Jogo Educativo",
     src: "https://scratch.mit.edu/projects/1087369595/embed",
     linkPublicacao: "https://www.cieduc.org/libros/LibroActasCieduc2022.pdf",
-    publicacaoArquivo: "publicacaoArquivo/Publicacoes_Jogos/17-Jogos_de_Quimica_O_uso_ferramenta_Scratch_utilizada_Ensino_Lei_de_Hess_para_alunos_com_Transtorno_Espectro_Autista_Libro_Actas_CIEDUC_2022.pdf",
+    publicacaoArquivo: "publicacaoArquivo/Publicacoes_Jogos/17-Publicacao _O_uso_da_ferramenta _Scratch _utilizada_Ensino_Lei _Hess_alunos_Transtorno_Espectro_Autista_Libro_Actas_CIEDUC_2022.pdf",
     referenciar: "NASCIMENTO, Ricardo Henrique dos Reis; MONTEMOR, Bianca Estrela Abdalla França Camargo; CAMPOS, Ryan Cristian Sousa; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. O uso da ferramenta Scratch utilizada para o Ensino da Lei de Hess para alunos com Transtorno do Espectro Autista. In: BEGONCHEA, Luis et al. Educación científica para el desarrollo ibero-americano. Alcalá - Espanha: Editorial Universidad de Alcalá, 2022, p. 133 - 140. Disponível em: https://www.cieduc.org/libros/LibroActasCieduc2022.pdf",
   },
   {
