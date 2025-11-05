@@ -7,7 +7,7 @@ function listarItens(tipo) {
       {imagem: 'imagens/eventos/img/conict_2022_bianca_ricardo_apresentacao_4.jpeg', sigla: 'CONICT', ano: '2022', descricao: 'Reitoria IFSP/SP - Apresentação: Bianca Montemor e Ricardo Reis'},
       
       {imagem: 'imagens/eventos/img/enebio_2024_banner_instituicao_evento_PUC_Minas_escola_feira_ciencias.jpg', sigla: 'ENEBIO', ano: '2024', descricao: 'Belo Horizonte/MG - Instituição que promoveu o evento - PUC Minas e escola onde foi realizada a apresentaçã na feira ciências'},
-      {imagem: 'imagens/eventos/img/enebio_2024_lucas_alexssandro_apresentacao.jpg', sigla: 'ENEBIO', ano: '2024', descricao: 'Belo Horizonte: Apresentação Lucas Caraça e Alexssandro Ferreira'},
+      {imagem: 'imagens/eventos/img/enebio_2024_lucas_alexssandro_apresentacao.jpg', sigla: 'ENEBIO', ano: '2024', descricao: 'Belo Horizonte - Apresentação: Lucas Caraça e Alexssandro Ferreira'},
       {imagem: 'imagens/eventos/img/enebio_2024_lucas_apresentacao_2.jpg', sigla: 'ENEBIO', ano: '2024', descricao: 'Belo Horizonte/MG - Apresentação: Lucas Caraça'},
       {imagem: 'imagens/eventos/img/enebio_2024_lucas_apresentacao_3.jpg', sigla: 'ENEBIO', ano: '2024', descricao: 'Belo Horizonte/MG - Apresentação:  Lucas Caraça'},
       {imagem: 'imagens/eventos/img/enebio_2024_lucas_apresentacao_4.jpg', sigla: 'ENEBIO', ano: '2024', descricao: 'Belo Horizonte/MG - Apresentação:  Lucas Caraça'},
