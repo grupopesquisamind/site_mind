@@ -518,7 +518,7 @@ referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, R
         sigla: "ENEBIO",
         linkSite: "https://eventos.ifgoiano.edu.br/ixenebioeviierebiomggotodf/",
         linkPublicacao: "https://Publicacoes.sbenbio.org.br/trabalhos/e0322.pdf",
-        publicacaoArquivo: "publicacaoArquivo/Publicacoes/37-Publicacao_Educacao_Cientifica_Inclusiva__Alunos_Transtorno_do_Espectro_Autista_Uso_de_Jogo_Didatico_Utilizando_Comunicacao_Aumentativa_Alternativa_EIAS_2024.pdf",
+        publicacaoArquivo: "publicacaoArquivo/Publicacoes/37-Publicacao_Educacao_Cientifica_Inclusiva_Alunos_TEA_Uso_Jogo_Didatico_Utilizando_CAA_EIAS_2024.pdf",
         referenciarPub: "SANTOS, Lucas Caraça dos; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; CAMEJO AVILES, Ivana Elena. Educação Científica Inclusiva para Alunos com Transtorno do Espectro Autista (TEA): Uso de Jogo Didático Utilizando Comunicação Aumentativa e Alternativa (CAA) e Scratch para Aprender sobre o Sistema Digestório. IN: IX ENEBIO & VII EREBIO MG/GO/TO/DF (Encontro Nacional de Ensino de Biologia).  E-book VIII ENEBIO, X ENEBIO & VII EREBIO, Campina Grande: Realize Editora, 2024. Disponível em:",
       },
       {
