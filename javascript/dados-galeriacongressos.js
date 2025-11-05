@@ -6,6 +6,8 @@ function listarItens(tipo) {
       {imagem: 'imagens/eventos/img/conict_2022_bianca_ricardo_apresentacao_3.jpeg', sigla: 'CONICT', ano: '2022', descricao: 'Reitoria IFSP - Apresentação: Bianca e Ricardo no CONICT'},
       {imagem: 'imagens/eventos/img/conict_2022_bianca_ricardo_apresentacao_4.jpeg', sigla: 'CONICT', ano: '2022', descricao: 'Reitoria IFSP - Apresentação: Bianca e Ricardo no CONICT'},
       
+      {imagem: 'imagens/eventos/img/enebio_lucas_alexssandro_2024.jpg', sigla: 'ENEBIO', ano: '2024', descricao: 'SBENBIO/ENEBIO - Lucas e Alexssandro'},
+
       {imagem: 'imagens/eventos/img/EIAS_imigracao.jpg', sigla: 'EIAS', ano: '2024', descricao: 'Montevideo Uruguai - Documentação Imigração'},
       {imagem: 'imagens/eventos/img/EIAS_chegada_grupo_escola_evento_congresso.jpg', sigla: 'EIAS', ano: '2024', descricao: 'Montevideo Uruguai: chegada grupo no local do congresso'},
       {imagem: 'imagens/eventos/img/EIAS_alex_apresentacao_trabalho_gabriel_baroni.jpg', sigla: 'EIAS', ano: '2024', descricao: 'Montevideo Uruguai - Apresentacao: Alexssandro sobre o trabalho feito por Gabriel Baroni'},
@@ -16,6 +18,10 @@ function listarItens(tipo) {
       {imagem: 'imagens/eventos/img/EIAS_paula_apresentacao_2.jpeg', sigla: 'EIAS', ano: '2024', descricao: 'Montevideo Uruguai - Apresentação: Ana Paula'},
       {imagem: 'imagens/eventos/img/EIAS_lucas_apresentacao.jpg', sigla: 'EIAS', ano: '2024', descricao: 'Montevideo Uruguai - Apresentação: Lucas'},
       {imagem: 'imagens/eventos/img/EIAS_lucas_apresentacao_2.jpg', sigla: 'EIAS', ano: '2024', descricao: 'Montevideo Uruguai - Apresentação: Lucas'},
+      {imagem: 'imagens/eventos/img/EIAS_gabriel_kawabe_apresentacao.jpeg', sigla: 'EIAS', ano: '2024', descricao: 'Montevideo Uruguai - Apresentação: Gabriel Kawabe'},
+      {imagem: 'imagens/eventos/img/EIAS_gabriel_kawabe_apresentacao_2.jpeg', sigla: 'EIAS', ano: '2024', descricao: 'Montevideo Uruguai - Apresentação: Gabriel Kawabe'},
+      {imagem: 'imagens/eventos/img/EIAS_palestrante_marco_antonio_moreira.jpeg', sigla: 'EIAS', ano: '2024', descricao: 'Montevideo Uruguai - Palestrante: Marco Antônio Moreira'},
+
 
       {imagem: 'imagens/eventos/img/eppeq_2025_grupo.jpg', sigla: 'EPPEQ', ano: '2025', descricao: 'Presidente Prudente/SP - Foto do Grupo'},
       {imagem: 'imagens/eventos/img/eppeq_2025.jpg', sigla: 'EPPEQ', ano: '2025', descricao: 'Presidente Prudente/SP - Apresentação do Grupo'},
