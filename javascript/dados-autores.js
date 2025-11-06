@@ -33,7 +33,7 @@ function listarItens(tipo) {
         id: "3",
         nome: "Ana Paula Kawabe de Lima Ferreira",
         status: "Ativo",
-        formacao: "Química, Cursando Pedagogia, Doutoranda em Educação pelo PECIM Unicamp",
+        formacao: "Química, Cursando Pedagogia,Doutoranda em Educação pelo PECIM Unicamp",
         titulo: "Mestrado",
         tipoParticipacao: "Coordenação",
         anoIngresso: "2021",
