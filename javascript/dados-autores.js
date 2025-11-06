@@ -7,7 +7,7 @@ function listarItens(tipo) {
         id: "1",
         status: "Ativo",
         nome: "Alexssandro Ferreira da Silva",
-        formacao: "Administração, Análise e Desenvolvimento de Sistemas, Cursando Pedagogia, Mestrando em Educação pelo PECIM Unicamp",
+        formacao: "Administração, Análise e Desenvolvimento de Sistemas, Cursando Pedagogia,Mestrando em Educação pelo PECIM Unicamp",
         titulo: "Mestrando",
         tipoParticipacao: "Colaborador Interno",
         anoIngresso: "2022",
