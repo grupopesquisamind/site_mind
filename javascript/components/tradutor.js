@@ -1,5 +1,5 @@
 // =========================
-// 🌐 Componente: Tradutor Global (com bandeiras + persistência + sem barra Google + responsivo)
+// 🌐 Componente Tradutor Global (bandeiras + persistência + sem barra Google)
 // =========================
 
 class MeuTradutor extends HTMLElement {
@@ -11,7 +11,6 @@ class MeuTradutor extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <style>
-        /* ===== Botão Flutuante ===== */
         #btnTradutor {
           position: fixed;
           bottom: 20px;
@@ -21,85 +20,66 @@ class MeuTradutor extends HTMLElement {
           color: #fff;
           border: none;
           border-radius: 50px;
-          width: auto;
           height: 48px;
           padding: 0 16px;
           font-size: 16px;
           font-weight: 600;
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
           cursor: pointer;
-          transition: all 0.4s ease;
           display: flex;
           align-items: center;
           justify-content: center;
           gap: 8px;
+          transition: all 0.3s ease;
         }
-
         #btnTradutor:hover {
           background-color: #0056b3;
           transform: scale(1.05);
         }
-
-        #btnTradutor.reduzido {
-          opacity: 0.6;
-          transform: scale(0.9);
-        }
-
-        /* ===== Widget ===== */
         #google_translate_element {
           position: fixed;
           bottom: 80px;
           right: 20px;
-          background: #f8f9fa;
-          border: 1px solid #ddd;
+          background: #fff;
+          border: 1px solid #ccc;
           border-radius: 10px;
-          padding: 6px 10px;
+          padding: 8px;
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
           opacity: 0;
           transform: translateY(10px);
-          transition: opacity 0.4s ease, transform 0.4s ease;
+          transition: opacity 0.3s ease, transform 0.3s ease;
           pointer-events: none;
-          z-index: 2001;
+          z-index: 3000;
         }
-
         #google_translate_element.mostrar {
           opacity: 1;
           transform: translateY(0);
           pointer-events: all;
         }
 
-        .goog-te-gadget-simple {
-          background-color: #f8f9fa !important;
-          border-radius: 6px !important;
-          padding: 5px !important;
-          border: 1px solid #ccc !important;
-        }
-
-        .goog-te-menu-value span {
-          color: #000 !important;
-        }
-
-        .goog-te-gadget-icon {
-          display: none !important;
-        }
-
-        small {
-          font-size: 0.8rem;
-          color: #555;
-        }
-
-        /* ===== Remove barra e tooltip do Google ===== */
-        .goog-te-banner-frame.skiptranslate { display: none !important; }
-        body { top: 0px !important; }
-        .goog-tooltip, .goog-tooltip:hover { display: none !important; }
-        .goog-text-highlight { background-color: transparent !important; box-shadow: none !important; }
-
-        /* ===== Bandeira ===== */
+        /* Bandeira */
         #bandeiraIdioma {
           font-size: 20px;
         }
 
-        /* ===== Modo Responsivo ===== */
+        /* Remove completamente a barra e tooltip */
+        body > .skiptranslate, 
+        .goog-te-banner-frame, 
+        .goog-te-balloon-frame {
+          display: none !important;
+        }
+        body {
+          top: 0 !important;
+        }
+        .goog-tooltip, 
+        .goog-tooltip:hover, 
+        .goog-text-highlight {
+          display: none !important;
+          background: none !important;
+          box-shadow: none !important;
+        }
+
+        /* Responsivo */
         @media (max-width: 768px) {
           #btnTradutor {
             top: 10px;
@@ -109,7 +89,6 @@ class MeuTradutor extends HTMLElement {
             height: 42px;
             padding: 0 12px;
           }
-
           #google_translate_element {
             top: 60px;
             bottom: auto;
@@ -118,8 +97,7 @@ class MeuTradutor extends HTMLElement {
         }
       </style>
 
-      <!-- Botão e Widget -->
-      <button id="btnTradutor" title="Traduzir Página">
+      <button id="btnTradutor" title="Traduzir página">
         <span id="bandeiraIdioma">🇧🇷</span>
         <span id="idiomaAtivo">PT</span>
       </button>
@@ -127,57 +105,47 @@ class MeuTradutor extends HTMLElement {
     `;
 
     this.inicializarTradutor();
-    this.configurarAnimacaoRolagem();
   }
 
   inicializarTradutor() {
-    let widgetPronto = false;
     const widget = this.querySelector("#google_translate_element");
+    const btn = this.querySelector("#btnTradutor");
+
     const idiomaSalvo = this.obterIdiomaSalvo();
-
-    this.atualizarBotao(idiomaSalvo);
     this.definirCookie(idiomaSalvo);
+    this.atualizarBotao(idiomaSalvo);
 
-    // Callback do Google
+    // Função global exigida pelo Google
     window.inicializarTradutor = () => {
-      try {
-        new google.translate.TranslateElement({
+      new google.translate.TranslateElement(
+        {
           pageLanguage: "pt",
           includedLanguages: "pt,en,es,fr",
-          layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-        }, "google_translate_element");
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        },
+        "google_translate_element"
+      );
 
-        widgetPronto = true;
-
-        // Aplica idioma salvo automaticamente
-        if (idiomaSalvo && idiomaSalvo !== "pt") {
-          setTimeout(() => this.aplicarIdioma(idiomaSalvo), 1500);
-        }
-
-        this.observarSelecao();
-      } catch (e) {
-        console.warn("⏳ Aguardando carregamento do tradutor...");
-        setTimeout(window.inicializarTradutor, 800);
+      // Aplica automaticamente o idioma salvo
+      if (idiomaSalvo !== "pt") {
+        setTimeout(() => this.aplicarIdioma(idiomaSalvo), 1000);
       }
+
+      this.observarSelecao();
     };
 
-    // Evita múltiplos scripts
+    // Carregar script do Google uma única vez
     if (!document.querySelector("script[src*='translate_a/element.js']")) {
       const script = document.createElement("script");
-      script.src = "https://translate.google.com/translate_a/element.js?cb=inicializarTradutor";
+      script.src =
+        "https://translate.google.com/translate_a/element.js?cb=inicializarTradutor";
       document.head.appendChild(script);
     } else {
       window.inicializarTradutor();
     }
 
-    // Clique no botão 🌐
-    const btn = this.querySelector("#btnTradutor");
+    // Mostra/Oculta o widget
     btn.addEventListener("click", () => {
-      if (!widgetPronto) {
-        widget.innerHTML = "<small>Carregando tradutor...</small>";
-        widget.classList.add("mostrar");
-        return;
-      }
       widget.classList.toggle("mostrar");
       if (widget.classList.contains("mostrar")) this.destacarIdiomaAtual();
     });
@@ -187,52 +155,56 @@ class MeuTradutor extends HTMLElement {
     const observer = new MutationObserver(() => {
       const iframe = document.querySelector("iframe.goog-te-menu-frame");
       if (!iframe) return;
-      const innerDoc = iframe.contentDocument || iframe.contentWindow.document;
-      const links = innerDoc.querySelectorAll(".goog-te-menu2-item div.text");
 
-      links.forEach(link => {
-        link.addEventListener("click", () => {
-          const idiomaSelecionado = this.mapearIdioma(link.textContent.trim());
-          localStorage.setItem("idiomaSelecionado", idiomaSelecionado);
-          this.definirCookie(idiomaSelecionado);
-          this.atualizarBotao(idiomaSelecionado);
-          this.destacarIdiomaAtual();
+      const inner = iframe.contentDocument || iframe.contentWindow.document;
+      const opcoes = inner.querySelectorAll(".goog-te-menu2-item div.text");
+
+      opcoes.forEach((opcao) => {
+        opcao.addEventListener("click", () => {
+          const idioma = this.mapearIdioma(opcao.textContent.trim());
+          localStorage.setItem("idiomaSelecionado", idioma);
+          this.definirCookie(idioma);
+          this.atualizarBotao(idioma);
         });
       });
+
       this.destacarIdiomaAtual();
     });
     observer.observe(document.body, { childList: true, subtree: true });
   }
 
-  aplicarIdioma(codigo) {
-    this.definirCookie(codigo);
+  aplicarIdioma(lang) {
+    this.definirCookie(lang);
     const frame = document.querySelector("iframe.goog-te-menu-frame");
     if (!frame) {
-      setTimeout(() => this.aplicarIdioma(codigo), 1000);
+      setTimeout(() => this.aplicarIdioma(lang), 1000);
       return;
     }
-    const innerDoc = frame.contentDocument || frame.contentWindow.document;
-    const links = innerDoc.querySelectorAll(".goog-te-menu2-item div.text");
-    links.forEach(link => {
-      const idioma = this.mapearIdioma(link.textContent.trim());
-      if (idioma === codigo) {
-        link.click();
-        this.atualizarBotao(idioma);
-        this.destacarIdiomaAtual();
-      }
+
+    const inner = frame.contentDocument || frame.contentWindow.document;
+    const opcoes = inner.querySelectorAll(".goog-te-menu2-item div.text");
+
+    opcoes.forEach((opcao) => {
+      const idioma = this.mapearIdioma(opcao.textContent.trim());
+      if (idioma === lang) opcao.click();
     });
+
+    this.atualizarBotao(lang);
   }
 
   destacarIdiomaAtual() {
     const idiomaAtivo = this.obterIdiomaSalvo();
     const frame = document.querySelector("iframe.goog-te-menu-frame");
     if (!frame) return;
-    const innerDoc = frame.contentDocument || frame.contentWindow.document;
-    const links = innerDoc.querySelectorAll(".goog-te-menu2-item div.text");
-    links.forEach(link => {
-      const idioma = this.mapearIdioma(link.textContent.trim());
-      link.parentElement.style.background = idioma === idiomaAtivo ? "#fff8c4" : "";
-      link.style.fontWeight = idioma === idiomaAtivo ? "bold" : "normal";
+
+    const inner = frame.contentDocument || frame.contentWindow.document;
+    const opcoes = inner.querySelectorAll(".goog-te-menu2-item div.text");
+
+    opcoes.forEach((opcao) => {
+      const idioma = this.mapearIdioma(opcao.textContent.trim());
+      opcao.parentElement.style.background =
+        idioma === idiomaAtivo ? "#fff8c4" : "";
+      opcao.style.fontWeight = idioma === idiomaAtivo ? "bold" : "normal";
     });
   }
 
@@ -245,16 +217,16 @@ class MeuTradutor extends HTMLElement {
     return "pt";
   }
 
-  atualizarBotao(codigo) {
-    const idiomaMap = {
+  atualizarBotao(lang) {
+    const idiomas = {
       pt: { texto: "PT", bandeira: "🇧🇷" },
       en: { texto: "EN", bandeira: "🇬🇧" },
       es: { texto: "ES", bandeira: "🇪🇸" },
-      fr: { texto: "FR", bandeira: "🇫🇷" }
+      fr: { texto: "FR", bandeira: "🇫🇷" },
     };
-    const idioma = idiomaMap[codigo] || idiomaMap.pt;
-    this.querySelector("#idiomaAtivo").textContent = idioma.texto;
-    this.querySelector("#bandeiraIdioma").textContent = idioma.bandeira;
+    const atual = idiomas[lang] || idiomas.pt;
+    this.querySelector("#bandeiraIdioma").textContent = atual.bandeira;
+    this.querySelector("#idiomaAtivo").textContent = atual.texto;
   }
 
   obterIdiomaSalvo() {
@@ -263,16 +235,6 @@ class MeuTradutor extends HTMLElement {
 
   definirCookie(lang) {
     document.cookie = `googtrans=/auto/${lang};path=/;domain=${location.hostname}`;
-  }
-
-  configurarAnimacaoRolagem() {
-    const btn = this.querySelector("#btnTradutor");
-    let rolando;
-    window.addEventListener("scroll", () => {
-      btn.classList.add("reduzido");
-      clearTimeout(rolando);
-      rolando = setTimeout(() => btn.classList.remove("reduzido"), 700);
-    });
   }
 }
 
