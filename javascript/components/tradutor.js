@@ -1,6 +1,3 @@
-// =============================
-// 🌐 Tradutor Unificado — versão final (rótulo dinâmico + persistência real)
-// =============================
 
 class MeuTradutor extends HTMLElement {
   connectedCallback() {
