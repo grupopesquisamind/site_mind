@@ -2,12 +2,12 @@ class MeuMenu extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <!-- Botão Toggle -->
-      <button class="btn py-5" id="menu-toggle-btn" data-bs-toggle="offcanvas" data-bs-target="#menuOffcanvas" aria-controls="menuOffcanvas">
+      <button class="btn py-1" id="menu-toggle-btn" data-bs-toggle="offcanvas" data-bs-target="#menuOffcanvas" aria-controls="menuOffcanvas">
         <i class="bi bi-list" id="menu-icon" style="font-size: 1.5rem;"></i>
       </button>
 
       <!-- Menu lateral -->
-      <div class="offcanvas offcanvas-start py-5" tabindex="0" id="menuOffcanvas" aria-labelledby="menuOffcanvasLabel">
+      <div class="offcanvas offcanvas-start py-3" tabindex="0" id="menuOffcanvas" aria-labelledby="menuOffcanvasLabel">
         <div class="offcanvas-header d-flex align-items-center justify-content-between">
           <figure style="text-align:center; width:100%;">
             <img src="imagens/nome-mind.jpg" alt="MIND" 
