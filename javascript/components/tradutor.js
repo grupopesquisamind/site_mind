@@ -1,8 +1,16 @@
+// =========================
+// 🌐 Componente: Tradutor Unificado (Botão + Persistência Global)
+// =========================
 
 class MeuTradutor extends HTMLElement {
+  constructor() {
+    super();
+  }
+
   connectedCallback() {
     this.innerHTML = `
       <style>
+        /* ===== BOTÃO FLUTUANTE ===== */
         #btnTradutor {
           position: fixed;
           bottom: 20px;
@@ -23,8 +31,19 @@ class MeuTradutor extends HTMLElement {
           justify-content: center;
           align-items: center;
         }
-        #btnTradutor:hover { background-color: #0056b3; transform: scale(1.1); }
 
+        #btnTradutor:hover {
+          background-color: #0056b3;
+          transform: scale(1.1);
+        }
+
+        /* ===== BOTÃO REDUZIDO AO ROLAR ===== */
+        #btnTradutor.reduzido {
+          opacity: 0.5;
+          transform: scale(0.85);
+        }
+
+        /* ===== WIDGET ===== */
         #google_translate_element {
           position: fixed;
           bottom: 90px;
@@ -40,18 +59,32 @@ class MeuTradutor extends HTMLElement {
           pointer-events: none;
           z-index: 2001;
         }
+
         #google_translate_element.mostrar {
           opacity: 1;
           transform: translateY(0);
           pointer-events: all;
         }
+
         .goog-te-gadget-simple {
           background-color: #fff !important;
           border-radius: 6px !important;
           border: 1px solid #ccc !important;
           padding: 5px !important;
         }
-        .goog-te-gadget-icon { display: none !important; }
+
+        .goog-te-menu-value span {
+          color: #000 !important;
+        }
+
+        .goog-te-gadget-icon {
+          display: none !important;
+        }
+
+        small {
+          font-size: 0.8rem;
+          color: #555;
+        }
       </style>
 
       <button id="btnTradutor" aria-label="Traduzir página" title="Traduzir página">
@@ -60,64 +93,110 @@ class MeuTradutor extends HTMLElement {
       <div id="google_translate_element"></div>
     `;
 
-    this.initTradutor();
+    this.inicializarTradutor();
+    this.configurarAnimacaoRolagem();
   }
 
-  initTradutor() {
+  inicializarTradutor() {
     const widget = this.querySelector("#google_translate_element");
     const btn = this.querySelector("#btnTradutor");
+    let widgetPronto = false;
 
-    const langMap = { pt: "PT", en: "EN", es: "ES", fr: "FR" };
-
-    // === Carrega idioma salvo ou padrão ===
-    let idiomaAtual =
-      localStorage.getItem("idiomaSelecionado") ||
-      "pt";
-
-    const aplicarIdioma = (lang) => {
-      const codigo = lang.toLowerCase();
-      idiomaAtual = codigo;
-      const label = langMap[codigo] || "PT";
-      btn.textContent = `🌐 ${label}`;
-      localStorage.setItem("idiomaSelecionado", codigo);
-      document.cookie = `googtrans=/auto/${codigo};path=/;`;
+    const salvarIdioma = (lang) => {
+      localStorage.setItem("idiomaSelecionado", lang);
+      document.cookie = `googtrans=/auto/${lang};path=/;`;
+      try {
+        sessionStorage.setItem("idiomaSelecionado", lang); // Fallback Safari
+      } catch (e) {}
+      window.dispatchEvent(new CustomEvent("idiomaAlterado", { detail: lang }));
     };
 
-    aplicarIdioma(idiomaAtual);
+    const aplicarIdiomaSalvo = () => {
+      const lang =
+        localStorage.getItem("idiomaSelecionado") ||
+        sessionStorage.getItem("idiomaSelecionado") ||
+        "pt";
 
-    // === Função global obrigatória do Google ===
+      document.cookie = `googtrans=/auto/${lang};path=/;`;
+      btn.textContent = `🌐 ${lang.toUpperCase()}`;
+      return lang;
+    };
+
+    // Função global obrigatória pelo Google
     window.inicializarTradutor = () => {
-      new google.translate.TranslateElement(
-        {
-          pageLanguage: "pt",
-          includedLanguages: "pt,en,es,fr",
-          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        },
-        "google_translate_element"
-      );
+      try {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: "pt",
+            includedLanguages: "pt,en,es,fr",
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+          },
+          "google_translate_element"
+        );
 
-      // Monitora URL e cookies para detectar idioma ativo
-      const atualizarDoCookie = () => {
-        const match = document.cookie.match(/googtrans=\/auto\/([^;]+)/);
-        const lang = match ? match[1] : "pt";
-        aplicarIdioma(lang);
-      };
-      setInterval(atualizarDoCookie, 1500);
+        widgetPronto = true;
+
+        // Define idioma salvo
+        const idiomaAtual = aplicarIdiomaSalvo();
+
+        // Atualiza visual no botão quando muda via widget
+        const observer = new MutationObserver(() => {
+          const iframe = document.querySelector("iframe.goog-te-menu-frame");
+          if (!iframe) return;
+          iframe.contentWindow.document.querySelectorAll(".goog-te-menu2-item").forEach(item => {
+            item.addEventListener("click", () => {
+              const lang = item.querySelector("span.text").innerText.trim().toLowerCase();
+              salvarIdioma(lang);
+              btn.textContent = `🌐 ${lang.toUpperCase()}`;
+            });
+          });
+        });
+        observer.observe(document.body, { childList: true, subtree: true });
+      } catch (e) {
+        console.warn("⏳ Aguardando Google Translate...");
+        setTimeout(window.inicializarTradutor, 1000);
+      }
     };
 
-    // === Carrega script Google Translate ===
-    if (!window.google || !window.google.translate) {
-      const script = document.createElement("script");
-      script.src =
-        "https://translate.google.com/translate_a/element.js?cb=inicializarTradutor";
-      document.head.appendChild(script);
-    } else {
-      window.inicializarTradutor();
-    }
+    // Carrega o script oficial do Google Translate
+    const script = document.createElement("script");
+    script.src = "https://translate.google.com/translate_a/element.js?cb=inicializarTradutor";
+    document.head.appendChild(script);
 
-    // === Abre/fecha o widget ===
+    // Exibe / oculta o widget
     btn.addEventListener("click", () => {
-      widget.classList.toggle("mostrar");
+      if (!widgetPronto) {
+        widget.innerHTML = "<small>Carregando tradutor...</small>";
+        widget.classList.add("mostrar");
+        return;
+      }
+
+      if (widget.classList.contains("mostrar")) {
+        widget.classList.remove("mostrar");
+        setTimeout(() => (widget.style.display = "none"), 400);
+      } else {
+        widget.style.display = "block";
+        setTimeout(() => widget.classList.add("mostrar"), 10);
+      }
+    });
+
+    aplicarIdiomaSalvo();
+
+    // Sincroniza quando idioma é alterado em outro componente
+    window.addEventListener("idiomaAlterado", (e) => {
+      btn.textContent = `🌐 ${e.detail.toUpperCase()}`;
+    });
+  }
+
+  configurarAnimacaoRolagem() {
+    const btn = this.querySelector("#btnTradutor");
+    let rolando;
+    window.addEventListener("scroll", () => {
+      btn.classList.add("reduzido");
+      clearTimeout(rolando);
+      rolando = setTimeout(() => {
+        btn.classList.remove("reduzido");
+      }, 700);
     });
   }
 }
