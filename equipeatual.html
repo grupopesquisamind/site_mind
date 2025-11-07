@@ -14,15 +14,13 @@
   <script src="javascript/components/footer.js" defer></script>
 
  <style>
-   #page-wrapper {
+#page-wrapper {
   display: flex;
   flex-direction: column;
-  flex: 1; /* ocupa a altura disponível */
-  min-height: 100vh; /* força ocupar a altura toda da tela */
-  max-width: 100%;
-  max-height: 90%;
-  margin: auto; /* centraliza horizontal e vertical */
-  overflow: auto; /* ativa scroll se o conteúdo for maior */
+  flex: 1;
+  min-height: 100vh;
+  margin: auto;
+  overflow: auto;
 }
 
 h2, h5 {
@@ -34,7 +32,6 @@ h2, h5 {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
-  margin-top: 2rem;
 }
 
 /* Ajuste de colunas por largura da tela */
@@ -47,7 +44,7 @@ h2, h5 {
 /* ====== Estilo dos cards ====== */
 .card {
   width: 180px; /* largura do card */
-  height: 480px; /* ocupa 60% do card */
+  height: 420px; /* ocupa 60% do card */
   display: flex;
   flex-direction: column;
   background: #fff;
