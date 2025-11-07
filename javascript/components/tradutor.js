@@ -39,21 +39,21 @@ class MeuTradutor extends HTMLElement {
         }
 
         /* ===== Widget ===== */
-        #google_translate_element {
-          position: fixed;
-          bottom: 90px;
-          right: 20px;
-          background: #f8f9fa;
-          border: 1px solid #ddd;
-          border-radius: 10px;
-          padding: 6px 10px;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-          opacity: 0;
-          transform: translateY(10px);
-          transition: opacity 0.4s ease, transform 0.4s ease;
-          pointer-events: none;
-          z-index: 2001;
-        }
+#google_translate_element {
+  position: fixed;
+  bottom: 130px; /* antes era 90px */
+  right: 20px;
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 6px 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+  z-index: 2001;
+}
 
         #google_translate_element.mostrar {
           opacity: 1;
