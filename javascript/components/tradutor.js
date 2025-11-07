@@ -1,7 +1,6 @@
 // =============================
-// 🌐 Tradutor Unificado — versão persistente e sincronizada
+// 🌐 Tradutor Unificado — Persistência Real entre Páginas
 // =============================
-
 class MeuTradutor extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
@@ -64,27 +63,14 @@ class MeuTradutor extends HTMLElement {
     const widget = this.querySelector("#google_translate_element");
     const langMap = { pt: "PT", en: "EN", es: "ES", fr: "FR" };
 
-    // 🔹 Carrega idioma salvo (ou padrão)
+    // 🔹 Lê o idioma salvo ou define como português
     let idiomaAtual = localStorage.getItem("idiomaSelecionado") || "pt";
     btn.textContent = `🌐 ${langMap[idiomaAtual]}`;
 
-    // 🔹 Função para aplicar idioma ao Google Translate
-    const aplicarIdioma = (lang) => {
-      localStorage.setItem("idiomaSelecionado", lang);
-      document.cookie = `googtrans=/auto/${lang};path=/;`;
-      btn.textContent = `🌐 ${langMap[lang] || "PT"}`;
+    // 🔹 Aplica cookie ANTES de carregar o script do Google
+    document.cookie = `googtrans=/auto/${idiomaAtual};path=/;`;
 
-      const iframe = document.querySelector("iframe.goog-te-menu-frame");
-      if (iframe) {
-        const doc = iframe.contentDocument || iframe.contentWindow.document;
-        const opt = [...doc.querySelectorAll(".goog-te-menu2-item span.text")].find(
-          (el) => el.innerText.toLowerCase() === lang.toLowerCase()
-        );
-        if (opt) opt.click();
-      }
-    };
-
-    // 🔹 Inicializa Google Translate
+    // 🔹 Define função de tradução global exigida pelo Google
     window.googleTranslateElementInit = () => {
       new google.translate.TranslateElement(
         {
@@ -95,22 +81,22 @@ class MeuTradutor extends HTMLElement {
         "google_translate_element"
       );
 
-      // Aplica idioma salvo após carregamento
-      setTimeout(() => aplicarIdioma(idiomaAtual), 1500);
+      // Reaplica idioma salvo após 1,5s
+      setTimeout(() => this.aplicarIdioma(idiomaAtual, btn, langMap), 1500);
     };
 
-    // 🔹 Carrega o script do Google Translate
+    // 🔹 Carrega o script do Google
     const script = document.createElement("script");
     script.src =
       "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
     document.head.appendChild(script);
 
-    // 🔹 Controle do botão flutuante
+    // 🔹 Exibe / oculta o widget
     btn.addEventListener("click", () => {
       widget.classList.toggle("mostrar");
     });
 
-    // 🔹 Observa mudança no iframe e atualiza idioma escolhido
+    // 🔹 Detecta mudança de idioma
     const observer = new MutationObserver(() => {
       const iframe = document.querySelector("iframe.goog-te-menu-frame");
       if (!iframe) return;
@@ -118,12 +104,24 @@ class MeuTradutor extends HTMLElement {
       const itens = doc.querySelectorAll(".goog-te-menu2-item span.text");
       itens.forEach((item) => {
         item.onclick = () => {
-          const novo = item.innerText.trim().toLowerCase();
-          aplicarIdioma(novo);
+          const lang = item.innerText.trim().toLowerCase();
+          this.salvarIdioma(lang, btn, langMap);
         };
       });
     });
     observer.observe(document.body, { childList: true, subtree: true });
+  }
+
+  salvarIdioma(lang, btn, map) {
+    localStorage.setItem("idiomaSelecionado", lang);
+    document.cookie = `googtrans=/auto/${lang};path=/;`;
+    btn.textContent = `🌐 ${map[lang] || "PT"}`;
+  }
+
+  aplicarIdioma(lang, btn, map) {
+    btn.textContent = `🌐 ${map[lang] || "PT"}`;
+    localStorage.setItem("idiomaSelecionado", lang);
+    document.cookie = `googtrans=/auto/${lang};path=/;`;
   }
 }
 
