@@ -37,17 +37,19 @@ h2, h3, h5 {
 
 /* Informações do projeto alinhadas à esquerda dentro de uma div */
 #infoProjeto {
+  position: relative;
   text-align: left;
-  width: 90%;
+  width: 95%;
   max-width: 900px;
-  margin: 10px auto;
-  padding: 10px 15px;
+  margin: 20px auto;
+  padding: 15px 20px;
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   font-size: 1rem;
-  line-height: 1.4;
+  line-height: 1.5;
   color: #333;
+  box-sizing: border-box;
 }
 
 #infoProjeto p {
@@ -93,18 +95,38 @@ h2, h3, h5 {
 }
 
 /* Responsividade */
-@media (max-width: 1200px) {
+  /* ===== Ajustes para tablets ===== */
+@media (max-width: 991px) {
+  #infoProjeto {
+    width: 92%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+  }
+}
+
+/* ===== Ajustes para celulares ===== */
+  @media (max-width: 1200px) {
   #nomeProducao { font-size: 1.4rem; }
   #infoProjeto { font-size: 0.95rem; }
   #iframeConteudo { height: 60vh; }
 }
-
+  
 @media (max-width: 768px) {
   #nomeProducao { font-size: 1.2rem; }
   #infoProjeto { font-size: 0.9rem; }
   #iframeConteudo { height: 55vh; }
 }
-
+@media (max-width: 576px) {
+  #infoProjeto {
+    width: 96%;
+    padding: 10px 12px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+}
+  
 @media (orientation: portrait) {
   #iframeConteudo { height: 60vh; width: 90vw; }
 }
@@ -115,7 +137,7 @@ h2, h3, h5 {
 </style>
 </head>
 
-<body class="container">
+<body class="container-fluid py-5">
 <main class="container my-2">
   <section class="mt-2" id="modal">
     <h2 id="titulo"><strong style="color: rgb(7, 7, 7);">Jogo criado pela equipe MIND - Movimento para Inclusão e Neurodiversidade.</strong></h2>
