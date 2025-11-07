@@ -1,10 +1,47 @@
-// =============================
-// 🌐 Tradutor Unificado — Persistência Real entre Páginas
-// =============================
+// ======================================================
+// 🌐 TRADUTOR GLOBAL MIND — Persistência total entre páginas
+// ======================================================
+
 class MeuTradutor extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <style>
+        .tradutor-menu {
+          position: fixed;
+          top: 0;
+          right: 0;
+          background: rgba(255,255,255,0.95);
+          border-bottom-left-radius: 10px;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+          padding: 6px 10px;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          z-index: 2001;
+          font-family: 'Segoe UI', sans-serif;
+        }
+
+        .tradutor-menu button {
+          background: none;
+          border: none;
+          cursor: pointer;
+          font-size: 18px;
+          padding: 4px;
+          opacity: 0.6;
+          transition: all 0.3s;
+        }
+
+        .tradutor-menu button.ativo {
+          opacity: 1;
+          transform: scale(1.15);
+        }
+
+        .tradutor-menu img {
+          width: 24px;
+          height: 18px;
+          border-radius: 3px;
+        }
+
         #btnTradutor {
           position: fixed;
           bottom: 20px;
@@ -16,7 +53,7 @@ class MeuTradutor extends HTMLElement {
           border-radius: 50%;
           width: 56px;
           height: 56px;
-          font-size: 20px;
+          font-size: 18px;
           font-weight: bold;
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
           cursor: pointer;
@@ -25,6 +62,7 @@ class MeuTradutor extends HTMLElement {
           justify-content: center;
           align-items: center;
         }
+
         #btnTradutor:hover { background-color: #0056b3; transform: scale(1.1); }
 
         #google_translate_element {
@@ -42,6 +80,7 @@ class MeuTradutor extends HTMLElement {
           pointer-events: none;
           z-index: 2001;
         }
+
         #google_translate_element.mostrar {
           opacity: 1;
           transform: translateY(0);
@@ -49,9 +88,14 @@ class MeuTradutor extends HTMLElement {
         }
       </style>
 
-      <button id="btnTradutor" aria-label="Traduzir página" title="Traduzir página">
-        🌐 PT
-      </button>
+      <div class="tradutor-menu">
+        <button data-lang="pt" title="Português"><img src="https://flagcdn.com/w20/br.png" alt="PT"></button>
+        <button data-lang="en" title="Inglês"><img src="https://flagcdn.com/w20/gb.png" alt="EN"></button>
+        <button data-lang="es" title="Espanhol"><img src="https://flagcdn.com/w20/es.png" alt="ES"></button>
+        <button data-lang="fr" title="Francês"><img src="https://flagcdn.com/w20/fr.png" alt="FR"></button>
+      </div>
+
+      <button id="btnTradutor" aria-label="Traduzir página">🌐 PT</button>
       <div id="google_translate_element"></div>
     `;
 
@@ -61,16 +105,16 @@ class MeuTradutor extends HTMLElement {
   initTradutor() {
     const btn = this.querySelector("#btnTradutor");
     const widget = this.querySelector("#google_translate_element");
+    const langButtons = this.querySelectorAll(".tradutor-menu button");
     const langMap = { pt: "PT", en: "EN", es: "ES", fr: "FR" };
 
-    // 🔹 Lê o idioma salvo ou define como português
-    let idiomaAtual = localStorage.getItem("idiomaSelecionado") || "pt";
-    btn.textContent = `🌐 ${langMap[idiomaAtual]}`;
+    // === Recupera idioma salvo (ou padrão PT)
+    const idiomaSalvo = localStorage.getItem("idiomaSelecionado") || "pt";
+    this.setCookieIdioma(idiomaSalvo);
+    btn.textContent = `🌐 ${langMap[idiomaSalvo]}`;
+    langButtons.forEach(b => b.classList.toggle("ativo", b.dataset.lang === idiomaSalvo));
 
-    // 🔹 Aplica cookie ANTES de carregar o script do Google
-    document.cookie = `googtrans=/auto/${idiomaAtual};path=/;`;
-
-    // 🔹 Define função de tradução global exigida pelo Google
+    // === Inicializa Google Translate
     window.googleTranslateElementInit = () => {
       new google.translate.TranslateElement(
         {
@@ -80,48 +124,44 @@ class MeuTradutor extends HTMLElement {
         },
         "google_translate_element"
       );
-
-      // Reaplica idioma salvo após 1,5s
-      setTimeout(() => this.aplicarIdioma(idiomaAtual, btn, langMap), 1500);
+      setTimeout(() => this.aplicarIdioma(idiomaSalvo, btn, langButtons, langMap), 1500);
     };
 
-    // 🔹 Carrega o script do Google
+    // === Carrega script do Google
     const script = document.createElement("script");
-    script.src =
-      "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+    script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
     document.head.appendChild(script);
 
-    // 🔹 Exibe / oculta o widget
+    // === Exibe/Oculta widget
     btn.addEventListener("click", () => {
       widget.classList.toggle("mostrar");
     });
 
-    // 🔹 Detecta mudança de idioma
-    const observer = new MutationObserver(() => {
-      const iframe = document.querySelector("iframe.goog-te-menu-frame");
-      if (!iframe) return;
-      const doc = iframe.contentDocument || iframe.contentWindow.document;
-      const itens = doc.querySelectorAll(".goog-te-menu2-item span.text");
-      itens.forEach((item) => {
-        item.onclick = () => {
-          const lang = item.innerText.trim().toLowerCase();
-          this.salvarIdioma(lang, btn, langMap);
-        };
+    // === Clique nas bandeiras
+    langButtons.forEach(b => {
+      b.addEventListener("click", () => {
+        const lang = b.dataset.lang;
+        this.salvarIdioma(lang);
+        this.aplicarIdioma(lang, btn, langButtons, langMap);
+        location.reload(); // Recarrega para aplicar tradução antes do Google ler o cookie
       });
     });
-    observer.observe(document.body, { childList: true, subtree: true });
   }
 
-  salvarIdioma(lang, btn, map) {
+  salvarIdioma(lang) {
     localStorage.setItem("idiomaSelecionado", lang);
-    document.cookie = `googtrans=/auto/${lang};path=/;`;
-    btn.textContent = `🌐 ${map[lang] || "PT"}`;
+    this.setCookieIdioma(lang);
   }
 
-  aplicarIdioma(lang, btn, map) {
+  aplicarIdioma(lang, btn, buttons, map) {
     btn.textContent = `🌐 ${map[lang] || "PT"}`;
-    localStorage.setItem("idiomaSelecionado", lang);
+    buttons.forEach(b => b.classList.toggle("ativo", b.dataset.lang === lang));
+    this.setCookieIdioma(lang);
+  }
+
+  setCookieIdioma(lang) {
     document.cookie = `googtrans=/auto/${lang};path=/;`;
+    document.cookie = `googtrans=/pt/${lang};path=/;`; // força o Google Translate a aplicar corretamente
   }
 }
 
