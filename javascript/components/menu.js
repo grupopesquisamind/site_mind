@@ -2,12 +2,12 @@ class MeuMenu extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <!-- Botão Toggle -->
-      <button class="btn" id="menu-toggle-btn" data-bs-toggle="offcanvas" data-bs-target="#menuOffcanvas" aria-controls="menuOffcanvas">
+      <button class="btn py-5" id="menu-toggle-btn" data-bs-toggle="offcanvas" data-bs-target="#menuOffcanvas" aria-controls="menuOffcanvas">
         <i class="bi bi-list" id="menu-icon" style="font-size: 1.5rem;"></i>
       </button>
 
       <!-- Menu lateral -->
-      <div class="offcanvas offcanvas-start" tabindex="0" id="menuOffcanvas" aria-labelledby="menuOffcanvasLabel">
+      <div class="offcanvas offcanvas-start py-5" tabindex="0" id="menuOffcanvas" aria-labelledby="menuOffcanvasLabel">
         <div class="offcanvas-header d-flex align-items-center justify-content-between">
           <figure style="text-align:center; width:100%;">
             <img src="imagens/nome-mind.jpg" alt="MIND" 
@@ -18,7 +18,7 @@ class MeuMenu extends HTMLElement {
           </figure>
         </div>
 
-        <div class="offcanvas-body p-0 d-flex flex-column justify-content-between">
+        <div class="offcanvas-body p-0 d-flex flex-column justify-content-between py-5">
           <nav class="nav flex-column px-3" id="meuMenu">
             <a class="nav-link d-flex align-items-center gap-2" href="home.html"><i class="bi bi-house-door-fill"></i> Início</a>
             <a class="nav-link d-flex align-items-center gap-2 border border-4 border-white" href="equipeatual.html"><i class="bi bi-people-fill"></i> Equipe Atual</a>
