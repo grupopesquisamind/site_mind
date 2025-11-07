@@ -18,7 +18,7 @@ class MeuMenu extends HTMLElement {
           </figure>
         </div>
 
-        <div class="offcanvas-body p-0 d-flex flex-column justify-content-between py-5">
+        <div class="offcanvas-body p-0 d-flex flex-column justify-content-between">
           <nav class="nav flex-column px-3" id="meuMenu">
             <a class="nav-link d-flex align-items-center gap-2" href="home.html"><i class="bi bi-house-door-fill"></i> Início</a>
             <a class="nav-link d-flex align-items-center gap-2 border border-4 border-white" href="equipeatual.html"><i class="bi bi-people-fill"></i> Equipe Atual</a>
