@@ -1,71 +1,64 @@
-class MeuTradutor extends HTMLElement {
+class TradutorMenu extends HTMLElement {
   constructor() {
     super();
+    this.idiomaAtual = "pt"; // idioma padrão inicial
   }
 
   connectedCallback() {
     this.innerHTML = `
       <style>
-        /* ===== Botão Flutuante ===== */
-        #btnTradutor {
-          position: fixed;
-          bottom: 20px;
-          right: 20px;
-          z-index: 2000;
-          background-color: #007bff;
-          color: #fff;
-          border: none;
-          border-radius: 50%;
-          width: 56px;
-          height: 56px;
-          font-size: 24px;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-          cursor: pointer;
-          transition: all 0.4s ease;
+        .tradutor-menu {
           display: flex;
-          justify-content: center;
           align-items: center;
+          gap: 8px;
+          margin-left: 15px;
+          position: relative;
+        }
+
+        #btnTradutor {
+          background-color: transparent;
+          border: none;
+          color: #fff;
+          font-size: 16px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          transition: all 0.3s ease;
         }
 
         #btnTradutor:hover {
-          background-color: #0056b3;
-          transform: scale(1.1);
+          color: #ffd700;
+          transform: scale(1.05);
         }
 
-        /* ===== Estado reduzido ao rolar ===== */
-        #btnTradutor.reduzido {
-          opacity: 0.5;
-          transform: scale(0.85);
-        }
-
-        /* ===== Widget do Tradutor ===== */
         #google_translate_element {
-          position: fixed;
-          bottom: 90px;
-          right: 20px;
-          background: #f8f9fa;
+          display: none;
+          position: absolute;
+          top: 40px;
+          right: 0;
+          background-color: #fff;
           border: 1px solid #ddd;
-          border-radius: 10px;
-          padding: 6px 10px;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-          opacity: 0;
-          transform: translateY(10px);
-          transition: opacity 0.4s ease, transform 0.4s ease;
-          pointer-events: none;
-          z-index: 2001;
+          border-radius: 8px;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+          padding: 5px 10px;
+          z-index: 5000;
+          animation: fadeIn 0.3s ease;
         }
 
         #google_translate_element.mostrar {
-          opacity: 1;
-          transform: translateY(0);
-          pointer-events: all;
+          display: block;
         }
 
-        /* ===== Estilo interno do widget ===== */
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(-5px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
         .goog-te-gadget-simple {
           background-color: #f8f9fa !important;
           border-radius: 6px !important;
-          padding: 5px !important;
+          padding: 4px !important;
           border: 1px solid #ccc !important;
         }
 
@@ -77,48 +70,59 @@ class MeuTradutor extends HTMLElement {
           display: none !important;
         }
 
-        small {
-          font-size: 0.8rem;
-          color: #555;
+        #idiomaAtivo {
+          font-weight: 600;
+          color: #ffd700;
         }
       </style>
 
-      <!-- Botão + Widget -->
-      <button id="btnTradutor" title="Traduzir Página">
-        🌐
-      </button>
-      <div id="google_translate_element"></div>
+      <div class="tradutor-menu">
+        <button id="btnTradutor" title="Selecionar idioma">
+          🌐 <span id="idiomaAtivo">PT</span>
+        </button>
+        <div id="google_translate_element"></div>
+      </div>
     `;
 
     this.inicializarTradutor();
-    this.configurarAnimacaoRolagem();
   }
 
   inicializarTradutor() {
-    let widgetPronto = false;
     const widget = this.querySelector("#google_translate_element");
+    let widgetPronto = false;
+    const idiomaSalvo = localStorage.getItem("idiomaSelecionado") || "pt";
+    this.atualizarBotao(idiomaSalvo);
 
-    // Callback exigido pelo Google
-    window.inicializarTradutor = function () {
+    // Callback do Google Translate
+    window.inicializarTradutor = () => {
       try {
         new google.translate.TranslateElement({
           pageLanguage: 'pt',
           includedLanguages: 'pt,en,es,fr',
           layout: google.translate.TranslateElement.InlineLayout.SIMPLE
         }, 'google_translate_element');
+
         widgetPronto = true;
+
+        if (idiomaSalvo !== "pt") {
+          this.aplicarIdioma(idiomaSalvo);
+        }
+
+        this.observarSelecao();
       } catch (e) {
         console.warn("Aguardando carregamento do tradutor...");
         setTimeout(window.inicializarTradutor, 1000);
       }
     };
 
-    // Carrega script oficial do Google Translate
-    const script = document.createElement("script");
-    script.src = "https://translate.google.com/translate_a/element.js?cb=inicializarTradutor";
-    document.head.appendChild(script);
+    if (!document.querySelector("script[src*='translate_a/element.js']")) {
+      const script = document.createElement("script");
+      script.src = "https://translate.google.com/translate_a/element.js?cb=inicializarTradutor";
+      document.head.appendChild(script);
+    } else {
+      window.inicializarTradutor();
+    }
 
-    // Controle de exibição do widget
     const btn = this.querySelector("#btnTradutor");
     btn.addEventListener("click", () => {
       if (!widgetPronto) {
@@ -126,30 +130,84 @@ class MeuTradutor extends HTMLElement {
         widget.classList.add("mostrar");
         return;
       }
+      widget.classList.toggle("mostrar");
+      if (widget.classList.contains("mostrar")) this.destacarIdiomaAtual();
+    });
+  }
 
-      if (widget.classList.contains("mostrar")) {
-        widget.classList.remove("mostrar");
-        setTimeout(() => (widget.style.display = "none"), 400);
-      } else {
-        widget.style.display = "block";
-        setTimeout(() => widget.classList.add("mostrar"), 10);
+  observarSelecao() {
+    const observer = new MutationObserver(() => {
+      const iframe = document.querySelector("iframe.goog-te-menu-frame");
+      if (!iframe) return;
+
+      const innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+      const links = innerDoc.querySelectorAll(".goog-te-menu2-item div.text");
+
+      links.forEach(link => {
+        link.addEventListener("click", () => {
+          const idiomaSelecionado = this.mapearIdioma(link.textContent.trim());
+          localStorage.setItem("idiomaSelecionado", idiomaSelecionado);
+          this.atualizarBotao(idiomaSelecionado);
+          this.destacarIdiomaAtual();
+        });
+      });
+
+      // Destaca idioma atual no menu quando ele é aberto
+      this.destacarIdiomaAtual();
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+  }
+
+  aplicarIdioma(codigo) {
+    const frame = document.querySelector("iframe.goog-te-menu-frame");
+    if (!frame) {
+      setTimeout(() => this.aplicarIdioma(codigo), 1000);
+      return;
+    }
+
+    const innerDoc = frame.contentDocument || frame.contentWindow.document;
+    const links = innerDoc.querySelectorAll(".goog-te-menu2-item div.text");
+
+    links.forEach(link => {
+      const idioma = this.mapearIdioma(link.textContent.trim());
+      if (idioma === codigo) {
+        link.click();
+        this.atualizarBotao(idioma);
+        this.destacarIdiomaAtual();
       }
     });
   }
 
-  configurarAnimacaoRolagem() {
-    const btn = this.querySelector("#btnTradutor");
-    let rolando;
+  destacarIdiomaAtual() {
+    const idiomaAtivo = localStorage.getItem("idiomaSelecionado") || "pt";
+    const frame = document.querySelector("iframe.goog-te-menu-frame");
+    if (!frame) return;
 
-    window.addEventListener("scroll", () => {
-      btn.classList.add("reduzido");
-      clearTimeout(rolando);
-      rolando = setTimeout(() => {
-        btn.classList.remove("reduzido");
-      }, 700);
+    const innerDoc = frame.contentDocument || frame.contentWindow.document;
+    const links = innerDoc.querySelectorAll(".goog-te-menu2-item div.text");
+
+    links.forEach(link => {
+      const idioma = this.mapearIdioma(link.textContent.trim());
+      link.parentElement.style.background = idioma === idiomaAtivo ? "#fff8c4" : "";
+      link.style.fontWeight = idioma === idiomaAtivo ? "bold" : "normal";
     });
+  }
+
+  mapearIdioma(nome) {
+    const nomeMin = nome.toLowerCase();
+    if (nomeMin.startsWith("port")) return "pt";
+    if (nomeMin.startsWith("ing") || nomeMin.startsWith("en")) return "en";
+    if (nomeMin.startsWith("esp") || nomeMin.startsWith("es")) return "es";
+    if (nomeMin.startsWith("fra") || nomeMin.startsWith("fr")) return "fr";
+    return "pt";
+  }
+
+  atualizarBotao(codigo) {
+    const idiomaMap = { pt: "PT", en: "EN", es: "ES", fr: "FR" };
+    const span = this.querySelector("#idiomaAtivo");
+    if (span) span.textContent = idiomaMap[codigo] || "PT";
   }
 }
 
-// Registra o componente personalizado
-customElements.define("meu-tradutor", MeuTradutor);
+customElements.define("tradutor-menu", TradutorMenu);
