@@ -2,7 +2,7 @@ class MeuMenu extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <!-- Botão Toggle -->
-      <button class="btn py-1" id="menu-toggle-btn" data-bs-toggle="offcanvas" data-bs-target="#menuOffcanvas" aria-controls="menuOffcanvas">
+      <button class="btn" id="menu-toggle-btn" data-bs-toggle="offcanvas" data-bs-target="#menuOffcanvas" aria-controls="menuOffcanvas">
         <i class="bi bi-list" id="menu-icon" style="font-size: 1.5rem;"></i>
       </button>
 
