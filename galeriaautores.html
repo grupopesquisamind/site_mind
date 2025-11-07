@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -119,15 +120,14 @@ h2, h5 {
   <div id="gallery" class="gallery"></div>
 </div>
 
-<!-- Template do item -->
 <template id="autor-card-template">
-  <a class="card image" target="_blank">
+  <div class="card image">
     <img class="autor-imagem" alt="">
     <div class="legend">
       <strong class="autor-nome"></strong>
       <span class="autor-participacao"></span>
     </div>
-  </a>
+  </div>
 </template>
 
 <!-- Scripts -->
@@ -147,7 +147,7 @@ class AutorCard extends HTMLElement {
     const imagem = this.getAttribute('imagem');
 
     const card = this.querySelector('.card');
-    card.href = imagem;
+  //--  card.href = imagem;
     this.querySelector('.autor-imagem').src = imagem;
     this.querySelector('.autor-imagem').alt = `Foto de ${nome}`;
     this.querySelector('.autor-nome').textContent = nome;
@@ -184,13 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
       item.setAttribute('imagem', `imagens/autores_equipe/${a.imagem || 'default.jpg'}`);
       container.appendChild(item);
     });
-
-    $('.gallery').magnificPopup({
-      delegate: 'a',
-      type: 'image',
-      gallery: { enabled: true }
-    });
-  }
+}
 
   renderizarGaleria();
 
