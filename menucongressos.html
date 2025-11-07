@@ -189,13 +189,15 @@
         console.error("Erro ao carregar eventos:", err);
         container.innerHTML = `<p class="text-center text-danger">Erro ao carregar os eventos.</p>`;
       }
-
-      // Adiciona o footer dinamicamente
-      const footer = document.createElement("meu-footer");
-      document.body.appendChild(footer);
     });
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <meu-tradutor></meu-tradutor>
+<script src="javascript/components/tradutor.js" defer></script>
+  
+<meu-footer></meu-footer>
+
 </body>
 </html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Tela de Boas-Vindas</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: white;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      font-family: "Montserrat", sans-serif;
+    }
+
+    #text {
+      color: blue;
+      font-size: 40px;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-top: 30px;
+    }
+
+    .imagem {
+      max-width: 600px;
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 20px auto;
+    }
+
+    .btn {
+      border: none;
+      margin: 20px;
+      padding: 20px;
+      width: 220px;
+      text-transform: uppercase;
+      border-radius: 6px;
+      cursor: pointer;
+      color: #fff;
+      background-size: 200%;
+      transition: 0.6s;
+    }
+
+    .btn3 {
+      background-image: linear-gradient(to left, #12CBC4, #0652DD, #12CBC4);
+    }
+
+    .btn:hover {
+      background-position: right;
+    }
+
+    /* ===== Botão Flutuante ===== */
+    #btnTradutor {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 2000;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 56px;
+      height: 56px;
+      font-size: 24px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #btnTradutor:hover {
+      background-color: #0056b3;
+      transform: scale(1.1);
+    }
+
+    /* ===== Widget do Tradutor ===== */
+    #google_translate_element {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      background: #f8f9fa;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 6px 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      display: none;
+      z-index: 2001;
+    }
+
+    .goog-te-gadget-simple {
+      background-color: #f8f9fa !important;
+      border-radius: 6px !important;
+      padding: 5px !important;
+      border: 1px solid #ccc !important;
+    }
+    .goog-te-menu-value span {
+      color: #000 !important;
+    }
+    .goog-te-gadget-icon {
+      display: none !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== Botão e Widget do Tradutor ===== -->
+  <button id="btnTradutor" title="Traduzir Página">
+    <i class="bi bi-translate"></i>
+  </button>
+  <div id="google_translate_element"></div>
+
+  <!-- ===== Script do Google Tradutor ===== -->
+  <script>
+    let widgetPronto = false;
+
+    function inicializarTradutor() {
+      try {
+        new google.translate.TranslateElement({
+          pageLanguage: 'pt',
+          includedLanguages: 'pt,en,es,fr',
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+        widgetPronto = true;
+      } catch (e) {
+        console.warn("Aguardando carregamento do tradutor...");
+        setTimeout(inicializarTradutor, 1000);
+      }
+    }
+
+    // Força HTTPS e callback
+    const script = document.createElement("script");
+    script.src = "https://translate.google.com/translate_a/element.js?cb=inicializarTradutor";
+    document.head.appendChild(script);
+
+    // Lógica do botão flutuante
+    document.addEventListener("DOMContentLoaded", () => {
+      const btn = document.getElementById("btnTradutor");
+      const widget = document.getElementById("google_translate_element");
+
+      btn.addEventListener("click", () => {
+        if (!widgetPronto) {
+          widget.innerHTML = "<small>Carregando tradutor...</small>";
+          widget.style.display = "block";
+          return;
+        }
+        widget.style.display = (widget.style.display === "none" || widget.style.display === "") ? "block" : "none";
+      });
+    });
+  </script>
+
+  <!-- ===== Texto animado ===== -->
+  <div id="text"></div>
+  <script>
+    let i = 0, text = "Seja Bem-Vindo! Somos o Grupo de Pesquisa";
+    function typing() {
+      if (i < text.length) {
+        document.getElementById("text").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typing, 100);
+      }
+    }
+    typing();
+  </script>
+
+  <!-- ====== Seção Vinculação ====== -->
+  <div class="container-fluid text-center my-2">
+    <div class="d-flex flex-column align-items-center justify-content-center">
+      <img src="imagens/img.jpg"
+           class="imagem img-fluid rounded shadow-lg mb-2 mt-1"
+           alt="MIND - Vinculado ao IFSP Jacareí">
+      <legend class="text-muted fs-6 mb-2">
+        Vinculado ao <strong>Instituto Federal de São Paulo - Campus Jacareí</strong>
+      </legend>
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+        <a href="home.html" target="_blank"
+           class="btn btn-primary btn-lg px-4 py-2 shadow-sm d-inline-flex align-items-center gap-2">
+          Acessar Aqui
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
