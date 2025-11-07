@@ -14,55 +14,53 @@
   <script src="javascript/components/footer.js" defer></script>
 
   <style>
-#page-wrapper {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  min-height: 100vh;
-  margin: auto;
-  overflow: auto;
-}
+    #page-wrapper {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      min-height: 100vh;
+      margin: auto;
+      overflow: auto;
+    }
 
-h2, h5 {
-  text-align: center;
-}
+    h2, h5 {
+      text-align: center;
+    }
 
-.card-container {
+    .card-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
 }
 
-/* Ajuste de colunas por largura da tela */
-@media (min-width: 1600px) { .card-container { grid-template-columns: repeat(7, 1fr); } }
-@media (min-width: 1200px) and (max-width: 1599px) { .card-container { grid-template-columns: repeat(5, 1fr); } }
-@media (min-width: 992px) and (max-width: 1199px) { .card-container { grid-template-columns: repeat(4, 1fr); } }
-@media (min-width: 768px) and (max-width: 991px) { .card-container { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 767px) { .card-container { grid-template-columns: repeat(2, 1fr); } }
 
-/* ====== Estilo dos cards ====== */
-.card {
-  width: 180px; /* largura do card */
-  height: 450px; /* ocupa 60% do card */
-  display: flex;
-  flex-direction: column;
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  text-align: center;
-  aspect-ratio: 4/5; /* altura proporcional à largura */
-}
+    @media (min-width: 1600px) { .card-container { grid-template-columns: repeat(7, 1fr); } }
+    @media (min-width: 1200px) and (max-width: 1599px) { .card-container { grid-template-columns: repeat(5, 1fr); } }
+    @media (min-width: 992px) and (max-width: 1199px) { .card-container { grid-template-columns: repeat(4, 1fr); } }
+    @media (min-width: 768px) and (max-width: 991px) { .card-container { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 767px) { .card-container { grid-template-columns: repeat(2, 1fr); } }
 
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
+    .card {
+      width: 200px; /* largura do card */
+      height: 450px; /* ocupa 60% do card */
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      text-align: center;
+      aspect-ratio: 4/5; /* altura proporcional à largura */
+    }
 
-/* ===== Imagem responsiva ===== */
-.card-img {
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+      .card-img {
   width: 100%;
   height: 50%; /* ocupa 60% do card */
   object-fit: cover; /* cobre o card sem deformar */
@@ -70,37 +68,38 @@ h2, h5 {
   transition: transform 0.3s ease;
 }
 
-.card:hover .card-img {
-  transform: scale(1.05);
-}
 
-/* ===== Conteúdo do card ===== */
-.card-info {
-  flex: 1; /* ocupa o restante do card */
-  padding: 0.4rem;
-  font-size: 0.85rem;
-  font-weight: 500;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: #fff;
-}
+    .card:hover .card-img {
+      transform: scale(1.05);
+    }
 
-.card-title {
-  font-weight: bold;
-  font-size: 0.9rem;
-  color: #333;
-  margin-top: 0.2rem;
-}
+    .card-info {
+      flex: 1;
+      padding: 0.4rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+    }
 
-.card-text {
-  font-size: 0.8rem;
-  color: #555;
-  margin: 0.2rem 0;
- text-align: justify;
+    .card-title {
+      font-weight: bold;
+      font-size: 0.9rem;
+      color: #333;
+      margin-top: 0.2rem;
+      
+    }
 
-}
+    .card-text {
+      font-size: 0.8rem;
+      color: #555;
+      margin: 0.2rem 0;
+      text-align: justify;
+
+    }
   </style>
 </head>
 <body class="py-5">
