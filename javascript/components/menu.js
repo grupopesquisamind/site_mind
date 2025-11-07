@@ -166,6 +166,24 @@ class MeuMenu extends HTMLElement {
         link.classList.add('active');
       }
     });
+
+    // ✅ === Ajuste automático quando o Google Tradutor adiciona a barra ===
+    const ajustarEspacoTradutor = () => {
+      const banner = document.querySelector('.goog-te-banner-frame');
+      const body = document.body;
+      const menuBtn = document.querySelector('#menu-toggle-btn');
+
+      if (banner) {
+        const altura = banner.offsetHeight || 40;
+        body.style.transition = 'margin-top 0.3s ease';
+        body.style.marginTop = `${altura}px`;
+        if (menuBtn) menuBtn.style.top = `${15 + altura}px`;
+      } else {
+        body.style.marginTop = '0';
+        if (menuBtn) menuBtn.style.top = '15px';
+      }
+    };
+    setInterval(ajustarEspacoTradutor, 1000);
   }
 }
 customElements.define('meu-menu', MeuMenu);

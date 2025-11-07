@@ -41,7 +41,7 @@ class MeuTradutor extends HTMLElement {
         /* ===== Widget ===== */
         #google_translate_element {
           position: fixed;
-          bottom: 90px;
+          bottom: 130px;
           right: 20px;
           background: #f8f9fa;
           border: 1px solid #ddd;
@@ -98,6 +98,7 @@ class MeuTradutor extends HTMLElement {
         }
         body {
           top: 0px !important;
+          transition: margin-top 0.4s ease;
         }
         .goog-tooltip, .goog-tooltip:hover {
           display: none !important;
@@ -118,6 +119,19 @@ class MeuTradutor extends HTMLElement {
 
     this.inicializarTradutor();
     this.configurarAnimacaoRolagem();
+
+    // === Ajuste automático de margem no topo do body quando a barra do tradutor aparece ===
+    const ajustarEspacoTradutor = () => {
+      const iframe = document.querySelector("iframe.goog-te-banner-frame");
+      const body = document.body;
+      if (iframe && iframe.style.display !== "none") {
+        const altura = iframe.offsetHeight || 40;
+        body.style.marginTop = `${altura}px`;
+      } else {
+        body.style.marginTop = "0";
+      }
+    };
+    setInterval(ajustarEspacoTradutor, 1000);
   }
 
   inicializarTradutor() {
@@ -232,10 +246,10 @@ class MeuTradutor extends HTMLElement {
 
   mapearIdioma(nome) {
     const nomeMin = nome.toLowerCase();
-    if (nomeMin.startsWith("port")) return "pt";
-    if (nomeMin.startsWith("ing") || nomeMin.startsWith("en")) return "en";
-    if (nomeMin.startsWith("esp") || nomeMin.startsWith("es")) return "es";
-    if (nomeMin.startsWith("fra") || nomeMin.startsWith("fr")) return "fr";
+    if (nomeMin.includes("port")) return "pt";
+    if (nomeMin.includes("ing") || nomeMin.includes("english")) return "en";
+    if (nomeMin.includes("esp") || nomeMin.includes("span")) return "es";
+    if (nomeMin.includes("fra") || nomeMin.includes("fran") || nomeMin.includes("french")) return "fr";
     return "pt";
   }
 
