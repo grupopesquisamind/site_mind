@@ -21,78 +21,77 @@
     }
 
     /* Container e layout geral */
-  #eventosContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
+    #eventosContainer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
 
-  .card {
-    border-radius: 12px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    cursor: pointer;
-    text-align: left;
-    background-color: #fff;
-    color: #444;
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 360px; /* largura mínima aumentada */
-    max-width: 430px; /* largura máxima aumentada */
-    min-height: 400px; /* altura uniforme */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  }
+    .card {
+      border-radius: 12px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      text-align: left;
+      background-color: #fff;
+      color: #444;
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 360px; /* largura mínima aumentada */
+      max-width: 430px; /* largura máxima aumentada */
+      min-height: 400px; /* altura uniforme */
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
 
-  .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  }
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
 
-  .card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex: 1;
-    padding: 1rem;
-  }
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+      padding: 1rem;
+    }
 
-  .card-title {
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 0.5rem;
-    background-color: #000;
-    color: #fff;
-    padding: 0.3rem;
-    border-radius: 4px;
-  }
+    .card-title {
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 0.5rem;
+      background-color: #000;
+      color: #fff;
+      padding: 0.3rem;
+      border-radius: 4px;
+    }
 
-  .card-text p {
-    font-size: 0.9rem;
-    color: #444;
-    text-align: left;
-    min-height: 45px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin-bottom: 0.3rem;
-    padding: 0 0.3rem;
-    text-align: justify;
+    .card-text p {
+      font-size: 0.9rem;
+      color: #444;
+      text-align: left;
+      min-height: 45px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      margin-bottom: 0.3rem;
+      padding: 0 0.3rem;
+      text-align: justify;
+    }
 
-  }
+    .card-text a {
+      text-decoration: none;
+    }
 
-  .card-text a {
-    text-decoration: none;
-  }
-
-  /* Responsividade ajustada */
-  @media (max-width: 576px) { .card { flex: 1 1 100%; max-width: 100%; } }
-  @media (min-width: 577px) and (max-width: 768px) { .card { flex: 1 1 55%; max-width: 55%; } }
-  @media (min-width: 769px) and (max-width: 992px) { .card { flex: 1 1 38%; max-width: 38%; } }
-  @media (min-width: 993px) { .card { flex: 1 1 28%; max-width: 28%; } }
-</style>
-
+    /* Responsividade ajustada */
+    @media (max-width: 576px) { .card { flex: 1 1 100%; max-width: 100%; } }
+    @media (min-width: 577px) and (max-width: 768px) { .card { flex: 1 1 55%; max-width: 55%; } }
+    @media (min-width: 769px) and (max-width: 992px) { .card { flex: 1 1 38%; max-width: 38%; } }
+    @media (min-width: 993px) { .card { flex: 1 1 28%; max-width: 28%; } }
+  </style>
 </head>
+
 <body class="py-5">
   <meu-menu></meu-menu>
 
@@ -113,33 +112,59 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="javascript/dados-eventos.js"></script>
-  <script>
-    const eventos = listarItens('eventos');
-    const container = document.getElementById('eventosContainer');
 
-    eventos.forEach(item => {
-      const card = document.createElement('div');
-      card.className = 'card';
-      card.innerHTML = `
-        <div class="card-body">
-          <div class="card-title">${item.titulo}</div>
-          <div class="card-text">
-            <p class="bg-primary text-white px-1"><strong>Tema:</strong> ${item.tema}</p>
-            <p><strong>Status:</strong> <span class="text-danger">${item.status}</span></p>
-            <p><strong>Data:</strong> ${item.data}</p>
-            <p><strong>Cidade:</strong> ${item.local}</p>
-            <p><strong>Local:</strong> ${item.sediadoPor}</p>
-            <p><strong>Link do Evento:</strong> <a href="${item.link}" class="text-primary" target="_blank">🔗 Acessar Aqui</a></p>
+  <script>
+  const eventos = listarItens('eventos');
+  const container = document.getElementById('eventosContainer');
+
+  eventos.forEach(item => {
+    // Define estilo conforme o status
+    let statusClass = "";
+    let statusStyle = "";
+
+    if (item.status === "Evento Encerrado") {
+      statusClass = "text-danger fw-bold"; // vermelho
+    } else if (item.status === "Evento em Andamento") {
+      statusClass = "text-primary fw-bold"; // azul
+    } else if (item.status === "Evento para Inscrição") {
+      statusStyle = "background-color: black; color: yellow; font-size: 20px; font-weight: bold; padding: 3px 6px; border-radius: 5px; text-align: center; display: inline-block; width: 100%;";
+    }
+
+    // Só mostra submissão se o texto for diferente de "já encerrado o prazo"
+    const submissaoHTML = item.submissao && item.submissao.toLowerCase() !== "já encerrado o prazo"
+      ? `<strong>Período para Submissão dos Trabalhos:</strong><p style="background-color: black; color: yellow; font-size: 20px; font-weight: bold; padding: 3px 6px; border-radius: 5px; text-align: center; display: inline-block; width: 100%;">
+           ${item.submissao}
+        </p>`
+      : "";
+
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <div class="card-body">
+        <div class="card-title">${item.titulo}</div>
+        <div class="card-text">
+          <div class="text-center mb-2">
+            <img src="${item.imagem}" class="img-fluid rounded shadow-sm" style="max-height:220px; max-width:200px; object-fit:cover;">
           </div>
+          <p class="bg-primary text-white px-1"><strong>Tema:</strong> ${item.tema}</p>
+          <p><strong>Status:</strong> <span class="${statusClass}" style="${statusStyle}">${item.status}</span></p>
+          ${submissaoHTML}
+          <p><strong>Data:</strong> ${item.data}</p>
+          <p><strong>Cidade:</strong> ${item.local}</p>
+          <p><strong>Local:</strong> ${item.sediadoPor}</p>
+          <p><strong>Link do Evento:</strong> <a href="${item.link}" class="text-primary" target="_blank">🔗 Acessar Aqui</a></p>
         </div>
-      `;
-      container.appendChild(card);
-    });
+      </div>
+    `;
+    container.appendChild(card);
+  });
+</script>
+
   </script>
 
-   <meu-tradutor></meu-tradutor>
-<script src="javascript/components/tradutor.js" defer></script>
+  <meu-tradutor></meu-tradutor>
+  <script src="javascript/components/tradutor.js" defer></script>
   
-<meu-footer></meu-footer>
+  <meu-footer></meu-footer>
 </body>
 </html>
