@@ -13,144 +13,186 @@ html, body {
   height: 100%;
   width: 100%;
   font-family: Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
   background: #f5f5f5;
+  color: #222;
 }
 
-.container {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
-  max-width: 100%;
-
-  position: flex;
+/* ===== CONTAINER PRINCIPAL ===== */
+main.container {
+  max-width: 1100px; /* largura ideal para desktops */
+  margin: 0 auto;
+  padding: 30px 25px;
   text-align: justify;
-  width: 95%;
-  max-width: 900px;
-  margin: 20px auto;
-  padding: 15px 20px;
+  word-wrap: break-word;
+  overflow-x: hidden;
 }
 
+/* ===== TÍTULOS ===== */
 h2, h3, h5 {
   text-align: center;
-  margin: 5px 0;
+  margin: 10px 0;
 }
 
-#titulo { margin: 10px 0; font-size: 1.5rem; color: darkred; }
-#nomeProducao { font-size: 1.6rem; margin: 5px 0; }
+#titulo { 
+  font-size: 1.7rem; 
+  color: darkred; 
+}
 
-/* Informações do projeto alinhadas à esquerda dentro de uma div */
+#nomeProducao { 
+  font-size: 1.6rem; 
+  margin: 10px 0; 
+  color: #0d6efd;
+}
+
+/* ===== BLOCO DE INFORMAÇÕES ===== */
 #infoProjeto {
-  position: flex;
-  text-align: left;
-  width: 95%;
-  max-width: 900px;
-  margin: 20px auto;
-  padding: 15px 20px;
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   font-size: 1rem;
-  line-height: 1.5;
-  color: #333;
-  box-sizing: border-box;
+  line-height: 1.7;
+  padding: 24px 28px;
+  margin: 20px 0;
+  text-align: justify;
+  word-break: break-word;
 }
 
 #infoProjeto p {
-  margin: 5px 0;
+  margin: 10px 0;
 }
 
+/* ===== IFRAME ===== */
 #iframeContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  flex: 1;
-  margin-top: 10px;
+  margin: 25px 0;
 }
 
 #iframeConteudo {
   width: 100%;
-  max-width: 90vw;
+  max-width: 95%;
   height: 70vh;
-  max-height: 90vh;
   border: none;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  background: #fff;
   transition: all 0.3s ease;
 }
 
-/* Botão centralizado */
+/* ===== BOTÃO ===== */
 #btnAmpliar {
-  margin: 10px auto;
+  margin: 15px auto;
   display: block;
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1.4rem;
   font-size: 1rem;
   border-radius: 8px;
   border: none;
   cursor: pointer;
   background-color: #0d6efd;
   color: white;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 #btnAmpliar:hover {
   transform: scale(1.05);
+  background-color: #084298;
 }
 
-/* Responsividade */
-  /* ===== Ajustes para tablets ===== */
-@media (max-width: 991px) {
+/* ====== MEDIA QUERIES ====== */
+
+/* === Telas muito grandes (monitores grandes) === */
+@media (min-width: 1400px) {
+  main.container {
+    max-width: 1200px;
+    padding: 40px;
+    font-size: 1.05rem;
+  }
+  #iframeConteudo {
+    height: 75vh;
+  }
+}
+
+/* === Notebooks e tablets em modo paisagem === */
+@media (max-width: 1200px) {
+  main.container {
+    padding: 20px;
+  }
   #infoProjeto {
-    width: 92%;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 12px 16px;
+    padding: 20px;
+    font-size: 0.98rem;
+  }
+  #iframeConteudo {
+    height: 65vh;
+  }
+}
+
+/* === Tablets (modo retrato) === */
+@media (max-width: 991px) {
+  #nomeProducao {
+    font-size: 1.4rem;
+  }
+  #infoProjeto {
+    padding: 18px;
     font-size: 0.95rem;
   }
-}
-
-/* ===== Ajustes para celulares ===== */
-  @media (max-width: 1200px) {
-  #nomeProducao { font-size: 1.4rem; }
-  #infoProjeto { font-size: 0.95rem; }
-  #iframeConteudo { height: 60vh; }
-}
-  
-@media (max-width: 768px) {
-  #nomeProducao { font-size: 1.2rem; }
-  #infoProjeto { font-size: 0.9rem; }
-  #iframeConteudo { height: 55vh; }
-}
-@media (max-width: 576px) {
-  #infoProjeto {
-    width: 96%;
-    padding: 10px 12px;
-    font-size: 0.9rem;
-    line-height: 1.4;
+  #iframeConteudo {
+    height: 60vh;
   }
 }
-  
-@media (orientation: portrait) {
-  #iframeConteudo { height: 60vh; width: 90vw; }
+
+/* === Celulares grandes (até ~768px) === */
+@media (max-width: 768px) {
+  main.container {
+    padding: 15px;
+  }
+  #titulo {
+    font-size: 1.4rem;
+  }
+  #nomeProducao {
+    font-size: 1.2rem;
+  }
+  #infoProjeto {
+    padding: 15px;
+    font-size: 0.92rem;
+  }
+  #iframeConteudo {
+    height: 55vh;
+    max-width: 100%;
+  }
 }
 
-@media (orientation: landscape) {
-  #iframeConteudo { height: 75vh; width: 90vw; }
+/* === Celulares pequenos (até 576px) === */
+@media (max-width: 576px) {
+  main.container {
+    padding: 10px;
+  }
+  #titulo {
+    font-size: 1.3rem;
+  }
+  #nomeProducao {
+    font-size: 1.1rem;
+  }
+  #infoProjeto {
+    width: 100%;
+    padding: 12px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  #iframeConteudo {
+    height: 50vh;
+  }
 }
 </style>
 </head>
 
-<body class="container-fluid py-5">
-<main class="container my-2">
-  <section class="mt-2" id="modal">
-    <h2 id="titulo"><strong style="color: rgb(7, 7, 7);">Jogo criado pela equipe MIND - Movimento para Inclusão e Neurodiversidade.</strong></h2>
+<body>
+<main class="container">
+  <section id="modal">
+    <h2 id="titulo"><strong>Jogo criado pela equipe MIND - Movimento para Inclusão e Neurodiversidade.</strong></h2>
     <h2 id="nomeProducao">Aguarde um instante, carregando o projeto...</h2>
 
-    <!-- Div única com todas as informações alinhadas à esquerda -->
     <div id="infoProjeto">
       <p id="autor"></p>
       <p id="tipo"></p>
@@ -174,27 +216,29 @@ const projetos = listarItens('projetos');
 const projeto = projetos.find(p => p.id === id);
 
 if (projeto) {
-  document.getElementById('nomeProducao').innerHTML = `ID: (${projeto.id}) - <strong> Nome do Projeto:</strong> <span style="color: blue;"> ${projeto.nomeProducao} </span>`;
-  document.getElementById('autor').innerHTML = `<strong>Autor do Jogo:</strong> <span style="color: blue;">${projeto.autor}</span> <span style="color: red;">(${projeto.ano})</span>`;
-  document.getElementById('tipo').innerHTML = `<strong>Tipo/Categoria:</strong> <span style="color: blue;">${projeto.tipo} </span><span style="color: red;">(${projeto.categoria})</span>`;
-  document.getElementById('referencia').innerHTML = `<strong>Como Referenciar pela ABNT:</strong><br>${projeto.referenciar}`;
+  document.getElementById('nomeProducao').innerHTML = 
+    `ID: (${projeto.id}) - <strong>Nome do Projeto:</strong> <span>${projeto.nomeProducao}</span>`;
+  document.getElementById('autor').innerHTML = 
+    `<strong>Autor do Jogo:</strong> <span style="color: blue;">${projeto.autor}</span> <span style="color: red;">(${projeto.ano})</span>`;
+  document.getElementById('tipo').innerHTML = 
+    `<strong>Tipo/Categoria:</strong> <span style="color: blue;">${projeto.tipo}</span> <span style="color: red;">(${projeto.categoria})</span>`;
+  document.getElementById('referencia').innerHTML = 
+    `<strong>Como Referenciar pela ABNT:</strong><br>${projeto.referenciar}`;
   document.getElementById('iframeConteudo').src = projeto.src;
 } else {
   document.getElementById('nomeProducao').textContent = 'Conteúdo não encontrado';
 }
 
-// Abrir iframe em nova janela fullscreen
+// Abrir o projeto em tela cheia
 document.getElementById('btnAmpliar').addEventListener('click', () => {
   if (document.getElementById('iframeConteudo').src) {
     const width = screen.availWidth;
     const height = screen.availHeight;
-
     const novaJanela = window.open(
       projeto.src,
       '_blank',
       `width=${width},height=${height},top=0,left=0,resizable=yes,scrollbars=yes`
     );
-
     if (novaJanela) {
       novaJanela.moveTo(0, 0);
       novaJanela.resizeTo(screen.availWidth, screen.availHeight);
@@ -203,9 +247,9 @@ document.getElementById('btnAmpliar').addEventListener('click', () => {
   }
 });
 </script>
-  <meu-tradutor></meu-tradutor>
+
+<meu-tradutor></meu-tradutor>
 <script src="javascript/components/tradutor.js" defer></script>
-  
 <meu-footer></meu-footer>
 </body>
 </html>
