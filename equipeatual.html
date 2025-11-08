@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -16,85 +15,85 @@
 
   <style>
   #page-wrapper {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  min-height: 100vh;
-  margin: auto;
-  overflow: auto;
-}
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 100vh;
+    margin: auto;
+    overflow: auto;
+  }
 
-h2, h5 {
-  text-align: center;
-}
+  h2, h5 {
+    text-align: center;
+  }
 
-/* ===== Galeria ===== */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1rem;
-  justify-items: center;
-}
+  /* ===== Galeria ===== */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    justify-items: center;
+  }
 
-/* ===== Card ===== */
-.card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  text-align: center;
-  color: inherit;
-  width: 100%;
-  max-width: 180px;
-  text-decoration: none;
-}
+  /* ===== Card ===== */
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
+    color: inherit;
+    width: 100%;
+    max-width: 180px;
+    text-decoration: none;
+  }
 
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  }
 
-.card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 0.4rem;
-  transition: transform 0.3s ease;
-}
+  .card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 0.4rem;
+    transition: transform 0.3s ease;
+  }
 
-.card:hover img {
-  transform: scale(1.05);
-}
+  .card:hover img {
+    transform: scale(1.05);
+  }
 
-.legend {
-  padding: 0.4rem;
-  font-size: 0.85rem;
-  font-weight: 500;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: #fff;
-  color: #555;
-  min-height: 60px;
-}
+  .legend {
+    padding: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    color: #555;
+    min-height: 60px;
+  }
   </style>
 </head>
 <body class="py-5">
 
   <meu-menu></meu-menu>
 
-  <div id="page-wrapper" class="container my-4">
+  <div id="page-wrapper" class="container-fluid my-4">
     <h2 class="text-danger fw-bold">Movimento para Inclusão e Neurodiversidade</h2>
 
     <div class="d-flex justify-content-center align-items-center flex-wrap gap-2 mt-3 mb-3">
-      <h5 class="text-black m-0">Conheça os membros atuais da Equipe</h5>
+      <h5 class="text-black m-0">Conheça os Membros Atuais da Equipe</h5>
       <a href="autores.html" class="btn btn-primary">
         <i class="bi bi-arrow-left-circle me-1"></i> Ver Dados Completos
       </a>
@@ -116,14 +115,13 @@ h2, h5 {
     <div id="gallery" class="gallery"></div>
   </div>
 
-<!-- Template de card -->
+  <!-- Template de card -->
   <template id="equipe-item-template">
     <div class="card">
       <img class="card-img" alt="">
       <div class="legend">
         <strong class="card-nome"></strong>
         <span class="card-participacao"></span>
-        <span class="card-formacao"></span>
       </div>
     </div>
   </template>
@@ -137,17 +135,14 @@ h2, h5 {
       const filtroParticipacao = document.getElementById('filtroParticipacao');
       const template = document.getElementById('equipe-item-template');
 
-      // Lista base ordenada
       const lista = idsEquipe
         .map(id => autores.find(a => String(a.id) === id))
         .filter(Boolean)
         .sort((a, b) => a.nome.localeCompare(b.nome, 'pt', { sensitivity: 'base' }));
 
-      // Popula filtro dinâmico
       const participacoes = [...new Set(lista.map(a => a.tipoParticipacao).filter(Boolean))].sort();
       participacoes.forEach(p => filtroParticipacao.append(new Option(p, p)));
 
-      // Função de renderização
       function renderizarEquipe(filtro = '') {
         container.innerHTML = '';
         const filtrados = lista.filter(a => !filtro || a.tipoParticipacao === filtro);
@@ -157,7 +152,6 @@ h2, h5 {
           const img = clone.querySelector('.card-img');
           const nome = clone.querySelector('.card-nome');
           const participacao = clone.querySelector('.card-participacao');
-          const formacao = clone.querySelector('.card-formacao');
 
           img.src = `imagens/autores_equipe/${autor.imagem || 'default.jpg'}`;
           img.alt = `Foto de ${autor.nome}`;
@@ -167,14 +161,12 @@ h2, h5 {
           };
 
           nome.textContent = autor.nome ?? '';
-          participacao.innerHTML = `<strong>Participação:</strong> ${autor.tipoParticipacao ?? ''}`;
-          formacao.innerHTML = `<strong>Formação:</strong> ${autor.formacao ?? ''}`;
+          participacao.textContent = autor.tipoParticipacao ?? '';
 
           container.appendChild(clone);
         });
       }
 
-      // Inicializa e ativa filtros
       renderizarEquipe();
 
       filtroParticipacao.addEventListener('change', () => renderizarEquipe(filtroParticipacao.value));
@@ -187,7 +179,6 @@ h2, h5 {
 
   <meu-tradutor></meu-tradutor>
   <script src="javascript/components/tradutor.js" defer></script>
-
   <meu-footer></meu-footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
