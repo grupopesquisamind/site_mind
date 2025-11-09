@@ -82,6 +82,25 @@
         height: 200px;
       }
     }
+
+    * Ajustes visuais e responsivos dos botões */
+    .btn-group-custom {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .btn-group-custom .btn {
+      flex: 1 1 calc(50% - 6px);
+      min-width: 130px;
+    }
+
+    @media (max-width: 576px) {
+      .btn-group-custom .btn {
+        flex: 1 1 100%;
+      }
+    }
   </style>
 </head>
 
