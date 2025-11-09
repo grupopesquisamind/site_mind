@@ -10,7 +10,14 @@
   <link rel="stylesheet" href="css/style.css" />
   <script src="javascript/components/menu.js" defer></script>
   <script src="javascript/components/footer.js" defer></script>
+
   <style>
+    body {
+      font-family: "Arial", sans-serif;
+      background-color: #f8f9fa;
+      text-align: justify;
+    }
+
     #page-wrapper {
       display: flex;
       flex-direction: column;
@@ -29,15 +36,58 @@
       max-width: 900px;
       margin: 0 auto;
     }
+
     #graficoProjetos {
       width: 100%;
       height: 100%;
       display: block;
     }
+
+    /* === Modal e textos === */
+    .modal-body p {
+      text-align: justify;
+      margin-bottom: 0.6rem;
+    }
+
+    .modal-body strong {
+      color: #000;
+    }
+
+    /* === Responsividade === */
+    @media (max-width: 768px) {
+      h2.text-danger {
+        font-size: 1.3rem;
+      }
+
+      h5, h6 {
+        font-size: 1rem;
+      }
+
+      .grafico-container {
+        height: 220px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .table {
+        font-size: 0.85rem;
+      }
+
+      .btn-sm {
+        font-size: 0.8rem;
+        padding: 0.3rem;
+      }
+
+      .grafico-container {
+        height: 200px;
+      }
+    }
   </style>
 </head>
+
 <body class="py-5">
   <meu-menu></meu-menu>
+
   <div id="page-wrapper">
     <main class="container-fluid d-flex flex-column my-0 pt-0 mt-1 mb-5">
       <section class="mt-2">
@@ -97,7 +147,7 @@
     </main>
   </div>
 
-  <!-- === Modal === -->
+  <!-- === Modal de Visualização do Projeto === -->
   <div class="modal fade" id="modalProjetos" tabindex="-1" aria-labelledby="modalProjetosLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
@@ -107,6 +157,22 @@
         </div>
         <div class="modal-body">
           <iframe id="iframeProjetos" src="" width="100%" height="600" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- === Modal de Referência === -->
+  <div class="modal fade" id="modalReferencia" tabindex="-1" aria-labelledby="modalReferenciaLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title" id="modalReferenciaLabel">Dados do Projeto</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body" id="conteudoReferencia"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
         </div>
       </div>
     </div>
@@ -132,27 +198,23 @@
       const selCategorias = $('#filtroCategorias');
       const selAnos = $('#filtroAnos');
 
-      // === Popula filtros ===
       function popularFiltros() {
         const autores = [...new Set(itens.map(i => i.autor))].sort();
         const tipos = [...new Set(itens.map(i => i.tipo))].sort();
         const categorias = [...new Set(itens.map(i => i.categoria))].sort();
         const anos = [...new Set(itens.map(i => i.ano))].sort();
-
         autores.forEach(v => selAutores.append(new Option(v, v)));
         tipos.forEach(v => selTipos.append(new Option(v, v)));
         categorias.forEach(v => selCategorias.append(new Option(v, v)));
         anos.forEach(v => selAnos.append(new Option(v, v)));
       }
 
-      // === Filtros aplicados ===
       function aplicarFiltros() {
         const q = $('#pesquisaInput').val().toLowerCase();
         const a = selAutores.val();
         const t = selTipos.val();
         const c = selCategorias.val();
         const y = selAnos.val();
-
         return itens.filter(i =>
           (!a || i.autor === a) &&
           (!t || i.tipo === t) &&
@@ -162,7 +224,6 @@
         );
       }
 
-      // === Renderiza tabela ===
       function renderizarTabela(data) {
         if (tabelaDT) {
           tabelaDT.clear().rows.add(data).draw();
@@ -178,22 +239,26 @@
               { data: 'categoria', render: d => `<strong>${d}</strong>` },
               { data: 'ano' },
               {
-                data: null,
-                render: d => `
-                  <div class="mb-2">
-                    <a href="${d.linkPublicacao}" class="btn btn-warning btn-sm w-100" target="_blank">🌐 Publicação</a>
-                  </div>
-                  <div>
-                    ${d.publicacaoArquivo
-                      ? `<a href="${d.publicacaoArquivo}" class="btn btn-success btn-sm w-100" target="_blank">📖 PDF</a>`
-                      : `<button class="btn btn-secondary btn-sm w-100" disabled>❌ Sem PDF</button>`
-                    }
-                  </div>`
-              },
-              {
-                data: 'id',
-                render: id => `<button class="btn btn-primary btn-sm" onclick="abrirJanela('${id}')">🔗 Acessar</button>`
-              }
+          data: null,
+            render: d => `
+              <div class="d-flex flex-column align-items-center gap-1">
+                <a href="${d.linkPublicacao}" class="btn btn-warning btn-sm w-100" target="_blank">🌐 Online</a>
+                ${
+                  d.publicacaoArquivo
+                    ? `<a href="${d.publicacaoArquivo}" class="btn btn-success btn-sm w-100" target="_blank">📖 PDF</a>`
+                    : `<button class="btn btn-secondary btn-sm w-100" disabled>❌ Sem PDF</button>`
+                }
+              </div>`
+          },
+          {
+            data: null,
+            render: d => `
+              <div class="d-flex flex-column align-items-center gap-1">
+                <button class="btn btn-danger btn-sm w-100" onclick="abrirJanela('${d.id}')">🔗 Acessar</button>
+                <button class="btn btn-primary btn-sm w-100" onclick='mostrarReferencia(${JSON.stringify(d)})'>📄 Citar</button>
+              </div>`
+          }
+
             ],
             paging: true,
             responsive: true,
@@ -213,7 +278,6 @@
         }
       }
 
-      // === Renderiza gráfico (compacto e proporcional) ===
       function renderizarGrafico(data) {
         const group = {};
         data.forEach(i => {
@@ -231,15 +295,6 @@
           data: anosArr.map(y => group[cat][y] || 0)
         }));
 
-        function calcularMaximo(datasets) {
-          let max = 0;
-          datasets.forEach(ds => {
-            const dsMax = Math.max(...ds.data);
-            if (dsMax > max) max = dsMax;
-          });
-          return Math.ceil(max + 1);
-        }
-
         const ctx = document.getElementById('graficoProjetos').getContext('2d');
         if (chartInstance) chartInstance.destroy();
 
@@ -249,27 +304,15 @@
           options: {
             responsive: true,
             maintainAspectRatio: false,
-            aspectRatio: 2,
-            barPercentage: 0.6,
-            categoryPercentage: 0.8,
-            layout: { padding: 10 },
             plugins: {
               legend: { position: 'bottom' },
               datalabels: { anchor: 'end', align: 'end', formatter: Math.round }
             },
             scales: {
-              x: {
-                ticks: { autoSkip: false, maxRotation: 45 },
-                grid: { display: false }
-              },
+              x: { grid: { display: false } },
               y: {
                 beginAtZero: true,
-                suggestedMax: calcularMaximo(datasets),
-                ticks: {
-                  stepSize: 1,
-                  precision: 0,
-                  callback: v => Number.isInteger(v) ? v : null
-                }
+                ticks: { stepSize: 1, precision: 0 }
               }
             }
           },
@@ -297,15 +340,39 @@
       atualizar();
     });
 
-    // === Abre projeto em nova janela ===
     function abrirJanela(id) {
       const url = `modal.html?id=${id}`;
       window.open(url, '_blank', `width=1200,height=800,scrollbars=yes,resizable=yes`);
     }
+
+    function mostrarReferencia(item) {
+      const ref = `
+        <p><strong>Nome do Projeto:</strong> ${item.nomeProducao}</p>
+        <p><strong>Autor Desenvolvedor:</strong> ${item.autor}</p>
+        <p><strong>Tipo:</strong> ${item.tipo}</p>
+        <p><strong>Categoria:</strong> ${item.categoria}</p>
+        <p><strong>Ano:</strong> ${item.ano}</p>
+        <p><strong>Título da Publicação:</strong> ${item.titulo}</p>
+        ${
+          item.linkPublicacao
+            ? `<p><strong>Link da Publicação:</strong> <a href="${item.linkPublicacao}" target="_blank">${item.linkPublicacao}</a></p>`
+            : ''
+        }
+        ${
+          item.publicacaoArquivo
+            ? `<p><strong>Arquivo PDF:</strong> <a href="${item.publicacaoArquivo}" target="_blank">Abrir</a></p>`
+            : ''
+        }
+        <hr>
+        <p><strong style="color:red;">Como Referenciar pela ABNT:</strong><br>${item.referenciar || 'Referência não informada.'}</p>`;
+      document.getElementById('conteudoReferencia').innerHTML = ref;
+      new bootstrap.Modal(document.getElementById('modalReferencia')).show();
+    }
   </script>
 
   <meu-tradutor></meu-tradutor>
-<script src="javascript/components/tradutor.js" defer></script>
-  
-<meu-footer></meu-footer></body>
+  <script src="javascript/components/tradutor.js" defer></script>
+
+  <meu-footer></meu-footer>
+</body>
 </html>
