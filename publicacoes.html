@@ -12,15 +12,39 @@
   <script src="javascript/components/footer.js" defer></script>
 
   <style>
-  #page-wrapper {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    min-height: 100vh;
-    max-width: 100%;
-    margin: auto;
-    overflow: auto;
-  }
+    #page-wrapper {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      min-height: 100vh;
+      max-width: 100%;
+      margin: auto;
+      overflow: auto;
+    }
+
+    /* Justificação de texto no modal */
+    #conteudoReferencia p {
+      text-align: justify;
+    }
+
+    /* Ajustes visuais e responsivos dos botões */
+    .btn-group-custom {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .btn-group-custom .btn {
+      flex: 1 1 calc(50% - 6px);
+      min-width: 130px;
+    }
+
+    @media (max-width: 576px) {
+      .btn-group-custom .btn {
+        flex: 1 1 100%;
+      }
+    }
   </style>
 </head>
 
@@ -32,35 +56,23 @@
       <section class="mt-2">
         <h2 class="text-center text-danger"><strong>Movimento para Inclusão e Neurodiversidade.</strong></h2>
 
-        <!-- Gráfico de publicações -->
+        <!-- Gráfico -->
         <div class="container text-center">
-          <h5 class="text-center text-black"><strong>Publicações realizadas pela equipe MIND.</strong></h5> 
-          <h5 class="text-center">Gráfico: Publicações por Tipo e Ano</h5>
+          <h5 class="text-black"><strong>Publicações realizadas pela equipe MIND.</strong></h5>
+          <h6>Gráfico: Publicações por Tipo e Ano</h6>
           <div style="position:relative; height:250px; width:100%; max-width:900px; margin:auto;">
-            <canvas id="graficoPublicacoes" style="width:100%; height:100%; display:block;"></canvas>
-          </div>        
+            <canvas id="graficoPublicacoes"></canvas>
+          </div>
         </div>
 
         <!-- Filtros -->
         <div class="row g-2 my-4 justify-content-center">
-          <div class="col-md-3">
-            <input type="text" id="pesquisaInput" class="form-control" placeholder="Buscar por título..." />
-          </div>
-          <div class="col-md-2">
-            <select id="filtroAutores" class="form-select"><option value="">Filtrar por Autor</option></select>
-          </div>
-          <div class="col-md-2">
-            <select id="filtroTipos" class="form-select"><option value="">Filtrar por Tipo</option></select>
-          </div>
-          <div class="col-md-2">
-            <select id="filtroSiglas" class="form-select"><option value="">Filtrar por Sigla</option></select>
-          </div>
-          <div class="col-md-2">
-            <select id="filtroAnos" class="form-select"><option value="">Filtrar por Ano</option></select>
-          </div>
-          <div class="col-md-1">
-            <button id="btnLimpar" class="btn btn-secondary w-100">Limpar</button>
-          </div>
+          <div class="col-md-3"><input type="text" id="pesquisaInput" class="form-control" placeholder="Buscar por título..."></div>
+          <div class="col-md-2"><select id="filtroAutores" class="form-select"><option value="">Filtrar por Autor</option></select></div>
+          <div class="col-md-2"><select id="filtroTipos" class="form-select"><option value="">Filtrar por Tipo</option></select></div>
+          <div class="col-md-2"><select id="filtroSiglas" class="form-select"><option value="">Filtrar por Sigla</option></select></div>
+          <div class="col-md-2"><select id="filtroAnos" class="form-select"><option value="">Filtrar por Ano</option></select></div>
+          <div class="col-md-1"><button id="btnLimpar" class="btn btn-secondary w-100">Limpar</button></div>
         </div>
 
         <!-- Tabela -->
@@ -73,10 +85,11 @@
                 <th>Autor</th>
                 <th>Co-Autor(es)</th>
                 <th>Tipo</th>
-                <th>Local Publicado</th>
+                <th>Local</th>
                 <th>Sigla</th>
                 <th>Ano</th>
-                <th>Acesse Aqui</th>
+                <th>Publicação</th>
+                <th>Trabalho</th>
               </tr>
             </thead>
           </table>
@@ -90,8 +103,8 @@
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header bg-primary text-white">
-          <h5 class="modal-title" id="modalReferenciaLabel">Dados referente à Publicação</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+          <h5 class="modal-title" id="modalReferenciaLabel">Dados da Publicação</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body" id="conteudoReferencia"></div>
         <div class="modal-footer">
@@ -116,7 +129,6 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     const itens = listarItens('publicacoes');
-
     const selAutores = $('#filtroAutores');
     const selTipos = $('#filtroTipos');
     const selAnos = $('#filtroAnos');
@@ -165,15 +177,21 @@
             {
               data: null,
               render: d => `
-                <div class="d-flex flex-column align-items-center gap-1">
-                  <a href="${d.linkSite}" class="btn btn-danger btn-sm w-100" target="_blank">🔗 Submissão</a>
-                  <a href="${d.linkPublicacao}" class="btn btn-warning btn-sm w-100" target="_blank">🌐 Publicação</a>
+                <div class="btn-group-custom">
+                  <a href="${d.linkPublicacao}" class="btn btn-warning btn-sm" target="_blank">🌐 Online</a>
                   ${
                     d.publicacaoArquivo
-                      ? `<a href="${d.publicacaoArquivo}" target="_blank" class="btn btn-success btn-sm w-100">📖 Abrir PDF</a>`
-                      : `<button class="btn btn-secondary btn-sm w-100" disabled>❌ Sem PDF</button>`
+                      ? `<a href="${d.publicacaoArquivo}" target="_blank" class="btn btn-success btn-sm">📖 PDF</a>`
+                      : `<button class="btn btn-secondary btn-sm" disabled>❌ Sem PDF</button>`
                   }
-                  <button class="btn btn-primary btn-sm w-100" onclick='mostrarReferencia(${JSON.stringify(d)})'>📄 Referenciar</button>
+                </div>`
+            },
+            {
+              data: null,
+              render: d => `
+                <div class="btn-group-custom">
+                <a href="${d.linkSite}" class="btn btn-danger btn-sm" target="_blank">🔗 Submissão</a>
+                <button class="btn btn-primary btn-sm" onclick='mostrarReferencia(${JSON.stringify(d)})'>📄 Citar</button>
                 </div>`
             }
           ],
@@ -185,10 +203,7 @@
             lengthMenu: "Mostrar _MENU_ registros por página",
             search: "Pesquisar:",
             paginate: {
-              first: "Primeiro",
-              last: "Último",
-              next: "Próximo",
-              previous: "Anterior"
+              first: "Primeiro", last: "Último", next: "Próximo", previous: "Anterior"
             }
           }
         });
@@ -212,18 +227,8 @@
         data: anosArr.map(y => group[tp][y] || 0)
       }));
 
-      function calcularMaximo(datasets) {
-        let max = 0;
-        datasets.forEach(ds => {
-          const dsMax = Math.max(...ds.data);
-          if (dsMax > max) max = dsMax;
-        });
-        return Math.ceil(max + 1);
-      }
-
       const ctx = document.getElementById('graficoPublicacoes').getContext('2d');
       if (chartInstance) chartInstance.destroy();
-
       chartInstance = new Chart(ctx, {
         type: 'bar',
         data: { labels: anosArr, datasets },
@@ -231,26 +236,12 @@
           responsive: true,
           maintainAspectRatio: false,
           aspectRatio: 2,
-          barPercentage: 0.6,
-          categoryPercentage: 0.8,
           plugins: {
             legend: { position: 'bottom' },
             datalabels: { anchor:'end', align:'end', formatter: Math.round }
           },
           scales: {
-            x: {
-              ticks: { autoSkip: false, maxRotation: 45, minRotation: 0 },
-              grid: { display: false }
-            },
-            y: {
-              beginAtZero: true,
-              suggestedMax: calcularMaximo(datasets),
-              ticks: {
-                stepSize: 1,
-                precision: 0,
-                callback: v => Number.isInteger(v) ? v : null
-              }
-            }
+            y: { beginAtZero: true, ticks: { stepSize: 1 } }
           }
         },
         plugins: [ChartDataLabels]
@@ -288,14 +279,18 @@
       <p><strong>Sigla:</strong> ${item.sigla}</p>
       <p><strong>Link Submissão:</strong> <a href="${item.linkSite}" target="_blank">${item.linkSite}</a></p>
       <p><strong>Link Publicação:</strong> <a href="${item.linkPublicacao}" target="_blank">${item.linkPublicacao}</a></p>
-      <p style="text-align: justify;"><strong style="color:red;">Como Referenciar pela ABNT:</strong> ${item.referenciarPub}</p>`;
+      <p><strong style="color:red;">Como Referenciar (ABNT):</strong> ${item.referenciarPub}</p>`;
     document.getElementById('conteudoReferencia').innerHTML = ref;
     new bootstrap.Modal(document.getElementById('modalReferencia')).show();
+  }
+
+  function abrirJanela(id) {
+    window.open(`modal.html?id=${id}`, '_blank', 'width=1200,height=800,scrollbars=yes,resizable=yes');
   }
   </script>
 
   <meu-tradutor></meu-tradutor>
-<script src="javascript/components/tradutor.js" defer></script>
-  
-<meu-footer></meu-footer></body>
+  <script src="javascript/components/tradutor.js" defer></script>
+  <meu-footer></meu-footer>
+</body>
 </html>
