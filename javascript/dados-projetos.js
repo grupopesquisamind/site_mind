@@ -90,7 +90,7 @@ function listarItens(chave) {
     src: "https://scratch.mit.edu/projects/1087642255/embed",
     linkPublicacao: "https://publicacoes.sbenbio.org.br/trabalhos/e0322.pdf",
     publicacaoArquivo: "publicacaoArquivo/Publicacoes_Jogos/7-Jogos_de_Ciencias_Educacao_Cientifica_Inclusiva_Alunos_TEA_Uso_de_Jogo_Didatico_Utilizando_CAA_Scratch_Aprender_Sistema_Digestivo_SBENBIO_2024.pdf",
-    referenciarPub: "SANTOS, Lucas Caraça dos; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; CAMEJO AVILES, Ivana Elena. Educação Científica Inclusiva para Alunos com Transtorno do Espectro Autista (TEA): Uso de Jogo Didático Utilizando Comunicação Aumentativa e Alternativa (CAA) e Scratch para Aprender sobre o Sistema Digestório. In: Congresso IX ENEBIO & VII EREBIO MG/GO/TO/DF (Encontro Nacional de Ensino de Biologia). E-0322, p. 1-13, 2024. Disponível em: https://publicacoes.sbenbio.org.br/trabalhos/e0322.pdf",
+    referenciar: "SANTOS, Lucas Caraça dos; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; CAMEJO AVILES, Ivana Elena. Educação Científica Inclusiva para Alunos com Transtorno do Espectro Autista (TEA): Uso de Jogo Didático Utilizando Comunicação Aumentativa e Alternativa (CAA) e Scratch para Aprender sobre o Sistema Digestório. In: Congresso IX ENEBIO & VII EREBIO MG/GO/TO/DF (Encontro Nacional de Ensino de Biologia). E-0322, p. 1-13, 2024. Disponível em: https://publicacoes.sbenbio.org.br/trabalhos/e0322.pdf",
   },
   {
     id: "8",
