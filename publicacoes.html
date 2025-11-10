@@ -13,6 +13,12 @@
   <script src="javascript/components/components.js" defer></script>
 
   <style>
+      body {
+      font-family: "Arial", sans-serif;
+      background-color: #ffffff;
+      text-align: justify;
+    }
+    
     #page-wrapper {
       display: flex;
       flex-direction: column;
@@ -99,21 +105,22 @@
     </main>
   </div>
 
-  <!-- Modal de Referência -->
+  <!-- === Modal de Referência (área de cópia liberada) === -->
   <div class="modal fade" id="modalReferencia" tabindex="-1" aria-labelledby="modalReferenciaLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header bg-primary text-white">
-          <h5 class="modal-title" id="modalReferenciaLabel">Dados da Publicação</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+          <h5 class="modal-title" id="modalReferenciaLabel">Dados do Projeto</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
         </div>
-        <div class="modal-body allow-copy" id="conteudoReferencia"></div>
+        <div class="modal-body" id="conteudoReferencia"></div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
         </div>
       </div>
     </div>
   </div>
+
 
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -210,8 +217,7 @@
         });
       }
     }
-
-    function renderizarGrafico(data) {
+function renderizarGrafico(data) {
       const group = {};
       data.forEach(i => {
         if (!group[i.tipo]) group[i.tipo] = {};
@@ -228,26 +234,48 @@
         data: anosArr.map(y => group[tp][y] || 0)
       }));
 
-      const ctx = document.getElementById('graficoPublicacoes').getContext('2d');
-      if (chartInstance) chartInstance.destroy();
-      chartInstance = new Chart(ctx, {
-        type: 'bar',
-        data: { labels: anosArr, datasets },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          aspectRatio: 2,
-          plugins: {
-            legend: { position: 'bottom' },
-            datalabels: { anchor:'end', align:'end', formatter: Math.round }
-          },
-          scales: {
-            y: { beginAtZero: true, ticks: { stepSize: 1 } }
+
+
+  // 🔹 Calcula o maior valor real exibido e ajusta +1 para espaçamento visual
+  let maxValue = Math.max(...datasets.flatMap(ds => ds.data));
+  if (!isFinite(maxValue) || maxValue < 1) maxValue = 1; // evita NaN ou zero total
+  const adjustedMax = maxValue + 1;
+
+  const ctx = document.getElementById('graficoPublicacoes').getContext('2d');
+  if (chartInstance) chartInstance.destroy();
+
+  chartInstance = new Chart(ctx, {
+    type: 'bar',
+    data: { labels: anosArr, datasets },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { position: 'bottom' },
+        datalabels: {
+          anchor: 'end',
+          align: 'end',
+          color: '#000',
+          font: { weight: 'bold' },
+          formatter: Math.round
+        }
+      },
+      scales: {
+        x: { grid: { display: false } },
+        y: {
+          beginAtZero: true,
+          ticks: {
+            stepSize: 2,
+            precision: 0,
+            max: adjustedMax // ✅ valor máximo real + 1
           }
-        },
-        plugins: [ChartDataLabels]
-      });
-    }
+        }
+      }
+    },
+    plugins: [ChartDataLabels]
+  });
+}
+
 
     function atualizar() {
       const filtrado = aplicarFiltros();
@@ -269,21 +297,45 @@
     atualizar();
   });
 
-  function mostrarReferencia(item) {
-    const ref = `
-      <p><strong>Título:</strong> ${item.titulo}</p>
+
+function mostrarReferencia(item) {
+      const ref = `
+        <p><strong>Título:</strong> ${item.titulo}</p>
       <p><strong>Autor Principal:</strong> ${item.autor}</p>
       <p><strong>Co-autor(es):</strong> ${item.coautor}</p>
       <p><strong>Tipo:</strong> ${item.tipo}</p>
       <p><strong>Ano:</strong> ${item.ano}</p>
       <p><strong>Local:</strong> ${item.local}</p>
       <p><strong>Sigla:</strong> ${item.sigla}</p>
-      <p><strong>Link Submissão:</strong> <a href="${item.linkSite}" target="_blank">${item.linkSite}</a></p>
-      <p><strong>Link Publicação:</strong> <a href="${item.linkPublicacao}" target="_blank">${item.linkPublicacao}</a></p>
-      <p><strong style="color:red;">Como Referenciar (ABNT):</strong> ${item.referenciarPub}</p>`;
-    document.getElementById('conteudoReferencia').innerHTML = ref;
-    new bootstrap.Modal(document.getElementById('modalReferencia')).show();
-  }
+
+        ${
+          item.linkPublicacao
+            ? `<p><strong>Link da Publicação:</strong> <a href="${item.linkPublicacao}" target="_blank">${item.linkPublicacao}</a></p>`
+            : ''
+        }
+        ${
+          item.publicacaoArquivo
+            ? `<p><strong>Arquivo PDF:</strong> <a href="${item.publicacaoArquivo}" target="_blank">Abrir</a></p>`
+            : ''
+        }
+        <hr>
+        <div class="allow-copy">
+          <p><strong style="color:red;">Como Referenciar pela ABNT:</strong><br>${item.referenciarPub || 'Referência não informada.'}</p>
+          <button class="btn btn-outline-secondary btn-sm mt-2" onclick="copiarReferencia()">Copiar Referência</button>
+          <small style="color:#888;">(Você pode copiar esta referência livremente)</small>
+        </div>`;
+      document.getElementById('conteudoReferencia').innerHTML = ref;
+      new bootstrap.Modal(document.getElementById('modalReferencia')).show();
+    }
+
+    function copiarReferencia() {
+      const ref = document.querySelector('.allow-copy');
+      if (!ref) return;
+      navigator.clipboard.writeText(ref.innerText.trim())
+        .then(() => alert('Referência copiada!'))
+        .catch(() => alert('Não foi possível copiar.'));
+    }
+ 
 
   function abrirJanela(id) {
     window.open(`modal.html?id=${id}`, '_blank', 'width=1200,height=800,scrollbars=yes,resizable=yes');
