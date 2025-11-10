@@ -1,7 +1,7 @@
 function listarItens(tipo) {
   if (tipo === 'galeriacongressos') {
     return [
-      {imagem: 'imagens/eventos/participacao_publicacao/conict/caie_2022_ryan_ana_paula_bianca_ricardo.jpg', sigla: 'CAIE', ano: '2022', descricao: 'IFSP Cubatão/SP (23 a 25 de Novembro) - Apresentação: Ryan Campos, Ana Paula Kawabe, Ricardo Reis e Bianca Montemor'},
+      {imagem: 'imagens/eventos/participacao_publicacao/caie/caie_2022_ryan_ana_paula_bianca_ricardo.jpg', sigla: 'CAIE', ano: '2022', descricao: 'IFSP Cubatão/SP (23 a 25 de Novembro) - Apresentação: Ryan Campos, Ana Paula Kawabe, Ricardo Reis e Bianca Montemor'},
 
       {imagem: 'imagens/eventos/participacao_publicacao/conict/conict_2022_bianca_ricardo_apresentacao.jpeg', sigla: 'CONICT', ano: '2022', descricao: 'Reitoria IFSP/SP (21 a 23 de Novembro) - Apresentação: Bianca Montemor e Ricardo Reis'},
       {imagem: 'imagens/eventos/participacao_publicacao/conict/conict_2022_bianca_ricardo_apresentacao_2.jpeg', sigla: 'CONICT', ano: '2022', descricao: 'Reitoria IFSP/SP (21 a 23 de Novembro) - Apresentação: Bianca Montemor e Ricardo Reis'},
