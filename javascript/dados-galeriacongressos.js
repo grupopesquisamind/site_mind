@@ -13,6 +13,7 @@ function listarItens(tipo) {
       {imagem: 'imagens/eventos/participacao_publicacao/conict/conict_2023_lucas_caraca_apresentacao.jpg', sigla: 'CONICT', ano: '2023', descricao: 'IFSP Capivari/SP (22 a 24 de Novembro) - Apresentação: Lucas Caraça'},
       {imagem: 'imagens/eventos/participacao_publicacao/conict/conict_2023_maria_wianney_apresentacao.jpg', sigla: 'CONICT', ano: '2023', descricao: 'IFSP Capivari/SP (22 a 24 de Novembro) - Apresentação: Maria Wianney'},
       {imagem: 'imagens/eventos/participacao_publicacao/conict/conict_2023_ryan_apresentacao.jpg', sigla: 'CONICT', ano: '2023', descricao: 'IFSP Capivari/SP (22 a 24 de Novembro) - Apresentação: Ryan Campos'},
+      {imagem: 'imagens/eventos/participacao_publicacao/conict/conict_2023_ryan_apresentacao2.jpg', sigla: 'CONICT', ano: '2023', descricao: 'IFSP Capivari/SP (22 a 24 de Novembro) - Apresentação: Ryan Campos'},
 
       {imagem: 'imagens/eventos/participacao_publicacao/eppeq/eppeq_2023_grupo.jpg', sigla: 'EPPEQ', ano: '2023', descricao: 'IFSP Sertãozinho/SP e USP Ribeirão Preto/SP (14 e 15 de Setembro) - Foto do Grupo: Ryan Campos, Bianca Montemor, Ricardo Reis, Ana Paula Kawabe e Lyan Souza'},
       {imagem: 'imagens/eventos/participacao_publicacao/eppeq/eppeq_2023_grupo_lyan_bianca_ricardo_ryan_paula.jpg', sigla: 'EPPEQ', ano: '2023', descricao: 'IFSP Sertãozinho/SP e USP Ribeirão Preto/SP (14 e 15 de Setembro) - Foto do Grupo: Ricardo Reis, Ana Paula Kawabe, Ryan Campos, Bianca Montemor e Lyan Souza'},
