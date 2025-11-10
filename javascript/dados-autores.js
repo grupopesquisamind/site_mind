@@ -286,7 +286,7 @@ function listarItens(tipo) {
         titulo: "Ensino Médio",
         tipoParticipacao: "Voluntário Interno",
         anoIngresso: "2025",
-        anoSaida: "",
+        anoSaida: "Atualmente",
         instituicao: "IFSP Jacareí",
         lattes: "https://lattes.cnpq.br/2838359900736717",
         imagem: "luis_reis.jpg",  // <-- Só o nome do arquivo
