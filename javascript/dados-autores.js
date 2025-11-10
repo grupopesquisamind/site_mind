@@ -7,7 +7,7 @@ function listarItens(tipo) {
         id: "1",
         status: "Ativo",
         nome: "Alexssandro Ferreira da Silva",
-        formacao: "Possiu Técnico em Informática, Graduação em Administração, Tecnólogo em Análise e Desenvolvimento de Sistemas, Cursando Pedagogia, Cursando Mestrado em Educação pelo PECIM - Unicamp-SP, atualmente é lotado no IFSP Campus Jacareí como Técnico de Tenologia da Informação",
+        formacao: "Possui Técnico em Informática, Graduação em Administração, Tecnólogo em Análise e Desenvolvimento de Sistemas, Cursando Pedagogia, Cursando Mestrado em Educação pelo PECIM - Unicamp-SP, atualmente é lotado no IFSP Campus Jacareí como Técnico de Tenologia da Informação",
         titulo: "Mestrando",
         tipoParticipacao: "Colaborador Interno",
         anoIngresso: "2022",
