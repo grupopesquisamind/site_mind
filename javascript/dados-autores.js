@@ -278,7 +278,19 @@ function listarItens(tipo) {
         lattes: "http://lattes.cnpq.br/5159854768377627",
         imagem: "ryan_cristian.jpg",  // <-- Só o nome do arquivo
       },
-      
+      {
+        id: "22",
+        status: "Ativo",
+        nome: "Luis Reis",
+        formacao: "Cursando Ensino Médio Integrado em Informática",
+        titulo: "Ensino Médio",
+        tipoParticipacao: "Voluntário Interno",
+        anoIngresso: "2025",
+        anoSaida: "",
+        instituicao: "IFSP Jacareí",
+        lattes: "",
+        imagem: "luis_reis.jpg",  // <-- Só o nome do arquivo
+      },
     ];
   }
   return [];
