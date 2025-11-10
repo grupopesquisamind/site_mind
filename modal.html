@@ -132,9 +132,8 @@ h2, h3, h5 {
     </div>
 
     <button id="btnAmpliar">🔍 Abrir em Nova Janela Fullscreen</button>
-
-    <div id="iframeContainer">
-      <iframe id="iframeConteudo" allowfullscreen scrolling="auto"></iframe>
+  <div id="iframeContainer" style="position: relative;">
+     <iframe id="iframeConteudo" allowfullscreen scrolling="auto"></iframe>
     </div>
   </section>
 </main>
@@ -175,13 +174,14 @@ function copiarReferencia() {
     .catch(() => alert('Não foi possível copiar.'));
 }
 
-// 🔹 Abrir o projeto em tela cheia
+// 🔹 Abrir o projeto em tela cheia (com bloqueio controlado pelo components.js)
 document.getElementById('btnAmpliar').addEventListener('click', () => {
-  if (document.getElementById('iframeConteudo').src) {
+  const iframe = document.getElementById('iframeConteudo');
+  if (iframe && iframe.src) {
     const width = screen.availWidth;
     const height = screen.availHeight;
     const novaJanela = window.open(
-      projeto.src,
+      iframe.src,
       '_blank',
       `width=${width},height=${height},top=0,left=0,resizable=yes,scrollbars=yes`
     );
@@ -189,6 +189,15 @@ document.getElementById('btnAmpliar').addEventListener('click', () => {
       novaJanela.moveTo(0, 0);
       novaJanela.resizeTo(screen.availWidth, screen.availHeight);
       novaJanela.focus();
+
+      // 🔒 Chama a função do components.js para aplicar bloqueios
+      novaJanela.addEventListener('load', () => {
+        if (typeof aplicarBloqueios === 'function') {
+          aplicarBloqueios(novaJanela);
+        } else {
+          console.warn('Função aplicarBloqueios() não encontrada no components.js');
+        }
+      });
     }
   }
 });
@@ -196,6 +205,8 @@ document.getElementById('btnAmpliar').addEventListener('click', () => {
 
 <meu-tradutor></meu-tradutor>
 <script src="javascript/components/tradutor.js" defer></script>
+<script src="javascript/components/components_modal.js" defer></script>
+
 <meu-footer></meu-footer>
 </body>
 </html>
