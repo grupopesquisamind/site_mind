@@ -5,17 +5,6 @@
 // Bloquear botão direito
 document.addEventListener('contextmenu', e => e.preventDefault());
 
-// Bloquear teclas sensíveis (F12, Ctrl+U, Ctrl+S, Ctrl+C, Ctrl+P)
-document.addEventListener('keydown', e => {
-  if (
-    e.key === 'F12' ||
-    (e.ctrlKey && ['u', 'U', 's', 'S', 'c', 'C', 'p', 'P', 'a', 'A'].includes(e.key))
-  ) {
-    e.preventDefault();
-    e.stopPropagation();
-  }
-});
-
 // Bloquear copiar, colar e cortar no documento principal
 ['copy', 'cut', 'paste'].forEach(evt =>
   document.addEventListener(evt, e => e.preventDefault())
@@ -27,55 +16,71 @@ document.addEventListener('selectstart', e => e.preventDefault());
 // ====================================================
 // FUNÇÃO PARA BLOQUEAR DENTRO DO IFRAME (MESMO DOMÍNIO)
 // ====================================================
-function aplicarBloqueiosInternos(iframe) {
-  try {
-    const doc = iframe.contentDocument || iframe.contentWindow.document;
-
-    doc.addEventListener('contextmenu', e => e.preventDefault());
-    doc.addEventListener('keydown', e => {
-      if (
-        e.key === 'F12' ||
-        (e.ctrlKey && ['u', 'U', 's', 'S', 'c', 'C', 'p', 'P', 'a', 'A'].includes(e.key))
-      ) {
-        e.preventDefault();
-        e.stopPropagation();
-      }
-    });
-    ['copy', 'cut', 'paste'].forEach(evt =>
-      doc.addEventListener(evt, e => e.preventDefault())
-    );
-    doc.addEventListener('selectstart', e => e.preventDefault());
-
-    console.log('🔒 Bloqueios internos aplicados ao iframe.');
-  } catch (err) {
-    console.warn('⚠️ Iframe externo — bloqueio interno não permitido (CORS).');
-  }
-}
-
 // ====================================================
-// BLOQUEIO EXTERNO COM OVERLAY INVISÍVEL (SE CORS IMPEDIR)
+// BLOQUEIO COMPLETO NA ÁREA DO IFRAME
 // ====================================================
-function aplicarOverlayBloqueio(iframe) {
+function aplicarProtecaoIframe(iframe) {
   const container = iframe.parentElement;
-  if (!container.querySelector('.iframe-overlay')) {
-    const overlay = document.createElement('div');
+  container.style.position = 'relative';
+
+  // 🔒 Cria overlay que cobre o iframe (para bloquear botão direito)
+  let overlay = container.querySelector('.iframe-overlay');
+  if (!overlay) {
+    overlay = document.createElement('div');
     overlay.className = 'iframe-overlay';
     overlay.style.cssText = `
       position: absolute;
       inset: 0;
-      z-index: 10;
+      z-index: 20;
       background: transparent;
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      touch-action: manipulation;
     `;
-    container.style.position = 'relative';
     container.appendChild(overlay);
-
-    // Permitir clique dentro do iframe (parcialmente)
-    overlay.addEventListener('dblclick', () => {
-      overlay.style.pointerEvents = 'none';
-      setTimeout(() => (overlay.style.pointerEvents = 'auto'), 5000);
-    });
   }
+
+  // ⚙️ Bloquear botão direito (desktop)
+  overlay.addEventListener('contextmenu', e => e.preventDefault());
+
+  // ⚙️ Bloquear gestos de toque múltiplo (pinch zoom, copiar com 2 dedos)
+  overlay.addEventListener('touchstart', e => {
+    if (e.touches.length > 1) e.preventDefault();
+  }, { passive: false });
+
+  // ⚙️ Permitir clique normal e toque (passagem temporária)
+  ['click', 'touchstart'].forEach(evt => {
+    overlay.addEventListener(evt, () => {
+      overlay.style.pointerEvents = 'none';  // libera clique
+      setTimeout(() => {
+        overlay.style.pointerEvents = 'auto'; // volta a bloquear botão direito
+      }, 3000); // 3 segundos livres de clique
+    });
+  });
+
+  // ⚙️ Bloqueio global de teclado e ações de cópia
+    // Bloquear teclas sensíveis (F12, Ctrl+U, Ctrl+S, Ctrl+C, Ctrl+P)
+
+  document.addEventListener('keydown', e => {
+    if (
+      e.key === 'F12' ||
+      (e.ctrlKey && ['u','U','s','S','c','C','p','P','a','A'].includes(e.key))
+    ) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  });
+
+  // Bloquear teclas sensíveis (F12, Ctrl+U, Ctrl+S, Ctrl+C, Ctrl+P)
+  document.addEventListener('copy', e => e.preventDefault());
+  document.addEventListener('cut', e => e.preventDefault());
+  document.addEventListener('paste', e => e.preventDefault());
+
+  console.log('🛡️ Proteção completa aplicada à área do iframe.');
 }
+
 
 // ====================================================
 // MONITORAR O IFRAME E APLICAR BLOQUEIOS

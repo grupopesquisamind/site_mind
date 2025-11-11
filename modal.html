@@ -64,6 +64,7 @@ h2, h3, h5 {
 }
 
 #iframeContainer {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -126,20 +127,38 @@ h2, h3, h5 {
       <p id="tipo"></p>
       <p id="categoria"></p>
 
-      <div id="referencia" class="allow-copy">
-        <!-- referência ABNT e botão serão carregados aqui -->
-      </div>
+      <div id="referencia" class="allow-copy"></div>
     </div>
 
     <button id="btnAmpliar">🔍 Abrir em Nova Janela Fullscreen</button>
-  <div id="iframeContainer" style="position: relative;">
-     <iframe id="iframeConteudo" allowfullscreen scrolling="auto"></iframe>
+
+    <div id="iframeContainer">
+      <iframe id="iframeConteudo" allowfullscreen scrolling="auto"></iframe>
     </div>
   </section>
 </main>
 
 <script src="javascript/dados-projetos.js"></script>
 <script>
+// ===========================================
+// 🔹 BLOQUEIOS GERAIS NO DOCUMENTO PRINCIPAL
+// ===========================================
+document.addEventListener('contextmenu', e => e.preventDefault());
+['copy', 'cut', 'paste'].forEach(evt => document.addEventListener(evt, e => e.preventDefault()));
+document.addEventListener('selectstart', e => e.preventDefault());
+document.addEventListener('keydown', e => {
+  if (
+    e.key === 'F12' ||
+    (e.ctrlKey && ['u','U','s','S','c','C','p','P','a','A'].includes(e.key))
+  ) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+});
+
+// ===========================================
+// 🔹 CARREGAR DADOS DO PROJETO
+// ===========================================
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get('id');
 const projetos = listarItens('projetos');
@@ -152,20 +171,19 @@ if (projeto) {
     `<strong>Autor do Jogo:</strong> <span style="color: blue;">${projeto.autor}</span> <span style="color: red;">(${projeto.ano})</span>`;
   document.getElementById('tipo').innerHTML = 
     `<strong>Tipo/Categoria:</strong> <span style="color: blue;">${projeto.tipo}</span> <span style="color: red;">(${projeto.categoria})</span>`;
-
-  // 🔽 Bloco com referência + botão copiar
   document.getElementById('referencia').innerHTML = `
     <p><strong style="color:red;">Como Referenciar pela ABNT:</strong><br>${projeto.referenciar || 'Referência não informada.'}</p>
     <button class="btn btn-outline-secondary btn-sm" onclick="copiarReferencia()">Copiar Referência</button>
     <small style="color:#888;">(Você pode copiar esta referência livremente)</small>
   `;
-
   document.getElementById('iframeConteudo').src = projeto.src;
 } else {
   document.getElementById('nomeProducao').textContent = 'Conteúdo não encontrado';
 }
 
-// 🔹 Função de copiar referência
+// ===========================================
+// 🔹 FUNÇÃO DE COPIAR REFERÊNCIA
+// ===========================================
 function copiarReferencia() {
   const ref = document.querySelector('.allow-copy');
   if (!ref) return;
@@ -174,7 +192,57 @@ function copiarReferencia() {
     .catch(() => alert('Não foi possível copiar.'));
 }
 
-// 🔹 Abrir o projeto em tela cheia (com bloqueio controlado pelo components.js)
+// ===========================================
+// 🔹 PROTEÇÃO COMPLETA NA ÁREA DO IFRAME
+// ===========================================
+function aplicarProtecaoIframe(iframe) {
+  const container = iframe.parentElement;
+  container.style.position = 'relative';
+
+  let overlay = container.querySelector('.iframe-overlay');
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.className = 'iframe-overlay';
+    overlay.style.cssText = `
+      position: absolute;
+      inset: 0;
+      z-index: 20;
+      background: transparent;
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      touch-action: manipulation;
+    `;
+    container.appendChild(overlay);
+  }
+
+  // Bloqueios
+  overlay.addEventListener('contextmenu', e => e.preventDefault());
+  overlay.addEventListener('touchstart', e => {
+    if (e.touches.length > 1) e.preventDefault();
+  }, { passive: false });
+
+  // Permitir clique / toque por 3s
+  ['click', 'touchstart'].forEach(evt => {
+    overlay.addEventListener(evt, () => {
+      overlay.style.pointerEvents = 'none';
+      setTimeout(() => (overlay.style.pointerEvents = 'auto'), 3000);
+    });
+  });
+
+  console.log('🛡️ Proteção aplicada à área do iframe.');
+}
+
+// ===========================================
+// 🔹 MONITORAR CARREGAMENTO DO IFRAME
+// ===========================================
+const iframe = document.getElementById('iframeConteudo');
+if (iframe) iframe.addEventListener('load', () => aplicarProtecaoIframe(iframe));
+
+// ===========================================
+// 🔹 FUNÇÃO DE ABRIR EM NOVA JANELA
+// ===========================================
 document.getElementById('btnAmpliar').addEventListener('click', () => {
   const iframe = document.getElementById('iframeConteudo');
   if (iframe && iframe.src) {
@@ -189,15 +257,6 @@ document.getElementById('btnAmpliar').addEventListener('click', () => {
       novaJanela.moveTo(0, 0);
       novaJanela.resizeTo(screen.availWidth, screen.availHeight);
       novaJanela.focus();
-
-      // 🔒 Chama a função do components.js para aplicar bloqueios
-      novaJanela.addEventListener('load', () => {
-        if (typeof aplicarBloqueios === 'function') {
-          aplicarBloqueios(novaJanela);
-        } else {
-          console.warn('Função aplicarBloqueios() não encontrada no components.js');
-        }
-      });
     }
   }
 });
