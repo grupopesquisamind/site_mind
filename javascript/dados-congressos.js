@@ -7,7 +7,8 @@ function listarItens(tipo) {
       { nome: "CONICT", descricao: "Congresso de Inovação, Ciência e Tecnologia pelo IFSP", imagem: "conict.jpg" },
       { nome: "EPPEQ", descricao: "Encontro Paulista de Pesquisa em Ensino de Química", imagem: "eppeq.png" },
       { nome: "SBENBIO", descricao: "Sociedade Brasileira de Ensino de Biologia", imagem: "sbenbio.png" },
-      { nome: "EIAS", descricao: "Encontro Internacional de Aprendizagem Significativa", imagem: "apsignificativa.png" }
+      { nome: "EIAS", descricao: "Encontro Internacional de Aprendizagem Significativa", imagem: "apsignificativa.png" },
+      { nome: "ENAS", descricao: "Encontro Nacional de Aprendizagem Signigicativa", imagem: "enasbanner.png"}
     ];
   }
   return [];
