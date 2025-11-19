@@ -16,7 +16,7 @@
 <script src="javascript/components/menu.js" defer></script>
 <script src="javascript/components/footer.js" defer></script>
 <script src="javascript/dados-galeriacongressos.js" defer></script>
-  <script src="javascript/components/components.js" defer></script>
+    <script src="javascript/components/components.js" defer></script>
 
 <style>
 #page-wrapper {
@@ -57,6 +57,7 @@ h2, h5 {
   height: 100%;
   max-width: 180px;
   border-left: 6px solid var(--accent-2, green);
+
 }
 
 .card:hover {
@@ -91,6 +92,11 @@ h2, h5 {
   color: #555;
 }
 
+.nome-evento{
+  font-size: 0.85rem;
+    color: #020000;
+    margin-bottom: 0.2rem;
+}
 .sigla-evento{
   font-size: 0.85rem;
     color: #007bff;
@@ -139,6 +145,7 @@ h2, h5 {
     <img class="galeria-imagem" alt="">
     <div class="legend">
       <strong class="galeria-sigla sigla-evento"></strong>
+      <strong class="galeria-nome nome-evento"></strong>
       <span class="galeria-descricao"></span>
     </div>
   </a>
@@ -158,14 +165,16 @@ class GaleriaItem extends HTMLElement {
 
     const imagem = this.getAttribute('imagem');
     const sigla = this.getAttribute('sigla');
+    const nome = this.getAttribute('nome');
     const ano = this.getAttribute('ano');
     const descricao = this.getAttribute('descricao');
 
     const card = this.querySelector('.card');
     card.href = imagem;
-    this.querySelector('.galeria-imagem').src = imagem;
-    this.querySelector('.galeria-imagem').alt = `${sigla} ${ano}`;
+    this.querySelector('.galeria-imagem').src = imagem;    
+    this.querySelector('.galeria-imagem').alt = '${sigla} ${ano}';
     this.querySelector('.galeria-sigla').textContent = `${sigla} - ${ano}`;
+    this.querySelector('.galeria-nome').textContent = nome ? nome : "";
     this.querySelector('.galeria-descricao').textContent = descricao;
   }
 }
@@ -194,6 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const item = document.createElement('galeria-item');
       item.setAttribute('imagem', e.imagem);
       item.setAttribute('sigla', e.sigla);
+      item.setAttribute('nome', e.nome);
       item.setAttribute('ano', e.ano);
       item.setAttribute('descricao', e.descricao);
       container.appendChild(item);
