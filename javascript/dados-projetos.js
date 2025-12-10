@@ -351,21 +351,7 @@ function listarItens(chave) {
     linkPublicacao: "aviso.html",
     publicacaoArquivo: "aviso.html",
     referenciar: "SANTOS, Thiago Marinho; SILVA, Alexssandro Ferreira da; NASCIMENTO, Ricardo Henrique dos Reis; FERREIRA, Ana Paula Kawabe de Lima. Do Vapor à Inclusão: Um Recurso Didático Digital Baseado na História da Máquina a Vapor para Alunos com Transtorno do Espectro Autista. 2025. In: EPPEQ-ENCONTRO PAULISTA DE PESQUISA EM ENSINO DE QUÍMICA, XIII, 2025, Presidente Prudente-SP. Anais [...]. Unesp: 2025, . Disponível em:",
-  },
-  {
-    id: "28", /*enviado ao ENAS, aguardando publicação*/
-    autor: "Yara Vitória Claro de Freitas",
-    ano: "2025",
-    nomeProducao: "Sequência Didática sobre Isomeria Geométrica. (Aguardando publicação nos Anais do Congresso)",
-    titulo: "Aprendizagem Significativa Crítica e Inclusão: uma proposta de sequência didática sobre isomeria geométrica.",
-    categoria: "Química",
-    tipo: "Jogo Educativo",
-    src: "aviso.html",
-    linkPublicacao: "aviso.html",
-    publicacaoArquivo: "aviso.html",
-    referenciar: "FREITAS, Yara Vitoria Claro de; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; CAMEJO AVILES, Ivana Elena. Aprendizagem Significativa Crítica e Inclusão: uma proposta de sequência didática sobre isomeria geométrica. In: Congresso 9º ENAS - Encontro Nacional de Aprendizagem Significativa, Univates de Lajeado-RS, 17-21/11/2025. Anais [...]. Disponível em: ",
-  },
-   
+  },   
 ];
   }
   return [];
