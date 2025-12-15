@@ -81,19 +81,8 @@ function listarItens(tipo) {
         lattes: "http://lattes.cnpq.br/0153768116859752",
         imagem: "gabriel_baroni.jpg",  // <-- Só o nome do arquivo
       },
-      {
-        id: "7",
-        nome: "Ivana Elena Camejo Aviles",
-        status: "Ativo",
-        formacao: "Possui Licenciatura em Biologia, atualmente é lotada no DBFE do Instituto de Biologia da UNICAMP, credenciada no Programa de Pós-Graduação Multiunidades em Ensino de Ciências e Matemática, PECIM e no Programa de Mestrado Profissional em Ensino de Biologia em Rede Nacional, PROFBIO. Pesquisadora do Laboratório de Tecnologia Educacional, LTE do Instituto de Biologia da UNICAMP",
-        titulo: "Doutorado",
-        tipoParticipacao: "Colaborador Externo",
-        anoIngresso: "2024",
-        anoSaida: "Atualmente",
-        instituicao: "Unicamp Campinas",
-        lattes: "http://lattes.cnpq.br/0294329481051613",
-        imagem: "ivana_camejo.jpg",  // <-- Só o nome do arquivo
-      },
+      
+      
        {
         id: "8",
         nome: "Mateus Cayque Figueiredo Gomes",
