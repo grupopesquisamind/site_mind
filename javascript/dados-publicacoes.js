@@ -286,7 +286,7 @@ referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, R
         ano: "2024",
         titulo: "Educação especial e a formação de professores: uma revisão sistemática da abordagem dos anais CB33-2023",
         autor: "Ana Paula Kawabe de Lima Ferreira",
-        coautor: "Alexssandro Ferreira da Silva, Ivana Elena Camejo Aviles",
+        coautor: "Alexssandro Ferreira da Silva", /*Ivana Elena Camejo Aviles*/
         tipo: "Anais de Congresso",
         local: "Congresso de Acessibilidade e Inclusão na Educação - Publicação na Revista da Educação Inclusiva",
         sigla: "CAIE - REI",
@@ -315,7 +315,7 @@ referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, R
         ano: "2023",
         titulo: "Apresentação Online: Educação especial e a formação de professores: uma revisão sistemática da abordagem dos anais CB33-2023",
         autor: "Ana Paula Kawabe de Lima Ferreira",
-        coautor: "Alexssandro Ferreira da Silva, Ivana Elena Camejo Aviles",
+        coautor: "Alexssandro Ferreira da Silva", /*Ivana Elena Camejo Aviles*/
         tipo: "Apresentação",
         local: "Caderno de Resumos do Congresso de Acessibilidade e Inclusão na Educação",
         sigla: "Caderno de Resumos - CAIE",
@@ -343,7 +343,7 @@ referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, R
         ano: "2024",
         titulo: "Potencialidade de Jogo Educacional no Ensino de Sistema Digestivo: uso da comunicação aumentativa e alternativa e o scratch para alunos com transtorno do espectro autista",
         autor: "Lucas Caraça dos Santos",
-        coautor: "Alexssandro Ferreira da Silva, Ana Paula Kawabe de Lima Ferreira, Ivana Elena Camejo Aviles",
+        coautor: "Alexssandro Ferreira da Silva, Ana Paula Kawabe de Lima Ferreira", /*Ivana Elena Camejo Aviles*/
         tipo: "Anais de Congresso",
         local: "Encuentro Internacional de Aprendizaje Significativo “Joseph Novak”, Montevidéo, Uruguay",
         sigla: "EIAS",
@@ -357,7 +357,7 @@ referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, R
         ano: "2024",
         titulo: "Educação Científica Inclusiva para Alunos com Transtorno do Espectro Autista (TEA): Uso de Jogo Didático Utilizando Comunicação Aumentativa e Alternativa (CAA) e Scratch para Aprender sobre o Sistema Digestório",
         autor: "Lucas Caraça dos Santos",
-        coautor: "Alexssandro Ferreira da Silva, Ana Paula Kawabe de Lima Ferreira, Ivana Elena Camejo Aviles",
+        coautor: "Alexssandro Ferreira da Silva, Ana Paula Kawabe de Lima Ferreira", /*Ivana Elena Camejo Aviles*/
         tipo: "Apresentação",
         local: "FEIRA DE CIÊNCIAS DO IX ENEBIO & VII EREBIO MG, GO, TO, DF MOSTRA DE MATERIAIS DIDÁTICOS E SESSÕES DE JOGOS EDUCATIVOS",
         sigla: "ENEBIO",
@@ -414,7 +414,7 @@ referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, R
         ano: "2024",
         titulo: "Jogo educacional para o ensino potencialmente significativo de hidrocarbonetos de cadeias fechadas para alunos com Transtorno do Espectro Autista",
         autor: "Mateus Cayque Figueiredo Gomes",
-        coautor: "Ana Paula Kawabe de Lima Ferreira, Alexssandro Ferreira da Silva, Ivana Elena Camejo Aviles",
+        coautor: "Ana Paula Kawabe de Lima Ferreira, Alexssandro Ferreira da Silva", /*Ivana Elena Camejo Aviles*/
         tipo: "Anais de Congresso",
         local: " Encuentro Internacional de Aprendizaje Significativo “Joseph Novak”,  Montevidéo, Uruguay",
         sigla: "EIAS",
@@ -428,7 +428,7 @@ referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, R
         ano: "2024",
         titulo: "Jogos computacionais e a contação de história: uma proposta educacional inclusiva para ensinar funções oxigenadas",
         autor: "Mateus Cayque Figueiredo Gomes",
-        coautor: "Alexssandro Ferreira da Silva, Ana Paula Kawabe de Lima Ferreira, Ivana Elena Camejo Aviles",
+        coautor: "Alexssandro Ferreira da Silva, Ana Paula Kawabe de Lima Ferreira", /*Ivana Elena Camejo Aviles*/
         tipo: "Anais de Congresso",
         local: "Congresso de Acessibilidade e Inclusão na Educação - Publicação na Revista  da Educação Inclusiva",
         sigla: "CAIE - REI",
@@ -456,7 +456,7 @@ referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, R
         ano: "2024",
         titulo: "Aprendizagem Significativa e Educação Inclusiva: uma revisão sistemática de Revistas Qualis A1 e A2 para o Ensino de Biologia de 2017 a 2024",
         autor: "Alexssandro Ferreira da Silva",
-        coautor: "Ana Paula Kawabe de Lima Ferreira, Gabriel Kawabe de Lima Ferreira, Ivana Elena Camejo Aviles",
+        coautor: "Ana Paula Kawabe de Lima Ferreira, Gabriel Kawabe de Lima Ferreira", /*Ivana Elena Camejo Aviles*/
          tipo: "Anais de Congresso",
         local: " Encuentro Internacional de Aprendizaje Significativo “Joseph Novak”,  Montevidéo, Uruguay",
         sigla: "EIAS",
@@ -470,7 +470,7 @@ referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, R
         ano: "2024",
         titulo: "Aprendizagem significativa no Ensino de Química em revistas Qualis A1 e A2: uma revisão sistemática para abordagem inclusiva",
         autor: "Ana Paula Kawabe de Lima Ferreira",
-        coautor: "Alexssandro Ferreira da Silva, Gabriel Kawabe de Lima Ferreira, Ivana Elena Camejo Aviles",
+        coautor: "Alexssandro Ferreira da Silva, Gabriel Kawabe de Lima Ferreira", /*Ivana Elena Camejo Aviles*/
         tipo: "Anais de Congresso",
         local: " Encuentro Internacional de Aprendizaje Significativo “Joseph Novak”,  Montevidéo, Uruguay",
         sigla: "EIAS",
@@ -512,7 +512,7 @@ referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, R
         ano: "2024",
         titulo: "Educação Científica Inclusiva para Alunos com Transtorno do Espectro Autista (TEA): Uso de Jogo Didático Utilizando Comunicação Aumentativa e Alternativa (CAA) e Scratch para Aprender sobre o Sistema Digestório",
         autor: "Lucas Caraça dos Santos",
-        coautor: "Alexssandro Ferreira da Silva, Ana Paula Kawabe de Lima Ferreira, Ivana Elena Camejo Aviles",
+        coautor: "Alexssandro Ferreira da Silva, Ana Paula Kawabe de Lima Ferreira", /*Ivana Elena Camejo Aviles*/
         tipo: "Anais de Congresso",
         local: "Encontro Nacional de Ensino de Biologia /  Encontro Regional de Ensino de Biologia MG/GO/TO/DF",
         sigla: "ENEBIO",
@@ -568,7 +568,7 @@ referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, R
         ano: "2025",
         titulo: "Adaptações curriculares e metodológicas para o ensino e aprendizagem de Hidroca Espectro Autista.",
         autor: "Ana Paula Kawabe de Lima Ferreira",
-        coautor: "Alexssandro Ferreira da Silva, Lyan Lisboa de Souza, Bianca Estrela Montemor Abdalla França Camargo, Ivana Elena Camejo Aviles",
+        coautor: "Alexssandro Ferreira da Silva, Lyan Lisboa de Souza, Bianca Estrela Montemor Abdalla França Camargo", /*Ivana Elena Camejo Aviles*/
         tipo: "Anais de Congresso: Aguardando Publicar",
         local: "XIII EPPEQ - Encontro Paulista de Pesquisa em Ensino de Química",
         sigla: "EPPEQ",
@@ -582,7 +582,7 @@ referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, R
         ano: "2025",
         titulo: "Formigas, feromônios e Isômeros Geométricos: Proposta de Jogo Educacional Digital para educação inclusiva de alunos com TEA.",
         autor: "Yara Vitoria Claro de Freitas",
-        coautor: "Ana Paula Kawabe de Lima Ferreira, Alexssandro Ferreira da Silva, Ricardo Henrique dos Reis Nascimento, Ivana Elena Camejo Aviles",
+        coautor: "Ana Paula Kawabe de Lima Ferreira, Alexssandro Ferreira da Silva, Ricardo Henrique dos Reis Nascimento", /*Ivana Elena Camejo Aviles*/
         tipo: "Anais de Congresso: Aguardando Publicar",
         local: "XIII EPPEQ - Encontro Paulista de Pesquisa em Ensino de Química",
         sigla: "EPPEQ",
@@ -596,7 +596,7 @@ referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, R
         ano: "2025",
         titulo: " Jogo Didático Inclusivo sobre Pilhas Eletroquímicas: Ensino de Química com Base no Desenho Universal da Aprendizagem.",
         autor: "Ana Clara Machado Godinho",
-        coautor: "Ana Paula Kawabe de Lima Ferreira, Alexssandro Ferreira da Silva, Mateus Cayque Figueiredo Gomes, Ivana Elena Camejo Aviles",
+        coautor: "Ana Paula Kawabe de Lima Ferreira, Alexssandro Ferreira da Silva, Mateus Cayque Figueiredo Gomes", /*Ivana Elena Camejo Aviles*/
         tipo: "Anais de Congresso: Aguardando Publicar",
         local: "XIII EPPEQ - Encontro Paulista de Pesquisa em Ensino de Química",
         sigla: "EPPEQ",
@@ -610,7 +610,7 @@ referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, R
         ano: "2025",
         titulo: "Do Vapor à Inclusão: Um Recurso Didático Digital Baseado na História da Máquina a Vapor para Alunos com Transtorno do Espectro Autista.",
         autor: "Thiago Marinho Santos",
-        coautor: "Ana Paula Kawabe de Lima Ferreira, Alexssandro Ferreira da Silva, Mateus Cayque Figueiredo Gomes, Ivana Elena Camejo Aviles",
+        coautor: "Ana Paula Kawabe de Lima Ferreira, Alexssandro Ferreira da Silva, Mateus Cayque Figueiredo Gomes", /*Ivana Elena Camejo Aviles*/
         tipo: "Anais de Congresso: Aguardando Publicar",
         local: "XIII EPPEQ - Encontro Paulista de Pesquisa em Ensino de Química",
         sigla: "EPPEQ",
@@ -624,7 +624,7 @@ referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, R
         ano: "2025",
         titulo: "Aprendizagem Significativa Crítica e Inclusão: uma proposta de sequência didática sobre isomeria geométrica.",
         autor: "Yara Vitória Claro de Freitas",
-        coautor: "Ana Paula Kawabe de Lima Ferreira, Alexssandro Ferreira da Silva, Ivana Elena Camejo Aviles",
+        coautor: "Ana Paula Kawabe de Lima Ferreira, Alexssandro Ferreira da Silva", /*Ivana Elena Camejo Aviles*/
         tipo: "Anais de Congresso: Aguardando Publicar",
         local: "9º ENAS - Encontro Nacional de Aprendizagem Significativa",
         sigla: "ENAS",
@@ -652,7 +652,7 @@ referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, R
         ano: "2025",
         titulo: "Máquina a vapor e Aprendizagem Significativa: proposta de sequência didátiva inclusiva.",
         autor: "Thiago Marinho Santos",
-        coautor: "Ana Paula Kawabe de Lima Ferreira, Alexssandro Ferreira da Silva, Ivana Elena Camejo Aviles",
+        coautor: "Ana Paula Kawabe de Lima Ferreira, Alexssandro Ferreira da Silva", /*Ivana Elena Camejo Aviles*/
         tipo: "Anais de Congresso: Aguardando Publicar",
         local: "9º ENAS - Encontro Nacional de Aprendizagem Significativa",
         sigla: "ENAS",
@@ -666,7 +666,7 @@ referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, R
         ano: "2025",
         titulo: "Monitoria Acadêmica no Ensino Médio: caminhos para uma Educação Inclusiva a partir da Aprendizagem Significativa Crítica.",
         autor: "Ana Paula Kawabe de Lima Ferreira",
-        coautor: "Ana Clara Machado Godinho, Alexssandro Ferreira da Silva, Ivana Elena Camejo Aviles",
+        coautor: "Ana Clara Machado Godinho, Alexssandro Ferreira da Silva", /*Ivana Elena Camejo Aviles*/
         tipo: "Anais de Congresso: Aguardando Publicar",
         local: "9º ENAS - Encontro Nacional de Aprendizagem Significativa",
         sigla: "ENAS",
@@ -680,7 +680,7 @@ referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, R
         ano: "2025",
         titulo: "Pilhas eletroquímicas e Educação Ambiental: uma proposta de sequência didática sob os pressupostos da  Aprendizagem Significativa Crítica.",
         autor: "Ana Clara Machado Godinho",
-        coautor: "Ana Paula Kawabe de Lima Ferreira, Alexssandro Ferreira da Silva, Ivana Elena Camejo Aviles",
+        coautor: "Ana Paula Kawabe de Lima Ferreira, Alexssandro Ferreira da Silva", /*Ivana Elena Camejo Aviles*/
         tipo: "Anais de Congresso: Aguardando Publicar",
         local: "9º ENAS - Encontro Nacional de Aprendizagem Significativa",
         sigla: "ENAS",
