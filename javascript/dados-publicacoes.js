@@ -133,7 +133,7 @@ referenciarPub: "CAMPOS, Ryan Cristian Sousa; MONTEMOR, Bianca Estrela  Abdalla 
         titulo: "O semáforo do corpo humano combinado à Comunicação Aumentativa e Alternativa através da utilização da Ferramenta metodológica Scratch",
         autor: "Gabriel Kawabe de Lima Ferreira",
         coautor: "Bianca Estrela Montemor Abdalla França Camargo, Alexssandro Ferreira da Silva, Ana Paula Kawabe de Lima Ferreira",
-        tipo: "Artigo",
+        tipo: "Anais de Congresso",
         local: "Congresso de Inovação, Ciência e Tecnologia do IFSP",
         sigla: "CONICT",
         linkSite: "https://ocs.ifsp.edu.br/conict/xivconict/",
