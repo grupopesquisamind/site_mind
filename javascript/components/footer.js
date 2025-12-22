@@ -1,7 +1,7 @@
 class MeuFooter extends HTMLElement {
   async connectedCallback() {
     const ano = new Date().getFullYear();
-    const ultimaAtualizacao = '08/11/2025';
+    const ultimaAtualizacao = '21/12/2025';
     const versao = 'v1.0.0';
     const hoje = new Date().toISOString().split('T')[0];
     const caminhoAtual = window.location.pathname;
@@ -126,7 +126,7 @@ class MeuFooter extends HTMLElement {
                 Desenvolvido por <span class="text-white">MIND</span>
               </h2>
               <p class="mb-0">Última atualização: <span class="text-warning">${ultimaAtualizacao}</span></p>
-              <p class="mb-0">Total de acessos: <span class="text-success fw-bold">${totalAcessos}</span></p>
+             <!-- <p class="mb-0">Total de acessos: <span class="text-success fw-bold">${totalAcessos}</span></p>-->
             </div>
 
           </div>
