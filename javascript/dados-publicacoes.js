@@ -441,7 +441,7 @@ referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, R
         idpub: "32",
         ano: "2024",
         titulo: "A trilha do Petróleo: aprendizagem lúdica para alunos com Transtorno do Espectro Autista",
-        autor: "Luiz Gustavo Cardoso",
+        autor: "Luis Gustavo Cardoso",
         coautor: "Alexssandro Ferreira da Silva, Ana Paula Kawabe de Lima Ferreira",
         tipo: "Anais de Congresso",
         local: "Congresso de Acessibilidade e Inclusão na Educação - Publicação na Revista  da Educação Inclusiva",
@@ -449,7 +449,7 @@ referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, R
         linkSite: "https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie",
         linkPublicacao: "https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie/article/view/51",
         publicacaoArquivo: "publicacaoArquivo/Publicacoes/32-Publicacao_A_trilha_do_petroleo_aprendizagem_ludica_para_alunos_com_transtorno_do_espectro_autista_CAIE_REI_2024.pdf",
-        referenciarPub: "CARDOSO, Luiz Gustavo; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. trilha do petróleo: aprendizagem lúdica para alunos com Transtorno do Espectro Autista. Anais [...] IN: 15º Congresso de Inovação, Ciência e Tecnologia do IFSP, v. ?, n. ?, 2024, p.1-12. Disponível em: https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie/article/view/51",
+        referenciarPub: "CARDOSO, Luis Gustavo; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. trilha do petróleo: aprendizagem lúdica para alunos com Transtorno do Espectro Autista. Anais [...] IN: 15º Congresso de Inovação, Ciência e Tecnologia do IFSP, v. ?, n. ?, 2024, p.1-12. Disponível em: https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie/article/view/51",
       },
       {
         idpub: "33",
