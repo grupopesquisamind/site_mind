@@ -261,7 +261,7 @@ referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, R
         coautor: "Ana Paula Kawabe de Lima Ferreira, Alexssandro Ferreira da Silva",
         tipo: "Anais de Congresso",
         local: "Congresso de Acessibilidade e Inclusão na Educação - Publicação na Revista da Educação Inclusiva",
-        sigla: "CAIE - REI",
+        sigla: "CAIE-REI",
         linkSite: "https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie",
         linkPublicacao: "https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie/article/view/49",
         publicacaoArquivo: "publicacaoArquivo/Publicacoes/19-Publicacao _Aprendizado_e_ludicidade_higiene_basica_para_criancas_do_Espectro_Autista_REI_2024.pdf",
