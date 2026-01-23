@@ -32,7 +32,7 @@ function listarItens(chave) {
         titulo: "X ENEBIO e X EREBIO",
         data: "24 a 27 de agosto de 2026",
         tema: "Ensino de Biologia e cidadania: doálogos entre vida, ciência e democracia.",
-        sediadoPor: "Universidade do Vale do Taquari - Univates",
+        sediadoPor: "A definir e acompanhar pelo site de divulgação",
         local: "João Pessoa / PB",
         link: "https://enebio.com.br/",
         imagem: 'imagens/eventos/divulgacao_participacao/10_enebio_2026.png',
