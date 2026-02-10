@@ -1,6 +1,6 @@
 Grupo de Pesquisa MIND - Movimento para Inclusão e Neurodiversidade
 
-Site: grupopesquisamind.github.io/site_mind
+Site: grupopesquisamind.github.io/site_mind 
 
 E-mail: grupopesquisamind@gmail.com
 
