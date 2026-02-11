@@ -16,7 +16,7 @@ function listarItens(chave) {
        },
       {
         id: "2",
-        status: "Evento em Andamento",
+        status: "Evento Encerrado",
         titulo: "9° Encontro Nacional de Aprendizagem Significativa",
         data: "17 a 21 de novembro de 2025",
         tema: "Discutir estudos fundamentados na Teoria da Aprendizagem Significativa (TAS), nas perspectivas tradicional e contemporânea, e seu impacto no processo da aprendizagem efetivada em contextos formais e não formais de ensino.",
