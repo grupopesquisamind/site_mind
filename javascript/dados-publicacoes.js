@@ -581,7 +581,7 @@ referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, R
         idpub: "42",
         ano: "2025",
         titulo: "Formigas, feromônios e Isômeros Geométricos: Proposta de Jogo Educacional Digital para educação inclusiva de alunos com TEA.",
-        autor: "Yara Vitoria Claro de Freitas",
+        autor: "Yara Vitória Claro de Freitas",
         coautor: "Ana Paula Kawabe de Lima Ferreira, Alexssandro Ferreira da Silva, Ricardo Henrique dos Reis Nascimento", /*Ivana Elena Camejo Aviles*/
         tipo: "Anais de Congresso: Aguardando Publicar",
         local: "XIII EPPEQ - Encontro Paulista de Pesquisa em Ensino de Química",
