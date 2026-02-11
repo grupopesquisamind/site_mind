@@ -18,13 +18,13 @@ function listarItens(tipo) {
       }, 
       {
         id: "2",
-        status: "Ativo",
+        status: "Inativo",
         nome: "Ana Clara Machado Godinho",
         formacao: "Atualmente está cursando o Ensino Médio Integrado em Informática no IFSP Campus Jacareí",
         titulo: "Ensino Médio",
         tipoParticipacao: "Bolsista",
         anoIngresso: "2025",
-        anoSaida: "Atualmente",
+        anoSaida: "2025",
         instituicao: "IFSP Jacareí",
         lattes: "http://lattes.cnpq.br/8868488747354907",
         imagem: "ana_clara_godinho.jpg",  // <-- Só o nome do arquivo
@@ -71,12 +71,12 @@ function listarItens(tipo) {
     {
         id: "6",
         nome: "Gabriel de Paula Baroni",
-        status: "Ativo",
+        status: "Inativo",
         formacao: "Atualmente está cursando o Ensino Médio Integrado em Informática no IFSP Campus Jacareí",
         titulo: "Ensino Médio",
         tipoParticipacao: "Colaborador Interno e Bolsista de outro Coordenador (prof. Tardelli Stekel - Informática)",
         anoIngresso: "2024",
-        anoSaida: "Atualmente",
+        anoSaida: "2025",
         instituicao: "IFSP Jacareí",
         lattes: "http://lattes.cnpq.br/0153768116859752",
         imagem: "gabriel_baroni.jpg",  // <-- Só o nome do arquivo
@@ -137,13 +137,13 @@ function listarItens(tipo) {
       },
     {     
         id: "12",
-        status: "Ativo",
+        status: "Inativo",
         nome: "Yara Vitoria Claro de Freitas",
         formacao: "Atualmente está cursando o Ensino Médio Integrado em Informática no IFSP Campus Jacareí",
         titulo: "Ensino Médio",
         tipoParticipacao: "Bolsista",
         anoIngresso: "2025",
-        anoSaida: "Atualmente",
+        anoSaida: "2025",
         instituicao: "IFSP Jacareí",
         lattes: "http://lattes.cnpq.br/6862799595515603",
         imagem: "yara_vitoria.jpg",  // <-- Só o nome do arquivo
