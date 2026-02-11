@@ -138,7 +138,7 @@ function listarItens(tipo) {
     {     
         id: "12",
         status: "Inativo",
-        nome: "Yara Vitoria Claro de Freitas",
+        nome: "Yara Vitória Claro de Freitas",
         formacao: "Atualmente está cursando o Ensino Médio Integrado em Informática no IFSP Campus Jacareí",
         titulo: "Ensino Médio",
         tipoParticipacao: "Bolsista",
