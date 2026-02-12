@@ -124,13 +124,13 @@ function listarItens(tipo) {
       },
     {     
         id: "11",
-        status: "Ativo",
+        status: "Inativo",
         nome: "Thiago Marinho Santos",
         formacao: "Atualmente está cursando o Ensino Médio Integrado em Administração no IFSP Campus Jacareí",
         titulo: "Ensino Médio",
         tipoParticipacao: "Bolsista",
         anoIngresso: "2025",
-        anoSaida: "Atualmente",
+        anoSaida: "2025",
         instituicao: "IFSP Jacareí",
         lattes: "http://lattes.cnpq.br/7416672377207564",
         imagem: "thiago_marinho.jpg",  // <-- Só o nome do arquivo
