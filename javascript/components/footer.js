@@ -115,7 +115,7 @@ class MeuFooter extends HTMLElement {
               </p>
               <p style="margin: 3px 0;">
                 📧 <a href="mailto:grupopesquisamind@gmail.com" style="color: #5daef0; text-decoration: none;">
-                  grupodepesquisamind@gmail.com
+                  grupopesquisamind@gmail.com
                 </a>
               </p>
             </div>
