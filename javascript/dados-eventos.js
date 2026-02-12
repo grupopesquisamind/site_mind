@@ -2,7 +2,7 @@
 function listarItens(chave) {
   if (chave === 'eventos') {
     return [
-       {
+     {
         id: "1",
         status: "Evento Encerrado",
         titulo: "XIII Encontro Paulista de Pesquisa em Ensino de Química",
@@ -14,7 +14,7 @@ function listarItens(chave) {
         imagem: 'imagens/eventos/divulgacao_participacao/13_EPPEQ_2025.png',
         submissao: "já encerrado o prazo"
        },
-      {
+     {
         id: "2",
         status: "Evento Encerrado",
         titulo: "9° Encontro Nacional de Aprendizagem Significativa",
@@ -25,14 +25,14 @@ function listarItens(chave) {
         link: "https://www.univates.br/evento/9-enas",
         imagem: 'imagens/eventos/divulgacao_participacao/9_Encontro_Nacional_ Aprendizagem_Significativa_2025.png',
         submissao: "já encerrado o prazo"
-      },
+     },
        {
         id: "3",
         status: "Evento para Inscrição",
         titulo: "X ENEBIO e X EREBIO",
         data: "24 a 27 de agosto de 2026",
         tema: "Ensino de Biologia e cidadania: doálogos entre vida, ciência e democracia.",
-        sediadoPor: "A definir e acompanhar pelo site de divulgação",
+        sediadoPor: "Universidade Federal da Paraíba",
         local: "João Pessoa / PB",
         link: "https://enebio.com.br/",
         imagem: 'imagens/eventos/divulgacao_participacao/10_enebio_2026.png',
