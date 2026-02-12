@@ -126,7 +126,7 @@ class MeuFooter extends HTMLElement {
                 Desenvolvido por <span class="text-white">MIND</span>
               </h2>
               <p class="mb-0">Última atualização: <span class="text-warning">${ultimaAtualizacao}</span></p>
-             <!-- <p class="mb-0">Total de acessos: <span class="text-success fw-bold">${totalAcessos}</span></p>-->
+              <p class="mb-0">Responsável: <span class="text-success fw-bold">Alexssandro Ferreira (Téc. Tec. Informação)</span></p>-->
             </div>
 
           </div>
