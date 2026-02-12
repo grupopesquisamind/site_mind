@@ -36,7 +36,7 @@ function listarItens(chave) {
         local: "João Pessoa / PB",
         link: "https://enebio.com.br/",
         imagem: 'imagens/eventos/divulgacao_participacao/10_enebio_2026.png',
-        submissao: "20/10/2025 a 09/02/2026"
+        submissao: "09/09/2025 a 28/02/2026"
       },
            
     ];
