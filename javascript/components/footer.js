@@ -114,7 +114,7 @@ class MeuFooter extends HTMLElement {
                 🧠 Grupo de Pesquisa em Educação, Inclusão e Neurodiversidade
               </p>
               <p style="margin: 3px 0;">
-                📧 <a href="mailto:grupodepesquisamind@gmail.com" style="color: #5daef0; text-decoration: none;">
+                📧 <a href="mailto:grupopesquisamind@gmail.com" style="color: #5daef0; text-decoration: none;">
                   grupodepesquisamind@gmail.com
                 </a>
               </p>
