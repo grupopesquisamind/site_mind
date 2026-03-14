@@ -28,7 +28,7 @@ function listarItens(chave) {
      },
        {
         id: "3",
-        status: "Evento para Inscrição",
+        status: "Evento Encerrado",
         titulo: "X ENEBIO e X EREBIO",
         data: "24 a 27 de agosto de 2026",
         tema: "Ensino de Biologia e cidadania: doálogos entre vida, ciência e democracia.",

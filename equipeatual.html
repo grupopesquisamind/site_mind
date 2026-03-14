@@ -13,6 +13,7 @@
   <script src="javascript/components/menu.js" defer></script>
   <script src="javascript/components/footer.js" defer></script>
   <script src="javascript/components/components.js" defer></script>
+  <link rel="stylesheet" href="css/style.css">
 
   <style>
   #page-wrapper {
@@ -29,42 +30,44 @@
   }
 
   /* ===== Galeria Responsiva ===== */
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.2rem;
-    justify-items: center;
-  }
+  .gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:1.8rem;
+padding:10px;
+justify-items:center;
+}
 
   /* ===== Card ===== */
-  .card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    text-align: center;
-    color: #333;
-    width: 100%;
-    max-width: 230px;
-    height: 100%;
-   border-left: 6px solid var(--accent-2, orange);
-  }
+ .card{
+display:flex;
+flex-direction:column;
+background:#fff;
+border-radius:14px;
+overflow:hidden;
+
+width:100%;
+max-width:320px;   /* largura maior */
+
+height:100%;
+
+box-shadow:0 4px 14px rgba(0,0,0,0.12);
+transition:all .25s ease;
+
+border-top:4px solid #0d6efd;
+}
 
   .card:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
   }
 
-  .card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-bottom: 2px solid #eee;
-  }
+ .card img{
+width:100%;
+height:240px;
+object-fit:cover;
+object-position:center;
+}
 
   /* ===== Legenda ===== */
   .legend {
@@ -111,7 +114,7 @@
   </style>
 </head>
 
-<body class="py-5">
+<body class="py-0">
   <meu-menu></meu-menu>
 
   <div id="page-wrapper" class="container-fluid my-4">

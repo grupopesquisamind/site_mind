@@ -1,138 +1,151 @@
 class MeuFooter extends HTMLElement {
   async connectedCallback() {
+
     const ano = new Date().getFullYear();
-    const ultimaAtualizacao = '11/02/2026';
-    const versao = 'v1.0.0';
+    const ultimaAtualizacao = '14/03/2026';
+    const versao = 'v1.2.0';
     const hoje = new Date().toISOString().split('T')[0];
     const caminhoAtual = window.location.pathname;
 
-    // --- Contagem só na página inicial ---
-    const ehPaginaPrincipal = caminhoAtual === '/' || caminhoAtual.endsWith('/index.html') || caminhoAtual.endsWith('/site_mind/') || caminhoAtual.endsWith('/site_mind/index.html');
+    const ehPaginaPrincipal =
+      caminhoAtual === '/' ||
+      caminhoAtual.endsWith('/index.html') ||
+      caminhoAtual.endsWith('/site_mind/') ||
+      caminhoAtual.endsWith('/site_mind/index.html');
 
     if (ehPaginaPrincipal) {
       const ultimaVisita = localStorage.getItem('visitaHoje');
+
       if (ultimaVisita !== hoje) {
         try {
           await fetch('/api/registrar-acesso', { method: 'POST' });
           localStorage.setItem('visitaHoje', hoje);
         } catch (e) {
-          console.warn('⚠️ Falha ao registrar acesso:', e);
+          console.warn('Falha ao registrar acesso:', e);
         }
       }
     }
 
-    // --- Buscar total de acessos (exibe em todas as páginas) ---
     let totalAcessos = '---';
+
     try {
       const res = await fetch('/api/total-acessos');
       const data = await res.json();
       totalAcessos = data.total || 0;
     } catch (e) {
-      console.warn('⚠️ Falha ao obter total de acessos:', e);
+      console.warn('Falha ao obter total de acessos:', e);
     }
 
-    // --- HTML do footer ---
     this.innerHTML = `
-      <style>
-        .social-link:hover {
-          color: #0d6efd !important;
-          transform: scale(1.2);
-          transition: all 0.3s ease-in-out;
-        }
 
-        .footer .col-md-4 p {
-          line-height: 1.5;
-          display: block;
-          width: 100%;
-        }
+<style>
 
-        .icone-social {
-          width: 33px;
-          height: 33px;
-          opacity: 0.8;
-          border: 2px solid #fff;
-          border-radius: 50%;
-          padding: 3px;
-          transition: transform 0.3s ease-in-out, opacity 0.3s, border-color 0.3s;
-        }
+/* FOOTER 
 
-        .social-link:hover .icone-social {
-          transform: scale(1.2);
-          opacity: 1;
-          border-color: #0d6efd;
-        }
+topo → 15px  direita → 50px  baixo → 20px esquerda → 30px
+*/
 
-        html, body {
-          height: 100%;
-          margin: 0;
-        }
+.footer{
+background:#1c232b;
+color:#ffffff;
+padding:15px 90px 20px 50px;
+font-size:14px;
+width:100%;
 
-        body {
-          display: flex;
-          flex-direction: column;
-          min-height: 100vh;
-        }
+}
 
-        #page-wrapper {
-          display: flex;
-          flex-direction: column;
-          flex: 1;
-        }
+.footer-container{
+display:flex;
+justify-content:space-between;
+align-items:flex-start;
+flex-wrap:wrap;
+}
 
-        #page-content-wrapper, main {
-          flex: 1;
-        }
+.footer-esquerda{
+text-align:left;
+}
 
-        meu-footer {
-          margin-top: auto;
-        }
-      </style>
+.footer-direita{
+text-align:right;
+}
 
-      <footer class="footer bg-dark text-white py-4 mt-auto">
-        <div class="container">
-          <div class="row align-items-center text-center text-md-start">
+.footer p{
+margin:4px 0;
+}
 
-            <!-- Coluna 1: Ícones sociais -->
-            <div class="col-12 col-md-3 mb-3 mb-md-0 d-flex justify-content-center justify-content-md-start gap-3">
-              <a href="" target="_blank" class="social-link">
-                <img src="imagens/icones/instagram.png" alt="Instagram" class="icone-social">
-              </a>
-              <a href="" target="_blank" class="social-link">
-                <img src="imagens/icones/youtube.png" alt="YouTube" class="icone-social">
-              </a>
-              <a href="" target="_blank" class="social-link">
-                <img src="imagens/icones/facebook.png" alt="Facebook" class="icone-social">
-              </a>
-            </div>
+.footer a{
+color:#4db5ff;
+text-decoration:none;
+}
 
-            <!-- Coluna 2: Texto institucional -->
-            <div class="col-12 col-md-5 text-center mb-3 mb-md-0">
-              <p class="mb-1">
-                &copy; 2022 - ${ano} <strong>MIND</strong> - Movimento para Inclusão e Neurodiversidade
-              </p>
-              <p style="margin: 3px 0; font-size: 14px; color: #ffff;">
-                🧠 Grupo de Pesquisa em Educação, Inclusão e Neurodiversidade
-              </p>
-              <p style="margin: 3px 0;">
-                📧 <a href="mailto:grupopesquisamind@gmail.com" style="color: #5daef0; text-decoration: none;">
-                  grupopesquisamind@gmail.com
-                </a>
-              </p>
-            </div>
+.footer a:hover{
+text-decoration:underline;
+}
 
-            <!-- Coluna 3: Informações extras -->
-            <div class="col-12 col-md-4 text-center text-md-end">
-              <h2 class="mb-0 small text-info fw-bold">
-                Desenvolvido por <span class="text-white">MIND</span>
-              </h2>
-              <p class="mb-0">Última atualização: <span class="text-warning">${ultimaAtualizacao}</span></p>
-              <p class="mb-0">Responsável: <span class="text-success fw-bold">Alexssandro Ferreira (Téc. Tec. Informação)</span></p>
-            </div>
+/* RESPONSIVO */
 
-          </div>
-        </div>
-      </footer>
-    `;
+@media (max-width:700px){
+
+.footer-container{
+flex-direction:column;
+gap:10px;
+text-align:center;
+}
+
+.footer-esquerda,
+.footer-direita{
+text-align:center;
+}
+
+}
+
+</style>
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<div class="footer-esquerda">
+
+<p>
+© 2022 - ${ano} <b>MIND - Movimento para Inclusão e Neurodiversidade</b>
+</p>
+
+<p>
+🧠 Grupo de Pesquisa em Educação, Inclusão e Neurodiversidade
+</p>
+
+<p>
+📧 Contato:
+<a href="mailto:grupopesquisamind@gmail.com">
+grupopesquisamind@gmail.com
+</a>
+</p>
+
+</div>
+
+<div class="footer-direita">
+
+<p><b>Desenvolvido por MIND</b></p>
+
+<p>
+Última atualização:
+<span class="data">${ultimaAtualizacao}</span>
+</p>
+
+<p>
+Responsável:
+<span class="responsavel">
+Alexsandro Ferreira (Tec. Informação)
+</span>
+</p>
+
+</div>
+
+</div>
+
+</footer>
+`;
   }
 }
 
