@@ -1,14 +1,13 @@
 class MeuMenu extends HTMLElement {
 
-connectedCallback(){
+  connectedCallback(){
 
-this.innerHTML = `
+    this.innerHTML = `
 
 <header class="topbar">
 
 <div class="logo">
 <img src="imagens/nome-mind.jpg" alt="Logo MIND">
-<!-- <img src="imagens/" alt="Logo IFSP"> -->
 </div>
 
 <div class="menu-toggle">☰</div>
@@ -29,28 +28,42 @@ this.innerHTML = `
 </nav>
 
 </header>
-
 `;
 
-const toggle = this.querySelector(".menu-toggle");
-const menu = this.querySelector(".menu");
+    // MENU MOBILE
+    const toggle = this.querySelector(".menu-toggle");
+    const menu = this.querySelector(".menu");
 
-toggle.addEventListener("click",()=>{
-menu.classList.toggle("active");
-});
+    toggle.addEventListener("click",()=>{
+      menu.classList.toggle("active");
+    });
 
-/* LINK ATIVO */
+    // LINK ATIVO (VERSÃO MELHORADA)
+    const links = this.querySelectorAll(".menu a");
+    const caminho = window.location.pathname;
 
-const links = this.querySelectorAll(".menu a");
-const url = window.location.pathname.split("/").pop();
+    links.forEach(link => {
+      const href = link.getAttribute("href");
 
-links.forEach(link=>{
-if(link.getAttribute("href")===url){
-link.classList.add("active");
-}
-});
+      // GRUPO AUTORES
+      if (
+        href.includes("autores.html") &&
+        (
+          caminho.includes("autores.html") ||
+          caminho.includes("publicacoesautores.html") ||
+          caminho.includes("galeriaautores.html")
+        )
+      ) {
+        link.classList.add("active");
+      }
 
-}
+      // PADRÃO
+      else if (caminho.includes(href)) {
+        link.classList.add("active");
+      }
+    });
+
+  }
 
 }
 
