@@ -22,6 +22,18 @@ main {
   flex: 1;
 }
 
+/* padrão global --> direto nas paginas com tabela*/
+/* padrão global */
+thead th {
+  text-align: center;
+}
+
+/* reforço para DataTables */
+table.dataTable thead th {
+  text-align: center;
+}
+
+
 /* HEADER */
 
 header{
