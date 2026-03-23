@@ -45,7 +45,7 @@ function listarItens(chave) {
 }
 
 //Adicionada lógica condicional no JavaScript para aplicar estilo dinâmico conforme o item.status:
-// "Evento ocorrerá em breve" -> texto preto
+// "Evento ocorrerá em breve" -> fundo azul texto branco
 //🔴 "Evento Encerrado" → texto vermelho
 //🔵 "Evento em Andamento" → texto azul
 //⚫🟡 "Evento para Inscrição" → fundo preto, texto amarelo, destaque
