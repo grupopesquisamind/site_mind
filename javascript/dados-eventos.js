@@ -2,7 +2,7 @@
 function listarItens(chave) {
   if (chave === 'eventos') {
     return [
-     {
+    /* {
         id: "1",
         status: "Evento Encerrado",
         titulo: "XIII Encontro Paulista de Pesquisa em Ensino de Química",
@@ -26,6 +26,7 @@ function listarItens(chave) {
         imagem: 'imagens/eventos/divulgacao_participacao/9_Encontro_Nacional_ Aprendizagem_Significativa_2025.png',
         submissao: "já encerrado o prazo"
      },
+*/
        {
         id: "3",
         status: "Evento ocorrerá em breve",
@@ -37,7 +38,7 @@ function listarItens(chave) {
         link: "https://enebio.com.br/",
         imagem: 'imagens/eventos/divulgacao_participacao/10_enebio_2026.png',
         submissao: "09/09/2025 a 28/02/2026"
-      },
+      }
            
     ];
   }
