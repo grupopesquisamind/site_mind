@@ -141,6 +141,10 @@ border-radius:6px;
     } else if (item.status === "Evento para Inscrição") {
       statusStyle = "background-color: black; color: yellow; font-size: 20px; font-weight: bold; padding: 3px 6px; border-radius: 5px; text-align: center; display: inline-block; width: 100%;";
     }
+    
+      else if (item.status === "Evento ocorrerá em breve") {
+      statusStyle = "background-color: primary; color: white; font-size: 20px; font-weight: bold; padding: 3px 6px; border-radius: 5px; text-align: center; display: inline-block; width: 100%;";
+    }
 
     // Só mostra submissão se o texto for diferente de "já encerrado o prazo"
     const submissaoHTML = item.submissao && item.submissao.toLowerCase() !== "já encerrado o prazo"
