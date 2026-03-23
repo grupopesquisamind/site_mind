@@ -28,7 +28,7 @@ function listarItens(chave) {
      },
        {
         id: "3",
-        status: "Evento Encerrado",
+        status: "Evento ocorrerá em breve",
         titulo: "X ENEBIO e X EREBIO",
         data: "24 a 27 de agosto de 2026",
         tema: "Ensino de Biologia e cidadania: doálogos entre vida, ciência e democracia.",
@@ -45,6 +45,7 @@ function listarItens(chave) {
 }
 
 //Adicionada lógica condicional no JavaScript para aplicar estilo dinâmico conforme o item.status:
+// "Evento ocorrerá em breve"
 //🔴 "Evento Encerrado" → texto vermelho
 //🔵 "Evento em Andamento" → texto azul
 //⚫🟡 "Evento para Inscrição" → fundo preto, texto amarelo, destaque
