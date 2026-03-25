@@ -45,7 +45,7 @@ function listarItens(tipo) {
       {
         id: "4",
         nome: "Bianca Estrela Montemor Abdalla França Camargo",
-        status: "Ativo",
+        status: "Inativo",
         formacao: "Cursando Psicologia na Universidade Federal de São João Del Rei (UFSJ-MG)",
         titulo: "Estudante de Ensino Superior",
         tipoParticipacao: "Colaborador Externo",
