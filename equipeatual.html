@@ -148,9 +148,11 @@ object-position:center;
     <div class="card">
       <img class="card-img" alt="">
       <div class="legend">
-        <strong class="card-nome"></strong>
-        <strong><span class="card-participacao"></span></strong>
+        <strong class="text-center card-nome"></strong>
+        <strong><span class="text-center card-participacao"></span></strong>
         <span class="card-formacao"></span>
+        <strong class="text-center">Clique no botão e acesse:</strong>
+        <span class="card-lattes"></span>
       </div>
     </div>
   </template>
@@ -184,6 +186,27 @@ object-position:center;
           const participacao = clone.querySelector('.card-participacao');
           const formacao = clone.querySelector('.card-formacao');
 
+// ===== LATTES (BOTÃO ESTILIZADO) =====
+      const lattes = clone.querySelector('.card-lattes');
+if (autor.lattes && autor.lattes.trim() !== '') {
+  const link = document.createElement('a');
+  link.href = autor.lattes;
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  link.className = 'btn btn-outline-primary btn-sm w-100 mt-2';
+
+  link.innerHTML = `
+    <i class="bi bi-mortarboard-fill me-1"></i> Currículo Lattes
+  `;
+
+  lattes.innerHTML = '';
+  lattes.appendChild(link);
+} else {
+  lattes.innerHTML = `
+    <span class="text-muted small">Lattes não informado</span>
+  `;
+}
+
           img.src = `imagens/autores_equipe/${autor.imagem || 'default.jpg'}`;
           img.alt = `Foto de ${autor.nome}`;
           img.onerror = () => {
@@ -194,7 +217,6 @@ object-position:center;
           nome.textContent = autor.nome ?? '';
           participacao.textContent = autor.tipoParticipacao ?? '';
           formacao.textContent = autor.formacao ?? 'Formação não informada.';
-
           container.appendChild(clone);
         });
       }
