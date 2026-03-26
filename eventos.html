@@ -30,26 +30,32 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 1.5rem;
-      margin-top: 2rem;
+      margin-top: 0%;
       align-items:stretch;
     }
 
    .card{
-border-radius:12px;
+    
+  border-radius:12px;
+  transition:transform 0.2s ease, box-shadow 0.2s ease;
+  cursor:pointer;
+  background-color:#fff;
+  color:#444;
+  display:flex;
+  flex-direction:column;
+  flex:0 1 360px; /* 🔥 chave */
+  max-width:500px;
+  min-height:580px; /* 🔥 melhor que height fixa */
+  margin:auto; /* 🔥 centraliza */
+  margin-top: 0%;
+  box-shadow:0 2px 8px rgba(0,0,0,0.1);
+
+
 transition:transform 0.2s ease, box-shadow 0.2s ease;
-cursor:pointer;
 text-align:left;
-background-color:#fff;
-color:#444;
 
-display:flex;
-flex-direction:column;
+margin:auto;
 
-flex:1 1 360px;
-max-width:500px;
-
-height:580px;           /* altura fixa */
-box-shadow:0 2px 8px rgba(0,0,0,0.1);
 }
 
     .card:hover {
@@ -109,7 +115,7 @@ border-radius:6px;
 <body class="py-0">
   <meu-menu></meu-menu>
 
-  <main class="container col-md-12 py-5">
+  <main class="container py-0">
   <h2 class="text-center text-danger"><strong>Movimento para Inclusão e Neurodiversidade.</strong></h2>
 
 <!-- Divisor animado -->
@@ -187,3 +193,4 @@ border-radius:6px;
   <meu-footer></meu-footer>
 </body>
 </html>
+
