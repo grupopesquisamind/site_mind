@@ -154,7 +154,7 @@ function listarItens(tipo) {
         id: "13",
         status: "Inativo",
         nome: "Bianca Estrela Montemor Abdalla França Camargo",
-        formacao: "Curso o Ensino Médio Integrado em Informática",
+        formacao: "Cursou o Ensino Médio Integrado em Informática",
         titulo: "Ensino Médio",
         tipoParticipacao: "Bolsista",
         anoIngresso: "2022",
