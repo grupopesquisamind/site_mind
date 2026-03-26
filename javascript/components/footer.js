@@ -136,7 +136,7 @@ grupopesquisamind@gmail.com
 <p>
 Responsável:
 <span class="responsavel">
-Alexsandro Ferreira (Técnico de Tecnologia da Informação)
+Alexssandro Ferreira (Técnico de Tecnologia da Informação)
 </span>
 </p>
 
