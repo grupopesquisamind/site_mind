@@ -47,7 +47,7 @@ border-radius:14px;
 overflow:hidden;
 
 width:100%;
-max-width:520px;   /* largura maior */
+max-width:320px;   /* largura maior */
 
 height:100%;
 
@@ -63,28 +63,23 @@ border-top:4px solid #0d6efd;
   }
 
  .card img{
-width: 50%;
-height:250px;
+width:100%;
+height:240px;
 object-fit:cover;
 object-position:center;
-margin: 0 auto;
-display: block;
 }
 
   /* ===== Legenda ===== */
-    .legend {
-    flex-grow: 1;
+  .legend {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    padding: 1rem;
-    font-size: 0.88rem;
+    justify-content: space-between;
+    padding: 0.6rem;
+    font-size: 0.9rem;
     background: #fff;
     color: #444;
-    height: auto;
-    min-height: 260px;
-    overflow-y: auto;
-    max-height: none;
+    min-height: 120px;
   }
 
   .card-nome {
@@ -100,57 +95,23 @@ display: block;
   }
 
   .card-formacao {
-    font-size: 0.80rem;
+    font-size: 0.82rem;
     color: #555;
     text-align: justify;
-    line-height: 1.45;
-    overflow: visible;
-    flex-grow: 1;
-    max-height: none;
-    margin-bottom: 0.5rem;
-    hyphens: auto;
-    word-break: break-word;
-    }
-
-  /* ===== Top Section - Cards same size ===== */
-#top-gallery {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 1.8rem;
-    padding: 10px;
-    justify-items: center;
-    align-items: start;
-  }
-
-  #top-gallery .card {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-
-#bottom-gallery {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 1.8rem;
-    padding: 10px;
-    justify-items: center;
-    align-items: start;
+    line-height: 1.2;
   }
 
   /* ===== Responsividade ===== */
   @media (max-width: 576px) {
-    .gallery, #bottom-gallery { grid-template-columns: repeat(2, 1fr); }
-    #top-gallery { flex-direction: column; align-items: center; }
-    .card { max-width: 280px; }
+    .gallery { grid-template-columns: repeat(2, 1fr); }
+    .card { max-width: 180px; }
   }
 
   @media (max-width: 400px) {
-    .gallery, #bottom-gallery { grid-template-columns: 1fr; }
+    .gallery { grid-template-columns: 1fr; }
     .card { max-width: 100%; }
   }
-
-    </style>
+  </style>
 </head>
 
 <body class="py-0">
@@ -166,29 +127,20 @@ display: block;
       </a>
     </div>
 
-    <!-- Seção Superior: Coordenação e Colaboradores Internos -->
-    <div class="mb-5">
-      <h4 class="text-center text-primary mb-4 fw-bold">📢 Coordenação e Colaboradores Internos</h4>
-      <div id="top-gallery" class="d-flex flex-wrap justify-content-center gap-4"></div>
-    </div>
-
-    
-<!-- Filtro para seção inferior -->
+    <!-- Filtro -->
     <div class="row g-2 mb-3 justify-content-center">
       <div class="col-md-3 col-sm-6">
         <select id="filtroParticipacao" class="form-select">
-          <option value="">Filtrar demais Colaboradores</option>
+          <option value="">Filtrar por Participação</option>
         </select>
       </div>
       <div class="col-md-2 col-sm-6">
         <button id="btnLimpar" class="btn btn-secondary w-100">Limpar</button>
       </div>
     </div>
-    <!-- Seção Inferior: Demais Colaboradores -->
-    <div>
-      <h4 class="text-center text-success mb-4 fw-bold">👥 Demais Colaboradores</h4>
-      <div id="bottom-gallery" class="gallery"></div>
-    </div>
+
+    <!-- Galeria -->
+    <div id="gallery" class="gallery"></div>
   </div>
 
   <!-- Template do Card -->
@@ -210,8 +162,7 @@ display: block;
     document.addEventListener('DOMContentLoaded', () => {
       const idsEquipe = ["1","3","5","7", "9","10","22"];
       const autores = listarItens('autores');
-      const topContainer = document.getElementById('top-gallery');
-      const bottomContainer = document.getElementById('bottom-gallery');
+      const container = document.getElementById('gallery');
       const filtroParticipacao = document.getElementById('filtroParticipacao');
       const template = document.getElementById('equipe-item-template');
 
@@ -220,74 +171,62 @@ display: block;
         .filter(Boolean)
         .sort((a, b) => a.nome.localeCompare(b.nome, 'pt', { sensitivity: 'base' }));
 
-      // Separação: Top (Coordenação e Colaborador Interno), Bottom (resto)
-      const topEquipe = lista.filter(a => 
-        a.tipoParticipacao === 'Coordenação' || a.tipoParticipacao === 'Colaborador Interno'
-      ).sort((a, b) => a.nome.localeCompare(b.nome, 'pt'));
-      
-      const bottomEquipe = lista.filter(a => 
-        !topEquipe.some(t => t.id === a.id)
-      ).sort((a, b) => a.nome.localeCompare(b.nome, 'pt'));
-
-      // Popular filtro de participação (apenas bottom)
-      const participacoes = [...new Set(bottomEquipe.map(a => a.tipoParticipacao).filter(Boolean))].sort();
+      // Popular filtro de participação
+      const participacoes = [...new Set(lista.map(a => a.tipoParticipacao).filter(Boolean))].sort();
       participacoes.forEach(p => filtroParticipacao.append(new Option(p, p)));
 
-      // Função auxiliar para renderizar cards
-      function renderCard(autor, container) {
-        const clone = template.content.cloneNode(true);
-        const img = clone.querySelector('.card-img');
-        const nome = clone.querySelector('.card-nome');
-        const participacao = clone.querySelector('.card-participacao');
-        const formacao = clone.querySelector('.card-formacao');
-        const lattes = clone.querySelector('.card-lattes');
+      function renderizarEquipe(filtro = '') {
+        container.innerHTML = '';
+        const filtrados = lista.filter(a => !filtro || a.tipoParticipacao === filtro);
 
-        if (autor.lattes && autor.lattes.trim() !== '') {
-          const link = document.createElement('a');
-          link.href = autor.lattes;
-          link.target = '_blank';
-          link.rel = 'noopener noreferrer';
-          link.className = 'btn btn-outline-primary btn-sm w-100 mt-2';
-          link.innerHTML = `<i class="bi bi-mortarboard-fill me-1"></i> Currículo Lattes`;
-          lattes.innerHTML = '';
-          lattes.appendChild(link);
-        } else {
-          lattes.innerHTML = `<span class="text-muted small">Lattes não informado</span>`;
-        }
+        filtrados.forEach(autor => {
+          const clone = template.content.cloneNode(true);
+          const img = clone.querySelector('.card-img');
+          const nome = clone.querySelector('.card-nome');
+          const participacao = clone.querySelector('.card-participacao');
+          const formacao = clone.querySelector('.card-formacao');
 
-        img.src = `imagens/autores_equipe/${autor.imagem || 'default.jpg'}`;
-        img.alt = `Foto de ${autor.nome}`;
-        img.onerror = () => {
-          img.src = 'imagens/autores_equipe/default.jpg';
-          img.alt = 'Foto não disponível';
-        };
+// ===== LATTES (BOTÃO ESTILIZADO) =====
+      const lattes = clone.querySelector('.card-lattes');
+if (autor.lattes && autor.lattes.trim() !== '') {
+  const link = document.createElement('a');
+  link.href = autor.lattes;
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  link.className = 'btn btn-outline-primary btn-sm w-100 mt-2';
 
-        nome.textContent = autor.nome ?? '';
-        participacao.textContent = autor.tipoParticipacao ?? '';
-        formacao.textContent = autor.formacao ?? 'Formação não informada.';
-        container.appendChild(clone);
+  link.innerHTML = `
+    <i class="bi bi-mortarboard-fill me-1"></i> Currículo Lattes
+  `;
+
+  lattes.innerHTML = '';
+  lattes.appendChild(link);
+} else {
+  lattes.innerHTML = `
+    <span class="text-muted small">Lattes não informado</span>
+  `;
+}
+
+          img.src = `imagens/autores_equipe/${autor.imagem || 'default.jpg'}`;
+          img.alt = `Foto de ${autor.nome}`;
+          img.onerror = () => {
+            img.src = 'imagens/autores_equipe/default.jpg';
+            img.alt = 'Foto não disponível';
+          };
+
+          nome.textContent = autor.nome ?? '';
+          participacao.textContent = autor.tipoParticipacao ?? '';
+          formacao.textContent = autor.formacao ?? 'Formação não informada.';
+          container.appendChild(clone);
+        });
       }
 
-      // Renderiza top (fixo, sem filtro)
-      function renderTopEquipe() {
-        topContainer.innerHTML = '';
-        topEquipe.forEach(autor => renderCard(autor, topContainer));
-      }
+      renderizarEquipe();
 
-      // Renderiza bottom (com filtro)
-      function renderBottomEquipe(filtro = '') {
-        bottomContainer.innerHTML = '';
-        const filtrados = bottomEquipe.filter(a => !filtro || a.tipoParticipacao === filtro);
-        filtrados.forEach(autor => renderCard(autor, bottomContainer));
-      }
-
-      renderTopEquipe();
-      renderBottomEquipe();
-
-      filtroParticipacao.addEventListener('change', () => renderBottomEquipe(filtroParticipacao.value));
+      filtroParticipacao.addEventListener('change', () => renderizarEquipe(filtroParticipacao.value));
       document.getElementById('btnLimpar').addEventListener('click', () => {
         filtroParticipacao.value = '';
-        renderBottomEquipe();
+        renderizarEquipe();
       });
     });
   </script>

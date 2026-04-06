@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <meta charset="UTF-8" />
   <title>MIND - Contatos</title>
@@ -11,10 +10,10 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
   <!-- Componentes -->
-  <script src="javascript/components/components.js" defer></script>
-  <script src="javascript/components/menu.js" defer></script>
-  <script src="javascript/components/footer.js" defer></script>
-  <link rel="stylesheet" href="css/style.css">
+<script src="javascript/components/components.js" defer></script>
+<script src="javascript/components/menu.js" defer></script>
+<script src="javascript/components/footer.js" defer></script>
+<link rel="stylesheet" href="css/style.css">
   <style>
     /* ====== Estrutura ====== */
     #page-wrapper {
@@ -26,37 +25,30 @@
       overflow: auto;
     }
 
-    h2,
-    h5 {
+    h2, h5 {
       text-align: center;
     }
 
-    .instituicao {
-      margin-top: 2rem;
-    }
-
+    
     /* ====== Cards de contato ====== */
     .gallery-contatos {
-      margin-bottom: 3rem;
-      /* espaço automático */
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 0.8rem;
-      /* espaço menor */
+      gap: 0.8rem; /* espaço menor */
       margin-top: 2rem;
     }
 
     .card-contato {
-      display: flex;
+    display: flex;
       flex-direction: column;
-      height: 100%;
+      height: 100%; 
       width: 100%;
       background: #fff;
       border-radius: 12px;
       overflow: hidden;
 
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       transition: all 0.2s ease;
 
       border-left: 6px solid rgb(0, 151, 131);
@@ -70,22 +62,14 @@
 
     .card-contato:hover {
       transform: scale(1.02);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
       z-index: 2;
     }
 
     .card-contato img {
-      width: 65%;
-      height: 250px;
-      object-fit: cover;
-      /* ocupa 60% do card */
-
-      object-position: center;
-      margin: 0 auto;
-      display: block;
-
-      border-radius: 5%;
-      /* cobre o card sem deformar */
+      width: 100%;
+      height: 60%; /* ocupa 60% do card */
+      object-fit: cover; /* cobre o card sem deformar */
       border-bottom: 1px solid #eee;
       transition: transform 0.3s ease;
     }
@@ -114,47 +98,17 @@
     }
 
     .card-text-contato {
-      font-size: 0, 8rem;
+      font-size: 0,8rem;
       color: #555;
       line-height: 1rem;
       text-align: justify;
-
-      display: inline-block;
-      word-break: break-all;
-      /* quebra corretamente em telas pequenas */
-      overflow-wrap: break-word;
-      font-weight: 600;
     }
 
     /* ====== Responsividade ====== */
-    @media (max-width: 579px) {
-      .card-contato {
-        width: 45%;
-        height: 55%;
-        font-size: 0, 5rem;
-
-      }
-    }
-
-    @media (min-width: 580px) and (max-width: 768px) {
-      .card-contato {
-        width: 30%;
-        font-size: 0, 8rem;
-
-      }
-    }
-
-    @media (min-width: 769px) and (max-width: 1200px) {
-      .card-contato {
-        width: 22%;
-      }
-    }
-
-    @media (min-width: 1201px) {
-      .card-contato {
-        width: 18%;
-      }
-    }
+    @media (max-width: 576px) { .card-contato { width: 45%; height: 55%; } }
+    @media (min-width: 577px) and (max-width: 768px) { .card-contato { width: 30%; } }
+    @media (min-width: 769px) and (max-width: 1200px) { .card-contato { width: 22%; } }
+    @media (min-width: 1201px) { .card-contato { width: 18%; } }
 
     /* ====== Mapa ====== */
     .embed-google-map {
@@ -170,7 +124,7 @@
       height: 350px;
       border: 0;
       border-radius: 8px;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
     }
   </style>
 </head>
@@ -185,10 +139,10 @@
     </div>
 
     <!-- ====== Cards de Contatos ====== -->
-    <section class="gallery-contatos mb-5" id="contatosContainer"></section>
+    <section class="gallery-contatos" id="contatosContainer"></section>
 
-     <!-- ====== Mapa 
-    <div class="instituicao text-center pt-4">
+    <!-- ====== Informações institucionais ====== -->
+    <div class="instituição text-center mt-4">
       <h5>Instituição de Vínculo da Equipe MIND:</h5>
       <h5><strong>Instituto Federal de São Paulo - Campus Jacareí</strong></h5>
       <h5>Rua Antônio Fogaça de Almeida, 200 - Jardim América, Jacareí - SP</h5>
@@ -200,23 +154,18 @@
       </h5>
     </div>
 
-   
+    <!-- ====== Mapa ====== -->
     <div class="embed-google-map">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d640.1111432226878!2d-45.98435759573596!3d-23.31748639596604!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cdcc814521b981%3A0xde813412bf4e04d!2sR.%20Ant%C3%B4nio%20Foga%C3%A7a%20de%20Almeida%2C%20200%20-%20Jardim%20America%2C%20Jacare%C3%AD%20-%20SP%2C%2012322-030%2C%20Brasil!5e1!3m2!1spt-BR!2sus!4v1750033904303!5m2!1spt-BR!2sus"
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d640.1111432226878!2d-45.98435759573596!3d-23.31748639596604!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cdcc814521b981%3A0xde813412bf4e04d!2sR.%20Ant%C3%B4nio%20Foga%C3%A7a%20de%20Almeida%2C%20200%20-%20Jardim%20America%2C%20Jacare%C3%AD%20-%20SP%2C%2012322-030%2C%20Brasil!5e1!3m2!1spt-BR!2sus!4v1750033904303!5m2!1spt-BR!2sus"
         allowfullscreen loading="lazy"></iframe>
     </div>
- 
-====== -->
-  <!-- Scripts -->
- 
- 
   </div>
-  
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="javascript/dados-contatos.js"></script>
 
-  <script>
+<script>
     document.addEventListener('DOMContentLoaded', () => {
       const contatos = listarItens('contatos');
       const container = document.getElementById('contatosContainer');
@@ -246,29 +195,30 @@
             <div>
               <!-- EMAIL -->
               <div class="card-text-contato">
-                ${item.email && item.email.trim() !== ''
-            ? `
+                ${
+                  item.email && item.email.trim() !== ''
+                    ? `
                       <a href="mailto:${item.email}?subject=Contato%20via%20site%20MIND"
                          class="btn btn-outline-success btn-sm w-100 mt-1">
-                        <i class="bi bi-envelope-fill me-1"> E-mail de Contato:</i> <br>
-                        ${item.email}
+                        <i class="bi bi-envelope-fill me-1">  Enviar e-mail</i> ${item.email}
                       </a>
                     `
-            : `<span class="text-muted small d-block mt-1">E-mail não informado</span>`
-          }
+                    : `<span class="text-muted small d-block mt-1">E-mail não informado</span>`
+                }
               </div>
 
               <!-- LATTES -->
               <div class="card-text-contato">
-                ${item.lattes && item.lattes.trim() !== ''
-            ? `
+                ${
+                  item.lattes && item.lattes.trim() !== ''
+                    ? `
                       <a href="${item.lattes}" target="_blank" rel="noopener noreferrer"
                          class="btn btn-outline-primary btn-sm w-100 mt-1">
                         <i class="bi bi-mortarboard-fill me-1"></i> Currículo Lattes
                       </a>
                     `
-            : `<span class="text-muted small d-block mt-1">Lattes não informado</span>`
-          }
+                    : `<span class="text-muted small d-block mt-1">Lattes não informado</span>`
+                }
               </div>
             </div>
 
@@ -279,13 +229,12 @@
       });
     });
   </script>
+  
 
-
-  <meu-tradutor></meu-tradutor>
-  <script src="javascript/components/tradutor.js" defer></script>
-
-  <meu-footer></meu-footer>
+<meu-tradutor></meu-tradutor>
+<script src="javascript/components/tradutor.js" defer></script>
+  
+<meu-footer></meu-footer>
 
 </body>
-
 </html>
