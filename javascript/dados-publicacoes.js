@@ -12,7 +12,7 @@ function listarItens(chave) {
         sigla: "CIEDUC",
         linkSite: "https://www.cieduc.org/home.html",
         linkPublicacao: "https://www.cieduc.org/libros/LibroActasCieduc2022.pdf",
-	publicacaoArquivo: "publicacaoArquivo/Publicacoes/1-Publicacao _O_uso_da_ferramenta _Scratch _utilizada_Ensino_Lei _Hess_alunos_Transtorno_Espectro_Autista_Libro_Actas_CIEDUC_2022.pdf", // NOVO CAMPO
+        publicacaoArquivo: "publicacaoArquivo/Publicacoes/1-Publicacao _O_uso_da_ferramenta _Scratch _utilizada_Ensino_Lei _Hess_alunos_Transtorno_Espectro_Autista_Libro_Actas_CIEDUC_2022.pdf", // NOVO CAMPO
         referenciarPub: "NASCIMENTO, Ricardo Henrique dos Reis; MONTEMOR, Bianca Estrela Abdalla França Camargo; CAMPOS, Ryan Cristian Sousa; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. O uso da ferramenta Scratch utilizada para o Ensino da Lei de Hess para alunos com Transtorno do Espectro Autista. In: BEGONCHEA, Luis et al. Educación científica para el desarrollo ibero-americano. Alcalá - Espanha: Editorial Universidad de Alcalá, 2022, p. 133 - 140. Disponível em: https://www.cieduc.org/libros/LibroActasCieduc2022.pdf",
       },
       {
@@ -26,7 +26,7 @@ function listarItens(chave) {
         sigla: "CONICT",
         linkSite: "https://ocs.ifsp.edu.br/conict/xivconict",
         linkPublicacao: "https://ocs.ifsp.edu.br/conict/xiiiconict/paper/view/8609/",
-	publicacaoArquivo: "publicacaoArquivo/Publicacoes/2-Publicacao_A_utilizacao_da_ferramenta_Scratch_na_aprendizagem_Entalpia_Padrao_alunos_TEA_foco_sistema_de_arraste_CONICT_2022.pdf", // NOVO CAMPO
+        publicacaoArquivo: "publicacaoArquivo/Publicacoes/2-Publicacao_A_utilizacao_da_ferramenta_Scratch_na_aprendizagem_Entalpia_Padrao_alunos_TEA_foco_sistema_de_arraste_CONICT_2022.pdf", // NOVO CAMPO
         referenciarPub: "NASCIMENTO, Ricardo Henrique dos Reis; MONTEMOR, Bianca Estrela Abdalla França Camargo; CAMPOS, Ryan Cristina Souza; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. A utilização da ferramenta Scratch na aprendizagem da Entalpia Padrão para alunos com TEA com foco no sistema de arraste. Anais [...] In: CONGRESSO DE INOVAÇÃO, CIÊNCIA E TECNOLOGIA DO IFSP, XIII, 2022, São Paulo-SP. Anais [...]. São Paulo: IFSP-SP, 2022, p. 1-6. Disponível em: https://ocs.ifsp.edu.br/conict/xiiiconict/paper/view/8609/",
       },
       {
@@ -40,8 +40,8 @@ function listarItens(chave) {
         sigla: "CONAPESC",
         linkSite: "https://editorarealize.com.br",
         linkPublicacao: "https://editorarealize.com.br/artigo/visualizar/86777",
-	publicacaoArquivo: "publicacaoArquivo/Publicacoes/3-Publicacao_A_utilizacao_da_ferramenta_Scratch_aprendizagem_entalpia_padrao_formacao_e_entalpia_padrao_de_combustao_alunos_TEA_CONAPESC_2022.pdf", // NOVO CAMPO
-	referenciarPub: "SILVA, Alexssandro Ferreira da; NASCIMENTO, Ricardo Henrique dos Reis; MONTEMOR, Bianca Estrela Abdalla França Camargo; FERREIRA, Ana Paula Kawabe de Lima.  A utilização da ferramenta scratch na aprendizagem entalpia padrão de formação e entalpia padrão de combustão para alunos com TEA. Anais [...] In: CONAPESC- CONGRESSO NACIONAL DE PESQUISA E ENSINO DE CIÊNCIAS, VII, 2022, Campina Grande – PB. Anais [...]. Campina Grande: Editora Realize, 2022, p. 1-10. Disponível em: https://editorarealize.com.br/artigo/visualizar/86777",
+        publicacaoArquivo: "publicacaoArquivo/Publicacoes/3-Publicacao_A_utilizacao_da_ferramenta_Scratch_aprendizagem_entalpia_padrao_formacao_e_entalpia_padrao_de_combustao_alunos_TEA_CONAPESC_2022.pdf", // NOVO CAMPO
+        referenciarPub: "SILVA, Alexssandro Ferreira da; NASCIMENTO, Ricardo Henrique dos Reis; MONTEMOR, Bianca Estrela Abdalla França Camargo; FERREIRA, Ana Paula Kawabe de Lima.  A utilização da ferramenta scratch na aprendizagem entalpia padrão de formação e entalpia padrão de combustão para alunos com TEA. Anais [...] In: CONAPESC- CONGRESSO NACIONAL DE PESQUISA E ENSINO DE CIÊNCIAS, VII, 2022, Campina Grande – PB. Anais [...]. Campina Grande: Editora Realize, 2022, p. 1-10. Disponível em: https://editorarealize.com.br/artigo/visualizar/86777",
       },
       {
         idpub: "4",
@@ -54,8 +54,8 @@ function listarItens(chave) {
         sigla: "CONICT",
         linkSite: "https://ocs.ifsp.edu.br/conict/xivconict",
         linkPublicacao: "https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9638/3216",
-	publicacaoArquivo: "publicacaoArquivo/Publicacoes/4-Publicacao_Bullying_e_Transtorno_do_Espectro_Autista_como_ajudar_crianças_com_TEA_reconhecerem_bullying_utilizando_plataforma_Scratch_ e_CAA_CONICT_2023.pdf", // NOVO CAMPO      
-referenciarPub: "ALMEIDA, Maria Wianney Miranda; MONTEMOR, Bianca Estrela  Abdalla França Camargo; SILVA,  Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Bullying e Transtorno do Espectro Autista: como ajudar crianças com TEA a reconhecerem o bullying utilizando a plataforma scratch e a Comunicação Aumentativa e Alternativa. Anais [...] In: CONGRESSO DE INOVAÇÃO, CIÊNCIA E TECNOLOGIA DO IFSP, XIV, 2023, Capivari-SP. Anais [...]. Capivari: IFSP-SP, 2023, p. 1-6. ISSN: 2178-9959. Disponível em: https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9638/3216",
+        publicacaoArquivo: "publicacaoArquivo/Publicacoes/4-Publicacao_Bullying_e_Transtorno_do_Espectro_Autista_como_ajudar_crianças_com_TEA_reconhecerem_bullying_utilizando_plataforma_Scratch_ e_CAA_CONICT_2023.pdf", // NOVO CAMPO      
+        referenciarPub: "ALMEIDA, Maria Wianney Miranda; MONTEMOR, Bianca Estrela  Abdalla França Camargo; SILVA,  Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Bullying e Transtorno do Espectro Autista: como ajudar crianças com TEA a reconhecerem o bullying utilizando a plataforma scratch e a Comunicação Aumentativa e Alternativa. Anais [...] In: CONGRESSO DE INOVAÇÃO, CIÊNCIA E TECNOLOGIA DO IFSP, XIV, 2023, Capivari-SP. Anais [...]. Capivari: IFSP-SP, 2023, p. 1-6. ISSN: 2178-9959. Disponível em: https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9638/3216",
       },
       {
         idpub: "5",
@@ -68,10 +68,10 @@ referenciarPub: "ALMEIDA, Maria Wianney Miranda; MONTEMOR, Bianca Estrela  Abdal
         sigla: "QUALIF",
         linkSite: "https://intranet.cbt.ifsp.edu.br/qualif/",
         linkPublicacao: "https://intranet.cbt.ifsp.edu.br/qualif/volume13/artigo9.pdf",
-	publicacaoArquivo: "publicacaoArquivo/Publicacoes/5-Publicacao_Uso_do_Scratch_como_ferramenta_metodologica_para_Ensino_do_Corpo_Humano_crianças_TEA_QUALIF_2023.pdf", // NOVO CAMPO           
-referenciarPub: "CAMPOS, Ryan Cristian Sousa; MONTEMOR, Bianca Estrela  Abdalla França Camargo; NASCIMENTO, Ricardo Henrique dos Reis ; SILVA,  Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Uso do Scratch como ferramenta metodológica para Ensino do Corpo Humano para crianças com TEA. Revista Qualif, v. 13, nº1, p. 111-125, 2023. Disponível em: https://intranet.cbt.ifsp.edu.br/qualif/volume13/artigo9.pdf",
+        publicacaoArquivo: "publicacaoArquivo/Publicacoes/5-Publicacao_Uso_do_Scratch_como_ferramenta_metodologica_para_Ensino_do_Corpo_Humano_crianças_TEA_QUALIF_2023.pdf", // NOVO CAMPO           
+        referenciarPub: "CAMPOS, Ryan Cristian Sousa; MONTEMOR, Bianca Estrela  Abdalla França Camargo; NASCIMENTO, Ricardo Henrique dos Reis ; SILVA,  Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Uso do Scratch como ferramenta metodológica para Ensino do Corpo Humano para crianças com TEA. Revista Qualif, v. 13, nº1, p. 111-125, 2023. Disponível em: https://intranet.cbt.ifsp.edu.br/qualif/volume13/artigo9.pdf",
       },
-       {
+      {
         idpub: "6",
         ano: "2023",
         titulo: "Utilização da ferramenta metodológica Scratch no ensino das direções para alunos com TEA, nível de suporte 2",
@@ -82,8 +82,8 @@ referenciarPub: "CAMPOS, Ryan Cristian Sousa; MONTEMOR, Bianca Estrela  Abdalla 
         sigla: "CIC IFSP ITP",
         linkSite: "https://eventosacademicos.itp.ifsp.edu.br/index.php/ic/index",
         linkPublicacao: "https://drive.google.com/file/d/1q6IocMyieI3uPrkgpwYN3SfP_Pwk2CWv/view",
-	publicacaoArquivo: "publicacaoArquivo/Publicacoes/6-Publicacao_Utilizacao_da_ferramenta_metodologica_Scratch_no_ensino_das_direcoes_para_alunos_com_TEA_nivel_ de_suporte_2_Anais_Congresso_CONICT_2023.pdf", // NOVO CAMPO         
-	referenciarPub: "CAMPOS, Ryan Cristian Sousa; MONTEMOR, Bianca Estrela Abdalla França Camargo; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Utilização da ferramenta metodológica Scratch no ensino das direções para alunos com TEA, nível de suporte 2. Anais [...] IN: CONGRESSO DE INICIAÇÃO CIENTÍFICA DO IFSP ITAPETININGA, IX. 2023, Itapetininga-SP. Anais [...]. Itapetininga: Edições Hipótese, 2023, p. 335-340. Disponível em: https://drive.google.com/file/d/1q6IocMyieI3uPrkgpwYN3SfP_Pwk2CWv/view",
+        publicacaoArquivo: "publicacaoArquivo/Publicacoes/6-Publicacao_Utilizacao_da_ferramenta_metodologica_Scratch_no_ensino_das_direcoes_para_alunos_com_TEA_nivel_ de_suporte_2_Anais_Congresso_CONICT_2023.pdf", // NOVO CAMPO         
+        referenciarPub: "CAMPOS, Ryan Cristian Sousa; MONTEMOR, Bianca Estrela Abdalla França Camargo; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Utilização da ferramenta metodológica Scratch no ensino das direções para alunos com TEA, nível de suporte 2. Anais [...] IN: CONGRESSO DE INICIAÇÃO CIENTÍFICA DO IFSP ITAPETININGA, IX. 2023, Itapetininga-SP. Anais [...]. Itapetininga: Edições Hipótese, 2023, p. 335-340. Disponível em: https://drive.google.com/file/d/1q6IocMyieI3uPrkgpwYN3SfP_Pwk2CWv/view",
       },
       {
         idpub: "7",
@@ -96,8 +96,8 @@ referenciarPub: "CAMPOS, Ryan Cristian Sousa; MONTEMOR, Bianca Estrela  Abdalla 
         sigla: "EPPEQ",
         linkSite: "http://eppeq.ti.srt.ifsp.edu.br/index.php/eppeq",
         linkPublicacao: "http://eppeq.ti.srt.ifsp.edu.br/index.php/eppeq/article/view/122",
-	publicacaoArquivo: "publicacaoArquivo/Publicacoes/7-Publicacao_Utilizacao_da_Plataforma_Scratch_no_Ensino_dos_Orgaos_do_Corpo_Humano_para_Alunos_ com_TEA_nivel_de_Suporte_2_EPPEQ_2023.pdf", // NOVO CAMPO          
-referenciarPub: "CAMPOS, Ryan Cristian Sousa; MONTEMOR, Bianca Estrela  Abdalla França Camargo; FERREIRA, Gabriel Kawabe de Lima; SILVA,  Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima.  Utilização da Plataforma Scratch no Ensino dos Órgãos do Corpo Humano para Alunos com TEA, Nível de Suporte 2. Anais [...] IN: EPPEQ-ENCONTRO PAULISTA DE PESQUISA EM ENSINO DE QUÍMICA, XII, 2023, Ribeirão Preto e Sertãozinho-SP. Anais [...]. Sertãozinho: IFSP, 2023, V1, nº 12, p. 1-11. Disponível em: http://eppeq.ti.srt.ifsp.edu.br/index.php/eppeq/article/view/122",
+        publicacaoArquivo: "publicacaoArquivo/Publicacoes/7-Publicacao_Utilizacao_da_Plataforma_Scratch_no_Ensino_dos_Orgaos_do_Corpo_Humano_para_Alunos_ com_TEA_nivel_de_Suporte_2_EPPEQ_2023.pdf", // NOVO CAMPO          
+        referenciarPub: "CAMPOS, Ryan Cristian Sousa; MONTEMOR, Bianca Estrela  Abdalla França Camargo; FERREIRA, Gabriel Kawabe de Lima; SILVA,  Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima.  Utilização da Plataforma Scratch no Ensino dos Órgãos do Corpo Humano para Alunos com TEA, Nível de Suporte 2. Anais [...] IN: EPPEQ-ENCONTRO PAULISTA DE PESQUISA EM ENSINO DE QUÍMICA, XII, 2023, Ribeirão Preto e Sertãozinho-SP. Anais [...]. Sertãozinho: IFSP, 2023, V1, nº 12, p. 1-11. Disponível em: http://eppeq.ti.srt.ifsp.edu.br/index.php/eppeq/article/view/122",
       },
       {
         idpub: "8",
@@ -111,7 +111,7 @@ referenciarPub: "CAMPOS, Ryan Cristian Sousa; MONTEMOR, Bianca Estrela  Abdalla 
         linkSite: "https://ocs.ifsp.edu.br/conict/xivconict/",
         linkPublicacao: "https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9636/3156",
         publicacaoArquivo: "publicacaoArquivo/Publicacoes/8-Publicacao_Ensino_da_Circulacao_Sanguinea_para_alunos_com_TEA_nivel de Suporte 2_atraves_da_ferramenta_computacional_Scratch_atrelada_CAA_CONICT_2023.pdf", // NOVO CAMPO 
-	referenciarPub: "CAMPOS, Ryan Cristian Sousa; MONTEMOR, Bianca Estrela  Abdalla França Camargo; SILVA,  Alexssandro Ferreira da; MALDONADO, Raquel Fonseca; FERREIRA, Ana Paula Kawabe de Lima. Ensino da Circulação Sanguínea para alunos com TEA, nível de Suporte 2, através da ferramenta computacional Scratch atrelada à Comunicação Aumentativa e Alternativa. Anais [...] IN: CONGRESSO DE INOVAÇÃO, CIÊNCIA E TECNOLOGIA DO IFSP, XIV, 2023, Capivari-SP. Anais [...]. Capivari: IFSP-SP, 2023, p. 1-6. ISSN: 2178-9959. Disponível em: https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9636/",
+        referenciarPub: "CAMPOS, Ryan Cristian Sousa; MONTEMOR, Bianca Estrela  Abdalla França Camargo; SILVA,  Alexssandro Ferreira da; MALDONADO, Raquel Fonseca; FERREIRA, Ana Paula Kawabe de Lima. Ensino da Circulação Sanguínea para alunos com TEA, nível de Suporte 2, através da ferramenta computacional Scratch atrelada à Comunicação Aumentativa e Alternativa. Anais [...] IN: CONGRESSO DE INOVAÇÃO, CIÊNCIA E TECNOLOGIA DO IFSP, XIV, 2023, Capivari-SP. Anais [...]. Capivari: IFSP-SP, 2023, p. 1-6. ISSN: 2178-9959. Disponível em: https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9636/",
       },
       {
         idpub: "9",
@@ -124,8 +124,8 @@ referenciarPub: "CAMPOS, Ryan Cristian Sousa; MONTEMOR, Bianca Estrela  Abdalla 
         sigla: "CONICT",
         linkSite: "https://ocs.ifsp.edu.br/conict/xivconict/",
         linkPublicacao: "https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9616/3715",
-	publicacaoArquivo: "publicacaoArquivo/Publicacoes/9-Publicacao_Desenvolvimento_de_jogo_para_Educacao_Nutricional_de_criancas_com_TEA_utilizando_plataforma_Scratch_CAA _CONICT_2023.pdf", // NOVO CAMPO 	        
-	referenciarPub: "FERREIRA, Gabriel Kawabe de Lima; MONTEMOR, Bianca Estrela  Abdalla França Camargo; SILVA,  Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Desenvolvimento de jogo para Educação Nutricional de crianças com TEA, utilizando a plataforma Scratch e a CAA. Anais [...] IN: CONGRESSO DE INOVAÇÃO, CIÊNCIA E TECNOLOGIA DO IFSP, XIV, 2023, Capivari-SP. Anais [...]. Capivari: IFSP-SP, 2023, p. 1-5. ISSN: 2178-9959. Disponível em: https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9616/3715",
+        publicacaoArquivo: "publicacaoArquivo/Publicacoes/9-Publicacao_Desenvolvimento_de_jogo_para_Educacao_Nutricional_de_criancas_com_TEA_utilizando_plataforma_Scratch_CAA _CONICT_2023.pdf", // NOVO CAMPO 	        
+        referenciarPub: "FERREIRA, Gabriel Kawabe de Lima; MONTEMOR, Bianca Estrela  Abdalla França Camargo; SILVA,  Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Desenvolvimento de jogo para Educação Nutricional de crianças com TEA, utilizando a plataforma Scratch e a CAA. Anais [...] IN: CONGRESSO DE INOVAÇÃO, CIÊNCIA E TECNOLOGIA DO IFSP, XIV, 2023, Capivari-SP. Anais [...]. Capivari: IFSP-SP, 2023, p. 1-5. ISSN: 2178-9959. Disponível em: https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9616/3715",
       },
       {
         idpub: "10",
@@ -139,7 +139,7 @@ referenciarPub: "CAMPOS, Ryan Cristian Sousa; MONTEMOR, Bianca Estrela  Abdalla 
         linkSite: "https://ocs.ifsp.edu.br/conict/xivconict/",
         linkPublicacao: "https://drive.google.com/file/d/1q6IocMyieI3uPrkgpwYN3SfP_Pwk2CWv/view",
         publicacaoArquivo: "publicacaoArquivo/Publicacoes/10-Publicacao_Utilizacao_da_ferramenta_metodologica_Scratch_no_ensino_das_direcoes_para_alunos_com_TEA_nivel_de_suporte_2_CONICT_2023.pdf", // NOVO CAMPO
-	referenciarPub: "FERREIRA, Gabriel Kawabe de Lima; MONTEMOR, Bianca Estrela  Abdalla França Camargo; SILVA,  Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. O semáforo do corpo humano combinado à Comunicação Aumentativa e Alternativa através da utilização da Ferramenta metodológica Scratch. Anais [...] IN: CONGRESSO DE INICIAÇÃO CIENTÍFICA DO IFSP ITAPETININGA, IX. 2023, Itapetininga-SP. Anais [...]. Itapetininga: Edições Hipótese, 2023, p. 232-237. Disponível em: https://drive.google.com/file/d/1q6IocMyieI3uPrkgpwYN3SfP_Pwk2CWv/view e FERREIRA, Gabriel Kawabe de Lima; CAMPOS, Ryan Cristian Sousa; SILVA, Alexssandro Ferreira da; CAMARGO, Bianca Estrela Montemor Abdlla França; FERREIRA, Ana Paula Kawabe de Lima. Semáforo do Corpo: uma proposta lúdica de sensações ao toque utilizando comunicação aumentativa e alternativa. Revista Macambira, [S. l.], v. 9, n. 1, p. 1–18, 2025. DOI: 10.35642/rm.v9i1.1227. Disponível em: https://revista.lapprudes.net/RM/article/view/1227",
+        referenciarPub: "FERREIRA, Gabriel Kawabe de Lima; MONTEMOR, Bianca Estrela  Abdalla França Camargo; SILVA,  Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. O semáforo do corpo humano combinado à Comunicação Aumentativa e Alternativa através da utilização da Ferramenta metodológica Scratch. Anais [...] IN: CONGRESSO DE INICIAÇÃO CIENTÍFICA DO IFSP ITAPETININGA, IX. 2023, Itapetininga-SP. Anais [...]. Itapetininga: Edições Hipótese, 2023, p. 232-237. Disponível em: https://drive.google.com/file/d/1q6IocMyieI3uPrkgpwYN3SfP_Pwk2CWv/view e FERREIRA, Gabriel Kawabe de Lima; CAMPOS, Ryan Cristian Sousa; SILVA, Alexssandro Ferreira da; CAMARGO, Bianca Estrela Montemor Abdlla França; FERREIRA, Ana Paula Kawabe de Lima. Semáforo do Corpo: uma proposta lúdica de sensações ao toque utilizando comunicação aumentativa e alternativa. Revista Macambira, [S. l.], v. 9, n. 1, p. 1–18, 2025. DOI: 10.35642/rm.v9i1.1227. Disponível em: https://revista.lapprudes.net/RM/article/view/1227",
       },
       {
         idpub: "11",
@@ -152,8 +152,8 @@ referenciarPub: "CAMPOS, Ryan Cristian Sousa; MONTEMOR, Bianca Estrela  Abdalla 
         sigla: "CONICT",
         linkSite: "https://ocs.ifsp.edu.br/conict/xivconict/",
         linkPublicacao: "https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9716/3359",
-       publicacaoArquivo: "publicacaoArquivo/Publicacoes/11-Publicacao_Nada_sobre_nos_sem_nos_O_relato_de_uma_aluna_autista_sobre_sua_participacao_em_projetos_de_pesquisa_ensino_extensão_IFSP_Campus_Jacarei_CONICT_2023.pdf", // NOVO CAMPO
- 	referenciarPub: "MONTEMOR, Bianca Estrela; FERREIRA, Ana Paula Kawabe de Lima. “Nada sobre nós, sem nós”: O relato de uma aluna autista sobre sua participação em projetos de pesquisa, ensino e extensão no IFSP - Campus Jacareí. Anais [...] IN: CONGRESSO DE INOVAÇÃO, CIÊNCIA E TECNOLOGIA DO IFSP, XIV, 2023, Capivari-SP. Anais [...]. Capivari: IFSP-SP, 2023, p. 1-5. ISSN: 2178-9959. Disponível em: https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9716/3359",
+        publicacaoArquivo: "publicacaoArquivo/Publicacoes/11-Publicacao_Nada_sobre_nos_sem_nos_O_relato_de_uma_aluna_autista_sobre_sua_participacao_em_projetos_de_pesquisa_ensino_extensão_IFSP_Campus_Jacarei_CONICT_2023.pdf", // NOVO CAMPO
+        referenciarPub: "MONTEMOR, Bianca Estrela; FERREIRA, Ana Paula Kawabe de Lima. “Nada sobre nós, sem nós”: O relato de uma aluna autista sobre sua participação em projetos de pesquisa, ensino e extensão no IFSP - Campus Jacareí. Anais [...] IN: CONGRESSO DE INOVAÇÃO, CIÊNCIA E TECNOLOGIA DO IFSP, XIV, 2023, Capivari-SP. Anais [...]. Capivari: IFSP-SP, 2023, p. 1-5. ISSN: 2178-9959. Disponível em: https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9716/3359",
       },
       {
         idpub: "12",
@@ -167,7 +167,7 @@ referenciarPub: "CAMPOS, Ryan Cristian Sousa; MONTEMOR, Bianca Estrela  Abdalla 
         linkSite: "https://revista.lapprudes.net/index.php/CM/",
         linkPublicacao: "https://revista.lapprudes.net/index.php/CM/article/view/790",
         publicacaoArquivo: "publicacaoArquivo/Publicacoes/12-Publicacao_A_utilizacao_do_Scratch_para_o_ensino_de_termoquímica_para_alunos_com_TEA_CADERNOS_MACAMBIRA_2022.pdf", // NOVO CAMPO
-	referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, Ricardo dos Reis; CAMPOS, Ryan Cristian Sousa; MONTEMOR, Bianca Estrela  Abdalla França Camargo; FERREIRA, Gabriel Kawabe de Lima; SILVA,  Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. A utilização do Scratch para o ensino de termoquímica para alunos com TEA. Cadernos Macambira, v. 7, n. 3, p. 82-89, 2022. Disponível em: https://revista.lapprudes.net/index.php/CM/article/view/790",
+        referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, Ricardo dos Reis; CAMPOS, Ryan Cristian Sousa; MONTEMOR, Bianca Estrela  Abdalla França Camargo; FERREIRA, Gabriel Kawabe de Lima; SILVA,  Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. A utilização do Scratch para o ensino de termoquímica para alunos com TEA. Cadernos Macambira, v. 7, n. 3, p. 82-89, 2022. Disponível em: https://revista.lapprudes.net/index.php/CM/article/view/790",
       },
       {
         idpub: "13",
@@ -181,7 +181,7 @@ referenciarPub: "CAMPOS, Ryan Cristian Sousa; MONTEMOR, Bianca Estrela  Abdalla 
         linkSite: "https://intranet.cbt.ifsp.edu.br/qualif",
         linkPublicacao: "https://intranet.cbt.ifsp.edu.br/qualif/volume13/artigo12.pdf",
         publicacaoArquivo: "publicacaoArquivo/Publicacoes/13-Publicacao_A_utilizacao_do_Scratch_para_o_ensino_de_termoquimica_para_alunos_com_TEA_Revista_QUALIF_2023.pdf", // NOVO CAMPO
-referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, Ricardo Henrique dos Reis; CAMPOS, Ryan Cristian Sousa; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. O ensino de conceitos Termoquímicos básicos para alunos com TEA através da ferramenta metodológica Scratch. Revista Qualif, v. 13, nº1, p. 150-164, 2023. Disponível em:  https://intranet.cbt.ifsp.edu.br/qualif/volume13/artigo12.pdf",
+        referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, Ricardo Henrique dos Reis; CAMPOS, Ryan Cristian Sousa; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. O ensino de conceitos Termoquímicos básicos para alunos com TEA através da ferramenta metodológica Scratch. Revista Qualif, v. 13, nº1, p. 150-164, 2023. Disponível em:  https://intranet.cbt.ifsp.edu.br/qualif/volume13/artigo12.pdf",
       },
       {
         idpub: "14",
@@ -195,9 +195,9 @@ referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, R
         linkSite: "https://ojs.ifsp.edu.br/compartilhar/",
         linkPublicacao: "https://ojs.ifsp.edu.br/index.php/compartilhar/issue/view/187",
         publicacaoArquivo: "publicacaoArquivo/Publicacoes/14-Publicacao_A_utilizacao_da_ferramenta_Scratch_na_aprendizagem_de_conceitos_de_Termoquimica_para_alunos_com_TEA_Revista_COMPARTILHAR_2023.pdf", // NOVO CAMPO
-	referenciarPub: "NASCIMENTO, Ricardo Henrique dos Reis; MONTEMOR, Bianca Estrela Abdalla França Camargo; SILVA,  Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. A utilização da ferramenta Scratch na aprendizagem de conceitos de Termoquímica para alunos com TEA. Revista Compartilhar, v. 6, p. 6-11, 2023.  Disponível em: https://ojs.ifsp.edu.br/index.php/compartilhar/issue/view/187",
+        referenciarPub: "NASCIMENTO, Ricardo Henrique dos Reis; MONTEMOR, Bianca Estrela Abdalla França Camargo; SILVA,  Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. A utilização da ferramenta Scratch na aprendizagem de conceitos de Termoquímica para alunos com TEA. Revista Compartilhar, v. 6, p. 6-11, 2023.  Disponível em: https://ojs.ifsp.edu.br/index.php/compartilhar/issue/view/187",
       },
-       {
+      {
         idpub: "15",
         ano: "2023",
         titulo: "A utilização da Ferramenta Computacional Scratch para o Ensino de Propriedades Coligativas para alunos com TEA",
@@ -209,9 +209,9 @@ referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, R
         linkSite: "http://eppeq.ti.srt.ifsp.edu.br/index.php/eppeq",
         linkPublicacao: "http://eppeq.ti.srt.ifsp.edu.br/index.php/eppeq/article/view/146/150",
         publicacaoArquivo: "publicacaoArquivo/Publicacoes/15-Publicacao_A_utilizacao_da_Ferramenta_Computacional_Scratch_para_o_Ensino_de_Propriedades_Coligativas_para_alunos_com_TEA_EPPEQ_2023.pdf", // NOVO CAMPO
-	referenciarPub: "NASCIMENTO, Ricardo Henrique dos Reis; MONTEMOR, Bianca Estrela Abdalla França Camargo; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. A utilização da Ferramenta Computacional Scratch para o Ensino de Propriedades Coligativas para alunos com TEA. Anais [...] IN: EPPEQ-ENCONTRO PAULISTA DE PESQUISA EM ENSINO DE QUÍMICA, XII, 2023, Ribeirão Preto e Sertãozinho-SP. Anais [...]. Sertãozinho: IFSP, 2023, V1, nº 12, p. 1-11. Disponível em: http://eppeq.ti.srt.ifsp.edu.br/index.php/eppeq/article/view/146/150",
+        referenciarPub: "NASCIMENTO, Ricardo Henrique dos Reis; MONTEMOR, Bianca Estrela Abdalla França Camargo; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. A utilização da Ferramenta Computacional Scratch para o Ensino de Propriedades Coligativas para alunos com TEA. Anais [...] IN: EPPEQ-ENCONTRO PAULISTA DE PESQUISA EM ENSINO DE QUÍMICA, XII, 2023, Ribeirão Preto e Sertãozinho-SP. Anais [...]. Sertãozinho: IFSP, 2023, V1, nº 12, p. 1-11. Disponível em: http://eppeq.ti.srt.ifsp.edu.br/index.php/eppeq/article/view/146/150",
       },
-       {
+      {
         idpub: "16",
         ano: "2023",
         titulo: "Enseñar sobre volatilidad, temperatura de ebullición y presión de vapor, con el uso de la herramienta metodológica Scratch para estudiantes con Trastorno del Espectro Autista",
@@ -223,9 +223,9 @@ referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, R
         linkSite: "https://www.esfm.ipn.mx/revista-jadc.html",
         linkPublicacao: "https://www.test.desarrolloweb.ipn.mx/assets/files/esfm/docs/jornadas/revista-jornadas-vi.pdf",
         publicacaoArquivo: "publicacaoArquivo/Publicacoes/16-Publicacao_Ensenar_volatilidad_temperatura_ebullicion_y_presion_vapor_uso_la_herramienta_metodologica_Scratch_estudiantes_TEA_Revista_DIDACTICA_2023.pdf",
-        referenciarPub: "NASCIMENTO, Ricardo Henrique dos Reis; MONTEMOR, Bianca Estrela Abdalla França Camargo; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Enseñar sobre volatilidad, temperatura de ebullición y presión de vapor, con el uso de la herramienta metodológica Scratch para estudiantes con Trastorno del Espectro Autista. Revista Digital Didáctica de Las Ciencias, México, v. 6, p. 310-319, 2023. Disponível em: https://www.esfm.ipn.mx/assets/files/esfm/docs/jornadas/revista-jornadas-vi.pdf",      
+        referenciarPub: "NASCIMENTO, Ricardo Henrique dos Reis; MONTEMOR, Bianca Estrela Abdalla França Camargo; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Enseñar sobre volatilidad, temperatura de ebullición y presión de vapor, con el uso de la herramienta metodológica Scratch para estudiantes con Trastorno del Espectro Autista. Revista Digital Didáctica de Las Ciencias, México, v. 6, p. 310-319, 2023. Disponível em: https://www.esfm.ipn.mx/assets/files/esfm/docs/jornadas/revista-jornadas-vi.pdf",
       },
-       {
+      {
         idpub: "17",
         ano: "2023",
         titulo: "Ensino da Propriedade Coligativa Osmose para alunos com TEA, por meio da plataforma Scratch",
@@ -309,7 +309,7 @@ referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, R
         publicacaoArquivo: "publicacaoArquivo/Publicacoes/22-Publicacao_Desenho_universal_da_aprendizagem_e_a_ludicidade_uma_proposta_para_o_ensino_de_isomeria_otica_REI_2024.pdf",
         referenciarPub: "SANTOS, Lucas Caraça dos; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Desenho universal da aprendizagem e a ludicidade: uma proposta para o ensino de isomeria óptica. Anais [...] IN: CONGRESSO DE ACESSIBILIDADE E INCLUSÃO NA EDUCAÇÃO, IFSP CUBATÃO, 2023, Cubatão-SP. Anais [...] Cubatão: Revista  da Educação Inclusiva (REI), v1, 2024, p.1-11. Disponível em: https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie/article/view/48",
       },
-      
+
       {
         idpub: "23",
         ano: "2023",
@@ -338,7 +338,7 @@ referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, R
         publicacaoArquivo: "publicacaoArquivo/Publicacoes/24-Publicacao_Estrategias_pedagogicas_inclusivas_para_alunos_com_TEA_no_ensino_de_formas_geometricas_planas_CAIE - REI_2024.pdf",
         referenciarPub: "FERREIRA, Gabriel Kawabe de Lima; SILVA, Alexssandro Ferreira da; Ferreira, Ana Paula Kawabe de Lima. Estratégia pedagógica inclusiva para alunos no transtorno do espectro autista: ensino de formas geométricas planas. Revista da Educação Inclusiva, v. 1, p. 128-139, 2024. Disponível em: https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie/article/view/36",
       },
-       {
+      {
         idpub: "25",
         ano: "2024",
         titulo: "Potencialidade de Jogo Educacional no Ensino de Sistema Digestivo: uso da comunicação aumentativa e alternativa e o scratch para alunos com transtorno do espectro autista",
@@ -457,7 +457,7 @@ referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, R
         titulo: "Aprendizagem Significativa e Educação Inclusiva: uma revisão sistemática de Revistas Qualis A1 e A2 para o Ensino de Biologia de 2017 a 2024",
         autor: "Alexssandro Ferreira da Silva",
         coautor: "Ana Paula Kawabe de Lima Ferreira, Gabriel Kawabe de Lima Ferreira", /*Ivana Elena Camejo Aviles*/
-         tipo: "Anais de Congresso",
+        tipo: "Anais de Congresso",
         local: " Encuentro Internacional de Aprendizaje Significativo “Joseph Novak”,  Montevidéo, Uruguay",
         sigla: "EIAS",
         linkSite: "https://www.apsignificativa.com/",
@@ -465,7 +465,7 @@ referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, R
         publicacaoArquivo: "publicacaoArquivo/Publicacoes/33-Publicacao_Aprendizagem_Significativa_e_Educacao_Inclusiva_uma_Revisao_Sistematica_de_revistas_Qualis_A1_e_A2_para_o_Ensino_de_Biologia_de_2017_a_2024_EIAS_2024.pdf",
         referenciarPub: "SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima; FERREIRA, Gabriel Kawabe de Lima; CAMEJO AVILES, Ivana Elena. Aprendizagem significativa e Educação Inclusiva: uma Revisão Sistemática de revistas Qualis A1 e A2 para o Ensino de Biologia de 2017 a 2024. Aprendizagem Significativa e Educação Inclusiva”. Anais [...] IN: X.EIAS – X Encuentro Internacional de Aprendizaje Significativo “Joseph Novak”,  Montevidéo, Uruguay, 11-15 de noviembre de 2024.   Anais [...]. Montevidéo, Uruguay, 2024, pg. 460-467. Disponível em: https://www.apsignificativa.com/_files/ugd/75b99d_c6891fb2e04f45c0bd86af6a699b76c3.pdf",
       },
-    {
+      {
         idpub: "34",
         ano: "2024",
         titulo: "Aprendizagem significativa no Ensino de Química em revistas Qualis A1 e A2: uma revisão sistemática para abordagem inclusiva",
@@ -479,7 +479,7 @@ referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, R
         publicacaoArquivo: "publicacaoArquivo/Publicacoes/34-Publicacao_Aprendizagem_Significativa_no_Ensino_de_Quimica_em_revistas_Qualis_A1_e_A2_uma_revisao_sistematica_para_abordagem_inclusiva_EIAS_2024.pdf",
         referenciarPub: "FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; FERREIRA, Gabriel Kawabe de Lima; CAMEJO AVILES, Ivana Elena. Aprendizagem significativa no Ensino de Química em revistas Qualis A1 e A2: uma revisão sistemática para abordagem inclusiva. Aprendizagem Significativa e Educação Inclusiva”. Anais [...] IN: X.EIAS – X Encuentro Internacional de Aprendizaje Significativo “Joseph Novak”,  Montevidéo, Uruguay, 11-15 de noviembre de 2024.   Anais [...]. Montevidéo, Uruguay, 2024, pg. 467-475. Disponível em: https://www.apsignificativa.com/_files/ugd/75b99d_c6891fb2e04f45c0bd86af6a699b76c3.pdf",
       },
-    {
+      {
         idpub: "35",
         ano: "2024",
         titulo: "Desafios na comunicação verbal uma proposta de intervenção utilizando comunicação aumentativa e alternativa junto ao paradigma low-code",
@@ -493,7 +493,7 @@ referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, R
         publicacaoArquivo: "publicacaoArquivo/Publicacoes/35-Publicacao_Dedafios_na_comunicacao_verbal_uma_proposta_de_intervencao_CAA _paradigma_Low_Code_CONICT_2024.pdf",
         referenciarPub: "BARONI, Gabriel de Paula; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; STEKEL, Tardelli Ronan Coelho. Desafios na comunicação verbal uma proposta de intervenção utilizando comunicação aumentativa e alternativa junto ao paradigma low-code. IN: Congresso de Inovação, Ciência e Tecnologia do IFSP,  15º CONICT, pg. 1-6, 2024. Disponível em: https://congressos.ifsp.edu.br/conict/article/view/470",
       },
-         {
+      {
         idpub: "36",
         ano: "2024",
         titulo: "Necessidades específicas na comunicação inclusiva: uma alternativa utilizando metodologia low-code e comunicação aumentativa e alternativa.",
@@ -507,7 +507,7 @@ referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, R
         publicacaoArquivo: "publicacaoArquivo/Publicacoes/36-Publicacao_Necessidades_especificas_na_comunicacao_inclusiva_uma_alternativa_utilizando_metodologia_low_code_e_CAA_CAIE-REI_2024.pdf",
         referenciarPub: "GARONI, Gabriel de Paula; BIAGIONI, Ana Clara de Freitas; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; STEKEL, Tardelli Ronan Coelho. Necessidades específicas na comunicação inclusiva: uma alternativa utilizando metodologia low-code e comunicação aumentativa e alternativa. Anais [...] IN: 15º Congresso de Inovação, Ciência e Tecnologia do IFSP, Cubatão/SP, v. ?, n. ?, 2024, p.?.Disponível em: https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie/article/view/29",
       },
-          {
+      {
         idpub: "37",
         ano: "2024",
         titulo: "Educação Científica Inclusiva para Alunos com Transtorno do Espectro Autista (TEA): Uso de Jogo Didático Utilizando Comunicação Aumentativa e Alternativa (CAA) e Scratch para Aprender sobre o Sistema Digestório",
@@ -690,7 +690,7 @@ referenciarPub: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, R
         referenciarPub: "GODINHO, Ana Clara Machado; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; CAMEJO AVILES, Ivana Elena. Pilhas eletroquímicas e Educação Ambiental: uma proposta de sequência didática sob os pressupostos da  Aprendizagem Significativa Crítica. In: Congresso 9º ENAS - Encontro Nacional de Aprendizagem Significativa, Univates de Lajeado-RS, 17-21/11/2025. Anais [...]. Disponível em: ",
       },
     ];
-    
+
   }
   return [];
 }

@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <title>Publicações</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ===== Estilos ===== -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- ===== Componentes ===== -->
   <script src="javascript/components/menu.js" defer></script>
   <script src="javascript/components/footer.js" defer></script>
-  <script src="javascript/components/components.js" defer></script>
+  <!-- <script src="javascript/components/components.js" defer></script>-->
+
+  <!-- ===== Proteção global (bloqueios) ===== -->
+  <script src="javascript/protecao-global.min.js" defer></script>
 
   <style>
-      body {
+    body {
       font-family: "Arial", sans-serif;
       background-color: #ffffff;
       text-align: justify;
     }
-    
+
     #page-wrapper {
       display: flex;
       flex-direction: column;
@@ -30,8 +38,7 @@
     }
 
 
-
-    /* Justificação de texto no modal */
+    /* Justificar texto no modal */
     #conteudoReferencia p {
       text-align: justify;
     }
@@ -49,10 +56,160 @@
       min-width: 130px;
     }
 
+
+
+    /* === Responsividade === */
+    @media (max-width: 768px) {
+      h2.text-danger {
+        font-size: 1.3rem;
+      }
+
+      h5,
+      h6 {
+        font-size: 1rem;
+      }
+
+      .grafico-container {
+        height: 220px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .table {
+        font-size: 0.85rem;
+      }
+
+      .btn-sm {
+        font-size: 0.8rem;
+        padding: 0.3rem;
+      }
+
+      .grafico-container {
+        height: 200px;
+      }
+    }
+
+    /* Ajustes dos botões */
+    .btn-group-custom {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .btn-group-custom .btn {
+      flex: 1 1 calc(50% - 6px);
+      min-width: 130px;
+    }
+
     @media (max-width: 576px) {
       .btn-group-custom .btn {
         flex: 1 1 100%;
       }
+    }
+
+    /* ===== IMPRESSÃO COMPLETA ===== */
+    /*configuração para imprimir pagina*/
+    @media print {
+
+      /* FAZ O MENU APARECER NORMAL */
+      meu-menu,
+      nav,
+      .navbar {
+        position: static !important;
+        width: 100% !important;
+        display: block !important;
+        width: 100%;
+      }
+
+
+      /* Esconde só botões de ação geral */
+      .no-print {
+        display: none !important;
+      }
+
+      header {
+        position: static !important;
+      }
+
+      @page {
+        size: A4;
+        margin: 15mm;
+      }
+
+      html,
+      body {
+        width: 100% !important;
+        height: 100% !important;
+      }
+
+      /* remove limitações */
+      .container,
+      .container-fluid,
+      #page-wrapper {
+        overflow: visible !important;
+        max-width: 100% !important;
+      }
+
+
+      /* EVITA SOBREPOSIÇÃO */
+      body {
+        margin-bottom: 80px;
+        /* espaço real pro footer */
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      #page-wrapper {
+        flex: 1;
+      }
+
+      /* REMOVE SCROLL */
+      .table-responsive {
+        overflow: visible !important;
+        width: 100% !important;
+        height: 100% !important;
+      }
+
+      /* CONTROLE DE QUEBRA */
+      table {
+        width: 100%;
+        page-break-inside: auto;
+      }
+
+      tr {
+        page-break-inside: avoid;
+      }
+
+      thead {
+        display: table-header-group;
+      }
+
+      #footerPrint {
+        display: block !important;
+        width: 100%;
+        margin-top: 30px;
+        padding-top: 10px;
+        border-top: 1px solid #ccc;
+        text-align: center;
+        font-size: 10px;
+        color: #444;
+        page-break-inside: auto;
+        page-break-before: always;
+        position: static;
+      }
+
+      /* espaço extra antes do footer (opcional) */
+      .quebra-final {
+        page-break-inside: always;
+        page-break-before: always;
+        position: auto;
+        height: 95%;
+      }
+
     }
   </style>
 </head>
@@ -76,19 +233,38 @@
 
         <!-- Filtros -->
         <div class="row g-2 my-4 justify-content-center">
-          <div class="col-md-3"><input type="text" id="pesquisaInput" class="form-control" placeholder="Buscar por título..."></div>
-          <div class="col-md-2"><select id="filtroAutores" class="form-select"><option value="">Filtrar por Autor</option></select></div>
-          <div class="col-md-2"><select id="filtroTipos" class="form-select"><option value="">Filtrar por Tipo</option></select></div>
-          <div class="col-md-2"><select id="filtroSiglas" class="form-select"><option value="">Filtrar por Sigla</option></select></div>
-          <div class="col-md-2"><select id="filtroAnos" class="form-select"><option value="">Filtrar por Ano</option></select></div>
+          <div class="col-md-3"><input type="text" id="pesquisaInput" class="form-control"
+              placeholder="Buscar por título..."></div>
+          <div class="col-md-2"><select id="filtroAutores" class="form-select">
+              <option value="">Filtrar por Autor</option>
+            </select></div>
+          <div class="col-md-2"><select id="filtroTipos" class="form-select">
+              <option value="">Filtrar por Tipo</option>
+            </select></div>
+          <div class="col-md-2"><select id="filtroSiglas" class="form-select">
+              <option value="">Filtrar por Sigla</option>
+            </select></div>
+          <div class="col-md-2"><select id="filtroAnos" class="form-select">
+              <option value="">Filtrar por Ano</option>
+            </select></div>
           <div class="col-md-1"><button id="btnLimpar" class="btn btn-secondary w-100">Limpar</button></div>
         </div>
 
-        <!-- Tabela -->
+        <div class="text-end my-2 no-print">
+          <button onclick="imprimirPagina()" class="btn btn-outline-dark">
+            🖨️ Imprimir Página
+          </button>
+
+          <button onclick="exportarExcel()" class="btn btn-success">
+            📊 Exportar Dados
+          </button>
+        </div>
+
+        <!-- === Tabela === -->
         <div class="table-responsive">
           <table id="tabelaPublicacoes" class="table table-striped table-bordered w-100">
-             <thead class="table-dark">
-          <tr>
+            <thead class="table-dark">
+              <tr>
                 <th>ID</th>
                 <th>Título</th>
                 <th>Autor</th>
@@ -101,6 +277,7 @@
                 <th>Trabalho</th>
               </tr>
             </thead>
+            <tbody></tbody>
           </table>
         </div>
       </section>
@@ -134,191 +311,192 @@
   <script src="javascript/dados-publicacoes.js"></script>
 
   <script>
-  let chartInstance;
-  let tabelaDT;
+    let chartInstance;
+    let tabelaDT;
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const itens = listarItens('publicacoes');
-    const selAutores = $('#filtroAutores');
-    const selTipos = $('#filtroTipos');
-    const selAnos = $('#filtroAnos');
-    const selSiglas = $('#filtroSiglas');
+    document.addEventListener('DOMContentLoaded', () => {
+      const itens = listarItens('publicacoes');
+      const selAutores = $('#filtroAutores');
+      const selTipos = $('#filtroTipos');
+      const selAnos = $('#filtroAnos');
+      const selSiglas = $('#filtroSiglas');
 
-    function popularFiltros() {
-      const autores = [...new Set(itens.map(i => i.autor))].sort();
-      const tipos = [...new Set(itens.map(i => i.tipo))].sort();
-      const anos = [...new Set(itens.map(i => i.ano))].sort();
-      const siglas = [...new Set(itens.map(i => i.sigla))].sort();
-      autores.forEach(v => selAutores.append(new Option(v, v)));
-      tipos.forEach(v => selTipos.append(new Option(v, v)));
-      anos.forEach(v => selAnos.append(new Option(v, v)));
-      siglas.forEach(v => selSiglas.append(new Option(v, v)));
-    }
+      function popularFiltros() {
+        const autores = [...new Set(itens.map(i => i.autor))].sort();
+        const tipos = [...new Set(itens.map(i => i.tipo))].sort();
+        const anos = [...new Set(itens.map(i => i.ano))].sort();
+        const siglas = [...new Set(itens.map(i => i.sigla))].sort();
+        autores.forEach(v => selAutores.append(new Option(v, v)));
+        tipos.forEach(v => selTipos.append(new Option(v, v)));
+        anos.forEach(v => selAnos.append(new Option(v, v)));
+        siglas.forEach(v => selSiglas.append(new Option(v, v)));
+      }
 
-    function aplicarFiltros() {
-      const q = $('#pesquisaInput').val().toLowerCase();
-      const a = selAutores.val();
-      const t = selTipos.val();
-      const y = selAnos.val();
-      const z = selSiglas.val();
-      return itens.filter(i =>
-        (!a || i.autor === a) &&
-        (!t || i.tipo === t) &&
-        (!y || i.ano === y) &&
-        (!z || i.sigla === z) &&
-        (!q || i.titulo.toLowerCase().includes(q))
-      );
-    }
+      function aplicarFiltros() {
+        const q = $('#pesquisaInput').val().toLowerCase();
+        const a = selAutores.val();
+        const t = selTipos.val();
+        const y = selAnos.val();
+        const z = selSiglas.val();
+        return itens.filter(i =>
+          (!a || i.autor === a) &&
+          (!t || i.tipo === t) &&
+          (!y || i.ano === y) &&
+          (!z || i.sigla === z) &&
+          (!q || i.titulo.toLowerCase().includes(q))
+        );
+      }
 
-    function renderizarTabela(data) {
-      if (tabelaDT) tabelaDT.clear().rows.add(data).draw();
-      else {
-        tabelaDT = $('#tabelaPublicacoes').DataTable({
-          data: data,
-          columns: [
-            { data: 'idpub' },
-            { data: 'titulo' },
-            { data: 'autor', render: d => `<strong>${d}</strong>` },
-            { data: 'coautor' },
-            { data: 'tipo' },
-            { data: 'local' },
-            { data: 'sigla' },
-            { data: 'ano' },
-            {
-              data: null,
-              render: d => `
+      function renderizarTabela(data) {
+        if (tabelaDT) {
+          tabelaDT.clear().rows.add(data).draw();
+        } else {
+          tabelaDT = $('#tabelaPublicacoes').DataTable({
+            data: data,
+            pageLength: 10,
+            lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, "Todos"]],
+            deferRender: false,
+            columns: [
+              { data: 'idpub' },
+              { data: 'titulo' },
+              { data: 'autor', render: d => `<strong>${d}</strong>` },
+              { data: 'coautor' },
+              { data: 'tipo' },
+              { data: 'local' },
+              { data: 'sigla' },
+              { data: 'ano' },
+              {
+                data: null,
+                render: d => `
                 <div class="btn-group-custom">
                   <a href="${d.linkPublicacao}" class="btn btn-warning btn-sm" target="_blank">🌐 Online</a>
-                  ${
-                    d.publicacaoArquivo
-                      ? `<a href="${d.publicacaoArquivo}" target="_blank" class="btn btn-success btn-sm">📖 PDF</a>`
-                      : `<button class="btn btn-secondary btn-sm" disabled>❌ Sem PDF</button>`
+                  ${d.publicacaoArquivo
+                    ? `<a href="${d.publicacaoArquivo}" target="_blank" class="btn btn-success btn-sm">📖 PDF</a>`
+                    : `<button class="btn btn-secondary btn-sm" disabled>❌ Sem PDF</button>`
                   }
                 </div>`
-            },
-            {
-              data: null,
-              render: d => `
+              },
+              {
+                data: null,
+                render: d => `
                 <div class="btn-group-custom">
                 <a href="${d.linkSite}" class="btn btn-danger btn-sm" target="_blank">🔗 Submissão</a>
                 <button class="btn btn-primary btn-sm" onclick='mostrarReferencia(${JSON.stringify(d)})'>📄 Citar</button>
                 </div>`
+              }
+            ],
+            paging: true,
+            responsive: true,
+            language: {
+              info: "Mostrando _START_ até _END_ de _TOTAL_ registros",
+              infoEmpty: "Mostrando 0 até 0 de 0 registros",
+              lengthMenu: "Mostrar _MENU_ registros por página",
+              search: "Pesquisar:",
+              paginate: {
+                first: "Primeiro", last: "Último", next: "Próximo", previous: "Anterior"
+              }
             }
-          ],
-          paging: true,
-          responsive: true,
-          language: {
-            info: "Mostrando _START_ até _END_ de _TOTAL_ registros",
-            infoEmpty: "Mostrando 0 até 0 de 0 registros",
-            lengthMenu: "Mostrar _MENU_ registros por página",
-            search: "Pesquisar:",
-            paginate: {
-              first: "Primeiro", last: "Último", next: "Próximo", previous: "Anterior"
+          });
+        }
+      }
+      function renderizarGrafico(data) {
+        const group = {};
+        data.forEach(i => {
+          if (!group[i.tipo]) group[i.tipo] = {};
+          if (!group[i.tipo][i.ano]) group[i.tipo][i.ano] = 0;
+          group[i.tipo][i.ano]++;
+        });
+
+        const tiposArr = Object.keys(group);
+        const anosArr = [...new Set(data.map(i => i.ano))].sort();
+        const colors = ['#007bff', '#28a745', '#ffc107', '#dc3545', '#17a2b8'];
+        const datasets = tiposArr.map((tp, idx) => ({
+          label: tp,
+          backgroundColor: colors[idx % colors.length],
+          data: anosArr.map(y => group[tp][y] || 0)
+        }));
+
+
+
+        // 🔹 Calcula o maior valor real exibido e ajusta +1 para espaçamento visual
+        let maxValue = Math.max(...datasets.flatMap(ds => ds.data));
+        if (!isFinite(maxValue) || maxValue < 1) maxValue = 1; // evita NaN ou zero total
+        const adjustedMax = maxValue + 1;
+
+        const ctx = document.getElementById('graficoPublicacoes').getContext('2d');
+        if (chartInstance) chartInstance.destroy();
+
+        chartInstance = new Chart(ctx, {
+          type: 'bar',
+          data: { labels: anosArr, datasets },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { position: 'bottom' },
+              datalabels: {
+                anchor: 'end',
+                align: 'end',
+                color: '#000',
+                font: { weight: 'bold' },
+                formatter: Math.round
+              }
+            },
+            scales: {
+              x: { grid: { display: false } },
+              y: {
+                beginAtZero: true,
+                ticks: {
+                  stepSize: 2,
+                  precision: 0,
+                  max: adjustedMax // ✅ valor máximo real + 1
+                }
+              }
             }
-          }
+          },
+          plugins: [ChartDataLabels]
         });
       }
-    }
-function renderizarGrafico(data) {
-      const group = {};
-      data.forEach(i => {
-        if (!group[i.tipo]) group[i.tipo] = {};
-        if (!group[i.tipo][i.ano]) group[i.tipo][i.ano] = 0;
-        group[i.tipo][i.ano]++;
+
+
+      function atualizar() {
+        const filtrado = aplicarFiltros();
+        renderizarTabela(filtrado);
+        renderizarGrafico(filtrado);
+      }
+
+      $('#pesquisaInput, #filtroAutores, #filtroTipos, #filtroAnos, #filtroSiglas').on('input change', atualizar);
+      $('#btnLimpar').on('click', () => {
+        $('#pesquisaInput').val('');
+        selAutores.val('');
+        selTipos.val('');
+        selAnos.val('');
+        selSiglas.val('');
+        atualizar();
       });
 
-      const tiposArr = Object.keys(group);
-      const anosArr = [...new Set(data.map(i => i.ano))].sort();
-      const colors = ['#007bff','#28a745','#ffc107','#dc3545','#17a2b8'];
-      const datasets = tiposArr.map((tp, idx) => ({
-        label: tp,
-        backgroundColor: colors[idx % colors.length],
-        data: anosArr.map(y => group[tp][y] || 0)
-      }));
-
-
-
-  // 🔹 Calcula o maior valor real exibido e ajusta +1 para espaçamento visual
-  let maxValue = Math.max(...datasets.flatMap(ds => ds.data));
-  if (!isFinite(maxValue) || maxValue < 1) maxValue = 1; // evita NaN ou zero total
-  const adjustedMax = maxValue + 1;
-
-  const ctx = document.getElementById('graficoPublicacoes').getContext('2d');
-  if (chartInstance) chartInstance.destroy();
-
-  chartInstance = new Chart(ctx, {
-    type: 'bar',
-    data: { labels: anosArr, datasets },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: { position: 'bottom' },
-        datalabels: {
-          anchor: 'end',
-          align: 'end',
-          color: '#000',
-          font: { weight: 'bold' },
-          formatter: Math.round
-        }
-      },
-      scales: {
-        x: { grid: { display: false } },
-        y: {
-          beginAtZero: true,
-          ticks: {
-            stepSize: 2,
-            precision: 0,
-            max: adjustedMax // ✅ valor máximo real + 1
-          }
-        }
-      }
-    },
-    plugins: [ChartDataLabels]
-  });
-}
-
-
-    function atualizar() {
-      const filtrado = aplicarFiltros();
-      renderizarTabela(filtrado);
-      renderizarGrafico(filtrado);
-    }
-
-    $('#pesquisaInput, #filtroAutores, #filtroTipos, #filtroAnos, #filtroSiglas').on('input change', atualizar);
-    $('#btnLimpar').on('click', () => {
-      $('#pesquisaInput').val('');
-      selAutores.val('');
-      selTipos.val('');
-      selAnos.val('');
-      selSiglas.val('');
+      popularFiltros();
       atualizar();
     });
 
-    popularFiltros();
-    atualizar();
-  });
 
-
-function mostrarReferencia(item) {
+    function mostrarReferencia(item) {
       const ref = `
         <p><strong>Título:</strong> ${item.titulo}</p>
-      <p><strong>Autor Principal:</strong> ${item.autor}</p>
-      <p><strong>Co-autor(es):</strong> ${item.coautor}</p>
-      <p><strong>Tipo:</strong> ${item.tipo}</p>
-      <p><strong>Ano:</strong> ${item.ano}</p>
-      <p><strong>Local:</strong> ${item.local}</p>
-      <p><strong>Sigla:</strong> ${item.sigla}</p>
+        <p><strong>Autor Principal:</strong> ${item.autor}</p>
+        <p><strong>Co-autor(es):</strong> ${item.coautor}</p>
+        <p><strong>Tipo:</strong> ${item.tipo}</p>
+        <p><strong>Ano:</strong> ${item.ano}</p>
+        <p><strong>Local:</strong> ${item.local}</p>
+        <p><strong>Sigla:</strong> ${item.sigla}</p>
 
-        ${
-          item.linkPublicacao
-            ? `<p><strong>Link da Publicação:</strong> <a href="${item.linkPublicacao}" target="_blank">${item.linkPublicacao}</a></p>`
-            : ''
+        ${item.linkPublicacao
+          ? `<p><strong>Link da Publicação:</strong> <a href="${item.linkPublicacao}" target="_blank">${item.linkPublicacao}</a></p>`
+          : ''
         }
-        ${
-          item.publicacaoArquivo
-            ? `<p><strong>Arquivo PDF:</strong> <a href="${item.publicacaoArquivo}" target="_blank">Abrir</a></p>`
-            : ''
+        ${item.publicacaoArquivo
+          ? `<p><strong>Arquivo PDF:</strong> <a href="${item.publicacaoArquivo}" target="_blank">Abrir</a></p>`
+          : ''
         }
         <hr>
         <div class="allow-copy">
@@ -337,15 +515,121 @@ function mostrarReferencia(item) {
         .then(() => alert('Referência copiada!'))
         .catch(() => alert('Não foi possível copiar.'));
     }
- 
 
-  function abrirJanela(id) {
-    window.open(`modal.html?id=${id}`, '_blank', 'width=1200,height=800,scrollbars=yes,resizable=yes');
-  }
+
+    function abrirJanela(id) {
+      window.open(`modal.html?id=${id}`, '_blank', 'width=1200,height=800,scrollbars=yes,resizable=yes');
+    }
+  </script>
+
+
+
+
+  <script>
+    function imprimirPagina() {
+
+      if (!tabelaDT) {
+        window.print();
+        return;
+      }
+
+      const info = tabelaDT.page.info();
+      const totalFiltrado = info.recordsDisplay;
+      const porPagina = info.length;
+
+      const executarImpressao = () => {
+
+        document.getElementById('footerPrint').style.display = 'block';
+
+        setTimeout(() => {
+          window.print();
+          document.getElementById('footerPrint').style.display = 'none';
+        }, 500);
+      };
+
+      // MAIS DE UMA PÁGINA
+      if (totalFiltrado > porPagina) {
+
+        const confirmar = confirm(
+          `Existem ${totalFiltrado} registros distribuídos em várias páginas.\n\nDeseja exibir TODOS antes de imprimir?`
+        );
+
+        if (confirmar) {
+
+          const tamanhoAtual = tabelaDT.page.len();
+
+          tabelaDT.page.len(-1).draw();
+
+          setTimeout(() => {
+            executarImpressao();
+            tabelaDT.page.len(tamanhoAtual).draw();
+          }, 800);
+
+        } else {
+          executarImpressao();
+        }
+
+        return;
+      }
+
+      executarImpressao();
+    }
+  </script>
+
+  <script>
+    function exportarExcel() {
+
+      if (!tabelaDT) return;
+
+      const dados = tabelaDT.rows({ search: 'applied' }).data().toArray();
+
+      let csv = "ID;Identificação Arquivo;Título da Publicação;Autor;Coautor;Tipo;Local;Sigla;Ano;Site Submissão;Link Publicação;Referenciar\n";
+
+      dados.forEach(d => {
+
+        const ref = (d.referenciarPub || "")
+          .replace(/"/g, '""')     // escapa aspas
+          .replace(/\n/g, ' ')     // remove quebra de linha
+          .replace(/\r/g, ' ')     // remove quebra de linha windows
+          .replace(/;/g, ',');     // evita quebrar coluna
+
+          /*caso o caminho seja fixo*/
+        const nomeArquivo = d.publicacaoArquivo.replace("publicacaoArquivo/Publicacoes/", "");
+
+        /**caminho relativo*/
+       /* const nomeArquivo = (d.publicacaoArquivo || "").split('/').pop();*/
+
+        csv += `${d.idpub};${nomeArquivo};"${d.titulo}";"${d.autor}";"${d.coautor}";${d.tipo};${d.local};${d.sigla};${d.ano};${d.linkSite};${d.linkPublicacao};"${ref}"\n`;
+
+      });
+
+      /* dados.forEach(d => {
+         const ref = (d.referenciarPub || "")
+           .replace(/"/g, '""')     // escapa aspas
+           .replace(/\n/g, ' ')     // remove quebra de linha
+           .replace(/\r/g, ' ')     // remove quebra de linha windows
+           .replace(/;/g, ',');     // evita quebrar coluna
+ 
+         csv += `${d.idpub};${d.publicacaoArquivo};"${d.titulo}";"${d.autor}";"${d.coautor}";${d.tipo};${d.local};${d.sigla};${d.ano};${d.linkSite};${d.linkPublicacao};"${ref}"\n`;
+       });
+ */
+      const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "publicações.xlsx";
+      link.click();
+    }
   </script>
 
   <meu-tradutor></meu-tradutor>
   <script src="javascript/components/tradutor.js" defer></script>
-  <meu-footer></meu-footer>
+
+  <div class="quebra-final"></div>
+  <div id="footerPrint">
+    <meu-footer></meu-footer>
+  </div>
+
 </body>
+
 </html>

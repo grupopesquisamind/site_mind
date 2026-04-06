@@ -14,7 +14,7 @@ class MeuMenu extends HTMLElement {
 
 <nav class="menu">
 
-<a href="home.html">Home</a>
+<a href="index.html">Home</a>
 <a href="equipeatual.html">Equipe Atual</a>
 <a href="autores.html">Autores</a>
 <a href="publicacoes.html">Publicações</a>

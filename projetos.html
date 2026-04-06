@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <title>Projetos</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
+
   <!-- ===== Estilos ===== -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
@@ -61,15 +62,33 @@
 
     /* === Responsividade === */
     @media (max-width: 768px) {
-      h2.text-danger { font-size: 1.3rem; }
-      h5, h6 { font-size: 1rem; }
-      .grafico-container { height: 220px; }
+      h2.text-danger {
+        font-size: 1.3rem;
+      }
+
+      h5,
+      h6 {
+        font-size: 1rem;
+      }
+
+      .grafico-container {
+        height: 220px;
+      }
     }
 
     @media (max-width: 576px) {
-      .table { font-size: 0.85rem; }
-      .btn-sm { font-size: 0.8rem; padding: 0.3rem; }
-      .grafico-container { height: 200px; }
+      .table {
+        font-size: 0.85rem;
+      }
+
+      .btn-sm {
+        font-size: 0.8rem;
+        padding: 0.3rem;
+      }
+
+      .grafico-container {
+        height: 200px;
+      }
     }
 
     /* Ajustes dos botões */
@@ -86,7 +105,111 @@
     }
 
     @media (max-width: 576px) {
-      .btn-group-custom .btn { flex: 1 1 100%; }
+      .btn-group-custom .btn {
+        flex: 1 1 100%;
+      }
+    }
+
+
+    /* ===== IMPRESSÃO COMPLETA ===== */
+    /*configuração para imprimir pagina*/
+    @media print {
+
+      /* FAZ O MENU APARECER NORMAL */
+      meu-menu,
+      nav,
+      .navbar {
+        position: static !important;
+        width: 100% !important;
+        display: block !important;
+        width: 100%;
+      }
+
+
+      /* Esconde só botões de ação geral */
+      .no-print {
+        display: none !important;
+      }
+
+      header {
+        position: static !important;
+      }
+
+      @page {
+        size: A4;
+        margin: 15mm;
+      }
+
+      html,
+      body {
+        height: 100% !important;
+      }
+
+      /* remove limitações */
+      .container,
+      .container-fluid,
+      #page-wrapper {
+        overflow: visible !important;
+        max-width: 100% !important;
+      }
+
+
+      /* EVITA SOBREPOSIÇÃO */
+      body {
+        margin-bottom: 80px;
+        /* espaço real pro footer */
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      #page-wrapper {
+        flex: 1;
+      }
+
+      /* REMOVE SCROLL */
+      .table-responsive {
+        overflow: visible !important;
+      }
+
+      /* CONTROLE DE QUEBRA */
+      table {
+        width: 100%;
+        page-break-inside: auto;
+      }
+
+      tr {
+        page-break-inside: avoid;
+      }
+
+      thead {
+        display: table-header-group;
+      }
+
+      #footerPrint {
+        display: block !important;
+        width: 100%;
+        margin-top: 30px;
+        padding-top: 10px;
+        border-top: 1px solid #ccc;
+        text-align: center;
+        font-size: 10px;
+        color: #444;
+        page-break-inside: auto;
+        page-break-before: always;
+        position: static;
+      }
+
+      /* espaço extra antes do footer (opcional) */
+      .quebra-final {
+        page-break-inside: always;
+        page-break-before: always;
+        position: auto;
+        height: 95%;
+      }
+
     }
   </style>
 </head>
@@ -102,11 +225,12 @@
         </h2>
 
         <div class="container text-center">
-          <h5 class="text-black"><strong>Projetos desenvolvidos pela equipe MIND.</strong></h5>
-          <h6>Gráfico: Projetos por Categoria e Ano</h6>
-          <div class="grafico-container">
-            <canvas id="graficoProjetos"></canvas>
-          </div>
+          <h5 class="text-black"><strong>Projetos desenvolvidos pela equipe MIND.</strong>
+          </h5>
+        </div>
+        <h6 class="text-center">Gráfico: Projetos por Categoria e Ano</h6>
+        <div class="grafico-container">
+          <canvas id="graficoProjetos"></canvas>
         </div>
 
         <!-- === Filtros === -->
@@ -115,27 +239,44 @@
             <input type="text" id="pesquisaInput" class="form-control" placeholder="Buscar por nome...">
           </div>
           <div class="col-md-2">
-            <select id="filtroAutores" class="form-select"><option value="">Filtrar por Autores</option></select>
+            <select id="filtroAutores" class="form-select">
+              <option value="">Filtrar por Autores</option>
+            </select>
           </div>
           <div class="col-md-2">
-            <select id="filtroTipos" class="form-select"><option value="">Filtrar por Tipo</option></select>
+            <select id="filtroTipos" class="form-select">
+              <option value="">Filtrar por Tipo</option>
+            </select>
           </div>
           <div class="col-md-2">
-            <select id="filtroCategorias" class="form-select"><option value="">Filtrar por Categoria</option></select>
+            <select id="filtroCategorias" class="form-select">
+              <option value="">Filtrar por Categoria</option>
+            </select>
           </div>
           <div class="col-md-2">
-            <select id="filtroAnos" class="form-select"><option value="">Filtrar por Ano</option></select>
+            <select id="filtroAnos" class="form-select">
+              <option value="">Filtrar por Ano</option>
+            </select>
           </div>
           <div class="col-md-1">
             <button id="btnLimpar" class="btn btn-secondary w-100">Limpar</button>
           </div>
         </div>
 
+        <div class="text-end my-2 no-print">
+          <button onclick="imprimirPagina()" class="btn btn-outline-dark">
+            🖨️ Imprimir Página
+          </button>
+
+          <button onclick="exportarExcel()" class="btn btn-success">
+            📊 Exportar Dados
+          </button>
+        </div>
         <!-- === Tabela === -->
         <div class="table-responsive">
           <table id="tabelaProjetos" class="table table-striped table-bordered w-100">
-             <thead class="table-dark">
-          <tr>
+            <thead class="table-dark">
+              <tr>
                 <th>ID</th>
                 <th>Nome do Jogo</th>
                 <th>Título da Publicação</th>
@@ -147,10 +288,12 @@
                 <th>Projeto</th>
               </tr>
             </thead>
+            <tbody></tbody>
           </table>
-        </div>
 
+        </div>
       </section>
+
     </main>
   </div>
 
@@ -237,6 +380,9 @@
         } else {
           tabelaDT = $('#tabelaProjetos').DataTable({
             data: data,
+            pageLength: 10,
+            lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, "Todos"]],
+            deferRender: false,
             columns: [
               { data: 'id' },
               { data: 'nomeProducao' },
@@ -250,11 +396,10 @@
                 render: d => `
                   <div class="d-flex flex-column align-items-center gap-1">
                     <a href="${d.linkPublicacao}" class="btn btn-warning btn-sm w-100" target="_blank">🌐 Online</a>
-                    ${
-                      d.publicacaoArquivo
-                        ? `<a href="${d.publicacaoArquivo}" class="btn btn-success btn-sm w-100" target="_blank">📖 PDF</a>`
-                        : `<button class="btn btn-secondary btn-sm w-100" disabled>❌ Sem PDF</button>`
-                    }
+                    ${d.publicacaoArquivo
+                    ? `<a href="${d.publicacaoArquivo}" class="btn btn-success btn-sm w-100" target="_blank">📖 PDF</a>`
+                    : `<button class="btn btn-secondary btn-sm w-100" disabled>❌ Sem PDF</button>`
+                  }
                   </div>`
               },
               {
@@ -281,6 +426,8 @@
         }
       }
 
+
+
       function renderizarGrafico(data) {
         const group = {};
         data.forEach(i => {
@@ -291,7 +438,7 @@
 
         const categoriasArr = Object.keys(group);
         const anosArr = [...new Set(data.map(i => i.ano))].sort();
-        const colors = ['#007bff','#28a745','#ffc107','#dc3545','#17a2b8'];
+        const colors = ['#007bff', '#28a745', '#ffc107', '#dc3545', '#17a2b8'];
         const datasets = categoriasArr.map((cat, idx) => ({
           label: cat,
           backgroundColor: colors[idx % colors.length],
@@ -353,15 +500,13 @@
         <p><strong>Categoria:</strong> ${item.categoria}</p>
         <p><strong>Ano:</strong> ${item.ano}</p>
         <p><strong>Título da Publicação:</strong> ${item.titulo}</p>
-        ${
-          item.linkPublicacao
-            ? `<p><strong>Link da Publicação:</strong> <a href="${item.linkPublicacao}" target="_blank">${item.linkPublicacao}</a></p>`
-            : ''
+        ${item.linkPublicacao
+          ? `<p><strong>Link da Publicação:</strong> <a href="${item.linkPublicacao}" target="_blank">${item.linkPublicacao}</a></p>`
+          : ''
         }
-        ${
-          item.publicacaoArquivo
-            ? `<p><strong>Arquivo PDF:</strong> <a href="${item.publicacaoArquivo}" target="_blank">Abrir</a></p>`
-            : ''
+        ${item.publicacaoArquivo
+          ? `<p><strong>Arquivo PDF:</strong> <a href="${item.publicacaoArquivo}" target="_blank">Abrir</a></p>`
+          : ''
         }
         <hr>
         <div class="allow-copy">
@@ -382,9 +527,100 @@
     }
   </script>
 
+  <script>
+    function imprimirPagina() {
+
+      if (!tabelaDT) {
+        window.print();
+        return;
+      }
+
+      const info = tabelaDT.page.info();
+      const totalFiltrado = info.recordsDisplay;
+      const porPagina = info.length;
+
+      const executarImpressao = () => {
+
+        document.getElementById('footerPrint').style.display = 'block';
+
+        setTimeout(() => {
+          window.print();
+          document.getElementById('footerPrint').style.display = 'none';
+        }, 500);
+      };
+
+      // MAIS DE UMA PÁGINA
+      if (totalFiltrado > porPagina) {
+
+        const confirmar = confirm(
+          `Existem ${totalFiltrado} registros distribuídos em várias páginas.\n\nDeseja exibir TODOS antes de imprimir?`
+        );
+
+        if (confirmar) {
+
+          const tamanhoAtual = tabelaDT.page.len();
+
+          tabelaDT.page.len(-1).draw();
+
+          setTimeout(() => {
+            executarImpressao();
+            tabelaDT.page.len(tamanhoAtual).draw();
+          }, 800);
+
+        } else {
+          executarImpressao();
+        }
+
+        return;
+      }
+
+      executarImpressao();
+    }
+  </script>
+
+  <script>
+    function exportarExcel() {
+
+      if (!tabelaDT) return;
+
+      const dados = tabelaDT.rows({ search: 'applied' }).data().toArray();
+
+      let csv = "ID;Identificação Arquivo;Nome do Jogo;Título;Autor;Tipo;Categoria;Ano;Publicação;Projeto;Referenciar\n";
+
+      dados.forEach(d => {
+        const ref = (d.referenciar || "")
+          .replace(/"/g, '""')     // escapa aspas
+          .replace(/\n/g, ' ')     // remove quebra de linha
+          .replace(/\r/g, ' ')     // remove quebra de linha windows
+          .replace(/;/g, ',');     // evita quebrar coluna
+
+         /*caso o caminho seja fixo*/
+        const nomeArquivo = d.publicacaoArquivo.replace("publicacaoArquivo/Publicacoes_Jogos/", "");
+
+        /**caminho relativo*/
+       /* const nomeArquivo = (d.publicacaoArquivo || "").split('/').pop();*/
+       
+          csv += `${d.id};${nomeArquivo};"${d.nomeProducao}";"${d.titulo}";"${d.autor}";${d.tipo};${d.categoria};${d.ano};${d.linkPublicacao};${d.src};"${ref}"\n`;
+      });
+
+      const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "projetos.xlsx";
+      link.click();
+    }
+  </script>
+
+
   <meu-tradutor></meu-tradutor>
   <script src="javascript/components/tradutor.js" defer></script>
 
-  <meu-footer></meu-footer>
+  <div class="quebra-final"></div>
+  <div id="footerPrint">
+    <meu-footer></meu-footer>
+  </div>
+
 </body>
+
 </html>

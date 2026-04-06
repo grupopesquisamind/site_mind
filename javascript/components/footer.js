@@ -2,7 +2,7 @@ class MeuFooter extends HTMLElement {
   async connectedCallback() {
 
     const ano = new Date().getFullYear();
-    const ultimaAtualizacao = '23/03/2026';
+    const ultimaAtualizacao = '06/04/2026';
     const versao = 'v1.2.0';
     const hoje = new Date().toISOString().split('T')[0];
     const caminhoAtual = window.location.pathname;
@@ -136,7 +136,7 @@ grupopesquisamind@gmail.com
 <p>
 Responsável:
 <span class="responsavel">
-Alexsandro Ferreira (Técnico de Tecnologia da Informação)
+Alexssandro Ferreira (Técnico de Tecnologia da Informação)
 </span>
 </p>
 

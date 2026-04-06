@@ -139,37 +139,12 @@ function listarItens(chave) {
     titulo: "Estratégia pedagógica inclusiva para alunos no transtorno do espectro autista: ensino de formas geométricas planas",
     categoria: "Matemática",
     tipo: "Jogo Educativo",
-    src: "aviso.html",
+    src: "https://scratch.mit.edu/projects/1298453896/embed",
     linkPublicacao: "https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie/article/view/36/",
     publicacaoArquivo: "publicacaoArquivo/Publicacoes_Jogos/11-Jogos_de_Matematica_Estrategia_pedagogica_inclusiva_alunos_Transtorno_Espectro_Autista_ensino_formas_geometricas_planas_CAIE_REI_2024.pdf",
     referenciar: "FERREIRA, Gabriel Kawabe de Lima; SILVA, Alexssandro Ferreira da; Ferreira, Ana Paula Kawabe de Lima. Estratégia pedagógica inclusiva para alunos no transtorno do espectro autista: ensino de formas geométricas planas. Revista da Educação Inclusiva, v. 1, p. 128-139, 2024. Disponível em: https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie/article/view/36",
   },
-  {
-    id: "12", /*Projeto Faltando em src*/
-    autor: "Ricardo Henrique dos Reis Nascimento e Ryan Cristian Sousa Campos ",
-    ano: "2022",
-    nomeProducao: "Jogo Junção de Termoquímica 1 a 4, só a parte de inclusão.",
-    titulo: "A utilização do Scratch para o ensino de termoquímica para alunos com TEA",
-    categoria: "Química",
-    tipo: "Jogo Educativo",
-    src: "aviso.html",
-    linkPublicacao: "https://revista.lapprudes.net/index.php/CM/article/view/790",
-    publicacaoArquivo: "publicacaoArquivo/Publicacoes_Jogos/12-Jogos_de_Quimica_A_utilizacao_do_Scratch_para_o_ensino_de_termoquimica_para_alunos_com_TEA_Cadernos_Macambira_2022.pdf",
-    referenciar: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, Ricardo dos Reis; CAMPOS, Ryan Cristian Sousa; MONTEMOR, Bianca Estrela  Abdalla França Camargo; FERREIRA, Gabriel Kawabe de Lima; SILVA,  Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. A utilização do Scratch para o ensino de termoquímica para alunos com TEA. Cadernos Macambira, v. 7, n. 3, p. 82-89, 2022. Disponível em: https://revista.lapprudes.net/index.php/CM/article/view/790",
-  },
-  {
-    id: "13", /*Projeto Faltando em src*/
-    autor: "Ricardo Henrique dos Reis Nascimento e Ryan Cristian Sousa Campos ",
-    ano: "2022",
-    nomeProducao: "Jogo Junção de Termoquímica 1 a 2, inclusão e programação.",
-    titulo: "O ensino de conceitos Termoquímicos básicos para alunos com TEA através da ferramenta metodológica Scratch",
-    categoria: "Química",
-    tipo: "Jogo Educativo",
-    src: "aviso.html",
-    linkPublicacao: "https://intranet.cbt.ifsp.edu.br/qualif/volume13/artigo12.pdf",
-    publicacaoArquivo: "publicacaoArquivo/Publicacoes_Jogos/13-Jogos_de_Quimica_O_ensino_de_conceitos_Termoquimicos_basicos_para_alunos_com_TEA_atraves_da_ferramenta_metodologica_Scratch_Revista_Qualif_2023.pdf",
-    referenciar: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, Ricardo Henrique dos Reis; CAMPOS, Ryan Cristian Sousa; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. O ensino de conceitos Termoquímicos básicos para alunos com TEA através da ferramenta metodológica Scratch. Revista Qualif, v. 13, nº1, p. 150-164, 2023. Disponível em:  https://intranet.cbt.ifsp.edu.br/qualif/volume13/artigo12.pdf",
-  },
+ 
   {
     id: "14",
     autor: "Ricardo Henrique dos Reis Nascimento",
@@ -363,4 +338,32 @@ Lyan              (trabalho aplicado)
 https://scratch.mit.edu/projects/1141670774/	
 
 eppeq 2025
+
+
+ {
+    id: "12", 
+    autor: "Ricardo Henrique dos Reis Nascimento e Ryan Cristian Sousa Campos ",
+    ano: "2022",
+    nomeProducao: "Jogo Junção de Termoquímica 1 a 4, só a parte de inclusão.",
+    titulo: "A utilização do Scratch para o ensino de termoquímica para alunos com TEA",
+    categoria: "Química",
+    tipo: "Jogo Educativo",
+    src: "aviso.html",
+    linkPublicacao: "https://revista.lapprudes.net/index.php/CM/article/view/790",
+    publicacaoArquivo: "publicacaoArquivo/Publicacoes_Jogos/12-Jogos_de_Quimica_A_utilizacao_do_Scratch_para_o_ensino_de_termoquimica_para_alunos_com_TEA_Cadernos_Macambira_2022.pdf",
+    referenciar: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, Ricardo dos Reis; CAMPOS, Ryan Cristian Sousa; MONTEMOR, Bianca Estrela  Abdalla França Camargo; FERREIRA, Gabriel Kawabe de Lima; SILVA,  Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. A utilização do Scratch para o ensino de termoquímica para alunos com TEA. Cadernos Macambira, v. 7, n. 3, p. 82-89, 2022. Disponível em: https://revista.lapprudes.net/index.php/CM/article/view/790",
+  },
+  {
+    id: "13", 
+    autor: "Ricardo Henrique dos Reis Nascimento e Ryan Cristian Sousa Campos ",
+    ano: "2022",
+    nomeProducao: "Jogo Junção de Termoquímica 1 a 2, inclusão e programação.",
+    titulo: "O ensino de conceitos Termoquímicos básicos para alunos com TEA através da ferramenta metodológica Scratch",
+    categoria: "Química",
+    tipo: "Jogo Educativo",
+    src: "aviso.html",
+    linkPublicacao: "https://intranet.cbt.ifsp.edu.br/qualif/volume13/artigo12.pdf",
+    publicacaoArquivo: "publicacaoArquivo/Publicacoes_Jogos/13-Jogos_de_Quimica_O_ensino_de_conceitos_Termoquimicos_basicos_para_alunos_com_TEA_atraves_da_ferramenta_metodologica_Scratch_Revista_Qualif_2023.pdf",
+    referenciar: "MONTEMOR, Bianca Estrela Abdalla França Camargo; NASCIMENTO, Ricardo Henrique dos Reis; CAMPOS, Ryan Cristian Sousa; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. O ensino de conceitos Termoquímicos básicos para alunos com TEA através da ferramenta metodológica Scratch. Revista Qualif, v. 13, nº1, p. 150-164, 2023. Disponível em:  https://intranet.cbt.ifsp.edu.br/qualif/volume13/artigo12.pdf",
+  },
 */
