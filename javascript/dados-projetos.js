@@ -296,7 +296,7 @@ function listarItens(chave) {
     titulo: "Jogos computacionais e a contação de história: uma proposta educacional inclusiva para ensinar funções oxigenadas",
     categoria: "Química",
     tipo: "Jogo Educativo",
-    src: "https://scratch.mit.edu/projects/1059732980/embed",
+    src: "https://scratch.mit.edu/projects/1221102313/embed",
     linkPublicacao: "https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie/article/view/30/",
     publicacaoArquivo: "publicacaoArquivo/Publicacoes_Jogos/25-Jogos_de_Quimica_Jogos_computacionais_contacao_historia_uma_proposta_educacional_inclusiva_para_ensinar_funcoes_oxigenadas_CAIE_REI_2024.pdf",
     referenciar: "GOMES, Mateus Cayque Figueiredo; ARAUJO, S. M.; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; CAMEJO AVILES, Ivana Elena. Jogos computacionais e a contação de história: uma proposta educacional inclusiva para ensinar funções oxigenadas. Revista da Educação Inclusiva, v. 1, p. 177-192, 2024. Disponível em: https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie/issue/view/30",
