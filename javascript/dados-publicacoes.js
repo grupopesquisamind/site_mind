@@ -594,7 +594,7 @@ function listarItens(chave) {
       {
         idpub: "43",
         ano: "2025",
-        titulo: " Jogo Didático Inclusivo sobre Pilhas Eletroquímicas: Ensino de Química com Base no Desenho Universal da Aprendizagem.",
+        titulo: "Jogo Didático Inclusivo sobre Pilhas Eletroquímicas: Ensino de Química com Base no Desenho Universal da Aprendizagem.",
         autor: "Ana Clara Machado Godinho",
         coautor: "Ana Paula Kawabe de Lima Ferreira, Alexssandro Ferreira da Silva, Mateus Cayque Figueiredo Gomes", /*Ivana Elena Camejo Aviles*/
         tipo: "Anais de Congresso: Aguardando Publicar",
