@@ -310,9 +310,9 @@ function listarItens(chave) {
     categoria: "Química",
     tipo: "Jogo Educativo",
     src: "https://scratch.mit.edu/projects/1234855642/embed",
-    linkPublicacao: "aviso.html",
-    publicacaoArquivo: "aviso.html",
-    referenciar: "FREITAS, Yara Vitoria Claro de; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; NASCIMENTO, Ricardo Henrique dos Reis; CAMEJO AVILES, Ivana Elena. Formigas, feromônios e Isômeros Geométricos: Proposta de Jogo Educacional Digital para a educação inclusiva de alunos com TEA. 2025. In: EPPEQ-ENCONTRO PAULISTA DE PESQUISA EM ENSINO DE QUÍMICA, XIII, 2025, Presidente Prudente-SP. Anais [...]. Unesp: 2025, . Disponível em:",
+    linkPublicacao: "https://firebasestorage.googleapis.com/v0/b/cientestudio.appspot.com/o/papers%2F41082556-ac25-4036-874b-24961c2e880d.pdf?alt=media&token=b5023c82-eca3-4b09-9889-b01924abaca1",
+    publicacaoArquivo: "publicacaoArquivo/Publicacoes_Jogos/24-Jogo_de_Quimica_Formigas_feromônios_Isomeros_Geometricos_Proposta_ de_Jogo_Educacional_Digital_educação_inclusiva_alunos_TEA.pdf",
+    referenciar: "FREITAS, Yara Vitoria Claro de; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; NASCIMENTO, Ricardo Henrique dos Reis; CAMEJO AVILES, Ivana Elena. Formigas, feromônios e Isômeros Geométricos: Proposta de Jogo Educacional Digital para a educação inclusiva de alunos com TEA. 2025. In: XIII Encontro Paulista de Pesquisa em Ensino de Química (XIII EPPEQ,UNESP Presidente Prudente, SP.  Anais [...]  Unesp: 2025, p. 1-12. Anais [...]. Unesp: 2025, . Disponível em: https://firebasestorage.googleapis.com/v0/b/cientestudio.appspot.com/o/papers%2F41082556-ac25-4036-874b-24961c2e880d.pdf?alt=media&token=b5023c82-eca3-4b09-9889-b01924abaca1",
   },
   {
     id: "25", /*enviado ao EPPEQ, aguardando publicação*/
@@ -323,9 +323,9 @@ function listarItens(chave) {
     categoria: "Física",
     tipo: "Jogo Educativo",
     src: "https://scratch.mit.edu/projects/1234857192/embed",
-    linkPublicacao: "aviso.html",
-    publicacaoArquivo: "aviso.html",
-    referenciar: "SANTOS, Thiago Marinho; SILVA, Alexssandro Ferreira da; NASCIMENTO, Ricardo Henrique dos Reis; FERREIRA, Ana Paula Kawabe de Lima. Do Vapor à Inclusão: Um Recurso Didático Digital Baseado na História da Máquina a Vapor para Alunos com Transtorno do Espectro Autista. 2025. In: EPPEQ-ENCONTRO PAULISTA DE PESQUISA EM ENSINO DE QUÍMICA, XIII, 2025, Presidente Prudente-SP. Anais [...]. Unesp: 2025, . Disponível em:",
+    linkPublicacao: "https://firebasestorage.googleapis.com/v0/b/cientestudio.appspot.com/o/papers%2F74e941b0-406c-433a-ab68-1661dc117524.pdf?alt=media&token=b6709f78-4709-46b3-8f5a-a8fef183ab59",
+    publicacaoArquivo: "publicacaoArquivo/Publicacoes_Jogos/25-Jogos_de_Fisica_Do_Vapor_Inclusao_Um_Recurso_Didático_Digital_Baseado_História_Maquina_Vapor_para_Alunos_Transtorno_Espectro_Autista.pdf",
+    referenciar: "SANTOS, Thiago Marinho; SILVA, Alexssandro Ferreira da; NASCIMENTO, Ricardo Henrique dos Reis; FERREIRA, Ana Paula Kawabe de Lima. Do Vapor à Inclusão: Um Recurso Didático Digital Baseado na História da Máquina a Vapor para Alunos com Transtorno do Espectro Autista. 2025. In: XIII Encontro Paulista de Pesquisa em Ensino de Química (XIII EPPEQ,UNESP Presidente Prudente, SP.  Anais [...]  Unesp: 2025, p. 1-11. Disponível em: https://firebasestorage.googleapis.com/v0/b/cientestudio.appspot.com/o/papers%2F74e941b0-406c-433a-ab68-1661dc117524.pdf?alt=media&token=b6709f78-4709-46b3-8f5a-a8fef183ab59",
   },   
 ];
   }
