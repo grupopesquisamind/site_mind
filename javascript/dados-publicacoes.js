@@ -27,7 +27,7 @@ function listarItens(chave) {
         linkSite: "https://ocs.ifsp.edu.br/conict/xivconict",
         linkPublicacao: "https://ocs.ifsp.edu.br/conict/xiiiconict/paper/view/8609/",
         publicacaoArquivo: "publicacaoArquivo/Publicacoes/2-Publicacao_A_utilizacao_da_ferramenta_Scratch_na_aprendizagem_Entalpia_Padrao_alunos_TEA_foco_sistema_de_arraste_CONICT_2022.pdf", // NOVO CAMPO
-        referenciarPub: "NASCIMENTO, Ricardo Henrique dos Reis; MONTEMOR, Bianca Estrela Abdalla França Camargo; CAMPOS, Ryan Cristina Souza; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. A utilização da ferramenta Scratch na aprendizagem da Entalpia Padrão para alunos com TEA com foco no sistema de arraste. Anais [...] In: CONGRESSO DE INOVAÇÃO, CIÊNCIA E TECNOLOGIA DO IFSP, XIII, 2022, São Paulo-SP. Anais [...]. São Paulo: IFSP-SP, 2022, p. 1-6. Disponível em: https://ocs.ifsp.edu.br/conict/xiiiconict/paper/view/8609/",
+        referenciarPub: "NASCIMENTO, Ricardo Henrique dos Reis; MONTEMOR, Bianca Estrela Abdalla França Camargo; CAMPOS, Ryan Cristina Souza; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. A utilização da ferramenta Scratch na aprendizagem da Entalpia Padrão para alunos com TEA com foco no sistema de arraste. Anais [...] In: 13º CONICT - CONGRESSO DE INOVAÇÃO, CIÊNCIA E TECNOLOGIA DO IFSP, XIII, 2022, São Paulo-SP. Anais [...]. São Paulo: IFSP-SP, 2022, p. 1-6. Disponível em: https://ocs.ifsp.edu.br/conict/xiiiconict/paper/view/8609/",
       },
       {
         idpub: "3",
@@ -55,7 +55,7 @@ function listarItens(chave) {
         linkSite: "https://ocs.ifsp.edu.br/conict/xivconict",
         linkPublicacao: "https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9638/3216",
         publicacaoArquivo: "publicacaoArquivo/Publicacoes/4-Publicacao_Bullying_e_Transtorno_do_Espectro_Autista_como_ajudar_crianças_com_TEA_reconhecerem_bullying_utilizando_plataforma_Scratch_ e_CAA_CONICT_2023.pdf", // NOVO CAMPO      
-        referenciarPub: "ALMEIDA, Maria Wianney Miranda; MONTEMOR, Bianca Estrela  Abdalla França Camargo; SILVA,  Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Bullying e Transtorno do Espectro Autista: como ajudar crianças com TEA a reconhecerem o bullying utilizando a plataforma scratch e a Comunicação Aumentativa e Alternativa. Anais [...] In: CONGRESSO DE INOVAÇÃO, CIÊNCIA E TECNOLOGIA DO IFSP, XIV, 2023, Capivari-SP. Anais [...]. Capivari: IFSP-SP, 2023, p. 1-6. ISSN: 2178-9959. Disponível em: https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9638/3216",
+        referenciarPub: "ALMEIDA, Maria Wianney Miranda; MONTEMOR, Bianca Estrela  Abdalla França Camargo; SILVA,  Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Bullying e Transtorno do Espectro Autista: como ajudar crianças com TEA a reconhecerem o bullying utilizando a plataforma scratch e a Comunicação Aumentativa e Alternativa. Anais [...] In: 14º CONICT - CONGRESSO DE INOVAÇÃO, CIÊNCIA E TECNOLOGIA DO IFSP, XIV, 2023, Capivari-SP. Anais [...]. Capivari: IFSP-SP, 2023, p. 1-6. ISSN: 2178-9959. Disponível em: https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9638/3216",
       },
       {
         idpub: "5",
@@ -83,7 +83,7 @@ function listarItens(chave) {
         linkSite: "https://eventosacademicos.itp.ifsp.edu.br/index.php/ic/index",
         linkPublicacao: "https://drive.google.com/file/d/1q6IocMyieI3uPrkgpwYN3SfP_Pwk2CWv/view",
         publicacaoArquivo: "publicacaoArquivo/Publicacoes/6-Publicacao_Utilizacao_da_ferramenta_metodologica_Scratch_no_ensino_das_direcoes_para_alunos_com_TEA_nivel_ de_suporte_2_Anais_Congresso_CONICT_2023.pdf", // NOVO CAMPO         
-        referenciarPub: "CAMPOS, Ryan Cristian Sousa; MONTEMOR, Bianca Estrela Abdalla França Camargo; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Utilização da ferramenta metodológica Scratch no ensino das direções para alunos com TEA, nível de suporte 2. Anais [...] IN: CONGRESSO DE INICIAÇÃO CIENTÍFICA DO IFSP ITAPETININGA, IX. 2023, Itapetininga-SP. Anais [...]. Itapetininga: Edições Hipótese, 2023, p. 335-340. Disponível em: https://drive.google.com/file/d/1q6IocMyieI3uPrkgpwYN3SfP_Pwk2CWv/view",
+        referenciarPub: "CAMPOS, Ryan Cristian Sousa; MONTEMOR, Bianca Estrela Abdalla França Camargo; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Utilização da ferramenta metodológica Scratch no ensino das direções para alunos com TEA, nível de suporte 2. Anais [...] IN: 9º CONICT - CONGRESSO DE INICIAÇÃO CIENTÍFICA DO IFSP ITAPETININGA, IX. 2023, Itapetininga-SP. Anais [...]. Itapetininga: Edições Hipótese, 2023, p. 335-340. Disponível em: https://drive.google.com/file/d/1q6IocMyieI3uPrkgpwYN3SfP_Pwk2CWv/view",
       },
       {
         idpub: "7",
@@ -111,7 +111,7 @@ function listarItens(chave) {
         linkSite: "https://ocs.ifsp.edu.br/conict/xivconict/",
         linkPublicacao: "https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9636/3156",
         publicacaoArquivo: "publicacaoArquivo/Publicacoes/8-Publicacao_Ensino_da_Circulacao_Sanguinea_para_alunos_com_TEA_nivel de Suporte 2_atraves_da_ferramenta_computacional_Scratch_atrelada_CAA_CONICT_2023.pdf", // NOVO CAMPO 
-        referenciarPub: "CAMPOS, Ryan Cristian Sousa; MONTEMOR, Bianca Estrela  Abdalla França Camargo; SILVA,  Alexssandro Ferreira da; MALDONADO, Raquel Fonseca; FERREIRA, Ana Paula Kawabe de Lima. Ensino da Circulação Sanguínea para alunos com TEA, nível de Suporte 2, através da ferramenta computacional Scratch atrelada à Comunicação Aumentativa e Alternativa. Anais [...] IN: CONGRESSO DE INOVAÇÃO, CIÊNCIA E TECNOLOGIA DO IFSP, XIV, 2023, Capivari-SP. Anais [...]. Capivari: IFSP-SP, 2023, p. 1-6. ISSN: 2178-9959. Disponível em: https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9636/",
+        referenciarPub: "CAMPOS, Ryan Cristian Sousa; MONTEMOR, Bianca Estrela  Abdalla França Camargo; SILVA,  Alexssandro Ferreira da; MALDONADO, Raquel Fonseca; FERREIRA, Ana Paula Kawabe de Lima. Ensino da Circulação Sanguínea para alunos com TEA, nível de Suporte 2, através da ferramenta computacional Scratch atrelada à Comunicação Aumentativa e Alternativa. Anais [...] IN: 14º CONICT - CONGRESSO DE INOVAÇÃO, CIÊNCIA E TECNOLOGIA DO IFSP, XIV, 2023, Capivari-SP. Anais [...]. Capivari: IFSP-SP, 2023, p. 1-6. ISSN: 2178-9959. Disponível em: https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9636/",
       },
       {
         idpub: "9",
@@ -125,7 +125,7 @@ function listarItens(chave) {
         linkSite: "https://ocs.ifsp.edu.br/conict/xivconict/",
         linkPublicacao: "https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9616/3715",
         publicacaoArquivo: "publicacaoArquivo/Publicacoes/9-Publicacao_Desenvolvimento_de_jogo_para_Educacao_Nutricional_de_criancas_com_TEA_utilizando_plataforma_Scratch_CAA _CONICT_2023.pdf", // NOVO CAMPO 	        
-        referenciarPub: "FERREIRA, Gabriel Kawabe de Lima; MONTEMOR, Bianca Estrela  Abdalla França Camargo; SILVA,  Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Desenvolvimento de jogo para Educação Nutricional de crianças com TEA, utilizando a plataforma Scratch e a CAA. Anais [...] IN: CONGRESSO DE INOVAÇÃO, CIÊNCIA E TECNOLOGIA DO IFSP, XIV, 2023, Capivari-SP. Anais [...]. Capivari: IFSP-SP, 2023, p. 1-5. ISSN: 2178-9959. Disponível em: https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9616/3715",
+        referenciarPub: "FERREIRA, Gabriel Kawabe de Lima; MONTEMOR, Bianca Estrela  Abdalla França Camargo; SILVA,  Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Desenvolvimento de jogo para Educação Nutricional de crianças com TEA, utilizando a plataforma Scratch e a CAA. Anais [...] IN: 14º CONICT - CONGRESSO DE INOVAÇÃO, CIÊNCIA E TECNOLOGIA DO IFSP, XIV, 2023, Capivari-SP. Anais [...]. Capivari: IFSP-SP, 2023, p. 1-5. ISSN: 2178-9959. Disponível em: https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9616/3715",
       },
       {
         idpub: "10",
@@ -139,7 +139,7 @@ function listarItens(chave) {
         linkSite: "https://ocs.ifsp.edu.br/conict/xivconict/",
         linkPublicacao: "https://drive.google.com/file/d/1q6IocMyieI3uPrkgpwYN3SfP_Pwk2CWv/view",
         publicacaoArquivo: "publicacaoArquivo/Publicacoes/10-Publicacao_Utilizacao_da_ferramenta_metodologica_Scratch_no_ensino_das_direcoes_para_alunos_com_TEA_nivel_de_suporte_2_CONICT_2023.pdf", // NOVO CAMPO
-        referenciarPub: "FERREIRA, Gabriel Kawabe de Lima; MONTEMOR, Bianca Estrela  Abdalla França Camargo; SILVA,  Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. O semáforo do corpo humano combinado à Comunicação Aumentativa e Alternativa através da utilização da Ferramenta metodológica Scratch. Anais [...] IN: CONGRESSO DE INICIAÇÃO CIENTÍFICA DO IFSP ITAPETININGA, IX. 2023, Itapetininga-SP. Anais [...]. Itapetininga: Edições Hipótese, 2023, p. 232-237. Disponível em: https://drive.google.com/file/d/1q6IocMyieI3uPrkgpwYN3SfP_Pwk2CWv/view e FERREIRA, Gabriel Kawabe de Lima; CAMPOS, Ryan Cristian Sousa; SILVA, Alexssandro Ferreira da; CAMARGO, Bianca Estrela Montemor Abdlla França; FERREIRA, Ana Paula Kawabe de Lima. Semáforo do Corpo: uma proposta lúdica de sensações ao toque utilizando comunicação aumentativa e alternativa. Revista Macambira, [S. l.], v. 9, n. 1, p. 1–18, 2025. DOI: 10.35642/rm.v9i1.1227. Disponível em: https://revista.lapprudes.net/RM/article/view/1227",
+        referenciarPub: "FERREIRA, Gabriel Kawabe de Lima; MONTEMOR, Bianca Estrela  Abdalla França Camargo; SILVA,  Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. O semáforo do corpo humano combinado à Comunicação Aumentativa e Alternativa através da utilização da Ferramenta metodológica Scratch. Anais [...] IN: 9º CONICT - CONGRESSO DE INICIAÇÃO CIENTÍFICA DO IFSP ITAPETININGA, IX. 2023, Itapetininga-SP. Anais [...]. Itapetininga: Edições Hipótese, 2023, p. 232-237. Disponível em: https://drive.google.com/file/d/1q6IocMyieI3uPrkgpwYN3SfP_Pwk2CWv/view e FERREIRA, Gabriel Kawabe de Lima; CAMPOS, Ryan Cristian Sousa; SILVA, Alexssandro Ferreira da; CAMARGO, Bianca Estrela Montemor Abdlla França; FERREIRA, Ana Paula Kawabe de Lima. Semáforo do Corpo: uma proposta lúdica de sensações ao toque utilizando comunicação aumentativa e alternativa. Revista Macambira, [S. l.], v. 9, n. 1, p. 1–18, 2025. DOI: 10.35642/rm.v9i1.1227. Disponível em: https://revista.lapprudes.net/RM/article/view/1227",
       },
       {
         idpub: "11",
@@ -153,7 +153,7 @@ function listarItens(chave) {
         linkSite: "https://ocs.ifsp.edu.br/conict/xivconict/",
         linkPublicacao: "https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9716/3359",
         publicacaoArquivo: "publicacaoArquivo/Publicacoes/11-Publicacao_Nada_sobre_nos_sem_nos_O_relato_de_uma_aluna_autista_sobre_sua_participacao_em_projetos_de_pesquisa_ensino_extensão_IFSP_Campus_Jacarei_CONICT_2023.pdf", // NOVO CAMPO
-        referenciarPub: "MONTEMOR, Bianca Estrela; FERREIRA, Ana Paula Kawabe de Lima. “Nada sobre nós, sem nós”: O relato de uma aluna autista sobre sua participação em projetos de pesquisa, ensino e extensão no IFSP - Campus Jacareí. Anais [...] IN: CONGRESSO DE INOVAÇÃO, CIÊNCIA E TECNOLOGIA DO IFSP, XIV, 2023, Capivari-SP. Anais [...]. Capivari: IFSP-SP, 2023, p. 1-5. ISSN: 2178-9959. Disponível em: https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9716/3359",
+        referenciarPub: "MONTEMOR, Bianca Estrela; FERREIRA, Ana Paula Kawabe de Lima. “Nada sobre nós, sem nós”: O relato de uma aluna autista sobre sua participação em projetos de pesquisa, ensino e extensão no IFSP - Campus Jacareí. Anais [...] IN: 14º CONICT - CONGRESSO DE INOVAÇÃO, CIÊNCIA E TECNOLOGIA DO IFSP, XIV, 2023, Capivari-SP. Anais [...]. Capivari: IFSP-SP, 2023, p. 1-5. ISSN: 2178-9959. Disponível em: https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9716/3359",
       },
       {
         idpub: "12",
@@ -237,7 +237,7 @@ function listarItens(chave) {
         linkSite: "https://ocs.ifsp.edu.br/conict/xivconict/",
         linkPublicacao: "https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9336/3628.pdf",
         publicacaoArquivo: "publicacaoArquivo/Publicacoes/17-Publicacao_Ensino_da_Propriedade_Coligativa_Osmose_para_alunos_com_TEA_por_meio_da_plataforma_Scratch_CONICT_2023.pdf",
-        referenciarPub: "SANTOS, Lucas Caraça dos; Bianca Estrela Abdalla França Camargo; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Ensino da Propriedade Coligativa Osmose para alunos com TEA, por meio da plataforma Scratch.Anais [...] IN: CONGRESSO DE INOVAÇÃO, CIÊNCIA E TECNOLOGIA DO IFSP, XIV, 2023, Capivari-SP. Anais [...]. Capivari: IFSP-SP, 2023, p. 1-6. ISSN: 2178-9959. Disponível em: https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9336/3628",
+        referenciarPub: "SANTOS, Lucas Caraça dos; Bianca Estrela Abdalla França Camargo; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Ensino da Propriedade Coligativa Osmose para alunos com TEA, por meio da plataforma Scratch.Anais [...] IN: 14º CONICT - CONGRESSO DE INOVAÇÃO, CIÊNCIA E TECNOLOGIA DO IFSP, XIV, 2023, Capivari-SP. Anais [...]. Capivari: IFSP-SP, 2023, p. 1-6. ISSN: 2178-9959. Disponível em: https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9336/3628",
       },
       {
         idpub: "18",
@@ -251,7 +251,7 @@ function listarItens(chave) {
         linkSite: "https://ocs.ifsp.edu.br/conict/xivconict/",
         linkPublicacao: "https://drive.google.com/file/d/1q6IocMyieI3uPrkgpwYN3SfP_Pwk2CWv/view",
         publicacaoArquivo: "publicacaoArquivo/Publicacoes/18-Publicacao_Uso_das_ferramentas_metodológicas_Scratch_e_Chemsketch_para_o_ensino_de_Formulas_Quimicas_para_alunos_com_TEA_Anais_Congresso_CONIT_2023.pdf",
-        referenciarPub: "SOUZA, Lyan Lisboa de; MONTEMOR, Bianca Estrela Abdalla França Camargo; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Uso das ferramentas metodológicas Scratch e Chemsketch para o ensino de Fórmulas Químicas para alunos com TEA. Anais [...] IN: CONGRESSO DE INICIAÇÃO CIENTÍFICA DO IFSP ITAPETININGA, IX. 2023, Itapetininga-SP. Anais [...]. Itapetininga: Edições Hipótese, 2023, p. 329-334. Disponível em: https://drive.google.com/file/d/1q6IocMyieI3uPrkgpwYN3SfP_Pwk2CWv/view",
+        referenciarPub: "SOUZA, Lyan Lisboa de; MONTEMOR, Bianca Estrela Abdalla França Camargo; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Uso das ferramentas metodológicas Scratch e Chemsketch para o ensino de Fórmulas Químicas para alunos com TEA. Anais [...] IN: 9º CONICT - CONGRESSO DE INICIAÇÃO CIENTÍFICA DO IFSP ITAPETININGA, IX. 2023, Itapetininga-SP. Anais [...]. Itapetininga: Edições Hipótese, 2023, p. 329-334. Disponível em: https://drive.google.com/file/d/1q6IocMyieI3uPrkgpwYN3SfP_Pwk2CWv/view",
       },
       {
         idpub: "19",
@@ -265,7 +265,7 @@ function listarItens(chave) {
         linkSite: "https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie",
         linkPublicacao: "https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie/article/view/49",
         publicacaoArquivo: "publicacaoArquivo/Publicacoes/19-Publicacao _Aprendizado_e_ludicidade_higiene_basica_para_criancas_do_Espectro_Autista_REI_2024.pdf",
-        referenciarPub: "ALMEIDA, Maria Wianney Miranda; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Aprendizado e ludicidade: higiene básica para crianças no transtorno do espectro autista. Anais [...] IN: CONGRESSO DE ACESSIBILIDADE E INCLUSÃO NA EDUCAÇÃO, IFSP CUBATÃO, 2023, Cubatão-SP. Anais [...] Cubatão: Revista  da Educação Inclusiva (REI), v1, 2024, p.1-13. Disponível em:https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie/article/view/49",
+        referenciarPub: "ALMEIDA, Maria Wianney Miranda; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Aprendizado e ludicidade: higiene básica para crianças no transtorno do espectro autista. Anais [...] IN: CAIE - CONGRESSO DE ACESSIBILIDADE E INCLUSÃO NA EDUCAÇÃO, IFSP CUBATÃO, 2023, Cubatão-SP. Anais [...] Cubatão: Revista  da Educação Inclusiva (REI), v1, 2024, p.1-13. Disponível em:https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie/article/view/49",
       },
       {
         idpub: "20",
@@ -491,7 +491,7 @@ function listarItens(chave) {
         linkSite: "https://congressos.ifsp.edu.br/conict/",
         linkPublicacao: "https://congressos.ifsp.edu.br/conict/article/view/470 ",
         publicacaoArquivo: "publicacaoArquivo/Publicacoes/35-Publicacao_Dedafios_na_comunicacao_verbal_uma_proposta_de_intervencao_CAA _paradigma_Low_Code_CONICT_2024.pdf",
-        referenciarPub: "BARONI, Gabriel de Paula; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; STEKEL, Tardelli Ronan Coelho. Desafios na comunicação verbal uma proposta de intervenção utilizando comunicação aumentativa e alternativa junto ao paradigma low-code. IN: Congresso de Inovação, Ciência e Tecnologia do IFSP,  15º CONICT, pg. 1-6, 2024. Disponível em: https://congressos.ifsp.edu.br/conict/article/view/470",
+        referenciarPub: "BARONI, Gabriel de Paula; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; STEKEL, Tardelli Ronan Coelho. Desafios na comunicação verbal uma proposta de intervenção utilizando comunicação aumentativa e alternativa junto ao paradigma low-code. IN: 15º CONICT - Congresso de Inovação, Ciência e Tecnologia do IFSP,  pg. 1-6, 2024. Disponível em: https://congressos.ifsp.edu.br/conict/article/view/470",
       },
       {
         idpub: "36",
