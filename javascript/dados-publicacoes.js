@@ -435,7 +435,7 @@ function listarItens(chave) {
         linkSite: "https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie",
         linkPublicacao: "https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie/issue/view/1",
         publicacaoArquivo: "publicacaoArquivo/Publicacoes/31-Publicacao_Jogo_ computacionais_contação_de_historia_uma_proposta_educacional_inclusiva_para_ensinar_funcoes_oxigenadas_CAIE-REI_2024.pdf",
-        referenciarPub: "GOMES, Mateus Cayque Figueiredo; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima; CAMEJO AVILES, Ivana Elena. Jogos computacionais e a contação de história: uma proposta educacional inclusiva para ensinar funções oxigenadas. Revista da Educação Inclusiva, v. 1, p. 177-192, 2024. Disponível em: https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie/issue/view/1",
+        referenciarPub: "GOMES, Mateus Cayque Figueiredo; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima; CAMEJO AVILES, Ivana Elena. Jogos computacionais e a contação de história: uma proposta educacional inclusiva para ensinar funções oxigenadas. Anais [...] IN: CAIE - Congresso de Acessibilidade e Inclusão na Educação - IFSP Cubatão. REI - Revista da Educação Inclusiva, v. 1, p. 177-192, 2024. Disponível em: https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie/issue/view/1",
       },
       {
         idpub: "32",
