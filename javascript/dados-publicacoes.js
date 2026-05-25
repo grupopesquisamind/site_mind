@@ -555,7 +555,7 @@ function listarItens(chave) {
         titulo: "Democratizando o Ensino: Inclusão de pessoas neurodivergentes no Ensino de Funções Orgânicas.",
         autor: "Gabriel de Paula Baroni",
         coautor: "Ana Paula Kawabe de Lima Ferreira, Alexssandro Ferreira da Silva, Tardelli Ronan Coelho Stekel",
-        tipo: "Anais de Congresso: Aguardando Publicar",
+        tipo: "Anais de Congresso",
         local: "XIII EPPEQ - Encontro Paulista de Pesquisa em Ensino de Química",
         sigla: "EPPEQ",
         linkSite: "https://portal.sbenq.org.br/eppeq/",
@@ -569,7 +569,7 @@ function listarItens(chave) {
         titulo: "Adaptações curriculares e metodológicas para o ensino e aprendizagem de Hidroca Espectro Autista.",
         autor: "Ana Paula Kawabe de Lima Ferreira",
         coautor: "Alexssandro Ferreira da Silva, Lyan Lisboa de Souza, Bianca Estrela Montemor Abdalla França Camargo", /*Ivana Elena Camejo Aviles*/
-        tipo: "Anais de Congresso: Aguardando Publicar",
+        tipo: "Anais de Congresso",
         local: "XIII EPPEQ - Encontro Paulista de Pesquisa em Ensino de Química",
         sigla: "EPPEQ",
         linkSite: "https://portal.sbenq.org.br/eppeq/",
@@ -583,7 +583,7 @@ function listarItens(chave) {
         titulo: "Formigas, feromônios e Isômeros Geométricos: Proposta de Jogo Educacional Digital para educação inclusiva de alunos com TEA.",
         autor: "Yara Vitória Claro de Freitas",
         coautor: "Ana Paula Kawabe de Lima Ferreira, Alexssandro Ferreira da Silva, Ricardo Henrique dos Reis Nascimento", /*Ivana Elena Camejo Aviles*/
-        tipo: "Anais de Congresso: Aguardando Publicar",
+        tipo: "Anais de Congresso",
         local: "XIII EPPEQ - Encontro Paulista de Pesquisa em Ensino de Química",
         sigla: "EPPEQ",
         linkSite: "https://portal.sbenq.org.br/eppeq/",
@@ -597,7 +597,7 @@ function listarItens(chave) {
         titulo: "Jogo Didático Inclusivo sobre Pilhas Eletroquímicas: Ensino de Química com Base no Desenho Universal da Aprendizagem.",
         autor: "Ana Clara Machado Godinho",
         coautor: "Ana Paula Kawabe de Lima Ferreira, Alexssandro Ferreira da Silva, Mateus Cayque Figueiredo Gomes", /*Ivana Elena Camejo Aviles*/
-        tipo: "Anais de Congresso: Aguardando Publicar",
+        tipo: "Anais de Congresso",
         local: "XIII EPPEQ - Encontro Paulista de Pesquisa em Ensino de Química",
         sigla: "EPPEQ",
         linkSite: "https://portal.sbenq.org.br/eppeq/",
@@ -611,7 +611,7 @@ function listarItens(chave) {
         titulo: "Do Vapor à Inclusão: Um Recurso Didático Digital Baseado na História da Máquina a Vapor para Alunos com Transtorno do Espectro Autista.",
         autor: "Thiago Marinho Santos",
         coautor: "Ana Paula Kawabe de Lima Ferreira, Alexssandro Ferreira da Silva, Mateus Cayque Figueiredo Gomes", /*Ivana Elena Camejo Aviles*/
-        tipo: "Anais de Congresso: Aguardando Publicar",
+        tipo: "Anais de Congresso",
         local: "XIII EPPEQ - Encontro Paulista de Pesquisa em Ensino de Química",
         sigla: "EPPEQ",
         linkSite: "https://portal.sbenq.org.br/eppeq/",
