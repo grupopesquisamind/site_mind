@@ -265,7 +265,7 @@ function listarItens(chave) {
         linkSite: "https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie",
         linkPublicacao: "https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie/article/view/49",
         publicacaoArquivo: "publicacaoArquivo/Publicacoes/19-Publicacao _Aprendizado_e_ludicidade_higiene_basica_para_criancas_do_Espectro_Autista_REI_2024.pdf",
-        referenciarPub: "FALMEIDA, Maria Wianney Miranda; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Aprendizado e ludicidade: higiene básica para crianças no transtorno do espectro autista. Anais [...] IN: CONGRESSO DE ACESSIBILIDADE E INCLUSÃO NA EDUCAÇÃO, IFSP CUBATÃO, 2023, Cubatão-SP. Anais [...] Cubatão: Revista  da Educação Inclusiva (REI), v1, 2024, p.1-13. Disponível em:https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie/article/view/49",
+        referenciarPub: "ALMEIDA, Maria Wianney Miranda; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Aprendizado e ludicidade: higiene básica para crianças no transtorno do espectro autista. Anais [...] IN: CONGRESSO DE ACESSIBILIDADE E INCLUSÃO NA EDUCAÇÃO, IFSP CUBATÃO, 2023, Cubatão-SP. Anais [...] Cubatão: Revista  da Educação Inclusiva (REI), v1, 2024, p.1-13. Disponível em:https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie/article/view/49",
       },
       {
         idpub: "20",
