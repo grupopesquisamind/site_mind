@@ -12,7 +12,7 @@ function listarItens(chave) {
     src: "https://scratch.mit.edu/projects/1086913760/embed",
     linkPublicacao: "https://drive.google.com/file/d/1q6IocMyieI3uPrkgpwYN3SfP_Pwk2CWv/view",
     publicacaoArquivo: "publicacaoArquivo/Publicacoes_Jogos/1-Jogos_de_Ciencias_Utilizacao_Scratch_ensino_direcoes_alunos_TEA_Anais_Congresso_CONICT_2023.pdf",
-    referenciar: "CAMPOS, Ryan Cristian Sousa; MONTEMOR, Bianca Estrela  Abdalla França Camargo; SILVA,  Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Utilização da ferramenta metodológica Scratch no ensino das direções para alunos com TEA, nível de suporte 2.  IN: CONGRESSO DE INICIAÇÃO CIENTÍFICA DO IFSP ITAPETININGa, IX. 2023, Itapetininga-SP. Anais [...]. Itapetininga: Edições Hipótese, 2023, p. 335-340. Disponível em: https://drive.google.com/file/d/1q6IocMyieI3uPrkgpwYN3SfP_Pwk2CWv/view",
+    referenciar: "CAMPOS, Ryan Cristian Sousa; MONTEMOR, Bianca Estrela  Abdalla França Camargo; SILVA,  Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Utilização da ferramenta metodológica Scratch no ensino das direções para alunos com TEA, nível de suporte 2. Anais [...] IN: CONGRESSO DE INICIAÇÃO CIENTÍFICA DO IFSP ITAPETININGA, IX. 2023, Itapetininga-SP. Itapetininga: Edições Hipótese, 2023, p. 335-340. Disponível em: https://drive.google.com/file/d/1q6IocMyieI3uPrkgpwYN3SfP_Pwk2CWv/view",
       },
        {
     id: "2",
@@ -25,7 +25,7 @@ function listarItens(chave) {
     src: "https://scratch.mit.edu/projects/1086922730/embed",
     linkPublicacao: "https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9616/3715",
     publicacaoArquivo: "publicacaoArquivo/Publicacoes_Jogos/2-Jogos_de_Ciencias_Desenvolvimento_de_jogo_para_Educacao_Nutricional_criancas_TEA_utilizando_plataforma_Scratch_CAA_CONICT_2023.pdf",
-    referenciar: "FERREIRA, Gabriel Kawabe de Lima; MONTEMOR, Bianca Estrela  Abdalla França Camargo; SILVA,  Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Desenvolvimento de jogo para Educação Nutricional de crianças com TEA, utilizando a plataforma Scratch e a CAA. In: CONGRESSO DE INOVAÇÃO, CIÊNCIA E TECNOLOGIA DO IFSP, XIV, 2023, Capivari-SP. Anais [...]. Capivari: IFSP-SP, 2023, p. 1-5. ISSN: 2178-9959. Disponível em: https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9616/3715",
+    referenciar: "FERREIRA, Gabriel Kawabe de Lima; MONTEMOR, Bianca Estrela  Abdalla França Camargo; SILVA,  Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Desenvolvimento de jogo para Educação Nutricional de crianças com TEA, utilizando a plataforma Scratch e a CAA. Anais [...] IN: CONGRESSO DE INOVAÇÃO, CIÊNCIA E TECNOLOGIA DO IFSP, XIV, 2023, Capivari-SP. Capivari: IFSP-SP, 2023, p. 1-5. ISSN: 2178-9959. Disponível em: https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9616/3715",
   },
   {
     id: "3",
@@ -38,7 +38,7 @@ function listarItens(chave) {
     src: "https://scratch.mit.edu/projects/1086923229/embed",
     linkPublicacao: "https://intranet.cbt.ifsp.edu.br/qualif/volume13/artigo9.pdf",
     publicacaoArquivo: "publicacaoArquivo/Publicacoes_Jogos/3-Jogos_de_Ciencias_Uso_do_Scratch_como_ferramenta_metodologica_para_Ensino_do_Corpo_Humano_para_criancas_TEA_Revista Qualif_2023.pdf",
-    referenciar: "CAMPOS, Ryan Cristian Sousa; MONTEMOR, Bianca Estrela  Abdalla França Camargo; NASCIMENTO, Ricardo Henrique dos Reis; SILVA,  Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Uso do Scratch como ferramenta metodológica para o ensino do corpo humano para crianças com TEA. In: REVISTA ACADÊMICA - ENSINO DE CIÊNCIAS E TECNOLOGIAS IFSP – CAMPUS CUBATÃO – CATEGORIA: ARTIGO – ESPECIAL QUALIF - NÚMERO 13 – JUL/DEZ DE 2023. Disponível em: http://eppeq.ti.srt.ifsp.edu.br/index.php/eppeq/article/view/122",
+    referenciar: "CAMPOS, Ryan Cristian Sousa; MONTEMOR, Bianca Estrela  Abdalla França Camargo; NASCIMENTO, Ricardo Henrique dos Reis; SILVA,  Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Uso do Scratch como ferramenta metodológica para o ensino do corpo humano para crianças com TEA. Anais [...] IN: REVISTA ACADÊMICA - ENSINO DE CIÊNCIAS E TECNOLOGIAS IFSP – CAMPUS CUBATÃO – CATEGORIA: ARTIGO – ESPECIAL QUALIF - NÚMERO 13 – JUL/DEZ DE 2023. Disponível em: http://eppeq.ti.srt.ifsp.edu.br/index.php/eppeq/article/view/122",
   },
   {
     id: "4",
@@ -51,7 +51,7 @@ function listarItens(chave) {
     src: "https://scratch.mit.edu/projects/1086926136/embed",
     linkPublicacao: "http://eppeq.ti.srt.ifsp.edu.br/index.php/eppeq/article/view/122",
     publicacaoArquivo: "publicacaoArquivo/Publicacoes_Jogos/4-Jogos_de_Ciencias_Utilizacao_da_Plataforma_Scratch_no_Ensino_dos_Orgaos_do_Corpo_Humano_para_Alunos_TEA_Nivel_Suporte_EPPEQ_2023.pdf",
-    referenciar: "CAMPOS, Ryan Cristian Sousa; MONTEMOR, Bianca Estrela Abdalla França Camargo; FERREIRA, Gabriel Kawabe de Lima; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Utilização da Plataforma Scratch no Ensino dos Órgãos do Corpo Humano para Alunos com TEA, Nível de Suporte 2. In: EPPEQ-ENCONTRO PAULISTA DE PESQUISA EM ENSINO DE QUÍMICA, XII, 2023, Ribeirão Preto e Sertãozinho-SP. Anais [...]. Sertãozinho: IFSP, 2023, V1, nº 12, p. 1-11. Disponível em: http://eppeq.ti.srt.ifsp.edu.br/index.php/eppeq/article/view/122",
+    referenciar: "CAMPOS, Ryan Cristian Sousa; MONTEMOR, Bianca Estrela Abdalla França Camargo; FERREIRA, Gabriel Kawabe de Lima; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Utilização da Plataforma Scratch no Ensino dos Órgãos do Corpo Humano para Alunos com TEA, Nível de Suporte 2. Anais [...] IN: EPPEQ-ENCONTRO PAULISTA DE PESQUISA EM ENSINO DE QUÍMICA, XII, 2023, Ribeirão Preto e Sertãozinho-SP. Sertãozinho: IFSP, 2023, V1, nº 12, p. 1-11. Disponível em: http://eppeq.ti.srt.ifsp.edu.br/index.php/eppeq/article/view/122",
   },
   {
     id: "5",
@@ -64,7 +64,7 @@ function listarItens(chave) {
     src: "https://scratch.mit.edu/projects/1086916528/embed",
     linkPublicacao: "https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9636/3156",
     publicacaoArquivo: "publicacaoArquivo/Publicacoes_Jogos/5-Jogos_de_Ciencias_Ensino_Circulacao_Sanguinea_alunos_com_TEA_nivel_Suporte_2_atraves_ferramenta_computacional_Scratch_atrelada_CAA_CONICT_2023.pdf",
-    referenciar: "CAMPOS, Ryan Cristian Sousa; MONTEMOR, Bianca Estrela Abdalla França Camargo; SILVA, Alexssandro Ferreira da; MALDONADO, Raquel Fonseca; FERREIRA, Ana Paula Kawabe de Lima. Ensino da Circulação Sanguínea para alunos com TEA, nível de Suporte 2, através da ferramenta computacional Scratch atrelada à Comunicação Aumentativa e Alternativa. In: CONGRESSO DE INOVAÇÃO, CIÊNCIA E TECNOLOGIA DO IFSP, XIV, 2023, Capivari-SP. Anais [...]. Capivari: IFSP-SP, 2023, p. 1-6. ISSN: 2178-9959. Disponível em: https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9636/",
+    referenciar: "CAMPOS, Ryan Cristian Sousa; MONTEMOR, Bianca Estrela Abdalla França Camargo; SILVA, Alexssandro Ferreira da; MALDONADO, Raquel Fonseca; FERREIRA, Ana Paula Kawabe de Lima. Ensino da Circulação Sanguínea para alunos com TEA, nível de Suporte 2, através da ferramenta computacional Scratch atrelada à Comunicação Aumentativa e Alternativa. Anais [...] IN: CONGRESSO DE INOVAÇÃO, CIÊNCIA E TECNOLOGIA DO IFSP, XIV, 2023, Capivari-SP. Capivari: IFSP-SP, 2023, p. 1-6. ISSN: 2178-9959. Disponível em: https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9636/",
   },
   {
     id: "6",
@@ -90,7 +90,7 @@ function listarItens(chave) {
     src: "https://scratch.mit.edu/projects/1087642255/embed",
     linkPublicacao: "https://publicacoes.sbenbio.org.br/trabalhos/e0322.pdf",
     publicacaoArquivo: "publicacaoArquivo/Publicacoes_Jogos/7-Jogos_de_Ciencias_Educacao_Cientifica_Inclusiva_Alunos_TEA_Uso_de_Jogo_Didatico_Utilizando_CAA_Scratch_Aprender_Sistema_Digestivo_SBENBIO_2024.pdf",
-    referenciar: "SANTOS, Lucas Caraça dos; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; CAMEJO AVILES, Ivana Elena. Educação Científica Inclusiva para Alunos com Transtorno do Espectro Autista (TEA): Uso de Jogo Didático Utilizando Comunicação Aumentativa e Alternativa (CAA) e Scratch para Aprender sobre o Sistema Digestório. In: Congresso IX ENEBIO & VII EREBIO MG/GO/TO/DF (Encontro Nacional de Ensino de Biologia). E-0322, p. 1-13, 2024. Disponível em: https://publicacoes.sbenbio.org.br/trabalhos/e0322.pdf",
+    referenciar: "SANTOS, Lucas Caraça dos; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; CAMEJO AVILES, Ivana Elena. Educação Científica Inclusiva para Alunos com Transtorno do Espectro Autista (TEA): Uso de Jogo Didático Utilizando Comunicação Aumentativa e Alternativa (CAA) e Scratch para Aprender sobre o Sistema Digestório. Anais [...] IN: Congresso IX ENEBIO & VII EREBIO MG/GO/TO/DF (Encontro Nacional de Ensino de Biologia). E-0322, p. 1-13, 2024. Disponível em: https://publicacoes.sbenbio.org.br/trabalhos/e0322.pdf",
   },
   {
     id: "8",
@@ -103,7 +103,7 @@ function listarItens(chave) {
     src: "https://scratch.mit.edu/projects/1086926136/embed",
     linkPublicacao: "https://www.apsignificativa.com/_files/ugd/75b99d_c6891fb2e04f45c0bd86af6a699b76c3.pdf",
     publicacaoArquivo: "publicacaoArquivo/Publicacoes_Jogos/8-Jogos_de_Ciencias_Potencialidade_de_Jogo_Educacional_no_Ensino_de_Sistema_Digestivo_uso_da_CAA_Scratch_alunos_com_TEA_EAIS_2024.pdf",
-    referenciar: "SANTOS, Lucas Caraça dos; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; AVILES, Ivana Elena Camejo. Potencialidade de Jogo Educacional no Ensino de Sistema Digestivo: uso da comunicação aumentativa e alternativa e o scratch para alunos com transtorno do espectro autista. In: X EIAS- Encontro Internacional de Aprendizagem Significativa, 2024, Montevidéu-Uruguai. X Encuentro Internacional de Aprendizaje Significativo. Montevidéu-Uruguai, 2024. v. 1. p. 316-323. Disponível em:  https://www.apsignificativa.com/_files/ugd/75b99d_c6891fb2e04f45c0bd86af6a699b76c3.pdf",
+    referenciar: "SANTOS, Lucas Caraça dos; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; AVILES, Ivana Elena Camejo. Potencialidade de Jogo Educacional no Ensino de Sistema Digestivo: uso da comunicação aumentativa e alternativa e o scratch para alunos com transtorno do espectro autista. Anais [...] IN: X EIAS- Encontro Internacional de Aprendizagem Significativa, 2024, Montevidéu-Uruguai. X Encuentro Internacional de Aprendizaje Significativo. Montevidéu-Uruguai, 2024. v. 1. p. 316-323. Disponível em:  https://www.apsignificativa.com/_files/ugd/75b99d_c6891fb2e04f45c0bd86af6a699b76c3.pdf",
   },
   {
     id: "9",
@@ -169,7 +169,7 @@ function listarItens(chave) {
     src: "https://scratch.mit.edu/projects/1087370213/embed",
     linkPublicacao: "https://editorarealize.com.br/artigo/visualizar/86777",
     publicacaoArquivo: "publicacaoArquivo/Publicacoes_Jogos/13-Jogos_de_Quimica_A_utilizacao_ferramenta_scratch_aprendizagem_entalpia_padrao_formação_entalpia_padrao_combustão_para_alunos_com_TEA_CONAPESC_2022.pdf",
-    referenciar: "SILVA, Alexssandro Ferreira da; NASCIMENTO, Ricardo Henrique dos Reis; MONTEMOR, Bianca Estrela Abdalla França Camargo; FERREIRA, Ana Paula Kawabe de Lima.  A utilização da ferramenta scratch na aprendizagem entalpia padrão de formação e entalpia padrão de combustão para alunos com TEA. In: CONAPESC- CONGRESSO NACIONAL DE PESQUISA E ENSINO DE CIÊNCIAS, VII, 2022, Campina Grande – PB. Anais [...]. Campina Grande: Editora Realize, 2022, p. 1-10. Disponível em: https://editorarealize.com.br/artigo/visualizar/86777",
+    referenciar: "SILVA, Alexssandro Ferreira da, NASCIMENTO, Ricardo Henrique dos Reis, MONTEMOR, Bianca Estrela Abdalla França Camargo, FERREIRA, Ana Paula Kawabe de Lima.  A utilização da ferramenta scratch na aprendizagem entalpia padrão de formação e entalpia padrão de combustão para alunos com TEA. Anais [...] IN: CONAPESC- CONGRESSO NACIONAL DE PESQUISA E ENSINO DE CIÊNCIAS, VII, 2022, Campina Grande – PB. Campina Grande: Editora Realize, 2022, p. 1-10. Disponível em: https://editorarealize.com.br/artigo/visualizar/86777",
   },
   {
     id: "14",
@@ -182,7 +182,7 @@ function listarItens(chave) {
     src: "https://scratch.mit.edu/projects/1220611026/embed",
     linkPublicacao: "https://ocs.ifsp.edu.br/conict/xiiiconict/paper/view/8609/2957",
     publicacaoArquivo: "publicacaoArquivo/Publicacoes_Jogos/14-Jogos_de_Quimica_A_utilizacao_da_ferramenta_Scratch_na_aprendizagem_da_Entalpia_Padrao_para_alunos_com_TEA_com_foco_no_sistema_de_arraste_CONICT_2022.pdf",
-    referenciar: "NASCIMENTO, Ricardo Henrique dos Reis; MONTEMOR, Bianca Estrela Abdalla França Camargo; CAMPOS, Ryan Cristina Souza; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. A utilização da ferramenta Scratch na aprendizagem da Entalpia Padrão para alunos com TEA com foco no sistema de arraste. In: CONGRESSO DE INOVAÇÃO, CIÊNCIA E TECNOLOGIA DO IFSP, XIII, 2022, São Paulo-SP. Anais [...]. São Paulo: IFSP-SP, 2022, p. 1-6. Disponível em: https://ocs.ifsp.edu.br/conict/xiiiconict/paper/view/8609/2957",
+    referenciar: "NASCIMENTO, Ricardo Henrique dos Reis, MONTEMOR, Bianca Estrela Abdalla França Camargo, CAMPOS, Ryan Cristina Souza, SILVA, Alexssandro Ferreira da, FERREIRA, Ana Paula Kawabe de Lima. A utilização da ferramenta Scratch na aprendizagem da Entalpia Padrão para alunos com TEA com foco no sistema de arraste. Anais [...] IN: CONGRESSO DE INOVAÇÃO, CIÊNCIA E TECNOLOGIA DO IFSP, XIII, 2022, São Paulo-SP. São Paulo: IFSP-SP, 2022, p. 1-6. Disponível em: https://ocs.ifsp.edu.br/conict/xiiiconict/paper/view/8609/2957",
   },
   {
     id: "15",
@@ -195,7 +195,7 @@ function listarItens(chave) {
     src: "https://scratch.mit.edu/projects/1087369595/embed",
     linkPublicacao: "https://www.cieduc.org/libros/LibroActasCieduc2022.pdf",
     publicacaoArquivo: "publicacaoArquivo/Publicacoes_Jogos/15-Jogos_de_Quimica_O_uso_ferramenta_Scratch_utilizada_Ensino_Lei_de_Hess_para_alunos_com_Transtorno_Espectro_Autista_Libro_Acta_CIEDUC_2022.pdf",
-    referenciar: "NASCIMENTO, Ricardo Henrique dos Reis; MONTEMOR, Bianca Estrela Abdalla França Camargo; CAMPOS, Ryan Cristian Sousa; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. O uso da ferramenta Scratch utilizada para o Ensino da Lei de Hess para alunos com Transtorno do Espectro Autista. In: BEGONCHEA, Luis et al. Educación científica para el desarrollo ibero-americano. Alcalá - Espanha: Editorial Universidad de Alcalá, 2022, p. 133 - 140. Disponível em: https://www.cieduc.org/libros/LibroActasCieduc2022.pdf",
+    referenciar: "NASCIMENTO, Ricardo Henrique dos Reis; MONTEMOR, Bianca Estrela Abdalla França Camargo; CAMPOS, Ryan Cristian Sousa; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. O uso da ferramenta Scratch utilizada para o Ensino da Lei de Hess para alunos com Transtorno do Espectro Autista. Anais [...] IN: BEGONCHEA, Luis et al. Educación científica para el desarrollo ibero-americano. Alcalá - Espanha: Editorial Universidad de Alcalá, 2022, p. 133 - 140. Disponível em: https://www.cieduc.org/libros/LibroActasCieduc2022.pdf",
   },
   {
     id: "16",
@@ -221,7 +221,7 @@ function listarItens(chave) {
     src: "https://scratch.mit.edu/projects/1086927431/embed",
     linkPublicacao: "http://eppeq.ti.srt.ifsp.edu.br/index.php/eppeq/article/view/146/150",
     publicacaoArquivo: "publicacaoArquivo/Publicacoes_Jogos/17-Jogos_de_Quimica_ A utilizacao_da_Ferramenta_Computacional_Scratch_para_o_Ensino_Propriedades_Coligativa_alunos_com_TEA_EPPEQ_2023.pdf",
-    referenciar: "NASCIMENTO, Ricardo Henrique dos Reis; MONTEMOR, Bianca Estrela Abdalla França Camargo; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. A utilização da Ferramenta Computacional Scratch para o Ensino de Propriedades Coligativas para alunos com TEA. In: EPPEQ-ENCONTRO PAULISTA DE PESQUISA EM ENSINO DE QUÍMICA, XII, 2023, Ribeirão Preto e Sertãozinho-SP. Anais [...]. Sertãozinho: IFSP, 2023, V1, nº 12, p. 1-11. Disponível em: http://eppeq.ti.srt.ifsp.edu.br/index.php/eppeq/article/view/146/150",
+    referenciar: "NASCIMENTO, Ricardo Henrique dos Reis, MONTEMOR, Bianca Estrela Abdalla França Camargo, SILVA, Alexssandro Ferreira da, FERREIRA, Ana Paula Kawabe de Lima. A utilização da Ferramenta Computacional Scratch para o Ensino de Propriedades Coligativas para alunos com TEA. Anais [...] IN: EPPEQ-ENCONTRO PAULISTA DE PESQUISA EM ENSINO DE QUÍMICA, XII, 2023, Ribeirão Preto e Sertãozinho-SP. Sertãozinho: IFSP, 2023, V1, nº 12, p. 1-11. Disponível em: http://eppeq.ti.srt.ifsp.edu.br/index.php/eppeq/article/view/146/150",
   },
   {
     id: "18",
@@ -234,7 +234,7 @@ function listarItens(chave) {
     src: "https://scratch.mit.edu/projects/1087641860/embed",
     linkPublicacao: "https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9336/",
     publicacaoArquivo: "publicacaoArquivo/Publicacoes_Jogos/18-Jogos_de_Quimica_Ensino_da_Propriedade_Coligativa_Osmose_para_alunos_com_TEA_por_meio_da_plataforma_Scratch_CONICT_2023.pdf",
-    referenciar: "SANTOS, Lucas Caraça dos; MONTEMOR, Bianca Estrela Abdalla França Camargo; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Ensino da propriedade coligativa osmose para alunos com TEA, por meio da plataforma Scratch. IN: 14º Congresso de Inovação, Ciência e Tecnologia do IFSP, Câmpus Capivari, v. 14, p.1-6, 2023. Disponível em: https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9336/",
+    referenciar: "SANTOS, Lucas Caraça dos; MONTEMOR, Bianca Estrela Abdalla França Camargo; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Ensino da propriedade coligativa osmose para alunos com TEA, por meio da plataforma Scratch. Anais [...] IN: 14º Congresso de Inovação, Ciência e Tecnologia do IFSP, Câmpus Capivari, v. 14, p.1-6, 2023. Disponível em: https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9336/",
   },
   {
     id: "19",
@@ -247,7 +247,7 @@ function listarItens(chave) {
     src: "https://scratch.mit.edu/projects/1087643719/embed",
     linkPublicacao: "https://congressos.ifsp.edu.br/conict/article/view/883",
     publicacaoArquivo: "publicacaoArquivo/Publicacoes_Jogos/19-Jogos_de_Quimica_Flexibilizacao_curricular_alunos_Transtorno_Espectro_Autista_Ensino_Cinetica_Quimica_uso_Tecnologias_Assistivas_CONICT_2024.pdf",
-    referenciar: "SANTOS, Lucas Caraça dos; MONTEMOR, Bianca Estrela Abdalla França Camargo; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Flexibilização curricular para alunos no Transtorno do Espectro Autista: Ensino de Cinética Química através do uso de Tecnologias Assistivas. IN: 15º Congresso de Inovação, Ciência e Tecnologia do IFSP, v. 15, n. 3, 2024, p.1-7. Disponível em: https://congressos.ifsp.edu.br/conict/article/view/883",
+    referenciar: "SANTOS, Lucas Caraça dos; MONTEMOR, Bianca Estrela Abdalla França Camargo; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Flexibilização curricular para alunos no Transtorno do Espectro Autista: Ensino de Cinética Química através do uso de Tecnologias Assistivas. Anais [...] IN: 15º Congresso de Inovação, Ciência e Tecnologia do IFSP, v. 15, n. 3, 2024, p.1-7. Disponível em: https://congressos.ifsp.edu.br/conict/article/view/883",
   },
   {
     id: "20",
@@ -260,7 +260,7 @@ function listarItens(chave) {
     src: "https://scratch.mit.edu/projects/1087370533/embed",
     linkPublicacao: "https://drive.google.com/file/d/1q6IocMyieI3uPrkgpwYN3SfP_Pwk2CWv/view",
     publicacaoArquivo: "publicacaoArquivo/Publicacoes_Jogos/20-Jogos_de_Química_Uso_ferramentas_metodologicas_Scratch_Chemsketch_ensino_Formulas_Quimicas_alunos_com_TEA_CONICT_2023.pdf",
-    referenciar: "SOUZA, Lyan Lisboa de; MONTEMOR, Bianca Estrela Abdalla França Camargo; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Uso das ferramentas metodológicas Scratch e Chemsketch para o ensino de Fórmulas Químicas para alunos com TEA. IN: CONGRESSO DE INICIAÇÃO CIENTÍFICA DO IFSP ITAPETININGA, IX. 2023, Itapetininga-SP. Anais [...]. Itapetininga: Edições Hipótese, 2023, p. 329-334. Disponível em: https://drive.google.com/file/d/1q6IocMyieI3uPrkgpwYN3SfP_Pwk2CWv/view",
+    referenciar: "SOUZA, Lyan Lisboa de; MONTEMOR, Bianca Estrela Abdalla França Camargo; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima. Uso das ferramentas metodológicas Scratch e Chemsketch para o ensino de Fórmulas Químicas para alunos com TEA. Anais [...] IN: CONGRESSO DE INICIAÇÃO CIENTÍFICA DO IFSP ITAPETININGA, IX. 2023, Itapetininga-SP. Anais [...]. Itapetininga: Edições Hipótese, 2023, p. 329-334. Disponível em: https://drive.google.com/file/d/1q6IocMyieI3uPrkgpwYN3SfP_Pwk2CWv/view",
   },
   {
     id: "21",
@@ -286,7 +286,7 @@ function listarItens(chave) {
     src: "https://scratch.mit.edu/projects/1144441889/embed",
     linkPublicacao: "https://www.apsignificativa.com/_files/ugd/75b99d_c6891fb2e04f45c0bd86af6a699b76c3.pdf",
     publicacaoArquivo: "publicacaoArquivo/Publicacoes_Jogos/22-Jogo_de_Quimica_Educacional_Ensino_Potencialmente_Significativo_Hidrocarbonetos_Cadeias_Fechadas_Alunos_Transtorno_Espectro_Autista_EIAS_2024.pdf",
-    referenciar: "GOMES, Mateus Cayque Figueiredo; SILVA, Alexssandro Ferreira da; Ferreira, Ana Paula Kawabe de Lima; AVILES, Ivana Elena Camejo. Jogo Educacional para o Ensino Potencialmente Significativo de Hidrocarbonetos de Cadeias Fechadas para Alunos com Transtorno do Espectro Autista. In: X EIAS- Encontro Internacional de Aprendizagem Significativa, 2024, X EIAS- Encontro Internacional. X Encuentro Internacional de Aprendizaje Significativo. Montevidéu-Uruguai, 2024. v. 1. p. 533-540. disponível em: https://www.apsignificativa.com/_files/ugd/75b99d_c6891fb2e04f45c0bd86af6a699b76c3.pdf",
+    referenciar: "GOMES, Mateus Cayque Figueiredo; SILVA, Alexssandro Ferreira da; Ferreira, Ana Paula Kawabe de Lima; AVILES, Ivana Elena Camejo. Jogo Educacional para o Ensino Potencialmente Significativo de Hidrocarbonetos de Cadeias Fechadas para Alunos com Transtorno do Espectro Autista. Anais [...] IN: X EIAS- Encontro Internacional de Aprendizagem Significativa, 2024, X EIAS- Encontro Internacional. X Encuentro Internacional de Aprendizaje Significativo. Montevidéu-Uruguai, 2024. v. 1. p. 533-540. disponível em: https://www.apsignificativa.com/_files/ugd/75b99d_c6891fb2e04f45c0bd86af6a699b76c3.pdf",
   },
   {
     id: "23",
@@ -312,7 +312,7 @@ function listarItens(chave) {
     src: "https://scratch.mit.edu/projects/1234855642/embed",
     linkPublicacao: "https://firebasestorage.googleapis.com/v0/b/cientestudio.appspot.com/o/papers%2F41082556-ac25-4036-874b-24961c2e880d.pdf?alt=media&token=b5023c82-eca3-4b09-9889-b01924abaca1",
     publicacaoArquivo: "publicacaoArquivo/Publicacoes_Jogos/24-Jogo_de_Quimica_Formigas_feromônios_Isomeros_Geometricos_Proposta_ de_Jogo_Educacional_Digital_educação_inclusiva_alunos_TEA.pdf",
-    referenciar: "FREITAS, Yara Vitoria Claro de; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; NASCIMENTO, Ricardo Henrique dos Reis; CAMEJO AVILES, Ivana Elena. Formigas, feromônios e Isômeros Geométricos: Proposta de Jogo Educacional Digital para a educação inclusiva de alunos com TEA. 2025. In: XIII Encontro Paulista de Pesquisa em Ensino de Química (XIII EPPEQ,UNESP Presidente Prudente, SP.  Anais [...]  Unesp: 2025, p. 1-12. Anais [...]. Unesp: 2025, . Disponível em: https://firebasestorage.googleapis.com/v0/b/cientestudio.appspot.com/o/papers%2F41082556-ac25-4036-874b-24961c2e880d.pdf?alt=media&token=b5023c82-eca3-4b09-9889-b01924abaca1",
+    referenciar: "FREITAS, Yara Vitoria Claro de; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; NASCIMENTO, Ricardo Henrique dos Reis; CAMEJO AVILES, Ivana Elena. Formigas, feromônios e Isômeros Geométricos: Proposta de Jogo Educacional Digital para a educação inclusiva de alunos com TEA. 2025. Anais [...] IN: XIII Encontro Paulista de Pesquisa em Ensino de Química (XIII EPPEQ,UNESP Presidente Prudente, SP.  Unesp: 2025, p. 1-12. Anais [...]. Unesp: 2025, . Disponível em: https://firebasestorage.googleapis.com/v0/b/cientestudio.appspot.com/o/papers%2F41082556-ac25-4036-874b-24961c2e880d.pdf?alt=media&token=b5023c82-eca3-4b09-9889-b01924abaca1",
   },
   {
     id: "25", /*enviado ao EPPEQ, aguardando publicação*/

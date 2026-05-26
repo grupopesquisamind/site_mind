@@ -505,7 +505,7 @@ function listarItens(chave) {
         linkSite: "https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie/",
         linkPublicacao: "https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie/article/view/29",
         publicacaoArquivo: "publicacaoArquivo/Publicacoes/36-Publicacao_Necessidades_especificas_na_comunicacao_inclusiva_uma_alternativa_utilizando_metodologia_low_code_e_CAA_CAIE-REI_2024.pdf",
-        referenciarPub: "GARONI, Gabriel de Paula; BIAGIONI, Ana Clara de Freitas; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; STEKEL, Tardelli Ronan Coelho. Necessidades específicas na comunicação inclusiva: uma alternativa utilizando metodologia low-code e comunicação aumentativa e alternativa. Anais [...] IN: 15º Congresso de Inovação, Ciência e Tecnologia do IFSP, Cubatão/SP, v. ?, n. ?, 2024, p.?.Disponível em: https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie/article/view/29",
+        referenciarPub: "GARONI, Gabriel de Paula; BIAGIONI, Ana Clara de Freitas; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; STEKEL, Tardelli Ronan Coelho. Necessidades específicas na comunicação inclusiva: uma alternativa utilizando metodologia low-code e comunicação aumentativa e alternativa. Anais [...] IN: 15º Congresso de Inovação, Ciência e Tecnologia do IFSP, Cubatão/SP, v. 1, p. 217-230, 2024. Disponível em: https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie/article/view/29",
       },
       {
         idpub: "37",
@@ -519,7 +519,7 @@ function listarItens(chave) {
         linkSite: "https://eventos.ifgoiano.edu.br/ixenebioeviierebiomggotodf/",
         linkPublicacao: "https://Publicacoes.sbenbio.org.br/trabalhos/e0322.pdf",
         publicacaoArquivo: "publicacaoArquivo/Publicacoes/37-Publicacao_Educacao_Cientifica_Inclusiva_Alunos_TEA_Uso_Jogo_Didatico_Utilizando_CAA_EIAS_2024.pdf",
-        referenciarPub: "SANTOS, Lucas Caraça dos; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; CAMEJO AVILES, Ivana Elena. Educação Científica Inclusiva para Alunos com Transtorno do Espectro Autista (TEA): Uso de Jogo Didático Utilizando Comunicação Aumentativa e Alternativa (CAA) e Scratch para Aprender sobre o Sistema Digestório. IN: IX ENEBIO & VII EREBIO MG/GO/TO/DF (Encontro Nacional de Ensino de Biologia).  E-book VIII ENEBIO, X ENEBIO & VII EREBIO, Campina Grande: Realize Editora, 2024. Disponível em:",
+        referenciarPub: "SANTOS, Lucas Caraça dos; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; CAMEJO AVILES, Ivana Elena. Educação Científica Inclusiva para Alunos com Transtorno do Espectro Autista (TEA): Uso de Jogo Didático Utilizando Comunicação Aumentativa e Alternativa (CAA) e Scratch para Aprender sobre o Sistema Digestório. Anais [] IN: IX ENEBIO & VII EREBIO MG/GO/TO/DF (Encontro Nacional de Ensino de Biologia). Belo Horizonte – MG, 22 a 25 de outubro de 2024. E-book VIII ENEBIO, X ENEBIO & VII EREBIO, Campina Grande: Realize Editora, E-0322, 2024. Disponível em: https://publicacoes.sbenbio.org.br/trabalhos/e0322.pdf, Publicações Congresso: https://www.sbenbio.org.br/publicacao-do-e-book-do-ix-enebio/",
       },
       {
         idpub: "38",
@@ -561,7 +561,7 @@ function listarItens(chave) {
         linkSite: "https://portal.sbenq.org.br/eppeq/",
         linkPublicacao: "https://firebasestorage.googleapis.com/v0/b/cientestudio.appspot.com/o/paperFinalVersion%2F2caee8da-edc8-449a-a0a7-a3af6f9b15f5.pdf?alt=media&token=ec457cc7-5057-43d0-9d3c-696146ac130f",
         publicacaoArquivo: "publicacaoArquivo/Publicacoes/40-Publicacao_Democratizando_Ensino_Inclusao_de_pessoas_neurodivergentes_Ensino_de_Funcoes_Organicas.pdf",
-        referenciarPub: "BARONI, Gabriel de Paula; SILVA, FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; STEKEL, Tardelli Ronan Coelho. Democratizando o Ensino: Inclusão de pessoas neurodivergentes no Ensino de Funções Orgânicas. In: Congresso XIII EPPEQ - Encontro Paulista de Pesquisa em Ensino de Química, UNESP de Presidente Prudente-SP, 17-19/11/2025. Anais [...] Unesp: 2025, p. 1-10. Disponível em: https://firebasestorage.googleapis.com/v0/b/cientestudio.appspot.com/o/paperFinalVersion%2F2caee8da-edc8-449a-a0a7-a3af6f9b15f5.pdf?alt=media&token=ec457cc7-5057-43d0-9d3c-696146ac130f",
+        referenciarPub: "BARONI, Gabriel de Paula; SILVA, FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; STEKEL, Tardelli Ronan Coelho. Democratizando o Ensino: Inclusão de pessoas neurodivergentes no Ensino de Funções Orgânicas. Anais [...] In: Congresso XIII EPPEQ - Encontro Paulista de Pesquisa em Ensino de Química, UNESP de Presidente Prudente-SP, 17-19/11/2025. Unesp: 2025, p. 1-10. Disponível em: https://firebasestorage.googleapis.com/v0/b/cientestudio.appspot.com/o/paperFinalVersion%2F2caee8da-edc8-449a-a0a7-a3af6f9b15f5.pdf?alt=media&token=ec457cc7-5057-43d0-9d3c-696146ac130f",
       },
       {
         idpub: "41",
@@ -575,7 +575,7 @@ function listarItens(chave) {
         linkSite: "https://portal.sbenq.org.br/eppeq/",
         linkPublicacao: "https://firebasestorage.googleapis.com/v0/b/cientestudio.appspot.com/o/paperFinalVersion%2F86ed1a34-e6af-4a4e-ba07-cc50b14cd805.pdf?alt=media&token=47a20687-ce89-41d2-ae16-380e7e5b5b2b",
         publicacaoArquivo: "publicacaoArquivo/Publicacoes/41-Publicacao_Adaptacoes_curriculares_metodologicas_para_ensino_aprendizagem_Hidrocarbonetos_caso_aluna_com_Transtorno_Espectro_Autista.pdf",
-        referenciarPub: "FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; SOUZA, Lyan Lisboa de; MONTEMOR, Bianca Estrela Abdalla França Camargo; CAMEJO AVILES, Ivana Elena. Democratizando o Ensino: Inclusão de pessoas neurodivergentes no Ensino de Funções Orgânicas. In: Congresso XIII EPPEQ - Encontro Paulista de Pesquisa em Ensino de Química, UNESP de Presidente Prudente-SP, 17-19/11/2025. Anais [...] Unesp: 2025, p. 1-13. Disponível em: https://firebasestorage.googleapis.com/v0/b/cientestudio.appspot.com/o/paperFinalVersion%2F86ed1a34-e6af-4a4e-ba07-cc50b14cd805.pdf?alt=media&token=47a20687-ce89-41d2-ae16-380e7e5b5b2b",
+        referenciarPub: "FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; SOUZA, Lyan Lisboa de; MONTEMOR, Bianca Estrela Abdalla França Camargo; CAMEJO AVILES, Ivana Elena. Democratizando o Ensino: Inclusão de pessoas neurodivergentes no Ensino de Funções Orgânicas. Anais [...] IN: In: Congresso XIII EPPEQ - Encontro Paulista de Pesquisa em Ensino de Química, UNESP de Presidente Prudente-SP, 17-19/11/2025. Unesp: 2025, p. 1-13. Disponível em: https://firebasestorage.googleapis.com/v0/b/cientestudio.appspot.com/o/paperFinalVersion%2F86ed1a34-e6af-4a4e-ba07-cc50b14cd805.pdf?alt=media&token=47a20687-ce89-41d2-ae16-380e7e5b5b2b",
       },
       {
         idpub: "42",
@@ -589,7 +589,7 @@ function listarItens(chave) {
         linkSite: "https://portal.sbenq.org.br/eppeq/",
         linkPublicacao: "https://firebasestorage.googleapis.com/v0/b/cientestudio.appspot.com/o/papers%2F41082556-ac25-4036-874b-24961c2e880d.pdf?alt=media&token=b5023c82-eca3-4b09-9889-b01924abaca1",
         publicacaoArquivo: "publicacaoArquivo/Publicacoes/42-Publicacao_Formigas_feromônios_Isomeros_Geometricos_Proposta_ de_Jogo_Educacional_Digital_educação_inclusiva_alunos_TEA.pdf",
-        referenciarPub: "FREITAS, Yara Vitoria Claro de; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; NASCIMENTO, Ricardo Henrique dos Reis; CAMEJO AVILES, Ivana Elena. Formigas, feromônios e Isômeros Geométricos: Proposta de Jogo Educacional Digital para a educação inclusiva de alunos com TEA. 2025. In: XIII Encontro Paulista de Pesquisa em Ensino de Química (XIII EPPEQ,UNESP Presidente Prudente, SP.  Anais [...]  Unesp: 2025, p. 1-12. Disponível em: https://firebasestorage.googleapis.com/v0/b/cientestudio.appspot.com/o/papers%2F41082556-ac25-4036-874b-24961c2e880d.pdf?alt=media&token=b5023c82-eca3-4b09-9889-b01924abaca1",
+        referenciarPub: "FREITAS, Yara Vitoria Claro de; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; NASCIMENTO, Ricardo Henrique dos Reis; CAMEJO AVILES, Ivana Elena. Formigas, feromônios e Isômeros Geométricos: Proposta de Jogo Educacional Digital para a educação inclusiva de alunos com TEA. 2025. Anais [...] In: XIII Encontro Paulista de Pesquisa em Ensino de Química (XIII EPPEQ,UNESP Presidente Prudente, SP.    Unesp: 2025, p. 1-12. Disponível em: https://firebasestorage.googleapis.com/v0/b/cientestudio.appspot.com/o/papers%2F41082556-ac25-4036-874b-24961c2e880d.pdf?alt=media&token=b5023c82-eca3-4b09-9889-b01924abaca1",
      },
       {
         idpub: "43",
@@ -603,7 +603,7 @@ function listarItens(chave) {
         linkSite: "https://portal.sbenq.org.br/eppeq/",
         linkPublicacao: "https://firebasestorage.googleapis.com/v0/b/cientestudio.appspot.com/o/paperFinalVersion%2Fc85aef69-3dfa-40e2-9e6b-d238b5251082.pdf?alt=media&token=d2a04398-cda4-4c9a-b824-7ef74bd5f878",
         publicacaoArquivo: "publicacaoArquivo/Publicacoes/43-Publicacao_Jogo Didático Inclusivo sobre Pilhas Eletroquímicas_Ensino_Química_Desenho_Universal_Aprendizagem.pdf",
-        referenciarPub: "GODINHO, Ana Clara Machado; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; GOMES, Mateus Cayque Figueiredo; CAMEJO AVILES, Ivana Elena. Democratizando o Ensino: Inclusão de pessoas neurodivergentes no Ensino de Funções Orgânicas. In: Congresso XIII EPPEQ - Encontro Paulista de Pesquisa em Ensino de Química, UNESP de Presidente Prudente-SP, 17-19/11/2025. Anais [...] Unesp: 2025, p.1-12. Disponível em: https://firebasestorage.googleapis.com/v0/b/cientestudio.appspot.com/o/paperFinalVersion%2Fc85aef69-3dfa-40e2-9e6b-d238b5251082.pdf?alt=media&token=d2a04398-cda4-4c9a-b824-7ef74bd5f878",
+        referenciarPub: "GODINHO, Ana Clara Machado; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; GOMES, Mateus Cayque Figueiredo; CAMEJO AVILES, Ivana Elena. Democratizando o Ensino: Inclusão de pessoas neurodivergentes no Ensino de Funções Orgânicas. Anais [...] IN: Congresso XIII EPPEQ - Encontro Paulista de Pesquisa em Ensino de Química, UNESP de Presidente Prudente-SP, 17-19/11/2025. Unesp: 2025, p.1-12. Disponível em: https://firebasestorage.googleapis.com/v0/b/cientestudio.appspot.com/o/paperFinalVersion%2Fc85aef69-3dfa-40e2-9e6b-d238b5251082.pdf?alt=media&token=d2a04398-cda4-4c9a-b824-7ef74bd5f878",
       },
       {
         idpub: "44",
@@ -617,7 +617,7 @@ function listarItens(chave) {
         linkSite: "https://portal.sbenq.org.br/eppeq/",
         linkPublicacao: "https://firebasestorage.googleapis.com/v0/b/cientestudio.appspot.com/o/papers%2F74e941b0-406c-433a-ab68-1661dc117524.pdf?alt=media&token=b6709f78-4709-46b3-8f5a-a8fef183ab59",
         publicacaoArquivo: "publicacaoArquivo/Publicacoes/44-Publicacao_Do_Vapor_Inclusao_Um_Recurso_Didatico_Digital_Baseado_Historia_Maquina_Vapor_para_Alunos_Transtorno_Espectro_Autista.pdf",
-        referenciarPub: "SANTOS, Thiago Marinho; SILVA, Alexssandro Ferreira da; NASCIMENTO, Ricardo Henrique dos Reis; FERREIRA, Ana Paula Kawabe de Lima. Do Vapor à Inclusão: Um Recurso Didático Digital Baseado na História da Máquina a Vapor para Alunos com Transtorno do Espectro Autista. 2025. In: XIII Encontro Paulista de Pesquisa em Ensino de Química (XIII EPPEQ,UNESP Presidente Prudente, SP. Anais [...]  Unesp: 2025, p. 1-11. Disponível em: https://firebasestorage.googleapis.com/v0/b/cientestudio.appspot.com/o/papers%2F74e941b0-406c-433a-ab68-1661dc117524.pdf?alt=media&token=b6709f78-4709-46b3-8f5a-a8fef183ab59",
+        referenciarPub: "SANTOS, Thiago Marinho; SILVA, Alexssandro Ferreira da; NASCIMENTO, Ricardo Henrique dos Reis; FERREIRA, Ana Paula Kawabe de Lima. Do Vapor à Inclusão: Um Recurso Didático Digital Baseado na História da Máquina a Vapor para Alunos com Transtorno do Espectro Autista. 2025. Anais [...] IN: XIII Encontro Paulista de Pesquisa em Ensino de Química (XIII EPPEQ,UNESP Presidente Prudente, SP. Anais [...]  Unesp: 2025, p. 1-11. Disponível em: https://firebasestorage.googleapis.com/v0/b/cientestudio.appspot.com/o/papers%2F74e941b0-406c-433a-ab68-1661dc117524.pdf?alt=media&token=b6709f78-4709-46b3-8f5a-a8fef183ab59",
       },
       {
         idpub: "45",
