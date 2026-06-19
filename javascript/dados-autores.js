@@ -267,7 +267,7 @@ function listarItens(tipo) {
         lattes: "http://lattes.cnpq.br/5159854768377627",
         imagem: "ryan_cristian.jpg",  // <-- Só o nome do arquivo
       },
-      
+       
     ];
   }
   return [];
