@@ -267,19 +267,7 @@ function listarItens(tipo) {
         lattes: "http://lattes.cnpq.br/5159854768377627",
         imagem: "ryan_cristian.jpg",  // <-- Só o nome do arquivo
       },
-       {
-        id: "22",
-        status: "Ativo",
-        nome: "Luis Guilherme dos Reis Nascimento",
-        formacao: "Atualmente está cursando o Ensino Médio Integrado em Informática no IFSP Campus Jacareí",
-        titulo: "Ensino Médio",
-        tipoParticipacao: "Voluntário Interno",
-        anoIngresso: "2025",
-        anoSaida: "Atualmente",
-        instituicao: "IFSP Jacareí",
-        lattes: "https://lattes.cnpq.br/2838359900736717",
-        imagem: "luis_reis.jpg",  // <-- Só o nome do arquivo
-      },
+      
     ];
   }
   return [];
