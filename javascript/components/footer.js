@@ -2,7 +2,7 @@ class MeuFooter extends HTMLElement {
   async connectedCallback() {
 
     const ano = new Date().getFullYear();
-    const ultimaAtualizacao = '18/06/2026';
+    const ultimaAtualizacao = '25/06/2026';
     const versao = 'v1.2.0';
     const hoje = new Date().toISOString().split('T')[0];
     const caminhoAtual = window.location.pathname;
