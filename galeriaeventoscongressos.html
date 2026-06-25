@@ -1,240 +1,258 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<title>MIND - Galeria de Congressos</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <title>MIND - Galeria de Congressos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!-- Bootstrap e ícones -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
 
-<!-- Magnific Popup -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" />
 
-<!-- Componentes -->
-<script src="javascript/components/menu.js" defer></script>
-<script src="javascript/components/footer.js" defer></script>
-<script src="javascript/dados-galeriacongressos.js" defer></script>
-    <script src="javascript/components/components.js" defer></script>
-<link rel="stylesheet" href="css/style.css">
+  <script src="javascript/components/menu.js" defer></script>
+  <script src="javascript/components/footer.js" defer></script>
+  <script src="javascript/dados-galeriacongressos.js" defer></script>
+  <script src="javascript/components/components.js" defer></script>
+  <script src="javascript/components/tradutor.js" defer></script>
+  <link rel="stylesheet" href="css/style.css">
 
-<style>
-#page-wrapper {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  min-height: 100vh;
-  margin: auto;
-  overflow: auto;
-}
+  <style>
+  #page-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 100vh;
+    margin: auto;
+    overflow: auto;
+  }
 
-h2, h5 {
-  text-align: center;
-}
+  h2, h5 {
+    text-align: center;
+  }
 
-/* ====== Galeria ====== */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1rem;
-  justify-items: center;
-}
+  /* ====== Galeria: Forçando no mínimo 5 colunas em telas grandes ====== */
+  .gallery {
+    display: grid !important;
+    /* Divide o espaço por 5 (20%) descontando a proporção dos espaçamentos (gap) */
+    grid-template-columns: repeat(auto-fill, minmax(calc(20% - 1.2rem), 1fr));
+    justify-content: center; 
+    gap: 1.5rem;
+    padding: 10px;
+    width: 100%;
+  }
 
-/* ====== Cards ====== */
-.card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  text-align: center;
-  text-decoration: none;
-  color: inherit;
-  width: 100%;
-  height: 100%;
-  max-width: 180px;
-  border-left: 6px solid var(--accent-2, green);
+  /* Ajuste responsivo: se a tela for menor (celulares), ele quebra em menos colunas naturalmente */
+  @media (max-width: 1200px) {
+    .gallery {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+  }
 
-}
+  /* ====== Novo Design dos Cards Ajustados ====== */
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    max-width: 280px; /* Reduzido ligeiramente a largura máxima para acomodar melhor os 5 cards lado a lado */
+    margin: 0 auto;   
+    height: 100%;
+    border-top: 4px solid var(--accent-2, green); 
+    position: relative;
+  }
 
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
 
-.card img {
-  width: 100%;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 0.5rem;
-  transition: transform 0.3s ease;
-}
+  .card img {
+    width: 100%;
+    height: 150px; /* Ajustado proporcionalmente para a nova largura */
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+  }
 
-.card:hover img {
-  transform: scale(1.05);
-}
+  .card:hover img {
+    transform: scale(1.02);
+  }
 
-.legend {
-  padding: 0.4rem;
-  font-size: 0.85rem;
-  font-weight: 500;
-  width: 100%;
-  min-height: 60px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: #ffffff;
-  color: #555;
-}
+  /* ====== Legenda e Conteúdos Centralizados ====== */
+  .legend {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem;
+    font-size: 0.85rem;
+    background: transparent;
+    color: #444;
+    text-align: center; 
+    width: 100%;
+  }
 
-.nome-evento{
-  font-size: 0.85rem;
-    color: #020000;
-    margin-bottom: 0.2rem;
-}
-.sigla-evento{
-  font-size: 0.85rem;
+  .nome-evento {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #212529;
+    margin-bottom: 0.3rem;
+  }
+
+  .sigla-evento {
+    font-size: 0.85rem;
+    font-weight: 700;
     color: #007bff;
-    margin-bottom: 0.2rem;
-}
+    margin-bottom: 0.5rem;
+  }
+
+  .galeria-descricao {
+    font-size: 0.8rem;
+    color: #6c757d;
+    line-height: 1.4;
+    word-break: break-word;
+    margin-top: 0.2rem;
+  }
 </style>
 </head>
 <body class="py-0">
 
-<meu-menu></meu-menu>
+  <meu-menu></meu-menu>
 
-<div id="page-wrapper" class="container-fluid my-4">
-  <h2 class="text-danger fw-bold">Movimento para Inclusão e Neurodiversidade</h2>
+  <div id="page-wrapper" class="container-fluid px-4 my-4">
+    <h2 class="text-danger fw-bold">Movimento para Inclusão e Neurodiversidade</h2>
 
-  <div class="d-flex justify-content-center align-items-center flex-wrap gap-2 mt-3 mb-3">
-    <h5 class="text-black m-0">Galeria de Participações em Eventos e Congressos</h5>
-    <a href="menucongressos.html" class="btn btn-primary">
-      <i class="bi bi-arrow-left-circle me-1"></i> Voltar Menu de Congresso
+    <div class="d-flex justify-content-center align-items-center flex-wrap gap-2 mt-3 mb-4">
+      <h5 class="text-black m-0">Galeria de Participações em Eventos e Congressos</h5>
+      <a href="menucongressos.html" class="btn btn-primary">
+        <i class="bi bi-arrow-left-circle me-1"></i> Voltar Menu de Congresso
+      </a>
+    </div>
+
+    <div class="bg-light p-3 rounded-3 border mb-4">
+      <div class="row g-2 justify-content-center align-items-center">
+        <div class="col-md-3 col-sm-5">
+          <select id="filtroSigla" class="form-select">
+            <option value="">Filtrar por sigla do evento</option>
+          </select>
+        </div>
+        <div class="col-md-2 col-sm-4">
+          <select id="filtroAno" class="form-select">
+            <option value="">Filtrar por Ano</option>
+          </select>
+        </div>
+        <div class="col-md-2 col-sm-3">
+          <button id="btnLimpar" class="btn btn-secondary w-100"><i class="bi bi-x-circle"></i> Limpar</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="gallery" class="gallery"></div>
+  </div>
+
+  <template id="galeria-item-template">
+    <a class="card image" target="_blank">
+      <img class="galeria-imagem" alt="">
+      <div class="legend">
+        <div class="galeria-sigla sigla-evento"></div>
+        <div class="galeria-nome nome-evento"></div>
+        <div class="galeria-descricao"></div>
+      </div>
     </a>
-  </div>
+  </template>
 
-  <!-- Filtros -->
-  <div class="row g-2 mb-3 justify-content-center">
-    <div class="col-md-3 col-sm-6">
-      <select id="filtroSigla" class="form-select">
-        <option value="">Filtrar por sigla do evento</option>
-      </select>
-    </div>
-    <div class="col-md-2 col-sm-6">
-      <select id="filtroAno" class="form-select">
-        <option value="">Filtrar por Ano</option>
-      </select>
-    </div>
-    <div class="col-md-2 col-sm-6">
-      <button id="btnLimpar" class="btn btn-secondary w-100">Limpar</button>
-    </div>
-  </div>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
 
-  <!-- Galeria -->
-  <div id="gallery" class="gallery"></div>
-</div>
+  <script>
+  // ===== Web Component sem Shadow DOM (mantém compatibilidade do magnificPopup) =====
+  class GaleriaItem extends HTMLElement {
+    connectedCallback() {
+      const template = document.getElementById('galeria-item-template').content.cloneNode(true);
+      this.appendChild(template);
 
-<!-- Template do item -->
-<template id="galeria-item-template">
-  <a class="card image" target="_blank">
-    <img class="galeria-imagem" alt="">
-    <div class="legend">
-      <strong class="galeria-sigla sigla-evento"></strong>
-      <strong class="galeria-nome nome-evento"></strong>
-      <span class="galeria-descricao"></span>
-    </div>
-  </a>
-</template>
+      const imagem = this.getAttribute('imagem');
+      const sigla = this.getAttribute('sigla');
+      const nome = this.getAttribute('nome');
+      const ano = this.getAttribute('ano');
+      const descricao = this.getAttribute('descricao');
 
-<!-- Scripts -->
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-
-<script>
-// ===== Web Component sem Shadow DOM (mantém popup funcional) =====
-class GaleriaItem extends HTMLElement {
-  connectedCallback() {
-    const template = document.getElementById('galeria-item-template').content.cloneNode(true);
-    this.appendChild(template);
-
-    const imagem = this.getAttribute('imagem');
-    const sigla = this.getAttribute('sigla');
-    const nome = this.getAttribute('nome');
-    const ano = this.getAttribute('ano');
-    const descricao = this.getAttribute('descricao');
-
-    const card = this.querySelector('.card');
-    card.href = imagem;
-    this.querySelector('.galeria-imagem').src = imagem;    
-    this.querySelector('.galeria-imagem').alt = '${sigla} ${ano}';
-    this.querySelector('.galeria-sigla').textContent = `${sigla} - ${ano}`;
-    this.querySelector('.galeria-nome').textContent = nome ? nome : "";
-    this.querySelector('.galeria-descricao').textContent = descricao;
+      const card = this.querySelector('.card');
+      card.href = imagem;
+      
+      const imgEl = this.querySelector('.galeria-imagem');
+      imgEl.src = imagem;    
+      imgEl.alt = `${sigla} ${ano}`;
+      
+      this.querySelector('.galeria-sigla').textContent = `${sigla} - ${ano}`;
+      this.querySelector('.galeria-nome').textContent = nome ? nome : "";
+      this.querySelector('.galeria-descricao').textContent = descricao ? descricao : "";
+    }
   }
-}
-customElements.define('galeria-item', GaleriaItem);
+  customElements.define('galeria-item', GaleriaItem);
 
-// ===== Lógica principal =====
-document.addEventListener('DOMContentLoaded', () => {
-  const container = document.getElementById('gallery');
-  const dados = listarItens('galeriacongressos');
+  // ===== Lógica de Manipulação de Dados e Filtros =====
+  document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('gallery');
+    const dados = typeof listarItens === 'function' ? listarItens('galeriacongressos') : [];
 
-  const filtroSigla = document.getElementById('filtroSigla');
-  const filtroAno = document.getElementById('filtroAno');
+    const filtroSigla = document.getElementById('filtroSigla');
+    const filtroAno = document.getElementById('filtroAno');
 
-  const siglas = [...new Set(dados.map(e => e.sigla))].sort();
-  const anos = [...new Set(dados.map(e => e.ano))].sort();
-  siglas.forEach(s => filtroSigla.append(new Option(s, s)));
-  anos.forEach(a => filtroAno.append(new Option(a, a)));
+    const siglas = [...new Set(dados.map(e => e.sigla).filter(Boolean))].sort();
+    const anos = [...new Set(dados.map(e => e.ano).filter(Boolean))].sort();
+    siglas.forEach(s => filtroSigla.append(new Option(s, s)));
+    anos.forEach(a => filtroAno.append(new Option(a, a)));
 
-  function renderizarGaleria(fSigla = '', fAno = '') {
-    container.innerHTML = '';
-    const filtrados = dados.filter(e =>
-      (!fSigla || e.sigla === fSigla) && (!fAno || e.ano === fAno)
-    );
+    function renderizarGaleria(fSigla = '', fAno = '') {
+      container.innerHTML = '';
+      const filtrados = dados.filter(e =>
+        (!fSigla || e.sigla === fSigla) && (!fAno || e.ano === fAno)
+      );
 
-    filtrados.forEach(e => {
-      const item = document.createElement('galeria-item');
-      item.setAttribute('imagem', e.imagem);
-      item.setAttribute('sigla', e.sigla);
-      item.setAttribute('nome', e.nome);
-      item.setAttribute('ano', e.ano);
-      item.setAttribute('descricao', e.descricao);
-      container.appendChild(item);
-    });
+      filtrados.forEach(e => {
+        const item = document.createElement('galeria-item');
+        item.setAttribute('imagem', e.imagem || 'imagens/default.jpg');
+        item.setAttribute('sigla', e.sigla || '');
+        item.setAttribute('nome', e.nome || '');
+        item.setAttribute('ano', e.ano || '');
+        item.setAttribute('descricao', e.descricao || 'Nenhuma descrição disponível.');
+        container.appendChild(item);
+      });
 
-    // Reativa Magnific Popup
-    $('.gallery').magnificPopup({
-      delegate: 'a',
-      type: 'image',
-      gallery: { enabled: true }
-    });
-  }
+      // Vincula novamente os gatilhos do lightbox de imagens após renderização
+      $('.gallery').magnificPopup({
+        delegate: 'a',
+        type: 'image',
+        gallery: { enabled: true }
+      });
+    }
 
-  renderizarGaleria();
-
-  filtroSigla.addEventListener('change', () => renderizarGaleria(filtroSigla.value, filtroAno.value));
-  filtroAno.addEventListener('change', () => renderizarGaleria(filtroSigla.value, filtroAno.value));
-  document.getElementById('btnLimpar').addEventListener('click', () => {
-    filtroSigla.value = '';
-    filtroAno.value = '';
     renderizarGaleria();
-  });
 
-});
-</script>
+    filtroSigla.addEventListener('change', () => renderizarGaleria(filtroSigla.value, filtroAno.value));
+    filtroAno.addEventListener('change', () => renderizarGaleria(filtroSigla.value, filtroAno.value));
+    document.getElementById('btnLimpar').addEventListener('click', () => {
+      filtroSigla.value = '';
+      filtroAno.value = '';
+      renderizarGaleria();
+    });
+  });
+  </script>
 
   <meu-tradutor></meu-tradutor>
-<script src="javascript/components/tradutor.js" defer></script>
-  
-<meu-footer></meu-footer>
+  <meu-footer></meu-footer>
 
 </body>
 </html>

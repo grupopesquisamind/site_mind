@@ -113,7 +113,7 @@ function listarItens(tipo) {
         id: "10",
         status: "Ativo",
         nome: "Tardelli Ronan Coelho Stekel",
-        formacao: "Possui Graduação em Engenharia Elétrica pela Universidade Federal de Santa Maria (UFSM), Mestrado em Geofísica Espacial pelo Instituto Nacional de Pesquisas Espaciais (INPE), com mestrado sanduíche FAPESP na George Mason University (GMU), Fairfax, VA e no Naval Research Laboratory (NRL), Washington, D.C. Doutor em Geofísica Espacial pelo INPE e doutorado sanduíche no Max-Planck-Institut für Sonnensystemforschung (MPS) em Göttingen, Alemanha, atulmente é lotado no IFSP Campus Jacareí como professor de Informática",
+        formacao: "Possui Graduação em Engenharia Elétrica pela Universidade Federal de Santa Maria (UFSM), Mestrado em Geofísica Espacial pelo Instituto Nacional de Pesquisas Espaciais (INPE), com mestrado sanduíche FAPESP na George Mason University (GMU), Fairfax, VA e no Naval Research Laboratory (NRL), Washington, D.C. Doutor em Geofísica Espacial pelo INPE e doutorado sanduíche no Max-Planck-Institut für Sonnensystemforschung (MPS) em Göttingen, Alemanha, atualmente é lotado no IFSP Campus Jacareí como professor de Informática",
         titulo: "Doutorado",
         tipoParticipacao: "Colaborador Interno",
         anoIngresso: "2024",
