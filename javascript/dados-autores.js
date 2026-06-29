@@ -267,7 +267,19 @@ function listarItens(tipo) {
         lattes: "http://lattes.cnpq.br/5159854768377627",
         imagem: "ryan_cristian.jpg",  // <-- Só o nome do arquivo
       },
-       
+       {
+        id: "22",
+        status: "Ativo",
+        nome: "Ana Clara Machado Godinho",
+        formacao: "Cursando Engenharia Química ",
+        titulo: "Estudante de Ensino Superior",
+        tipoParticipacao: "Colaborador Externo",
+        anoIngresso: "2026",
+        anoSaida: "Atualmente",
+        instituicao: "Universidade Federal Do Rio Grande do Sul",
+        lattes: "http://lattes.cnpq.br/8868488747354907",
+        imagem: "ana_clara_godinho.jpg",  // <-- Só o nome do arquivo
+      }, 
     ];
   }
   return [];
