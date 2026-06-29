@@ -271,7 +271,7 @@ function listarItens(tipo) {
         id: "22",
         status: "Ativo",
         nome: "Ana Clara Machado Godinho",
-        formacao: "Atualmente está cursando Engenharia Química na UFRGS (Universidade Federal Do Rio Grande do Sul)",
+        formacao: "Atualmente está cursando Engenharia Química na Universidade Federal Do Rio Grande do Sul (UFRGS)",
         titulo: "Estudante de Ensino Superior",
         tipoParticipacao: "Colaborador Externo",
         anoIngresso: "2026",
