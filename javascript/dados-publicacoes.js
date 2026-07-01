@@ -203,7 +203,7 @@ function listarItens(chave) {
         titulo: "A utilização da Ferramenta Computacional Scratch para o Ensino de Propriedades Coligativas para alunos com TEA",
         autor: "Ricardo Henrique dos Reis Nascimento",
         coautor: "Bianca Estrela Montemor Abdalla França Camargo, Alexssandro Ferreira da Silva, Ana Paula Kawabe de Lima Ferreira",
-        tipo: "Artigo",
+        tipo: "Anais de Congresso",
         local: "Encontro Paulista de Pesquisa em Ensino de Química",
         sigla: "EPPEQ",
         linkSite: "http://eppeq.ti.srt.ifsp.edu.br/index.php/eppeq",
