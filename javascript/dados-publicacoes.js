@@ -292,7 +292,7 @@ function listarItens(chave) {
         sigla: "CAIE-REI",
         linkSite: "https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie",
         linkPublicacao: "https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie/article/view/31",
-        publicacaoArquivo: "publicacaoArquivo/Publicacoes/21-Publicacao_Educacao_especial_formacao_professores_revisao_sistematica_abordagem_anais_CBEE_CAIE-REI_2024.pdf",
+        publicacaoArquivo: "publicacaoArquivo/Publicacoes/21-Publicacao_Educacao_especial_formacao_professores_revisao_sistematica_abordagem_anais_CBEE_CAIE_REI_2024.pdf",
         referenciarPub: "FERREIRA, Ana Paula Kawabe de Lima, CAMEJO AVILES, Ivana Elena. Educação especial e a formação de professores: uma revisão sistemática da abordagem dos anais CB33-2023. Anais [...] IN: CONGRESSO DE ACESSIBILIDADE E INCLUSÃO NA EDUCAÇÃO, IFSP CUBATÃO, 2023, Cubatão-SP. Anais [...] Cubatão: Revista  da Educação Inclusiva (REI), v1, 2024, p.1-16. Disponível em: https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie/article/view/31",
       },
       {
@@ -335,7 +335,7 @@ function listarItens(chave) {
         sigla: "CAIE-REI",
         linkSite: "https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie",
         linkPublicacao: "https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie/article/view/36",
-        publicacaoArquivo: "publicacaoArquivo/Publicacoes/24-Publicacao_Estrategias_pedagogicas_inclusivas_para_alunos_com_TEA_no_ensino_de_formas_geometricas_planas_CAIE - REI_2024.pdf",
+        publicacaoArquivo: "publicacaoArquivo/Publicacoes/24-Publicacao_Estrategias_pedagogicas_inclusivas_para_alunos_com_TEA_no_ensino_de_formas_geometricas_planas_CAIE_REI_2024.pdf",
         referenciarPub: "FERREIRA, Gabriel Kawabe de Lima; SILVA, Alexssandro Ferreira da; Ferreira, Ana Paula Kawabe de Lima. Estratégia pedagógica inclusiva para alunos no transtorno do espectro autista: ensino de formas geométricas planas. Revista da Educação Inclusiva, v. 1, p. 128-139, 2024. Disponível em: https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie/article/view/36",
       },
       {
@@ -434,7 +434,7 @@ function listarItens(chave) {
         sigla: "CAIE-REI",
         linkSite: "https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie",
         linkPublicacao: "https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie/issue/view/1",
-        publicacaoArquivo: "publicacaoArquivo/Publicacoes/31-Publicacao_Jogo_ computacionais_contação_de_historia_uma_proposta_educacional_inclusiva_para_ensinar_funcoes_oxigenadas_CAIE-REI_2024.pdf",
+        publicacaoArquivo: "publicacaoArquivo/Publicacoes/31-Publicacao_Jogo_ computacionais_contação_de_historia_uma_proposta_educacional_inclusiva_para_ensinar_funcoes_oxigenadas_CAIE_REI_2024.pdf",
         referenciarPub: "GOMES, Mateus Cayque Figueiredo; SILVA, Alexssandro Ferreira da; FERREIRA, Ana Paula Kawabe de Lima; CAMEJO AVILES, Ivana Elena. Jogos computacionais e a contação de história: uma proposta educacional inclusiva para ensinar funções oxigenadas. Anais [...] IN: CAIE - Congresso de Acessibilidade e Inclusão na Educação - IFSP Cubatão. REI - Revista da Educação Inclusiva, v. 1, p. 177-192, 2024. Disponível em: https://intranet.cbt.ifsp.edu.br/ojs/index.php/caie/issue/view/1",
       },
       {
@@ -560,7 +560,7 @@ function listarItens(chave) {
         sigla: "EPPEQ",
         linkSite: "https://portal.sbenq.org.br/eppeq/",
         linkPublicacao: "https://firebasestorage.googleapis.com/v0/b/cientestudio.appspot.com/o/paperFinalVersion%2F2caee8da-edc8-449a-a0a7-a3af6f9b15f5.pdf?alt=media&token=ec457cc7-5057-43d0-9d3c-696146ac130f",
-        publicacaoArquivo: "publicacaoArquivo/Publicacoes/40-Publicacao_Democratizando_Ensino_Inclusao_de_pessoas_neurodivergentes_Ensino_de_Funcoes_Organicas.pdf",
+        publicacaoArquivo: "publicacaoArquivo/Publicacoes/40-Publicacao_Democratizando_Ensino_Inclusao_de_pessoas_neurodivergentes_Ensino_de_Funcoes_Organicas_EPPEQ_2025.pdf",
         referenciarPub: "BARONI, Gabriel de Paula; SILVA, FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; STEKEL, Tardelli Ronan Coelho. Democratizando o Ensino: Inclusão de pessoas neurodivergentes no Ensino de Funções Orgânicas. Anais [...] In: Congresso XIII EPPEQ - Encontro Paulista de Pesquisa em Ensino de Química, UNESP de Presidente Prudente-SP, 17-19/11/2025. Unesp: 2025, p. 1-10. Disponível em: https://firebasestorage.googleapis.com/v0/b/cientestudio.appspot.com/o/paperFinalVersion%2F2caee8da-edc8-449a-a0a7-a3af6f9b15f5.pdf?alt=media&token=ec457cc7-5057-43d0-9d3c-696146ac130f",
       },
       {
@@ -574,7 +574,7 @@ function listarItens(chave) {
         sigla: "EPPEQ",
         linkSite: "https://portal.sbenq.org.br/eppeq/",
         linkPublicacao: "https://firebasestorage.googleapis.com/v0/b/cientestudio.appspot.com/o/paperFinalVersion%2F86ed1a34-e6af-4a4e-ba07-cc50b14cd805.pdf?alt=media&token=47a20687-ce89-41d2-ae16-380e7e5b5b2b",
-        publicacaoArquivo: "publicacaoArquivo/Publicacoes/41-Publicacao_Adaptacoes_curriculares_metodologicas_para_ensino_aprendizagem_Hidrocarbonetos_caso_aluna_com_Transtorno_Espectro_Autista.pdf",
+        publicacaoArquivo: "publicacaoArquivo/Publicacoes/41-Publicacao_Adaptacoes_curriculares_metodologicas_para_ensino_aprendizagem_Hidrocarbonetos_caso_aluna_com_Transtorno_Espectro_Autista_EPPEQ_2025.pdf",
         referenciarPub: "FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; SOUZA, Lyan Lisboa de; MONTEMOR, Bianca Estrela Abdalla França Camargo; CAMEJO AVILES, Ivana Elena. Democratizando o Ensino: Inclusão de pessoas neurodivergentes no Ensino de Funções Orgânicas. Anais [...] IN: In: Congresso XIII EPPEQ - Encontro Paulista de Pesquisa em Ensino de Química, UNESP de Presidente Prudente-SP, 17-19/11/2025. Unesp: 2025, p. 1-13. Disponível em: https://firebasestorage.googleapis.com/v0/b/cientestudio.appspot.com/o/paperFinalVersion%2F86ed1a34-e6af-4a4e-ba07-cc50b14cd805.pdf?alt=media&token=47a20687-ce89-41d2-ae16-380e7e5b5b2b",
       },
       {
@@ -588,7 +588,7 @@ function listarItens(chave) {
         sigla: "EPPEQ",
         linkSite: "https://portal.sbenq.org.br/eppeq/",
         linkPublicacao: "https://firebasestorage.googleapis.com/v0/b/cientestudio.appspot.com/o/papers%2F41082556-ac25-4036-874b-24961c2e880d.pdf?alt=media&token=b5023c82-eca3-4b09-9889-b01924abaca1",
-        publicacaoArquivo: "publicacaoArquivo/Publicacoes/42-Publicacao_Formigas_feromônios_Isomeros_Geometricos_Proposta_ de_Jogo_Educacional_Digital_educação_inclusiva_alunos_TEA.pdf",
+        publicacaoArquivo: "publicacaoArquivo/Publicacoes/42-Publicacao_Formigas_feromônios_Isomeros_Geometricos_Proposta_ de_Jogo_Educacional_Digital_educação_inclusiva_alunos_TEA_EPPEQ_2025.pdf",
         referenciarPub: "FREITAS, Yara Vitoria Claro de; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; NASCIMENTO, Ricardo Henrique dos Reis; CAMEJO AVILES, Ivana Elena. Formigas, feromônios e Isômeros Geométricos: Proposta de Jogo Educacional Digital para a educação inclusiva de alunos com TEA. 2025. Anais [...] In: XIII Encontro Paulista de Pesquisa em Ensino de Química (XIII EPPEQ,UNESP Presidente Prudente, SP.    Unesp: 2025, p. 1-12. Disponível em: https://firebasestorage.googleapis.com/v0/b/cientestudio.appspot.com/o/papers%2F41082556-ac25-4036-874b-24961c2e880d.pdf?alt=media&token=b5023c82-eca3-4b09-9889-b01924abaca1",
      },
       {
@@ -602,7 +602,7 @@ function listarItens(chave) {
         sigla: "EPPEQ",
         linkSite: "https://portal.sbenq.org.br/eppeq/",
         linkPublicacao: "https://firebasestorage.googleapis.com/v0/b/cientestudio.appspot.com/o/paperFinalVersion%2Fc85aef69-3dfa-40e2-9e6b-d238b5251082.pdf?alt=media&token=d2a04398-cda4-4c9a-b824-7ef74bd5f878",
-        publicacaoArquivo: "publicacaoArquivo/Publicacoes/43-Publicacao_Jogo Didático Inclusivo sobre Pilhas Eletroquímicas_Ensino_Química_Desenho_Universal_Aprendizagem.pdf",
+        publicacaoArquivo: "publicacaoArquivo/Publicacoes/43-Publicacao_Jogo Didático Inclusivo sobre Pilhas Eletroquímicas_Ensino_Química_Desenho_Universal_Aprendizagem_EPPEQ_2025.pdf",
         referenciarPub: "GODINHO, Ana Clara Machado; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; GOMES, Mateus Cayque Figueiredo; CAMEJO AVILES, Ivana Elena. Democratizando o Ensino: Inclusão de pessoas neurodivergentes no Ensino de Funções Orgânicas. Anais [...] IN: Congresso XIII EPPEQ - Encontro Paulista de Pesquisa em Ensino de Química, UNESP de Presidente Prudente-SP, 17-19/11/2025. Unesp: 2025, p.1-12. Disponível em: https://firebasestorage.googleapis.com/v0/b/cientestudio.appspot.com/o/paperFinalVersion%2Fc85aef69-3dfa-40e2-9e6b-d238b5251082.pdf?alt=media&token=d2a04398-cda4-4c9a-b824-7ef74bd5f878",
       },
       {
@@ -616,7 +616,7 @@ function listarItens(chave) {
         sigla: "EPPEQ",
         linkSite: "https://portal.sbenq.org.br/eppeq/",
         linkPublicacao: "https://firebasestorage.googleapis.com/v0/b/cientestudio.appspot.com/o/papers%2F74e941b0-406c-433a-ab68-1661dc117524.pdf?alt=media&token=b6709f78-4709-46b3-8f5a-a8fef183ab59",
-        publicacaoArquivo: "publicacaoArquivo/Publicacoes/44-Publicacao_Do_Vapor_Inclusao_Um_Recurso_Didatico_Digital_Baseado_Historia_Maquina_Vapor_para_Alunos_Transtorno_Espectro_Autista.pdf",
+        publicacaoArquivo: "publicacaoArquivo/Publicacoes/44-Publicacao_Do_Vapor_Inclusao_Um_Recurso_Didatico_Digital_Baseado_Historia_Maquina_Vapor_para_Alunos_Transtorno_Espectro_Autista_EPPEQ_2025.pdf",
         referenciarPub: "SANTOS, Thiago Marinho; SILVA, Alexssandro Ferreira da; NASCIMENTO, Ricardo Henrique dos Reis; FERREIRA, Ana Paula Kawabe de Lima. Do Vapor à Inclusão: Um Recurso Didático Digital Baseado na História da Máquina a Vapor para Alunos com Transtorno do Espectro Autista. 2025. Anais [...] IN: XIII Encontro Paulista de Pesquisa em Ensino de Química (XIII EPPEQ,UNESP Presidente Prudente, SP. Anais [...]  Unesp: 2025, p. 1-11. Disponível em: https://firebasestorage.googleapis.com/v0/b/cientestudio.appspot.com/o/papers%2F74e941b0-406c-433a-ab68-1661dc117524.pdf?alt=media&token=b6709f78-4709-46b3-8f5a-a8fef183ab59",
       },
       {
@@ -625,13 +625,13 @@ function listarItens(chave) {
         titulo: "Aprendizagem Significativa Crítica e Inclusão: uma proposta de sequência didática sobre isomeria geométrica.",
         autor: "Yara Vitória Claro de Freitas",
         coautor: "Ana Paula Kawabe de Lima Ferreira, Alexssandro Ferreira da Silva", /*Ivana Elena Camejo Aviles*/
-        tipo: "Anais de Congresso: Aguardando Publicar",
+        tipo: "Anais de Congresso",
         local: "9º ENAS - Encontro Nacional de Aprendizagem Significativa",
         sigla: "ENAS",
         linkSite: "https://www.univates.br/evento/9-enas",
-        linkPublicacao: "aviso.html",
-        publicacaoArquivo: "aviso.html",
-        referenciarPub: "FREITAS, Yara Vitoria Claro de; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; CAMEJO AVILES, Ivana Elena. Aprendizagem Significativa Crítica e Inclusão: uma proposta de sequência didática sobre isomeria geométrica. In: Congresso 9º ENAS - Encontro Nacional de Aprendizagem Significativa, Univates de Lajeado-RS, 17-21/11/2025. Anais [...]. Disponível em: ",
+        linkPublicacao: "publicacaoArquivo/Publicacoes/IX-ENAS-2025-ANAIS-final_2025.pdf",
+        publicacaoArquivo: "publicacaoArquivo/Publicacoes/45-Publicacao_Apresendizagem_significativa_critica_inclusao_proposta_UEPS_isimeria_geometrica_ENAS_2025.pdf",
+        referenciarPub: "FREITAS, Yara Vitoria Claro de; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; CAMEJO AVILES, Ivana Elena. Aprendizagem Significativa Crítica e Inclusão: uma proposta de sequência didática sobre isomeria geométrica. In: Congresso 9º ENAS - Encontro Nacional de Aprendizagem Significativa, Univates de Lajeado-RS, 17-21/11/2025. Anais [...]. Univates: 2025,  p. 185-194. Disponível em: ",
       },
       {
         idpub: "46",
@@ -639,13 +639,13 @@ function listarItens(chave) {
         titulo: "Da contextualização à inclusão: funções orgânicas e a comunicação aumentativa e alternativa no Ensino de Química.",
         autor: "Gabriel de Paula Baroni",
         coautor: "Ana Paula Kawabe de Lima Ferreira, Alexssandro Ferreira da Silva, Tardelli Ronan Coelho Stekel",
-        tipo: "Anais de Congresso: Aguardando Publicar",
+        tipo: "Anais de Congresso",
         local: "9º ENAS - Encontro Nacional de Aprendizagem Significativa",
         sigla: "ENAS",
         linkSite: "https://www.univates.br/evento/9-enas",
-        linkPublicacao: "aviso.html",
-        publicacaoArquivo: "aviso.html",
-        referenciarPub: "BARONI, Gabriel de Paula; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; STEKEL, Tardelli Ronan Coelho. Da contextualização à inclusão: funções orgânicas e a comunicação aumentativa e alternativa no Ensino de Química. In: Congresso 9º ENAS - Encontro Nacional de Aprendizagem Significativa, Univates de Lajeado-RS, 17-21/11/2025. Anais [...]. Disponível em: ",
+        linkPublicacao: "publicacaoArquivo/Publicacoes/IX-ENAS-2025-ANAIS-final_2025.pdf",
+        publicacaoArquivo: "publicacaoArquivo/Publicacoes/46-Publicacao_Da_contextualizacao_inclusao_funcoes_organicas_CAA_ensino_quimica_ENAS_2025.pdf",
+        referenciarPub: "BARONI, Gabriel de Paula; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; STEKEL, Tardelli Ronan Coelho. Da contextualização à inclusão: funções orgânicas e a comunicação aumentativa e alternativa no Ensino de Química. In: Congresso 9º ENAS - Encontro Nacional de Aprendizagem Significativa, Univates de Lajeado-RS, 17-21/11/2025. Anais [...]. Univates: 2025,  p. 564-573. Disponível em: ",
       },
       {
         idpub: "47",
@@ -653,13 +653,13 @@ function listarItens(chave) {
         titulo: "Máquina a vapor e Aprendizagem Significativa: proposta de sequência didátiva inclusiva.",
         autor: "Thiago Marinho Santos",
         coautor: "Ana Paula Kawabe de Lima Ferreira, Alexssandro Ferreira da Silva", /*Ivana Elena Camejo Aviles*/
-        tipo: "Anais de Congresso: Aguardando Publicar",
+        tipo: "Anais de Congresso",
         local: "9º ENAS - Encontro Nacional de Aprendizagem Significativa",
         sigla: "ENAS",
         linkSite: "https://www.univates.br/evento/9-enas",
-        linkPublicacao: "aviso.html",
-        publicacaoArquivo: "aviso.html",
-        referenciarPub: "SANTOS, Thiago Marinho; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; CAMEJO AVILES, Ivana Elena. Máquina a vapor e Aprendizagem Significativa: proposta de sequência didátiva inclusiva. In: Congresso 9º ENAS - Encontro Nacional de Aprendizagem Significativa, Univates de Lajeado-RS, 17-21/11/2025. Anais [...]. Disponível em: ",
+        linkPublicacao: "publicacaoArquivo/Publicacoes/IX-ENAS-2025-ANAIS-final_2025.pdf",
+        publicacaoArquivo: "publicacaoArquivo/Publicacoes/47-Publicacao_Maquina_vapor_apresendizagem_significativa_critica_proposta_sequencia_dicatica_inclusiva_ENAS_2025.pdf",
+        referenciarPub: "SANTOS, Thiago Marinho; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; CAMEJO AVILES, Ivana Elena. Máquina a vapor e Aprendizagem Significativa: proposta de sequência didátiva inclusiva. In: Congresso 9º ENAS - Encontro Nacional de Aprendizagem Significativa, Univates de Lajeado-RS, 17-21/11/2025. Anais [...]. Univates: 2025,  p. 501-511. Disponível em: ",
       },
       {
         idpub: "48",
@@ -667,13 +667,13 @@ function listarItens(chave) {
         titulo: "Monitoria Acadêmica no Ensino Médio: caminhos para uma Educação Inclusiva a partir da Aprendizagem Significativa Crítica.",
         autor: "Ana Paula Kawabe de Lima Ferreira",
         coautor: "Ana Clara Machado Godinho, Alexssandro Ferreira da Silva", /*Ivana Elena Camejo Aviles*/
-        tipo: "Anais de Congresso: Aguardando Publicar",
+        tipo: "Anais de Congresso",
         local: "9º ENAS - Encontro Nacional de Aprendizagem Significativa",
         sigla: "ENAS",
         linkSite: "https://www.univates.br/evento/9-enas",
-        linkPublicacao: "aviso.html",
-        publicacaoArquivo: "aviso.html",
-        referenciarPub: "FERREIRA, Ana Paula Kawabe de Lima; GODINHO, Ana Clara Machado; SILVA, Alexssandro Ferreira da; CAMEJO AVILES, Ivana Elena. Monitoria Acadêmica no Ensino Médio: caminhos para uma Educação Inclusiva a partir da Aprendizagem Significativa Crítica. In: Congresso 9º ENAS - Encontro Nacional de Aprendizagem Significativa, Univates de Lajeado-RS, 17-21/11/2025. Anais [...]. Disponível em: ",
+        linkPublicacao: "publicacaoArquivo/Publicacoes/IX-ENAS-2025-ANAIS-final_2025.pdf",
+        publicacaoArquivo: "publicacaoArquivo/Publicacoes/48-Publicacao_Monitoria_ensino_medio_educacao_inclusiva_apresendizagem_significativa_critica_ENAS_2025.pdf",
+        referenciarPub: "FERREIRA, Ana Paula Kawabe de Lima; GODINHO, Ana Clara Machado; SILVA, Alexssandro Ferreira da; CAMEJO AVILES, Ivana Elena. Monitoria Acadêmica no Ensino Médio: caminhos para uma Educação Inclusiva a partir da Aprendizagem Significativa Crítica. In: Congresso 9º ENAS - Encontro Nacional de Aprendizagem Significativa, Univates de Lajeado-RS, 17-21/11/2025. Anais [...]. Univates: 2025,  p. 174-184. Disponível em: ",
       },
       {
         idpub: "49",
@@ -681,14 +681,15 @@ function listarItens(chave) {
         titulo: "Pilhas eletroquímicas e Educação Ambiental: uma proposta de sequência didática sob os pressupostos da  Aprendizagem Significativa Crítica.",
         autor: "Ana Clara Machado Godinho",
         coautor: "Ana Paula Kawabe de Lima Ferreira, Alexssandro Ferreira da Silva", /*Ivana Elena Camejo Aviles*/
-        tipo: "Anais de Congresso: Aguardando Publicar",
+        tipo: "Anais de Congresso",
         local: "9º ENAS - Encontro Nacional de Aprendizagem Significativa",
         sigla: "ENAS",
         linkSite: "https://www.univates.br/evento/9-enas",
-        linkPublicacao: "aviso.html",
-        publicacaoArquivo: "aviso.html",
-        referenciarPub: "GODINHO, Ana Clara Machado; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; CAMEJO AVILES, Ivana Elena. Pilhas eletroquímicas e Educação Ambiental: uma proposta de sequência didática sob os pressupostos da  Aprendizagem Significativa Crítica. In: Congresso 9º ENAS - Encontro Nacional de Aprendizagem Significativa, Univates de Lajeado-RS, 17-21/11/2025. Anais [...]. Disponível em: ",
+        linkPublicacao: "publicacaoArquivo/Publicacoes/IX-ENAS-2025-ANAIS-final_2025.pdf",
+        publicacaoArquivo: "publicacaoArquivo/Publicacoes/49-Publicacao_Pilhas_eletroquimicas_educacao_ambiental_proposta_sequencia_didatica_aprendizagem_siginificativa_critica_ENAS_2025.pdf",
+        referenciarPub: "GODINHO, Ana Clara Machado; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; CAMEJO AVILES, Ivana Elena. Pilhas eletroquímicas e Educação Ambiental: uma proposta de sequência didática sob os pressupostos da  Aprendizagem Significativa Crítica. In: Congresso 9º ENAS - Encontro Nacional de Aprendizagem Significativa, Univates de Lajeado-RS, 17-21/11/2025. Anais [...]. Univates: 2025,  p. 574-584. Disponível em: ",
       },
+  
     ];
 
   }
