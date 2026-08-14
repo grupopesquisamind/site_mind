@@ -253,7 +253,7 @@ function listarItens(chave) {
     id: "20",
     autor: "Lyan Lisboa de Souza",
     ano: "2023",
-    nomeProducao: "Jogo Química Orgânica: Fórmulas hidrocarbonato.",
+    nomeProducao: "Jogo Química Orgânica: Fórmulas hidrocarboneto.",
     titulo: "Uso das ferramentas metodológicas Scratch e Chemsketch para o ensino de Fórmulas Químicas para alunos com TEA",
     categoria: "Química",
     tipo: "Jogo Educativo",
@@ -279,7 +279,7 @@ function listarItens(chave) {
     id: "22",
     autor: "Mateus Cayque Figueiredo Gomes",
     ano: "2024",
-    nomeProducao: "Jogo Química Orgânica: Hidrocarbonato cadeia fechada.",
+    nomeProducao: "Jogo Química Orgânica: Hidrocarboneto cadeia fechada.",
     titulo: " Jogo Educacional para o Ensino Potencialmente Significativo de Hidrocarbonetos de Cadeias Fechadas para Alunos com Transtorno do Espectro Autista",
     categoria: "Química",
     tipo: "Jogo Educativo",
@@ -305,7 +305,7 @@ function listarItens(chave) {
     id: "24", /*enviado ao EPPEQ, aguardando publicação*/
     autor: "Yara Vitoria Claro de Freitas",
     ano: "2025",
-    nomeProducao: "Feromônios para o ensino de isomeria geométrica. (Aguardando publicação nos Anais do Congresso)",
+    nomeProducao: "Feromônios para o ensino de isomeria geométrica.",
     titulo: "Formigas, feromônios e Isômeros Geométricos: Proposta de Jogo Educacional Digital para a educação inclusiva de alunos com TEA.",
     categoria: "Química",
     tipo: "Jogo Educativo",
@@ -318,7 +318,7 @@ function listarItens(chave) {
     id: "25", /*enviado ao EPPEQ, aguardando publicação*/
     autor: "Thiago Marinho Santos",
     ano: "2025",
-    nomeProducao: "Máquina a vapor. (Aguardando publicação nos Anais do Congresso)",
+    nomeProducao: "Máquina a vapor.",
     titulo: "Do Vapor à Inclusão: Um Recurso Didático Digital Baseado na História da Máquina a Vapor para Alunos com Transtorno do Espectro Autista.",
     categoria: "Física",
     tipo: "Jogo Educativo",
@@ -326,6 +326,19 @@ function listarItens(chave) {
     linkPublicacao: "https://firebasestorage.googleapis.com/v0/b/cientestudio.appspot.com/o/papers%2F74e941b0-406c-433a-ab68-1661dc117524.pdf?alt=media&token=b6709f78-4709-46b3-8f5a-a8fef183ab59",
     publicacaoArquivo: "publicacaoArquivo/Publicacoes_Jogos/25-Jogos_de_Fisica_Do_Vapor_Inclusao_Um_Recurso_Didático_Digital_Baseado_História_Maquina_Vapor_para_Alunos_Transtorno_Espectro_Autista.pdf",
     referenciar: "SANTOS, Thiago Marinho; SILVA, Alexssandro Ferreira da; NASCIMENTO, Ricardo Henrique dos Reis; FERREIRA, Ana Paula Kawabe de Lima. Do Vapor à Inclusão: Um Recurso Didático Digital Baseado na História da Máquina a Vapor para Alunos com Transtorno do Espectro Autista. 2025. In: XIII Encontro Paulista de Pesquisa em Ensino de Química (XIII EPPEQ,UNESP Presidente Prudente, SP.  Anais [...]  Unesp: 2025, p. 1-11. Disponível em: https://firebasestorage.googleapis.com/v0/b/cientestudio.appspot.com/o/papers%2F74e941b0-406c-433a-ab68-1661dc117524.pdf?alt=media&token=b6709f78-4709-46b3-8f5a-a8fef183ab59",
+  },   
+   {
+    id: "26", /*enviado ao EPPEQ, aguardando publicação*/
+    autor: "Lyan Lisboa de Souza",
+    ano: "2026",
+    nomeProducao: "Ensino de Hidrocarbonetos e adaptações.",
+    titulo: "Ensino e aprendizagem de hidrocarbonetos por jogo didático virtual: adaptações metodológicas para uma estudante com transtorno do espectro autista.",
+    categoria: "Química",
+    tipo: "Jogo Educativo",
+    src: "https://scratch.mit.edu/projects/1234857192/embed",
+    linkPublicacao: "https://ojs.revistadcs.com/index.php/revista/article/view/4381",
+    publicacaoArquivo: "publicacaoArquivo/Publicacoes_Jogos/26-Jogos_de_Quimica_Ensino_aprendizagem_hidrocarbonetos_jogo_didático_virtuaL_adaptações_metodológicas_estudante_TEA.pdf",
+    referenciar: "FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; Bianca Estrela Montemor Abdlla França Camargo; SOUZA, Lyan Lisboa de Souza; GALASSO, Bruno José Betti. Ensino e aprendizagem de hidrocarbonetos por jogo didático virtual: adaptações metodológicas para uma estudante com transtorno do espectro autista. 2026. Revista DCS, 23(86), e4381. https://doi.org/10.54899/dcs.v23i86.4381. Disponível em: https://ojs.revistadcs.com/index.php/revista/article/view/4381",
   },   
 ];
   }

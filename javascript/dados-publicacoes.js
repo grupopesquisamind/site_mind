@@ -689,7 +689,19 @@ function listarItens(chave) {
         publicacaoArquivo: "publicacaoArquivo/Publicacoes/49-Publicacao_Pilhas_eletroquimicas_educacao_ambiental_proposta_sequencia_didatica_aprendizagem_siginificativa_critica_ENAS_2025.pdf",
         referenciarPub: "GODINHO, Ana Clara Machado; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; CAMEJO AVILES, Ivana Elena. Pilhas eletroquímicas e Educação Ambiental: uma proposta de sequência didática sob os pressupostos da  Aprendizagem Significativa Crítica. In: Congresso 9º ENAS - Encontro Nacional de Aprendizagem Significativa, Univates de Lajeado-RS, 17-21/11/2025. Anais [...]. Univates: 2025,  p. 574-584. Disponível em: ",
       },
-  
+     {
+    idpub: "50", /*enviado ao EPPEQ, aguardando publicação*/
+    ano: "2026",
+    titulo: "Ensino e aprendizagem de hidrocarbonetos por jogo didático virtual: adaptações metodológicas para uma estudante com transtorno do espectro autista.",
+    autor: "Ana Paula Kawabe de Lima Ferreira",
+    coautor: "Alexssandro Ferreira da Silva, Lyan Lisboa de Souza, Bruno José Betti Galasso",
+    tipo: "Artigo",
+    local: "Revista DCS - Derecho y Cambio Social",
+    sigla: "DCS",
+    linkPublicacao: "https://ojs.revistadcs.com/index.php/revista/article/view/4381",
+    publicacaoArquivo: "publicacaoArquivo/Publicacoes/50-Publicacao_Ensino_aprendizagem_hidrocarbonetos_jogo_didático_virtuaL_adaptações_metodológicas_estudante_TEA.pdf",
+    referenciarPub: "FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; Bianca Estrela Montemor Abdlla França Camargo; SOUZA, Lyan Lisboa de Souza; GALASSO, Bruno José Betti. Ensino e aprendizagem de hidrocarbonetos por jogo didático virtual: adaptações metodológicas para uma estudante com transtorno do espectro autista. 2026. Revista DCS, 23(86), e4381. https://doi.org/10.54899/dcs.v23i86.4381. Disponível em: https://ojs.revistadcs.com/index.php/revista/article/view/4381",
+  },  
     ];
 
   }
