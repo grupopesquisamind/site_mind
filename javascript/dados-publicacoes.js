@@ -694,13 +694,13 @@ function listarItens(chave) {
     ano: "2026",
     titulo: "Ensino e aprendizagem de hidrocarbonetos por jogo didático virtual: adaptações metodológicas para uma estudante com transtorno do espectro autista.",
     autor: "Ana Paula Kawabe de Lima Ferreira",
-    coautor: "Alexssandro Ferreira da Silva, Lyan Lisboa de Souza, Bruno José Betti Galasso",
+    coautor: "Alexssandro Ferreira da Silva,  Bianca Estrela Montemor Abdlla França Camargo, Lyan Lisboa de Souza, Bruno José Betti Galasso",
     tipo: "Artigo",
     local: "Revista DCS - Derecho y Cambio Social",
     sigla: "DCS",
     linkPublicacao: "https://ojs.revistadcs.com/index.php/revista/article/view/4381",
     publicacaoArquivo: "publicacaoArquivo/Publicacoes/50-Publicacao_Ensino_aprendizagem_hidrocarbonetos_jogo_didático_virtuaL_adaptações_metodológicas_estudante_TEA.pdf",
-    referenciarPub: "FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; Bianca Estrela Montemor Abdlla França Camargo; SOUZA, Lyan Lisboa de Souza; GALASSO, Bruno José Betti. Ensino e aprendizagem de hidrocarbonetos por jogo didático virtual: adaptações metodológicas para uma estudante com transtorno do espectro autista. 2026. Revista DCS, 23(86), e4381. https://doi.org/10.54899/dcs.v23i86.4381. Disponível em: https://ojs.revistadcs.com/index.php/revista/article/view/4381",
+    referenciarPub: "FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; MONTEMOR, Bianca Estrela Abdlla França Camargo; SOUZA, Lyan Lisboa de Souza; GALASSO, Bruno José Betti. Ensino e aprendizagem de hidrocarbonetos por jogo didático virtual: adaptações metodológicas para uma estudante com transtorno do espectro autista. 2026. Revista DCS, 23(86), e4381. https://doi.org/10.54899/dcs.v23i86.4381. Disponível em: https://ojs.revistadcs.com/index.php/revista/article/view/4381",
   },  
     ];
 

@@ -115,20 +115,15 @@
 
   </main>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-  <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
-  
-  <script src="javascript/dados-publicacoes.js"></script>
-
-  <script>
+ <script>
   const publicacoes = listarItens('publicacoes');
 
   const contagem = {};
 
   publicacoes.forEach(pub => {
+    // Ignora a publicação se o tipo for "Apresentação"
+    if (pub.tipo === 'Apresentação') return;
+
     const autor = pub.autor?.trim();
     if (autor) {
       if (!contagem[autor]) contagem[autor] = { autor: 0, coautor: 0 };
