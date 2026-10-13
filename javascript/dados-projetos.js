@@ -101,9 +101,9 @@ function listarItens(chave) {
     categoria: "Ciências",
     tipo: "Jogo Educativo",
     src: "https://scratch.mit.edu/projects/1086926136/embed",
-    linkPublicacao: "https://www.apsignificativa.com/_files/ugd/75b99d_c6891fb2e04f45c0bd86af6a699b76c3.pdf",
+    linkPublicacao: "https://www.apsignificativa.com.br/anais",
     publicacaoArquivo: "publicacaoArquivo/Publicacoes_Jogos/8-Jogos_de_Ciencias_Potencialidade_de_Jogo_Educacional_no_Ensino_de_Sistema_Digestivo_uso_da_CAA_Scratch_alunos_com_TEA_EAIS_2024.pdf",
-    referenciar: "SANTOS, Lucas Caraça dos; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; AVILES, Ivana Elena Camejo. Potencialidade de Jogo Educacional no Ensino de Sistema Digestivo: uso da comunicação aumentativa e alternativa e o scratch para alunos com transtorno do espectro autista. Anais [...] IN: X EIAS- Encontro Internacional de Aprendizagem Significativa, 2024, Montevidéu-Uruguai. X Encuentro Internacional de Aprendizaje Significativo. Montevidéu-Uruguai, 2024. v. 1. p. 316-323. Disponível em:  https://www.apsignificativa.com/_files/ugd/75b99d_c6891fb2e04f45c0bd86af6a699b76c3.pdf",
+    referenciar: "SANTOS, Lucas Caraça dos; FERREIRA, Ana Paula Kawabe de Lima; SILVA, Alexssandro Ferreira da; AVILES, Ivana Elena Camejo. Potencialidade de Jogo Educacional no Ensino de Sistema Digestivo: uso da comunicação aumentativa e alternativa e o scratch para alunos com transtorno do espectro autista. Anais [...] IN: X EIAS- Encontro Internacional de Aprendizagem Significativa, 2024, Montevidéu-Uruguai. X Encuentro Internacional de Aprendizaje Significativo. Montevidéu-Uruguai, 2024. v. 1. p. 316-323. Disponível em:  https://www.apsignificativa.com.br/anais",
   },
   {
     id: "9",
@@ -284,9 +284,9 @@ function listarItens(chave) {
     categoria: "Química",
     tipo: "Jogo Educativo",
     src: "https://scratch.mit.edu/projects/1144441889/embed",
-    linkPublicacao: "https://www.apsignificativa.com/_files/ugd/75b99d_c6891fb2e04f45c0bd86af6a699b76c3.pdf",
+    linkPublicacao: "https://www.apsignificativa.com.br/anais",
     publicacaoArquivo: "publicacaoArquivo/Publicacoes_Jogos/22-Jogo_de_Quimica_Educacional_Ensino_Potencialmente_Significativo_Hidrocarbonetos_Cadeias_Fechadas_Alunos_Transtorno_Espectro_Autista_EIAS_2024.pdf",
-    referenciar: "GOMES, Mateus Cayque Figueiredo; SILVA, Alexssandro Ferreira da; Ferreira, Ana Paula Kawabe de Lima; AVILES, Ivana Elena Camejo. Jogo Educacional para o Ensino Potencialmente Significativo de Hidrocarbonetos de Cadeias Fechadas para Alunos com Transtorno do Espectro Autista. Anais [...] IN: X EIAS- Encontro Internacional de Aprendizagem Significativa, 2024, X EIAS- Encontro Internacional. X Encuentro Internacional de Aprendizaje Significativo. Montevidéu-Uruguai, 2024. v. 1. p. 533-540. disponível em: https://www.apsignificativa.com/_files/ugd/75b99d_c6891fb2e04f45c0bd86af6a699b76c3.pdf",
+    referenciar: "GOMES, Mateus Cayque Figueiredo; SILVA, Alexssandro Ferreira da; Ferreira, Ana Paula Kawabe de Lima; AVILES, Ivana Elena Camejo. Jogo Educacional para o Ensino Potencialmente Significativo de Hidrocarbonetos de Cadeias Fechadas para Alunos com Transtorno do Espectro Autista. Anais [...] IN: X EIAS- Encontro Internacional de Aprendizagem Significativa, 2024, X EIAS- Encontro Internacional. X Encuentro Internacional de Aprendizaje Significativo. Montevidéu-Uruguai, 2024. v. 1. p. 533-540. disponível em: https://www.apsignificativa.com.br/anais",
   },
   {
     id: "23",
