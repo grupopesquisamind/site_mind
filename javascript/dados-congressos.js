@@ -8,7 +8,9 @@ function listarItens(tipo) {
       { nome: "EPPEQ", descricao: "Encontro Paulista de Pesquisa em Ensino de Química", imagem: "eppeq.png" },
       { nome: "SBENBIO", descricao: "Sociedade Brasileira de Ensino de Biologia", imagem: "sbenbio.png" },
       { nome: "EIAS", descricao: "Encontro Internacional de Aprendizagem Significativa", imagem: "apsignificativa.png" },
-      { nome: "ENAS", descricao: "Encontro Nacional de Aprendizagem Signigicativa", imagem: "enasbanner.png"}
+      { nome: "ENAS", descricao: "Encontro Nacional de Aprendizagem Significativa", imagem: "enasbanner.png"},
+      { nome: "ENEBIO/EREBIO", descricao: "Encontro Nacional de Ensino de Biologia (ENEBIO) e o Encontro Regional de Ensino de Biologia da Regional 5 – Nordeste (EREBIO)", imagem: "10_enebio_2026.png"}
+
     ];
   }
   return [];
