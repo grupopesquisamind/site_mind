@@ -16,7 +16,7 @@
   <script src="javascript/components/menu.js" defer></script>
   <script src="javascript/components/footer.js" defer></script>
   <script src="javascript/components/components.js" defer></script>
-
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
   <!-- ===== Proteção global (bloqueios) ===== -->
   <script src="javascript/protecao-global.min.js" defer></script>
 
@@ -250,15 +250,21 @@
           <div class="col-md-1"><button id="btnLimpar" class="btn btn-secondary w-100">Limpar</button></div>
         </div>
 
-        <div class="text-end my-2 no-print">
-          <button onclick="imprimirPagina()" class="btn btn-outline-dark">
-            🖨️ Imprimir Página
-          </button>
 
-          <button onclick="exportarExcel()" class="btn btn-success">
-            📊 Exportar Dados
-          </button>
-        </div>
+        <!-- === botões ações imprimir/exportar === -->
+        <div class="text-end my-2 no-print">
+  <button onclick="imprimirPagina()" class="btn btn-outline-dark">
+    🖨️ Imprimir Página
+  </button>
+
+  <button onclick="exportarCSV()" class="btn btn-secondary">
+    📊 Exportar CSV
+  </button>
+
+  <button onclick="exportarXLSX()" class="btn btn-success">
+    📊 Exportar Excel (.xlsx)
+  </button>
+</div>
 
         <!-- === Tabela === -->
         <div class="table-responsive">
@@ -576,51 +582,70 @@
     }
   </script>
 
-  <script>
-    function exportarExcel() {
+  
+<script>
+  // Função para Exportar como CSV (separado por ponto e vírgula)
+  function exportarCSV() {
+    if (!tabelaDT) return;
 
-      if (!tabelaDT) return;
+    const dados = tabelaDT.rows({ search: 'applied' }).data().toArray();
 
-      const dados = tabelaDT.rows({ search: 'applied' }).data().toArray();
+    let csv = "ID;Identificação Arquivo;Título da Publicação;Autor;Coautor;Tipo;Local;Sigla;Ano;Site Submissão;Link Publicação;Referenciar\n";
 
-      let csv = "ID;Identificação Arquivo;Título da Publicação;Autor;Coautor;Tipo;Local;Sigla;Ano;Site Submissão;Link Publicação;Referenciar\n";
+    dados.forEach(d => {
+      const ref = (d.referenciarPub || "")
+        .replace(/"/g, '""')     // escapa aspas
+        .replace(/\n/g, ' ')     // remove quebra de linha
+        .replace(/\r/g, ' ')     // remove quebra de linha windows
+        .replace(/;/g, ',');     // evita quebrar coluna
 
-      dados.forEach(d => {
+      const nomeArquivo = (d.publicacaoArquivo || "").replace("publicacaoArquivo/Publicacoes/", "");
 
-        const ref = (d.referenciarPub || "")
-          .replace(/"/g, '""')     // escapa aspas
-          .replace(/\n/g, ' ')     // remove quebra de linha
-          .replace(/\r/g, ' ')     // remove quebra de linha windows
-          .replace(/;/g, ',');     // evita quebrar coluna
+      csv += `${d.idpub};${nomeArquivo};"${d.titulo}";"${d.autor}";"${d.coautor}";${d.tipo};${d.local};${d.sigla};${d.ano};${d.linkSite};${d.linkPublicacao};"${ref}"\n`;
+    });
 
-          /*caso o caminho seja fixo*/
-        const nomeArquivo = d.publicacaoArquivo.replace("publicacaoArquivo/Publicacoes/", "");
+    const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "publicacoes.csv";
+    link.click();
+  }
 
-        /**caminho relativo*/
-       /* const nomeArquivo = (d.publicacaoArquivo || "").split('/').pop();*/
+  // Função para Exportar como XLSX real (utilizando SheetJS)
+  function exportarXLSX() {
+    if (!tabelaDT) return;
 
-        csv += `${d.idpub};${nomeArquivo};"${d.titulo}";"${d.autor}";"${d.coautor}";${d.tipo};${d.local};${d.sigla};${d.ano};${d.linkSite};${d.linkPublicacao};"${ref}"\n`;
+    const dados = tabelaDT.rows({ search: 'applied' }).data().toArray();
 
-      });
+    // Mapeia os dados estruturados para as colunas do Excel
+    const linhasFormatadas = dados.map(d => {
+      const nomeArquivo = (d.publicacaoArquivo || "").replace("publicacaoArquivo/Publicacoes/", "");
+      return {
+        "ID": d.idpub,
+        "Identificação Arquivo": nomeArquivo,
+        "Título da Publicação": d.titulo,
+        "Autor": d.autor,
+        "Coautor": d.coautor,
+        "Tipo": d.tipo,
+        "Local": d.local,
+        "Sigla": d.sigla,
+        "Ano": d.ano,
+        "Site Submissão": d.linkSite,
+        "Link Publicação": d.linkPublicacao,
+        "Referenciar": d.referenciarPub || ""
+      };
+    });
 
-      /* dados.forEach(d => {
-         const ref = (d.referenciarPub || "")
-           .replace(/"/g, '""')     // escapa aspas
-           .replace(/\n/g, ' ')     // remove quebra de linha
-           .replace(/\r/g, ' ')     // remove quebra de linha windows
-           .replace(/;/g, ',');     // evita quebrar coluna
- 
-         csv += `${d.idpub};${d.publicacaoArquivo};"${d.titulo}";"${d.autor}";"${d.coautor}";${d.tipo};${d.local};${d.sigla};${d.ano};${d.linkSite};${d.linkPublicacao};"${ref}"\n`;
-       });
- */
-      const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+    // Cria a planilha e o livro de trabalho (Workbook)
+    const worksheet = XLSX.utils.json_to_sheet(linhasFormatadas);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Publicações");
 
-      const link = document.createElement("a");
-      link.href = URL.createObjectURL(blob);
-      link.download = "publicações.xlsx";
-      link.click();
-    }
-  </script>
+    // Gera o arquivo .xlsx real e dispara o download
+    XLSX.writeFile(workbook, "publicacoes.xlsx");
+  }
+</script>
+
 
   <meu-tradutor></meu-tradutor>
   <script src="javascript/components/tradutor.js" defer></script>

@@ -16,7 +16,7 @@
   <script src="javascript/components/menu.js" defer></script>
   <script src="javascript/components/footer.js" defer></script>
   <script src="javascript/components/components.js" defer></script>
-
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
   <!-- ===== Proteção global (bloqueios) ===== -->
   <script src="javascript/protecao-global.min.js" defer></script>
 
@@ -263,15 +263,21 @@
           </div>
         </div>
 
-        <div class="text-end my-2 no-print">
-          <button onclick="imprimirPagina()" class="btn btn-outline-dark">
-            🖨️ Imprimir Página
-          </button>
+        <!-- === botões ações imprimir/export === -->
+ 	<div class="text-end my-2 no-print">
+	  <button onclick="imprimirPagina()" class="btn btn-outline-dark">
+ 	   🖨️ Imprimir Página
+ 	 </button>
 
-          <button onclick="exportarExcel()" class="btn btn-success">
-            📊 Exportar Dados
-          </button>
-        </div>
+ 	 <button onclick="exportarCSV()" class="btn btn-secondary">
+  	  📊 Exportar CSV
+  	</button>
+
+ 	 <button onclick="exportarXLSX()" class="btn btn-success">
+ 	   📊 Exportar Excel (.xlsx)
+ 	 </button>
+	</div>
+
         <!-- === Tabela === -->
         <div class="table-responsive">
           <table id="tabelaProjetos" class="table table-striped table-bordered w-100">
@@ -578,40 +584,65 @@
     }
   </script>
 
-  <script>
-    function exportarExcel() {
+ <script>
+  // Função para Exportar como CSV (texto separado por ponto e vírgula)
+  function exportarCSV() {
+    if (!tabelaDT) return;
 
-      if (!tabelaDT) return;
+    const dados = tabelaDT.rows({ search: 'applied' }).data().toArray();
+    let csv = "ID;Identificação Arquivo;Nome do Jogo;Título;Autor;Tipo;Categoria;Ano;Publicação;Projeto;Referenciar\n";
 
-      const dados = tabelaDT.rows({ search: 'applied' }).data().toArray();
+    dados.forEach(d => {
+      const ref = (d.referenciar || "")
+        .replace(/"/g, '""')
+        .replace(/\n/g, ' ')
+        .replace(/\r/g, ' ')
+        .replace(/;/g, ',');
 
-      let csv = "ID;Identificação Arquivo;Nome do Jogo;Título;Autor;Tipo;Categoria;Ano;Publicação;Projeto;Referenciar\n";
+      const nomeArquivo = (d.publicacaoArquivo || "").replace("publicacaoArquivo/Publicacoes_Jogos/", "");
+      csv += `${d.id};${nomeArquivo};"${d.nomeProducao}";"${d.titulo}";"${d.autor}";${d.tipo};${d.categoria};${d.ano};${d.linkPublicacao};${d.src};"${ref}"\n`;
+    });
 
-      dados.forEach(d => {
-        const ref = (d.referenciar || "")
-          .replace(/"/g, '""')     // escapa aspas
-          .replace(/\n/g, ' ')     // remove quebra de linha
-          .replace(/\r/g, ' ')     // remove quebra de linha windows
-          .replace(/;/g, ',');     // evita quebrar coluna
+    const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "projetos.csv";
+    link.click();
+  }
 
-         /*caso o caminho seja fixo*/
-        const nomeArquivo = d.publicacaoArquivo.replace("publicacaoArquivo/Publicacoes_Jogos/", "");
+  // Função para Exportar como XLSX real (utilizando SheetJS)
+  function exportarXLSX() {
+    if (!tabelaDT) return;
 
-        /**caminho relativo*/
-       /* const nomeArquivo = (d.publicacaoArquivo || "").split('/').pop();*/
-       
-          csv += `${d.id};${nomeArquivo};"${d.nomeProducao}";"${d.titulo}";"${d.autor}";${d.tipo};${d.categoria};${d.ano};${d.linkPublicacao};${d.src};"${ref}"\n`;
-      });
+    const dados = tabelaDT.rows({ search: 'applied' }).data().toArray();
+    
+    // Mapeia os dados estruturados para o formato de linhas/colunas do Excel
+    const linhasFormatadas = dados.map(d => {
+      const nomeArquivo = (d.publicacaoArquivo || "").replace("publicacaoArquivo/Publicacoes_Jogos/", "");
+      return {
+        "ID": d.id,
+        "Identificação Arquivo": nomeArquivo,
+        "Nome do Jogo": d.nomeProducao,
+        "Título": d.titulo,
+        "Autor": d.autor,
+        "Tipo": d.tipo,
+        "Categoria": d.categoria,
+        "Ano": d.ano,
+        "Publicação": d.linkPublicacao,
+        "Projeto": d.src,
+        "Referenciar": d.referenciar || ""
+      };
+    });
 
-      const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+    // Cria a planilha e o livro de trabalho (Workbook)
+    const worksheet = XLSX.utils.json_to_sheet(linhasFormatadas);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Projetos");
 
-      const link = document.createElement("a");
-      link.href = URL.createObjectURL(blob);
-      link.download = "projetos.xlsx";
-      link.click();
-    }
-  </script>
-
+    // Gera o arquivo .xlsx real e dispara o download
+    XLSX.writeFile(workbook, "projetos.xlsx");
+  }
+</script>
 
   <meu-tradutor></meu-tradutor>
   <script src="javascript/components/tradutor.js" defer></script>
